@@ -1,4 +1,8 @@
 {
   "chromeWebSecurity": false,
-  "projectId": "wildlife test"
+  "projectId": "wildlife test",
+  "env":{ 
+    "baseUrl": "https://new-dev-ing.aws-int.defra.cloud",
+    "signInText": "Dealing in exempted ivory items privacy not"
+  }
 }
