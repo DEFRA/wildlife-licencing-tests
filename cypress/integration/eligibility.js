@@ -3,7 +3,7 @@ import { faker } from '@faker-js/faker';
 
 describe('Page title verification', () => {
   it('the login page loads', () => {
-      cy.visit(Cypress.env('URL'))
+      cy.visit(Cypress.env('baseUrl'))
       cy.fixture('users.json').then(users => {
         cy.get('body > div').contains(users.signInText);
         console.log(users.email)
@@ -12,7 +12,7 @@ describe('Page title verification', () => {
     })
 
     it('the login page loads', () => {
-      cy.visit(Cypress.env('URL'))
+      cy.visit(Cypress.env('baseUrl'))
       cy.fixture('users.json').then(users => {
         cy.get('body > div').contains(users.signInText);
         console.log(users.email)
@@ -20,7 +20,7 @@ describe('Page title verification', () => {
       })
     })
       it('the login page loads', () => {
-        cy.visit(Cypress.env('URL'))
+        cy.visit(Cypress.env('baseUrl'))
         cy.fixture('users.json').then(users => {
           cy.get('#user-id').type(users.email);
           cy.get('#continue').click();
@@ -29,7 +29,7 @@ describe('Page title verification', () => {
     
   })
   it('the login page loads', () => {
-    cy.visit(Cypress.env('URL'))
+    cy.visit(Cypress.env('baseUrl'))
     const email = faker.internet.email(); // Kassandra.Haley@erich.biz
       cy.get('#user-id').type(email);
       cy.get('a.govuk-link govuk-body-m').click();
@@ -43,7 +43,7 @@ describe('Page title verification', () => {
 
 
 it.only('Verify CD49 - Landowner permission copy-deck', () => {
-  cy.visit(Cypress.env('URL'))
+  cy.visit(Cypress.env('baseUrl'))
   cy.fixture('users.json').then(users => {
     cy.get('#user-id').type(users.email);
     cy.get('#continue').click();

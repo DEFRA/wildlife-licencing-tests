@@ -1,7 +1,7 @@
-
+'use strict';
 require('dotenv').config();
 
 module.exports = (on, config) => {
-  config.env.URL = 'https://new-dev-ing.aws-int.defra.cloud/login';
+  config.env.DB_USERNAME = process.env.DB_USER;
   return config;
 };
