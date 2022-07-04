@@ -1,5 +1,9 @@
 import { faker } from "@faker-js/faker";
-
+/**
+   * ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
+   * Copy Deck Testing
+   * ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
+   */
 describe("Page title verification", () => {
   it("Verify CD48 - Landowner copy-deck", () => {
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
@@ -215,7 +219,7 @@ describe("Page title verification", () => {
       });
     });
   });
-  it("Verify CD62 - Eligible (Applicant) copy-deck - when user is not logged in  to Government gateway", () => {
+  it("Verify CD62 - Eligible (Applicant) copy-deck - when user is logged in  to Government gateway", () => {
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
       cy.get("#user-id").type(users.email1);
@@ -244,6 +248,11 @@ describe("Page title verification", () => {
       });
     });
   });
+  /**
+   * ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
+   * Functional testing
+   * ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
+   */
   it(" 1 Verify Unhappy path - eligibility check after user logged in - user select ‘No’ to Land owner permission question", () => {
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
