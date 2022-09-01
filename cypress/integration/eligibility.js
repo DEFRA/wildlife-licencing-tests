@@ -1,16 +1,26 @@
-import { faker } from "@faker-js/faker";
+const faker = require('faker');
 /**
    * ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
    * Copy Deck Testing
    * ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
    */
+
+//  const yourFixturePath = 'Elephant.jpg';
+//         cy.get('#files').attachFile(yourFixturePath);
+//         cy.get("#continue").click();
+//         cy.wait(2000)
 describe("Page title verification", () => {
   it("Verify CD48 - Landowner copy-deck", () => {
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
+    cy.get("#main-content > div > div > form > fieldset > a").click();
     cy.fixture("users.json").then((users) => {
-      cy.get("#user-id").type(users.email1);
+      const email = faker.internet.email()
+      console.log(email)
+      cy.get("#user-id").type(email);
       cy.get("#continue").click();
-      cy.get(".govuk-heading-xl").contains(users.nextpage);
+      cy.get("#user-id").type(email);
+      cy.get("#continue").click();
+      cy.get(".govuk-heading-xl").contains(users.taskListHeaderText);
       cy.get(
         "#main-content > div > div > form > fieldset > span > ol > li:nth-child(1) > ul > li.app-task-list__item > span > a"
       ).click();
@@ -25,10 +35,15 @@ describe("Page title verification", () => {
   });
   it("Verify CD49 - Landowner permission copy-deck", () => {
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
+    cy.get("#main-content > div > div > form > fieldset > a").click();
     cy.fixture("users.json").then((users) => {
-      cy.get("#user-id").type(users.email2);
+      const email = faker.internet.email()
+      console.log(email)
+      cy.get("#user-id").type(email);
       cy.get("#continue").click();
-      cy.get(".govuk-heading-xl").contains(users.nextpage);
+      cy.get("#user-id").type(email);
+      cy.get("#continue").click();
+      cy.get(".govuk-heading-xl").contains(users.taskListHeaderText);
       cy.get(
         "#main-content > div > div > form > fieldset > span > ol > li:nth-child(1) > ul > li.app-task-list__item > span > a"
       ).click();
@@ -47,10 +62,15 @@ describe("Page title verification", () => {
   });
   it("Verify CD51 - Project permissions copy-deck", () => {
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
+    cy.get("#main-content > div > div > form > fieldset > a").click();
     cy.fixture("users.json").then((users) => {
-      cy.get("#user-id").type(users.email2);
+      const email = faker.internet.email()
+      console.log(email)
+      cy.get("#user-id").type(email);
       cy.get("#continue").click();
-      cy.get(".govuk-heading-xl").contains(users.nextpage);
+      cy.get("#user-id").type(email);
+      cy.get("#continue").click();
+      cy.get(".govuk-heading-xl").contains(users.taskListHeaderText);
       cy.get(
         "#main-content > div > div > form > fieldset > span > ol > li:nth-child(1) > ul > li.app-task-list__item > span > a"
       ).click();
@@ -70,10 +90,15 @@ describe("Page title verification", () => {
   });
   it("Verify CD50 - Not eligible (landowner) copy-deck", () => {
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
+    cy.get("#main-content > div > div > form > fieldset > a").click();
     cy.fixture("users.json").then((users) => {
-      cy.get("#user-id").type(users.email2);
+      const email = faker.internet.email()
+      console.log(email)
+      cy.get("#user-id").type(email);
       cy.get("#continue").click();
-      cy.get(".govuk-heading-xl").contains(users.nextpage);
+      cy.get("#user-id").type(email);
+      cy.get("#continue").click();
+      cy.get(".govuk-heading-xl").contains(users.taskListHeaderText);
       cy.get(
         "#main-content > div > div > form > fieldset > span > ol > li:nth-child(1) > ul > li.app-task-list__item > span > a"
       ).click();
@@ -94,10 +119,15 @@ describe("Page title verification", () => {
   });
   it("Verify CD52 - Project permissions granted copy-deck3", () => {
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
+    cy.get("#main-content > div > div > form > fieldset > a").click();
     cy.fixture("users.json").then((users) => {
-      cy.get("#user-id").type(users.email2);
+      const email = faker.internet.email()
+      console.log(email)
+      cy.get("#user-id").type(email);
       cy.get("#continue").click();
-      cy.get(".govuk-heading-xl").contains(users.nextpage);
+      cy.get("#user-id").type(email);
+      cy.get("#continue").click();
+      cy.get(".govuk-heading-xl").contains(users.taskListHeaderText);
       cy.get(
         "#main-content > div > div > form > fieldset > span > ol > li:nth-child(1) > ul > li.app-task-list__item > span > a"
       ).click();
@@ -121,10 +151,15 @@ describe("Page title verification", () => {
   });
   it("Verify CD53 - Not eligible (project) copy-deck", () => {
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
+    cy.get("#main-content > div > div > form > fieldset > a").click();
     cy.fixture("users.json").then((users) => {
-      cy.get("#user-id").type(users.email2);
+      const email = faker.internet.email()
+      console.log(email)
+      cy.get("#user-id").type(email);
       cy.get("#continue").click();
-      cy.get(".govuk-heading-xl").contains(users.nextpage);
+      cy.get("#user-id").type(email);
+      cy.get("#continue").click();
+      cy.get(".govuk-heading-xl").contains(users.taskListHeaderText);
       cy.get(
         "#main-content > div > div > form > fieldset > span > ol > li:nth-child(1) > ul > li.app-task-list__item > span > a"
       ).click();
@@ -147,10 +182,15 @@ describe("Page title verification", () => {
   });
   it("Verify CD54 - Check your answers (eligibility) copy-deck", () => {
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
+    cy.get("#main-content > div > div > form > fieldset > a").click();
     cy.fixture("users.json").then((users) => {
-      cy.get("#user-id").type(users.email2);
+      const email = faker.internet.email()
+      console.log(email)
+      cy.get("#user-id").type(email);
       cy.get("#continue").click();
-      cy.get(".govuk-heading-xl").contains(users.nextpage);
+      cy.get("#user-id").type(email);
+      cy.get("#continue").click();
+      cy.get(".govuk-heading-xl").contains(users.taskListHeaderText);
       cy.get(
         "#main-content > div > div > form > fieldset > span > ol > li:nth-child(1) > ul > li.app-task-list__item > span > a"
       ).click();
@@ -179,7 +219,7 @@ describe("Page title verification", () => {
           "#main-content > div > div > form > fieldset > legend > h1"
         ).contains(eligibility2.text5);
         cy.get("#continue").click();
-        cy.get(".govuk-heading-xl").contains(users.nextpage);
+        cy.get(".govuk-heading-xl").contains(users.taskListHeaderText);
         cy.get(
           "#main-content > div > div > form > fieldset > span > ol > li:nth-child(1) > ul"
         ).contains("COMPLETED");
@@ -210,9 +250,14 @@ describe("Page title verification", () => {
       cy.get("div.govuk-width-container ").contains("Continue");
       cy.get("#continue").click();
       cy.fixture("users.json").then((users) => {
-        cy.get("#user-id").type(users.email2);
-        cy.get("#continue").click();
-        cy.get(".govuk-heading-xl").contains(users.nextpage);
+        const email = faker.internet.email()
+      console.log(email)
+      cy.get("#main-content > div > div > form > fieldset > a").click();
+      cy.get("#user-id").type(email);
+      cy.get("#continue").click();
+      cy.get("#user-id").type(email);
+      cy.get("#continue").click();
+        cy.get(".govuk-heading-xl").contains(users.taskListHeaderText);
         cy.get(
           "#main-content > div > div > form > fieldset > span > ol > li:nth-child(1) > ul"
         ).contains("COMPLETED");
@@ -222,9 +267,14 @@ describe("Page title verification", () => {
   it("Verify CD62 - Eligible (Applicant) copy-deck - when user is logged in  to Government gateway", () => {
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#user-id").type(users.email1);
+      const email = faker.internet.email()
+      console.log(email)
+      cy.get("#main-content > div > div > form > fieldset > a").click();
+      cy.get("#user-id").type(email);
       cy.get("#continue").click();
-      cy.get(".govuk-heading-xl").contains(users.nextpage);
+      cy.get("#user-id").type(email);
+      cy.get("#continue").click();
+      cy.get(".govuk-heading-xl").contains(users.taskListHeaderText);
       cy.get(
         "#main-content > div > div > form > fieldset > span > ol > li:nth-child(1) > ul > li.app-task-list__item > span > a"
       ).click();
@@ -260,6 +310,9 @@ describe("Page title verification", () => {
       cy.get("#continue").click();
       cy.get(".govuk-heading-xl").contains(users.nextpage);
       cy.get(
+        "#main-content > div > div > form > fieldset > a"
+      ).click();
+      cy.get(
         "#main-content > div > div > form > fieldset > span > ol > li:nth-child(1) > ul > li.app-task-list__item > span > a"
       ).click();
       cy.get("#yes-no-2").click();
@@ -279,6 +332,9 @@ describe("Page title verification", () => {
       cy.get("#user-id").type(users.email2);
       cy.get("#continue").click();
       cy.get(".govuk-heading-xl").contains(users.nextpage);
+      cy.get(
+        "#main-content > div > div > form > fieldset > a"
+      ).click();
       cy.get(
         "#main-content > div > div > form > fieldset > span > ol > li:nth-child(1) > ul > li.app-task-list__item > span > a"
       ).click();
@@ -301,6 +357,9 @@ describe("Page title verification", () => {
       cy.get("#user-id").type(users.email2);
       cy.get("#continue").click();
       cy.get(".govuk-heading-xl").contains(users.nextpage);
+      cy.get(
+        "#main-content > div > div > form > fieldset > a"
+      ).click();
       cy.get(
         "#main-content > div > div > form > fieldset > span > ol > li:nth-child(1) > ul > li.app-task-list__item > span > a"
       ).click();
@@ -328,6 +387,9 @@ describe("Page title verification", () => {
       cy.get("#continue").click();
       cy.get(".govuk-heading-xl").contains(users.nextpage);
       cy.get(
+        "#main-content > div > div > form > fieldset > a"
+      ).click();
+      cy.get(
         "#main-content > div > div > form > fieldset > span > ol > li:nth-child(1) > ul > li.app-task-list__item > span > a"
       ).click();
       cy.get("#yes-no").click();
@@ -351,6 +413,9 @@ describe("Page title verification", () => {
       cy.get("#user-id").type(users.email2);
       cy.get("#continue").click();
       cy.get(".govuk-heading-xl").contains(users.nextpage);
+      cy.get(
+        "#main-content > div > div > form > fieldset > a"
+      ).click();
       cy.get(
         "#main-content > div > div > form > fieldset > span > ol > li:nth-child(1) > ul > li.app-task-list__item > span > a"
       ).click();
@@ -379,6 +444,9 @@ describe("Page title verification", () => {
       cy.get("#user-id").type(users.email2);
       cy.get("#continue").click();
       cy.get(".govuk-heading-xl").contains(users.nextpage);
+      cy.get(
+        "#main-content > div > div > form > fieldset > a"
+      ).click();
       cy.get(
         "#main-content > div > div > form > fieldset > span > ol > li:nth-child(1) > ul > li.app-task-list__item > span > a"
       ).click();
@@ -422,7 +490,7 @@ describe("Page title verification", () => {
       cy.fixture("users.json").then((users) => {
         cy.get("#user-id").type(users.email2);
         cy.get("#continue").click();
-        cy.get(".govuk-heading-xl").contains(users.nextpage);
+        cy.get(".govuk-heading-xl").contains(users.taskListHeaderText);
         cy.get(
           "#main-content > div > div > form > fieldset > span > ol > li:nth-child(1) > ul"
         ).contains("COMPLETED");
@@ -450,7 +518,7 @@ describe("Page title verification", () => {
       cy.fixture("users.json").then((users) => {
         cy.get("#user-id").type(users.email2);
         cy.get("#continue").click();
-        cy.get(".govuk-heading-xl").contains(users.nextpage);
+        cy.get(".govuk-heading-xl").contains(users.taskListHeaderText);
         cy.get(
           "#main-content > div > div > form > fieldset > span > ol > li:nth-child(1) > ul"
         ).contains("COMPLETED");
@@ -482,7 +550,7 @@ describe("Page title verification", () => {
       cy.fixture("users.json").then((users) => {
         cy.get("#user-id").type(users.email2);
         cy.get("#continue").click();
-        cy.get(".govuk-heading-xl").contains(users.nextpage);
+        cy.get(".govuk-heading-xl").contains(users.taskListHeaderText);
         cy.get(
           "#main-content > div > div > form > fieldset > span > ol > li:nth-child(1) > ul"
         ).contains("COMPLETED");
@@ -512,7 +580,7 @@ describe("Page title verification", () => {
       cy.fixture("users.json").then((users) => {
         cy.get("#user-id").type(users.email2);
         cy.get("#continue").click();
-        cy.get(".govuk-heading-xl").contains(users.nextpage);
+        cy.get(".govuk-heading-xl").contains(users.taskListHeaderText);
         cy.get(
           "#main-content > div > div > form > fieldset > span > ol > li:nth-child(1) > ul"
         ).contains("COMPLETED");
