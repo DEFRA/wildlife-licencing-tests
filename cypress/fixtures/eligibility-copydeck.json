@@ -14,5 +14,14 @@
   "text10": "Get advice on planning and development proposals for projects that will need a protected species mitigation licence.",
   "text11": "More about what you’ll need before you apply for a licence.",
   "text12": "You can't apply for a licence until the project has got permission to start.",
-  "text13": "To be able to save your application and return to it later, you need to sign into an existing account or create a new one."
+  "text13": "To be able to save your application and return to it later, you need to sign into an existing account or create a new one.",
+  "text13a": "You can save your application and return to it later.",
+  "splashErrorMessage": "Enter the name of the applicant's organisation using only letters, numbers, spaces, the apostrophe, hyphen, full-stop or comma.",
+  "text14": "Building and street",
+  "text15": "Locality (optional)",
+  "text16": "Town or city",
+  "text17": "County (optional)"
+
+
+
 }

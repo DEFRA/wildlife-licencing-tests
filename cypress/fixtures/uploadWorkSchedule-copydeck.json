@@ -1,5 +1,12 @@
 { 
   "errorSummary": "The selected file contains a virus. Upload a different file.",
-  "checkAnswerHeader": "Check your answer"
+  "checkAnswerHeader": "Check your answer",
+  "grantedState": "Licence application",
+  "status": "SUBMITTED",
+  "uploadFiles": ["Uploaded file 1", "Uploaded file 2"]
+
+  
+
+  
   
 }

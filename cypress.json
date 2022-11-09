@@ -1,8 +1,9 @@
 {
   "chromeWebSecurity": false,
+  "video": false,
   "projectId": "wildlife test",
-  "env":{ 
-    "baseUrl": "https://new-tst.aws.defra.cloud/",
+  "env": {
+    "baseUrl": "https://new-dev.aws.defra.cloud/",
     "tasklist": "tasklist",
     "login": "login",
     "signInText": "Dealing in exempted ivory items privacy not"
