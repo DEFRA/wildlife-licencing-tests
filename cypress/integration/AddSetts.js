@@ -1,12 +1,5 @@
 describe("Add sett", () => {
   it(" Verify happy path -  Add setts ", () => {
-    // cy.on("uncaught:exception", (err, runnable) => {
-    //   expect(err.message).to.include("cannot read properties exception");
-    //   done();
-    //   return false;
-    // });
-    //    if(ResizeObserverLoopErrRe.test(err.message).to.include("of undefined")){
-    //         return false}
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
