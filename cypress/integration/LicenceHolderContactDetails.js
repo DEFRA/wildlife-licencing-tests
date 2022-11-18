@@ -498,7 +498,8 @@ describe("Page title verification", () => {
       cy.get("#continue").click();
       // cy.get("#name").type(faker.name.firstName() + faker.name.lastName());
       // cy.get("#continue").click();
-      cy.get("#account-4").click();
+     // cy.get("#account-4").click();
+      cy.get("input[value='new']").click();
       cy.get("#continue").click();
       cy.get("#is-organisation").click();
       cy.get("#organisation-name").type(faker.company.bs());

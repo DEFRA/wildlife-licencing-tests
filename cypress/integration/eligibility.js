@@ -664,7 +664,6 @@ describe("Page title verification", () => {
 
   it("SDDSIP-654: Verify  - User able to have a reference number if logged in and eligibility is not completed", () => {
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
-    cy.get("#main-content > div > div > form > fieldset > a").click();
     cy.fixture("users.json").then((users) => {
       cy.get("#username").type(users.email1);
       cy.get("#password").type(users.password1);
@@ -702,8 +701,8 @@ describe("Page title verification", () => {
   });
 
   it("SDDSIP-652 - Forward and backward slash are being accepted on Licence holder ", () => {
-    cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
-    cy.get("#main-content > div > div > form > fieldset > a").click();
+    cy.visit(Cypress.env("baseUrl") + Cypress.env("tasklist"));
+   // cy.get("#main-content > div > div > form > fieldset > a").click();
     cy.fixture("users.json").then((users) => {
       cy.get("#username").type(users.email1);
       cy.get("#password").type(users.password1);
