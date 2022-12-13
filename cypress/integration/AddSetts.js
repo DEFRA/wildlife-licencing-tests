@@ -1,6 +1,15 @@
+const clearDataEndpoint = require('/Users/delelookman/Desktop/wildlife-licencing-tests/cypress/support/service.js')
+
+
 describe("Add sett", () => {
   it(" Verify happy path -  Add setts ", () => {
-    cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
+    // cy.on("uncaught:exception", (err, runnable) => {
+    //   expect(err.message).to.include("cannot read properties exception");
+    //   done();
+    //   return false;
+    // });
+    //    if(ResizeObserverLoopErrRe.test(err.message).to.include("of undefined")){
+    //         return false}
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
       cy.get("#username").type(users.email1);
@@ -27,11 +36,11 @@ describe("Add sett", () => {
       cy.get("#continue").click();
       cy.get("input[value='true']").click();
       cy.get("#continue").click();
-      cy.get("input[id='habitat-entrances']").type("5");
+      cy.get("#habitat-entrances").type("7");
       cy.get("#continue").click();
-      cy.get("input[type='text']").type("5");
+      cy.get("#habitat-active-entrances").type("5");
       cy.get("#continue").click();
-      cy.get("input[type='text']").type("NY123456");
+      cy.get("#habitat-grid-ref").type("NY123456");
       cy.get("#continue").click();
       cy.get("input[id='habitat-work-start-day']").type("1");
       cy.get("input[id='habitat-work-start-month']").type("11");
@@ -46,10 +55,14 @@ describe("Add sett", () => {
       //cy.scrollTo("5000px")
       cy.get("#continue").click();
       cy.get("input[value='yes']").click();
-      cy.get("//fieldset/div/div [1]").click();
+      // cy.get("//fieldset/div/div [1]").click();
       cy.get("#continue").click();
-      cy.get("input[value='yes']").click();
-      cy.get("#continuee").click();
+      // cy.get("input[value='yes']").click();
+      cy.get("#continue").click();
+      cy.get("#continue").click();
+      cy.get("#continue").click();
+      cy.get("#continue").click();
+      cy.get("#continue").click();
     });
   });
 });
