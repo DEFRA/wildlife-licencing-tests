@@ -26,24 +26,25 @@ describe("Give ecologist details", () => {
       cy.get("#is-organisation").click();
       cy.get("#continue").click();
       cy.get("#organisation-name").type(faker.company.bs());
-        cy.get("#continue").click();
-        cy.get("#change-email").click();
-        cy.get("#continue").click();
-        cy.get("#postcode").type("M24 6DH");
-          cy.get("#continue").click();
-          cy.get("#address").select(
-            "1, SATIN DRIVE, MIDDLETON, MANCHESTER, M24 6DH"
-          );
-          cy.get("#continue").click();
-          cy.get("#continue").click();
-          cy.get("#main-content > div > div > form > fieldset > span > ol > li:nth-child(2) > ul > li:nth-child(3)").contains(
-            "COMPLETED");
-            cy.get("#main-content > div > div > form > fieldset > span > ol > li:nth-child(2) > ul > li:nth-child(3)").contains(
-              "Give ecologist details");
-    
+      cy.get("#continue").click();
+      cy.get("#change-email").click();
+      cy.get("#continue").click();
+      cy.get("#postcode").type("M24 6DH");
+      cy.get("#continue").click();
+      cy.get("#address").select(
+        "1, SATIN DRIVE, MIDDLETON, MANCHESTER, M24 6DH"
+      );
+      cy.get("#continue").click();
+      cy.get("#continue").click();
+      cy.get(
+        "#main-content > div > div > form > fieldset > span > ol > li:nth-child(2) > ul > li:nth-child(3)"
+      ).contains("COMPLETED");
+      cy.get(
+        "#main-content > div > div > form > fieldset > span > ol > li:nth-child(2) > ul > li:nth-child(3)"
+      ).contains("Give ecologist details");
     });
-});
-it("2 Verify happy path - Give ecologist details", () => {
+  });
+  it("2 Verify happy path - Give ecologist details", () => {
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
       cy.get("#username").type(users.email1);
@@ -65,19 +66,20 @@ it("2 Verify happy path - Give ecologist details", () => {
       cy.get("#continue").click();
       cy.get("#contact").click();
       cy.get("#continue").click();
-    //   cy.get("#yes-no").click();
+      //   cy.get("#yes-no").click();
       cy.get("#account").click();
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get("#continue").click();
-          cy.get("#main-content > div > div > form > fieldset > span > ol > li:nth-child(2) > ul > li:nth-child(3)").contains(
-            "COMPLETED");
-            cy.get("#main-content > div > div > form > fieldset > span > ol > li:nth-child(2) > ul > li:nth-child(3)").contains(
-              "Give ecologist details");
-    
+      cy.get(
+        "#main-content > div > div > form > fieldset > span > ol > li:nth-child(2) > ul > li:nth-child(3)"
+      ).contains("COMPLETED");
+      cy.get(
+        "#main-content > div > div > form > fieldset > span > ol > li:nth-child(2) > ul > li:nth-child(3)"
+      ).contains("Give ecologist details");
     });
-});
-it("3 Verify happy path - Give ecologist details", () => {
+  });
+  it("3 Verify happy path - Give ecologist details", () => {
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
       cy.get("#username").type(users.email1);
@@ -105,29 +107,26 @@ it("3 Verify happy path - Give ecologist details", () => {
       cy.get("#continue").click();
       cy.get("#is-organisation").click();
       cy.get("#continue").click();
-    //   cy.get("#yes-no").click();
-    //   cy.get("#continue").click();
       cy.get("#organisation-name").type(faker.company.bs());
-        cy.get("#continue").click();
-        cy.get("#email-address").type(faker.internet.email());
-        cy.get("#continue").click();
-        // cy.get("#change-email").click();
-        // cy.get("#continue").click();
-        cy.get("#postcode").type("M24 6DH");
-          cy.get("#continue").click();
-          cy.get("#address").select(
-            "1, SATIN DRIVE, MIDDLETON, MANCHESTER, M24 6DH"
-          );
-          cy.get("#continue").click();
-          cy.get("#continue").click();
-          cy.get("#main-content > div > div > form > fieldset > span > ol > li:nth-child(2) > ul > li:nth-child(3)").contains(
-            "COMPLETED");
-            cy.get("#main-content > div > div > form > fieldset > span > ol > li:nth-child(2) > ul > li:nth-child(3)").contains(
-              "Give ecologist details");
-    
+      cy.get("#continue").click();
+      cy.get("#email-address").type(faker.internet.email());
+      cy.get("#continue").click();
+      cy.get("#postcode").type("M24 6DH");
+      cy.get("#continue").click();
+      cy.get("#address").select(
+        "1, SATIN DRIVE, MIDDLETON, MANCHESTER, M24 6DH"
+      );
+      cy.get("#continue").click();
+      cy.get("#continue").click();
+      cy.get(
+        "#main-content > div > div > form > fieldset > span > ol > li:nth-child(2) > ul > li:nth-child(3)"
+      ).contains("COMPLETED");
+      cy.get(
+        "#main-content > div > div > form > fieldset > span > ol > li:nth-child(2) > ul > li:nth-child(3)"
+      ).contains("Give ecologist details");
     });
-});
-it("4 Verify happy path - Give ecologist details", () => {
+  });
+  it("4 Verify happy path - Give ecologist details", () => {
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
       cy.get("#username").type(users.email1);
@@ -151,13 +150,14 @@ it("4 Verify happy path - Give ecologist details", () => {
       cy.get("#continue").click();
       cy.get("#account").click();
       cy.get("#continue").click();
-          cy.get("#continue").click();
-          cy.get("#continue").click();
-          cy.get("#main-content > div > div > form > fieldset > span > ol > li:nth-child(2) > ul > li:nth-child(3)").contains(
-            "COMPLETED");
-            cy.get("#main-content > div > div > form > fieldset > span > ol > li:nth-child(2) > ul > li:nth-child(3)").contains(
-              "Give ecologist details");
-    
+      cy.get("#continue").click();
+      cy.get("#continue").click();
+      cy.get(
+        "#main-content > div > div > form > fieldset > span > ol > li:nth-child(2) > ul > li:nth-child(3)"
+      ).contains("COMPLETED");
+      cy.get(
+        "#main-content > div > div > form > fieldset > span > ol > li:nth-child(2) > ul > li:nth-child(3)"
+      ).contains("Give ecologist details");
     });
-});
+  });
 });

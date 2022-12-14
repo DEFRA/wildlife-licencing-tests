@@ -8,16 +8,6 @@ const faker = require("faker");
 
 describe("Page title verification", () => {
   it("SDDSIP-509 and verify Licence application screen", () => {
-    // cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
-    // cy.get("#main-content > div > div > form > fieldset > a").click();
-    // cy.fixture("users.json").then((users) => {
-    //   const email = faker.internet.email();
-    //   console.log(email);
-    //   cy.get("#user-id").type(email);
-    //   cy.get("#continue").click();
-    //   cy.get("#user-id").type(email);
-    //   cy.get("#continue").click();
-
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
       cy.get("#username").type(users.email1);
@@ -37,7 +27,6 @@ describe("Page title verification", () => {
       cy.get("#continue").click();
       cy.get("#continue").click();
 
-
       cy.get("a").contains("Give licence holder details").click();
       cy.get("#yes-no").click();
       cy.get("#continue").click();
@@ -53,21 +42,18 @@ describe("Page title verification", () => {
         "1, SATIN DRIVE, MIDDLETON, MANCHESTER, M24 6DH"
       );
       cy.get("#continue").click();
-      // cy.get("#change-email").click();
       cy.get("#continue").click();
-    //   Give ecologist details
-    cy.get("a").contains("Give ecologist details").click();
-    cy.get("#yes-no").click();
-cy.get("#continue").click();
- cy.get("#account").click();
- cy.get("#continue").click();
-cy.get("#change-email").click();
-cy.get("#continue").click();
+      //   Give ecologist details
+      cy.get("a").contains("Give ecologist details").click();
+      cy.get("#yes-no").click();
+      cy.get("#continue").click();
+      cy.get("#account").click();
+      cy.get("#continue").click();
+      cy.get("#change-email").click();
+      cy.get("#continue").click();
+      cy.get("#continue").click();
 
-    // cy.get("#main-content > div > div > form > fieldset > div > div > div:nth-child(1) > label").click();
-    cy.get("#continue").click();
-
-// Authorised person
+      // Authorised person
       cy.get("a").contains("Add authorised people").click();
       cy.get("#yes-no").click();
       cy.get("#continue").click();
@@ -79,30 +65,28 @@ cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get("#address").select(
         "1, SATIN DRIVE, MIDDLETON, MANCHESTER, M24 6DH"
-        
       );
       cy.get("#continue").click();
       cy.get("#yes-no-2").click();
       cy.get("#continue").click();
-      
-    //   Add additional contacts
+
+      //   Add additional contacts
       cy.get("a").contains("Add additional contacts").click();
       cy.get("#yes-no-2").click();
       cy.get("#continue").click();
-        cy.get("#yes-no").click();
+      cy.get("#yes-no").click();
       cy.get("#continue").click();
       cy.get("input[value='new']").click();
       cy.get("#continue").click();
       cy.get("#name").type(faker.name.firstName() + faker.name.lastName());
       cy.get("#continue").click();
-        cy.get("#email-address").clear();
-        cy.get("#email-address").type(faker.internet.email());
+      cy.get("#email-address").clear();
+      cy.get("#email-address").type(faker.internet.email());
       cy.get("#continue").click();
       cy.get("#continue").click();
 
       cy.get("a").contains("Add invoice details").click();
       cy.get("input[value='other']").click();
-    //   cy.get("#responsible").click();
       cy.get("#continue").click();
       cy.get("#new").click();
       cy.get("#continue").click();
@@ -120,26 +104,21 @@ cy.get("#continue").click();
       cy.get("#site-postcode-check").click();
       cy.get("#site-postcode").type("B38 9SH");
       cy.get("#continue").click();
-      cy.get("#siteAddress").select(
-        "2, BAY TREE CLOSE, BIRMINGHAM, B38 9SH"
-      );
+      cy.get("#siteAddress").select("2, BAY TREE CLOSE, BIRMINGHAM, B38 9SH");
       cy.get("#continue").click();
-      cy.get('#scan-file').click();
-      // cy.get("#main-content > div > div > form > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(11) > span > a").click();
-      // cy.get("#main-content > div > div > form > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(9) > span > a").click();
+      cy.get("#scan-file").click();
       const yourFixturePath = "virusfile.pdf";
       cy.get("#scan-file").attachFile(yourFixturePath);
       cy.get("#continue").click();
-      cy.get('#scan-file').click();
+      cy.get("#scan-file").click();
       cy.get("#scan-file").attachFile(yourFixturePath);
       cy.get("#continue").click();
-      cy.get('#scan-file').click();
+      cy.get("#scan-file").click();
       cy.get("#scan-file").attachFile(yourFixturePath);
       cy.get("#continue").click();
       cy.get("#site-grid-ref").type("SP039775");
       cy.get("#continue").click();
       cy.get("#continue").click();
-
 
       cy.get("a").contains("Give ecologist’s experience").click();
       cy.get("input[value='no']").click();
@@ -155,9 +134,6 @@ cy.get("#continue").click();
       cy.get("#continue").click();
 
       cy.get("a").contains("Upload supporting information").click();
-      // cy.get('a[href*="/upload"]').click();
-      // cy.get("#main-content > div > div > form > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(11) > span > a").click();
-      // cy.get("#main-content > div > div > form > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(9) > span > a").click();
       const yourFixturePath1 = "virusfile.pdf";
       cy.get("#scan-file").attachFile(yourFixturePath1);
       cy.wait(2000);
@@ -165,23 +141,13 @@ cy.get("#continue").click();
         (uploadWorkSchedule) => {
           cy.get("#continue").click();
           cy.get("main[id*='main-']").contains("Uploaded file 1");
-          //     cy.get(".govuk-heading-xl").contains(
-          //       uploadWorkSchedule.checkAnswerHeader
-          //     );
+          cy.get(".govuk-heading-xl").contains(
+            uploadWorkSchedule.checkAnswerHeader
+          );
           cy.get("input[value='no']").click();
           cy.get("#continue").click();
           cy.get("a").contains("Add setts the work will affect").click();
           cy.get("#continue").click();
-          // cy.get("#yes-no").click();
-          // cy.get("#continue").click();
-          // cy.get("#yes-no-2").click();
-          // cy.get("#continue").click();
-          // cy.get("#continue").click();
-          // cy.get("#continue").click();
-          // cy.get(
-          //   "#main-content > div > div > form > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(7) > span > a"
-          // ).click();
-          // cy.get("#continue").click();
           cy.get("input[id='habitat-name']").type(faker.name.firstName());
           cy.get("#continue").click();
           cy.get("#habitat-types").click();
@@ -204,86 +170,63 @@ cy.get("#continue").click();
           cy.get("#habitat-work-end-year").type("2024");
           cy.get("#continue").click();
           cy.get("#habitat-activities").click();
-          // cy.viewport(2100, 1500) // Set viewport to 550px x 750px
-          //cy.scrollTo("5000px")
           cy.get("#continue").click();
-
-
-          // cy.get("input[value='yes']").click();
-          // // cy.get("//fieldset/div/div [1]").click();
-          // cy.get("#continue").click();
           cy.get("input[value='no']").click();
           cy.get("#continue").click();
-          // cy.get("#continue").click();
-          // cy.get("#continue").click();
-          // cy.get("#continue").click();
-          // cy.get("#continue").click();
-          
-
-
-
-      cy.get(
-        "#main-content > div > div > form > fieldset > span > ol > li:nth-child(4) > ul > li.app-task-list__item > span > a"
-      ).click();
-      cy.get("#main-content > div > div > form > fieldset").contains(
-        users.text18
-      );
-      cy.get("#main-content > div > div > form > fieldset").contains(
-        "By sending the application you agree that you have given complete and correct information."
-      );
-      cy.get("#main-content > div > div > form > fieldset").contains(
-        "If you are making this application on behalf of another person, you confirm that you have their permission to do so. By sending the application, they agree that they will:"
-      );
-      cy.get("#main-content > div > div > form > fieldset").contains(
-        "will uphold any conditions applied to my licence if granted"
-      );
-      cy.get("#main-content > div > div > form > fieldset").contains(
-        "will abide by the terms and conditions of this service"
-      );
-      cy.get("#main-content > div > div > form > fieldset").contains(
-        "By sending the application you confirm that:"
-      );
-      cy.get("#main-content > div > div > form > fieldset").contains(
-        "an appropriate ecologist has been involved in the application and the design of any mitigations"
-      );
-      cy.get("#main-content > div > div > form > fieldset").contains(
-        "the ecologist supports the application"
-      );
-      cy.get("#main-content > div > div > form > fieldset").contains(
-        "the ecologist is content that the proposed methods, actions and mitigation are appropriate to address the findings of the ecologist's site assessment"
-      );
-      cy.get("#main-content > div > div > form > fieldset").contains(
-        "you will report any actions you took using this licence within 2 weeks of your licence expiring, even if you've taken no action"
-      );
-      cy.get("#continue").click();
-      cy.get("#continue").click();
-      //cy.wait(2000);
-      // cy.get("#main-content > div > div > form > fieldset > table > tbody > tr > th > p > a").click();
-      const ls = cy.get("a").contains("Badger mitigation").first();
-      ls.click();
-//       cy.get(
-//         "#main-content > div > div > form > fieldset > table > tbody > tr:nth-child(1) > th > p.govuk-body.govuk-\!-font-weight-bold.govuk-\!-margin-bottom-2 > a"
-//       ).click();
-//       const ls = cy.get('div.outer-circle').last();
-// ls.click();
-      // cy.get(
-      //   "#main-content > div > div > form > fieldset > table > tbody > tr:nth-child(1)").click();
-      cy.get("#main-content > div > div > form > fieldset > dl").contains(
-        "SUBMITTED"
-      );
-      cy.get("#main-content > div > div > form > fieldset > dl").contains(
-        "Bat mitigation"
-      );
-      cy.get("#main-content > div > div > form > fieldset > dl").contains(
-        "Reference"
-      );
-      cy.get("#main-content > div > div > form > fieldset > dl").contains(
-        "Licence holder"
-      );
-      cy.get("#main-content > div > div > form > fieldset > dl").contains(
-        "Submitted"
+          cy.get(
+            "#main-content > div > div > form > fieldset > span > ol > li:nth-child(4) > ul > li.app-task-list__item > span > a"
+          ).click();
+          cy.get("#main-content > div > div > form > fieldset").contains(
+            users.text18
+          );
+          cy.get("#main-content > div > div > form > fieldset").contains(
+            "By sending the application you agree that you have given complete and correct information."
+          );
+          cy.get("#main-content > div > div > form > fieldset").contains(
+            "If you are making this application on behalf of another person, you confirm that you have their permission to do so. By sending the application, they agree that they will:"
+          );
+          cy.get("#main-content > div > div > form > fieldset").contains(
+            "will uphold any conditions applied to my licence if granted"
+          );
+          cy.get("#main-content > div > div > form > fieldset").contains(
+            "will abide by the terms and conditions of this service"
+          );
+          cy.get("#main-content > div > div > form > fieldset").contains(
+            "By sending the application you confirm that:"
+          );
+          cy.get("#main-content > div > div > form > fieldset").contains(
+            "an appropriate ecologist has been involved in the application and the design of any mitigations"
+          );
+          cy.get("#main-content > div > div > form > fieldset").contains(
+            "the ecologist supports the application"
+          );
+          cy.get("#main-content > div > div > form > fieldset").contains(
+            "the ecologist is content that the proposed methods, actions and mitigation are appropriate to address the findings of the ecologist's site assessment"
+          );
+          cy.get("#main-content > div > div > form > fieldset").contains(
+            "you will report any actions you took using this licence within 2 weeks of your licence expiring, even if you've taken no action"
+          );
+          cy.get("#continue").click();
+          cy.get("#continue").click();
+          const ls = cy.get("a").contains("Badger mitigation").first();
+          ls.click();
+          cy.get("#main-content > div > div > form > fieldset > dl").contains(
+            "SUBMITTED"
+          );
+          cy.get("#main-content > div > div > form > fieldset > dl").contains(
+            "Bat mitigation"
+          );
+          cy.get("#main-content > div > div > form > fieldset > dl").contains(
+            "Reference"
+          );
+          cy.get("#main-content > div > div > form > fieldset > dl").contains(
+            "Licence holder"
+          );
+          cy.get("#main-content > div > div > form > fieldset > dl").contains(
+            "Submitted"
+          );
+        }
       );
     });
   });
-});
 });

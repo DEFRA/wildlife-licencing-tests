@@ -1,15 +1,5 @@
-const clearDataEndpoint = require('/Users/delelookman/Desktop/wildlife-licencing-tests/cypress/support/service.js')
-
-
 describe("Add sett", () => {
   it(" Verify happy path -  Add setts ", () => {
-    // cy.on("uncaught:exception", (err, runnable) => {
-    //   expect(err.message).to.include("cannot read properties exception");
-    //   done();
-    //   return false;
-    // });
-    //    if(ResizeObserverLoopErrRe.test(err.message).to.include("of undefined")){
-    //         return false}
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
       cy.get("#username").type(users.email1);
@@ -51,13 +41,9 @@ describe("Add sett", () => {
       cy.get("input[id='habitat-work-end-year']").type("2024");
       cy.get("#continue").click();
       cy.get("input[id='habitat-activities']").click();
-      // cy.viewport(2100, 1500) // Set viewport to 550px x 750px
-      //cy.scrollTo("5000px")
       cy.get("#continue").click();
       cy.get("input[value='yes']").click();
-      // cy.get("//fieldset/div/div [1]").click();
       cy.get("#continue").click();
-      // cy.get("input[value='yes']").click();
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get("#continue").click();
@@ -66,5 +52,3 @@ describe("Add sett", () => {
     });
   });
 });
-//    });
-//});

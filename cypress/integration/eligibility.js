@@ -375,19 +375,12 @@ describe("Page title verification", () => {
    * ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
    */
   it(" 1 Verify Unhappy path - eligibility check after user logged in - user select ‘No’ to Land owner permission question", () => {
-    // cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
-    // cy.fixture("users.json").then((users) => {
-    //   cy.get("#username").type(users.email1);
-    //   cy.get("#password").type(users.password1);
-    //   cy.get("#continue").click();
-
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
       cy.get("#username").type(users.email1);
       cy.get("#password").type(users.password1);
       cy.get("#continue").click();
       cy.get("#main-content > div > div > form > fieldset > a").click();
-      //  cy.get("h1[class*='govuk-heading']").contains(users.nextpage);
       cy.get(
         "#main-content > div > div > form > fieldset > span > ol > li:nth-child(1) > ul > li.app-task-list__item > span > a"
       ).click();
@@ -433,7 +426,6 @@ describe("Page title verification", () => {
       cy.get("#password").type(users.password2);
       cy.get("#continue").click();
       cy.get("#main-content > div > div > form > fieldset > a").click();
-      //  cy.get("h1[class*='govuk-heading']").contains(users.nextpage);
       cy.get(
         "#main-content > div > div > form > fieldset > span > ol > li:nth-child(1) > ul > li.app-task-list__item > span > a"
       ).click();
@@ -461,7 +453,6 @@ describe("Page title verification", () => {
       cy.get("#password").type(users.password1);
       cy.get("#continue").click();
       cy.get("#main-content > div > div > form > fieldset > a").click();
-      //   cy.get("h1[class*='govuk-heading']").contains(users.nextpage);
       cy.get(
         "#main-content > div > div > form > fieldset > span > ol > li:nth-child(1) > ul > li.app-task-list__item > span > a"
       ).click();
@@ -487,7 +478,6 @@ describe("Page title verification", () => {
       cy.get("#password").type(users.password1);
       cy.get("#continue").click();
       cy.get("#main-content > div > div > form > fieldset > a").click();
-      //     cy.get("h1[class*='govuk-heading']").contains(users.nextpage);
       cy.get(
         "#main-content > div > div > form > fieldset > span > ol > li:nth-child(1) > ul > li.app-task-list__item > span > a"
       ).click();
@@ -517,7 +507,6 @@ describe("Page title verification", () => {
       cy.get("#password").type(users.password1);
       cy.get("#continue").click();
       cy.get("#main-content > div > div > form > fieldset > a").click();
-      //  cy.get("h1[class*='govuk-heading']").contains(users.nextpage);
       cy.get(
         "#main-content > div > div > form > fieldset > span > ol > li:nth-child(1) > ul > li.app-task-list__item > span > a"
       ).click();
@@ -664,76 +653,6 @@ describe("Page title verification", () => {
     });
   });
 
-  // it("SDDSIP-654: Verify  - User able to have a reference number if logged in and eligibility is not completed", () => {
-  //   cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
-  //   cy.fixture("users.json").then((users) => {
-  //     cy.get("#username").type(users.email1);
-  //     cy.get("#password").type(users.password1);
-  //     cy.get("#continue").click();
-  //     cy.get("h1[class*='govuk-heading']").contains(users.nextpage);
-  //     // cy.get("#main-content > div > div > form > fieldset > span").contains("Reference:");
-  //     cy.get("#main-content > div > div > form > fieldset > span").should(
-  //       "not.include.text",
-  //       "Reference:"
-  //     );
-  //     cy.get(
-  //       "#main-content > div > div > form > fieldset > span > ol > li:nth-child(1) > ul > li.app-task-list__item > span > a"
-  //     ).click();
-  //     cy.get("input[value='yes']").click();
-  //     cy.get("#continue").click();
-  //     cy.get("input[value='no']").click();
-  //     cy.get("#continue").click();
-  //     cy.fixture("eligibility-copydeck.json").then((eligibility2) => {
-  //       cy.get(
-  //         "#main-content > div > div > form > fieldset > legend > h1"
-  //       ).contains(eligibility2.text4);
-  //       cy.get("#continue").click();
-  //       cy.get(
-  //         "#main-content > div > div > form > fieldset > legend > h1"
-  //       ).contains(eligibility2.text5);
-  //       cy.get("div.govuk-width-container ").contains(eligibility2.text13a);
-  //       cy.get("div.govuk-width-container ").contains("Back");
-  //       cy.get("div.govuk-width-container ").contains("Continue");
-  //       cy.get("#continue").click();
-  //       cy.get("#main-content > div > div > form > fieldset > span").contains(
-  //         "Reference:"
-  //       );
-  //     });
-  //   });
-  // });
-
-  // it("SDDSIP-652 - Forward and backward slash are being accepted on Licence holder ", () => {
-  //   cy.visit(Cypress.env("baseUrl") + Cypress.env("tasklist"));
-  //  // cy.get("#main-content > div > div > form > fieldset > a").click();
-  //   cy.fixture("users.json").then((users) => {
-  //     cy.get("#username").type(users.email1);
-  //     cy.get("#password").type(users.password1);
-  //     cy.get("#continue").click();
-  //     cy.get("h1[class*='govuk-heading']").contains(users.taskListHeaderText);
-  //     cy.get(
-  //       "#main-content > div > div > form > fieldset > span > ol > li:nth-child(1) > ul > li.app-task-list__item > span > a"
-  //     ).click();
-  //     cy.get("#yes-no").click();
-  //     cy.get("#continue").click();
-  //     cy.get("#yes-no-2").click();
-  //     cy.get("#continue").click();
-  //     cy.get("#continue").click();
-  //     cy.get("#continue").click();
-  //     cy.get("a").contains("Give licence holder details").click();
-  //     cy.get("#yes-no-2").click();
-  //     cy.get("#continue").click();
-  //     cy.get("#name").type(faker.name.firstName() + faker.name.lastName());
-  //     cy.get("#continue").click();
-  //     cy.get("#is-organisation").click();
-  //     cy.get("#organisation-name").type("\\\\////");
-  //     cy.get("#continue").click();
-  //     cy.get(
-  //       "#main-content > div > div > div.govuk-error-summary > div > ul > li > a"
-  //     ).contains(
-  //       "Enter the name of the applicant's organisation using only letters, numbers, spaces, the apostrophe, hyphen, full-stop or comma."
-  //     );
-  //   });
-  // });
   it("SDDSIP-650 - Not answered should be displaying on Check your answer screen…..", () => {
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {

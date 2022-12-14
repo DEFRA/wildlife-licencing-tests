@@ -18,6 +18,9 @@ describe("Ecologist experience", () => {
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get("#continue").click();
+
+      // Give ecologist’s experience
+
       cy.get("a").contains("Give ecologist’s experience").click();
       cy.get("#yes-no").click();
       cy.get("#continue").click();
@@ -54,6 +57,9 @@ describe("Ecologist experience", () => {
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get("#continue").click();
+
+      // Give ecologist’s experience
+
       cy.get("a").contains("Give ecologist’s experience").click();
       cy.get("#yes-no").click();
       cy.get("#continue").click();
@@ -93,6 +99,9 @@ describe("Ecologist experience", () => {
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get("#continue").click();
+
+      // Give ecologist’s experience
+
       cy.get("a").contains("Give ecologist’s experience").click();
       cy.get("input[value='no']").click();
       cy.get("#continue").click();
@@ -122,6 +131,9 @@ describe("Ecologist experience", () => {
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get("#continue").click();
+
+      // Give ecologist’s experience
+
       cy.get("a").contains("Give ecologist’s experience").click();
       cy.get("input[value='yes']").click();
       cy.get("#continue").click();
@@ -155,6 +167,9 @@ describe("Ecologist experience", () => {
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get("#continue").click();
+
+      // Give ecologist’s experience
+
       cy.get("a").contains("Give ecologist’s experience").click();
       cy.get("input[value='no']").click();
       cy.get("#continue").click();
