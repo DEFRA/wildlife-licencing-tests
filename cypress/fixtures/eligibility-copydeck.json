@@ -7,13 +7,16 @@
   "text3": "Has the project got all permissions for work to start?",
   "text4": "Check your answers",
   "text5": "You’re eligible to apply for a licence",
-  "text6": "You’re not currently eligible to apply for this licence",
+  "text6a": "You’re not currently eligible to apply for this licence",
+  "text6": "You are not eligible for this licence",
   "text7": "Does the applicant have the landowner’s permission to apply?",
   "text8": "For example, planning permission or listed building consent.",
   "text9": "You need the landowner’s permission to apply for a licence.",
+  "text9a":"You must have permission for the development before you apply for a licence.",
   "text10": "Get advice on planning and development proposals for projects that will need a protected species mitigation licence.",
   "text11": "More about what you’ll need before you apply for a licence.",
   "text12": "You can't apply for a licence until the project has got permission to start.",
+  "text12a": "You must have permission for the development before you apply for a licence.",
   "text13": "To be able to save your application and return to it later, you need to sign into an existing account or create a new one.",
   "text13a": "You can save your application and return to it later.",
   "splashErrorMessage": "Enter the name of the applicant's organisation using only letters, numbers, spaces, the apostrophe, hyphen, full-stop or comma.",
@@ -21,7 +24,6 @@
   "text15": "Locality (optional)",
   "text16": "Town or city",
   "text17": "County (optional)"
-
 
 
 }
