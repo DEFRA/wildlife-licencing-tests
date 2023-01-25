@@ -22,6 +22,8 @@ describe("Add authorised People", () => {
       // Add authorised people
 
       cy.get("a").contains("Add authorised people").click();
+      cy.get("#main-content > div > div").contains("This is a person who will be responsible for everything done under the licence.");
+      cy.get("#main-content > div > div").contains("It does not include any assistants who will work under the direct supervision of the licence holder or any authorised people.");
       cy.get("#yes-no").click();
       cy.get("#continue").click();
       cy.get("#name").type(faker.name.firstName() + faker.name.lastName());

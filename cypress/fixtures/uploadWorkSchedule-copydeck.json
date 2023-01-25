@@ -3,6 +3,7 @@
   "checkAnswerHeader": "Check your answer",
   "grantedState": "Licence application",
   "status": "SUBMITTED",
+  "siteInfoText": "Supporting information",
   "uploadFiles": ["Uploaded file 1", "Uploaded file 2"]
 
   

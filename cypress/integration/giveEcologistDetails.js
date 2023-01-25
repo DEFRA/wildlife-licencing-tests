@@ -24,7 +24,6 @@ describe("Give ecologist details", () => {
       cy.get("input[value='new']").click();
       cy.get("#continue").click();
       cy.get("#is-organisation").click();
-      cy.get("#continue").click();
       cy.get("#organisation-name").type(faker.company.bs());
       cy.get("#continue").click();
       cy.get("#change-email").click();
@@ -66,7 +65,6 @@ describe("Give ecologist details", () => {
       cy.get("#continue").click();
       cy.get("#contact").click();
       cy.get("#continue").click();
-      //   cy.get("#yes-no").click();
       cy.get("#account").click();
       cy.get("#continue").click();
       cy.get("#continue").click();
@@ -106,7 +104,6 @@ describe("Give ecologist details", () => {
       cy.get("input[value='new']").click();
       cy.get("#continue").click();
       cy.get("#is-organisation").click();
-      cy.get("#continue").click();
       cy.get("#organisation-name").type(faker.company.bs());
       cy.get("#continue").click();
       cy.get("#email-address").type(faker.internet.email());
