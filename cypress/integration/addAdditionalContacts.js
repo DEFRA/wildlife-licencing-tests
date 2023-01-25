@@ -291,11 +291,11 @@ describe("Add an additional contact", () => {
       cy.get("#continue").click();
       cy.get("#yes-no").click();
       cy.get("#continue").click();
-      cy.get("#contact").click();
+      cy.contains("Blaine Gutierrez").click();
       cy.get("#continue").click();
-      cy.get("#email-address").clear();
-      cy.get("#email-address").type(faker.internet.email());
-      cy.get("#continue").click();
+      // cy.get("#email-address").clear();
+      // cy.get("#email-address").type(faker.internet.email());
+      // cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get(
         "#main-content > div > div > form > fieldset > span > ol > li:nth-child(2) > ul > li:nth-child(7)"

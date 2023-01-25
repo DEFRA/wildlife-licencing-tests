@@ -284,7 +284,6 @@ describe("Site Information", () => {
       cy.get("#address-county").type("Manchester");
       cy.get("#continue").click();
       cy.get("#scan-file").click();
-
       const yourFixturePath = "virusfile.pdf";
       cy.get("#scan-file").attachFile(yourFixturePath);
       cy.get("#continue").click();
@@ -308,7 +307,6 @@ describe("Site Information", () => {
       cy.get("#address-county").type("Manchester");
       cy.get("#continue").click();
       cy.get("#scan-file").click();
-
       cy.get("#scan-file").attachFile(yourFixturePath);
       cy.get("#continue").click();
       cy.get("#scan-file").click();
@@ -381,7 +379,6 @@ describe("Site Information", () => {
       cy.get("#continue").click();
       cy.get("#address-and-grid-reference-mismatch").click();
       cy.get("#continue").click();
-
       cy.get("#continue").click();
       cy.get("#address-line-1").clear();
       cy.get("#address-line-1").type("4");
@@ -393,7 +390,6 @@ describe("Site Information", () => {
       cy.get("#address-county").type("Manchester");
       cy.get("#continue").click();
       cy.get("#scan-file").click();
-
       cy.get("#scan-file").attachFile(yourFixturePath);
       cy.get("#continue").click();
       cy.get("#scan-file").click();
@@ -444,7 +440,6 @@ describe("Site Information", () => {
       cy.get("#siteAddress").select("2, BAY TREE CLOSE, BIRMINGHAM, B38 9SH");
       cy.get("#continue").click();
       cy.get("#scan-file").click();
-
       const yourFixturePath = "virusfile.pdf";
       cy.get("#scan-file").attachFile(yourFixturePath);
       cy.get("#continue").click();

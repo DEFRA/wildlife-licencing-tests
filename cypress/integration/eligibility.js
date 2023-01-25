@@ -54,8 +54,8 @@ describe("Page title verification", () => {
 
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email3);
-      cy.get("#password").type(users.password2);
+      cy.get("#username").type(users.email1);
+      cy.get("#password").type(users.password1);
       cy.get("#continue").click();
       cy.get("#main-content > div > div > form > fieldset > a").click();
       cy.get("a").contains("Check if you’re eligible to apply").click();
@@ -125,8 +125,8 @@ describe("Page title verification", () => {
 
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email3);
-      cy.get("#password").type(users.password2);
+      cy.get("#username").type(users.email1);
+      cy.get("#password").type(users.password1);
       cy.get("#continue").click();
       cy.get("#main-content > div > div > form > fieldset > a").click();
       //  cy.get("h1[class*='govuk-heading']").contains(users.taskListHeaderText);
@@ -161,8 +161,8 @@ describe("Page title verification", () => {
 
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email3);
-      cy.get("#password").type(users.password2);
+      cy.get("#username").type(users.email1);
+      cy.get("#password").type(users.password1);
       cy.get("#continue").click();
       cy.get("#main-content > div > div > form > fieldset > a").click();
       //  cy.get("h1[class*='govuk-heading']").contains(users.taskListHeaderText);
@@ -238,8 +238,8 @@ describe("Page title verification", () => {
 
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email3);
-      cy.get("#password").type(users.password2);
+      cy.get("#username").type(users.email1);
+      cy.get("#password").type(users.password1);
       cy.get("#continue").click();
       cy.get("#main-content > div > div > form > fieldset > a").click();
       //  cy.get("h1[class*='govuk-heading']").contains(users.taskListHeaderText);
@@ -422,8 +422,8 @@ describe("Page title verification", () => {
   it("2a Verify Happy path - eligibility check after user logged in - user select No to Project permissions", () => {
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email3);
-      cy.get("#password").type(users.password2);
+      cy.get("#username").type(users.email1);
+      cy.get("#password").type(users.password1);
       cy.get("#continue").click();
       cy.get("#main-content > div > div > form > fieldset > a").click();
       cy.get(

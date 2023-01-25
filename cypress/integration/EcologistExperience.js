@@ -67,7 +67,7 @@ describe("Ecologist experience", () => {
       cy.get("#continue").click();
       cy.get("input[value='yes']").click();
       cy.get("#continue").click();
-      cy.get("input#enter-licence-details").type("NY123456");
+      cy.get("input#enter-licence-details").type("NY123457");
       cy.get("#continue").click();
       cy.get("input[value='no']").click();
       cy.get("#continue").click();
