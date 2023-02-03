@@ -6,6 +6,7 @@
     "baseUrl": "https://new-tst.aws.defra.cloud/",
     "tasklist": "tasklist",
     "login": "login",
+    "which-species": "which-species",
     "signInText": "Dealing in exempted ivory items privacy not"
   }
 }

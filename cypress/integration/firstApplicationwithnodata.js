@@ -8,14 +8,19 @@ const faker = require("faker");
 
 describe("Page title verification", () => {
   it("SDDSIP-509 and verify Licence application screen", () => {
+    cy.request("https://new-tst.aws.defra.cloud/set-sysdate?iso-string=2023-04-01T17:48:00.000Z");
     cy.request("https://new-tst.aws.defra.cloud/reset?username=user1@email.com");
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
       cy.get("#username").type(users.email3);
       cy.get("#password").type(users.password2);
       cy.get("#continue").click();
+      cy.get("#species").click();
+      cy.get("#continue").click();
+      cy.get("#yes-no-2").click();
+      cy.get("#continue").click();
     //   cy.get("h1[class*='govuk-heading']").contains(users.nextpage);
-      cy.get("a").contains("Check if you’re eligible to apply").click();
+      // cy.get("a").contains("Check if you’re eligible to apply").click();
     //   cy.get(
     //     "#main-content > div > div > form > fieldset > span > ol > li:nth-child(1) > ul > li.app-task-list__item > span > a"
     //   ).click();
@@ -200,9 +205,11 @@ describe("Page title verification", () => {
           cy.get("#continue").click();
           cy.get("input[value='no']").click();
           cy.get("#continue").click();
-          cy.get(
-            "#main-content > div > div > form > fieldset > span > ol > li:nth-child(4) > ul > li.app-task-list__item > span > a"
-          ).click();
+          cy.get("a").contains("Declare convictions").click();
+          cy.get("#convictions-check-2").click();
+          cy.get("#continue").click();
+          cy.get("#continue").click();
+          cy.get("a").contains("Send application").click();
           cy.get("#main-content > div > div > form > fieldset").contains(
             users.text18
           );
