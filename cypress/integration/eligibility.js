@@ -20,13 +20,32 @@ describe("Page title verification", () => {
     //   cy.get("#continue").click();
     //   cy.get("#user-id").type(email);
     //   cy.get("#continue").click();
+
+    cy.request("https://new-tst.aws.defra.cloud/set-sysdate?iso-string=2023-04-01T17:48:00.000Z");
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
       cy.get("#username").type(users.email1);
       cy.get("#password").type(users.password1);
       cy.get("#continue").click();
-      cy.get("#main-content > div > div > form > fieldset > a").click();
-      cy.get("a").contains("Check if you’re eligible to apply").click();
+      cy.get("h1.govuk-fieldset__heading").contains(users.nextpage);
+         cy.get("#main-content > div > div > form > fieldset > a").click();
+         cy.get("#species").click();
+      cy.get("#continue").click();
+      cy.get("#yes-no-2").click();
+      cy.get("#continue").click();
+      // cy.get("a").contains("Check if you’re eligible to apply").click();
+      // cy.get("#species").click();
+      // cy.get("#continue").click();
+      // cy.get("#yes-no-2").click();
+      // cy.get("#continue").click();
+
+    // cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
+    // cy.fixture("users.json").then((users) => {
+    //   cy.get("#username").type(users.email1);
+    //   cy.get("#password").type(users.password1);
+    //   cy.get("#continue").click();
+    //   cy.get("#main-content > div > div > form > fieldset > a").click();
+    //   cy.get("a").contains("Check if you’re eligible to apply").click();
       //cy.get("h1[class*='govuk-heading']").contains(users.taskListHeaderText);
       // cy.get(
       //   "#main-content > div > div > form > fieldset > span > ol > li:nth-child(1) > ul > li.app-task-list__item > span > a"
@@ -52,13 +71,21 @@ describe("Page title verification", () => {
     //   cy.get("#user-id").type(email);
     //   cy.get("#continue").click();
 
+    cy.request("https://new-tst.aws.defra.cloud/set-sysdate?iso-string=2023-04-01T17:48:00.000Z");
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
       cy.get("#username").type(users.email1);
       cy.get("#password").type(users.password1);
       cy.get("#continue").click();
-      cy.get("#main-content > div > div > form > fieldset > a").click();
-      cy.get("a").contains("Check if you’re eligible to apply").click();
+      cy.get("h1.govuk-fieldset__heading").contains(users.nextpage);
+           cy.get("#main-content > div > div > form > fieldset > a").click();
+           
+      // cy.get("a").contains("Check if you’re eligible to apply").click();
+
+      cy.get("#species").click();
+      cy.get("#continue").click();
+      cy.get("#yes-no-2").click();
+      cy.get("#continue").click();
       // cy.get("h1[class*='govuk-heading']").contains(users.taskListHeaderText);
       // cy.get(
       //   "#main-content > div > div > form > fieldset > span > ol > li:nth-child(1) > ul > li.app-task-list__item > span > a"
@@ -88,16 +115,29 @@ describe("Page title verification", () => {
     //   cy.get("#user-id").type(email);
     //   cy.get("#continue").click();
 
+    cy.request("https://new-tst.aws.defra.cloud/set-sysdate?iso-string=2023-04-01T17:48:00.000Z");
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
       cy.get("#username").type(users.email1);
       cy.get("#password").type(users.password1);
       cy.get("#continue").click();
-      cy.get("#main-content > div > div > form > fieldset > a").click();
+      cy.get("h1.govuk-fieldset__heading").contains(users.nextpage);
+            cy.get("#main-content > div > div > form > fieldset > a").click();
+            cy.get("#species").click();
+            cy.get("#continue").click();
+            cy.get("#yes-no-2").click();
+            cy.get("#continue").click();
+
+
+      // cy.get("a").contains("Check if you’re eligible to apply").click();
+      // cy.get("#species").click();
+      // cy.get("#continue").click();
+      // cy.get("#yes-no-2").click();
+      // cy.get("#continue").click();
       // cy.get("h1[class*='govuk-heading']").contains(users.taskListHeaderText);
-      cy.get(
-        "#main-content > div > div > form > fieldset > span > ol > li:nth-child(1) > ul > li.app-task-list__item > span > a"
-      ).click();
+      // cy.get(
+      //   "#main-content > div > div > form > fieldset > span > ol > li:nth-child(1) > ul > li.app-task-list__item > span > a"
+      // ).click();
       cy.get("#yes-no").click();
       cy.get("#continue").click();
       cy.fixture("eligibility-copydeck.json").then((eligibility2) => {
@@ -123,16 +163,24 @@ describe("Page title verification", () => {
     //   cy.get("#user-id").type(email);
     //   cy.get("#continue").click();
 
+    cy.request("https://new-tst.aws.defra.cloud/set-sysdate?iso-string=2023-04-01T17:48:00.000Z");
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
       cy.get("#username").type(users.email1);
       cy.get("#password").type(users.password1);
       cy.get("#continue").click();
-      cy.get("#main-content > div > div > form > fieldset > a").click();
+      cy.get("h1.govuk-fieldset__heading").contains(users.nextpage);
+            cy.get("#main-content > div > div > form > fieldset > a").click();
+
+      // cy.get("a").contains("Check if you’re eligible to apply").click();
+      cy.get("#species").click();
+      cy.get("#continue").click();
+      cy.get("#yes-no-2").click();
+      cy.get("#continue").click();
       //  cy.get("h1[class*='govuk-heading']").contains(users.taskListHeaderText);
-      cy.get(
-        "#main-content > div > div > form > fieldset > span > ol > li:nth-child(1) > ul > li.app-task-list__item > span > a"
-      ).click();
+      // cy.get(
+      //   "#main-content > div > div > form > fieldset > span > ol > li:nth-child(1) > ul > li.app-task-list__item > span > a"
+      // ).click();
       cy.get("#yes-no-2").click();
       cy.get("#continue").click();
       cy.get("#yes-no-2").click();
@@ -159,16 +207,24 @@ describe("Page title verification", () => {
     //   cy.get("#user-id").type(email);
     //   cy.get("#continue").click();
 
+    cy.request("https://new-tst.aws.defra.cloud/set-sysdate?iso-string=2023-04-01T17:48:00.000Z");
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
       cy.get("#username").type(users.email1);
       cy.get("#password").type(users.password1);
       cy.get("#continue").click();
+      cy.get("h1.govuk-fieldset__heading").contains(users.nextpage);
       cy.get("#main-content > div > div > form > fieldset > a").click();
+
+      // cy.get("a").contains("Check if you’re eligible to apply").click();
+      cy.get("#species").click();
+      cy.get("#continue").click();
+      cy.get("#yes-no-2").click();
+      cy.get("#continue").click();
       //  cy.get("h1[class*='govuk-heading']").contains(users.taskListHeaderText);
-      cy.get(
-        "#main-content > div > div > form > fieldset > span > ol > li:nth-child(1) > ul > li.app-task-list__item > span > a"
-      ).click();
+      // cy.get(
+      //   "#main-content > div > div > form > fieldset > span > ol > li:nth-child(1) > ul > li.app-task-list__item > span > a"
+      // ).click();
       cy.get("#yes-no").click();
       cy.get("#continue").click();
       cy.fixture("eligibility-copydeck.json").then((eligibility2) => {
@@ -236,16 +292,24 @@ describe("Page title verification", () => {
     //   cy.get("#user-id").type(email);
     //   cy.get("#continue").click();
 
+    cy.request("https://new-tst.aws.defra.cloud/set-sysdate?iso-string=2023-04-01T17:48:00.000Z");
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email1);
-      cy.get("#password").type(users.password1);
+      cy.get("#username").type(users.email3);
+      cy.get("#password").type(users.password2);
       cy.get("#continue").click();
-      cy.get("#main-content > div > div > form > fieldset > a").click();
+      // cy.get("#main-content > div > div > form > fieldset > a").click();
+
+      // cy.get("h1.govuk-fieldset__heading").contains(users.nextpage);
+      // cy.get("a").contains("Check if you’re eligible to apply").click();
+      cy.get("#species").click();
+      cy.get("#continue").click();
+      cy.get("#yes-no-2").click();
+      cy.get("#continue").click();
       //  cy.get("h1[class*='govuk-heading']").contains(users.taskListHeaderText);
-      cy.get(
-        "#main-content > div > div > form > fieldset > span > ol > li:nth-child(1) > ul > li.app-task-list__item > span > a"
-      ).click();
+      // cy.get(
+      //   "#main-content > div > div > form > fieldset > span > ol > li:nth-child(1) > ul > li.app-task-list__item > span > a"
+      // ).click();
       cy.get("#yes-no").click();
       cy.get("#continue").click();
       cy.fixture("eligibility-copydeck.json").then((eligibility2) => {
@@ -271,7 +335,7 @@ describe("Page title verification", () => {
           "#main-content > div > div > form > fieldset > legend > h1"
         ).contains(eligibility2.text5);
         cy.get("#continue").click();
-        cy.get("h1[class*='govuk-heading']").contains(users.taskListHeaderText);
+        cy.get("h1.govuk-fieldset__heading").contains(users.taskListHeaderText);
         cy.get(
           "#main-content > div > div > form > fieldset > span > ol > li:nth-child(1) > ul"
         ).contains("COMPLETED");
@@ -279,10 +343,20 @@ describe("Page title verification", () => {
     });
   });
   it("Verify CD62 - Eligible (Applicant) copy-deck - when user is not logged in  to Government gateway", () => {
-    cy.visit(Cypress.env("baseUrl") + Cypress.env("tasklist"));
-    cy.get(
-      "#main-content > div > div > form > fieldset > span > ol > li:nth-child(1) > ul > li.app-task-list__item > span > a"
-    ).click();
+    cy.request("https://new-tst.aws.defra.cloud/set-sysdate?iso-string=2023-04-01T17:48:00.000Z");
+    cy.visit(Cypress.env("baseUrl") + Cypress.env("which-species"));
+    // cy.fixture("users.json").then((users) => {
+    //   cy.get("#username").type(users.email3);
+    //   cy.get("#password").type(users.password2);
+    //   cy.get("#continue").click();
+    //   cy.get("#main-content > div > div > form > fieldset > a").click();
+
+      // cy.get("h1.govuk-fieldset__heading").contains(users.nextpage);
+      // cy.get("a").contains("Check if you’re eligible to apply").click();
+      cy.get("#species").click();
+      cy.get("#continue").click();
+      cy.get("#yes-no-2").click();
+      cy.get("#continue").click();
     cy.get("#yes-no").click();
     cy.get("#continue").click();
     cy.get("#yes-no").click();
@@ -314,7 +388,7 @@ describe("Page title verification", () => {
           cy.get("#username").type(users.email3);
           cy.get("#password").type(users.password2);
           cy.get("#continue").click();
-          cy.get("h1[class*='govuk-heading']").contains(
+          cy.get("h1.govuk-fieldset__heading").contains(
             users.taskListHeaderText
           );
           cy.get(
@@ -324,6 +398,7 @@ describe("Page title verification", () => {
       });
     });
   });
+
 
   it("Verify CD62a - Eligible (Applicant) copy-deck - when user is logged in  to Government gateway", () => {
     // cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
@@ -336,16 +411,24 @@ describe("Page title verification", () => {
     //   cy.get("#user-id").type(email);
     //   cy.get("#continue").click();
 
+    cy.request("https://new-tst.aws.defra.cloud/set-sysdate?iso-string=2023-04-01T17:48:00.000Z");
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
       cy.get("#username").type(users.email3);
       cy.get("#password").type(users.password2);
       cy.get("#continue").click();
       cy.get("#main-content > div > div > form > fieldset > a").click();
+
+      // cy.get("h1.govuk-fieldset__heading").contains(users.nextpage);
+      // cy.get("a").contains("Check if you’re eligible to apply").click();
+      cy.get("#species").click();
+      cy.get("#continue").click();
+      cy.get("#yes-no-2").click();
+      cy.get("#continue").click();
       // cy.get("h1[class*='govuk-heading']").contains(users.taskListHeaderText);
-      cy.get(
-        "#main-content > div > div > form > fieldset > span > ol > li:nth-child(1) > ul > li.app-task-list__item > span > a"
-      ).click();
+      // cy.get(
+      //   "#main-content > div > div > form > fieldset > span > ol > li:nth-child(1) > ul > li.app-task-list__item > span > a"
+      // ).click();
       cy.get("#yes-no").click();
       cy.get("#continue").click();
       cy.get("#yes-no").click();
@@ -375,15 +458,18 @@ describe("Page title verification", () => {
    * ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
    */
   it(" 1 Verify Unhappy path - eligibility check after user logged in - user select ‘No’ to Land owner permission question", () => {
+    cy.request("https://new-tst.aws.defra.cloud/set-sysdate?iso-string=2023-04-01T17:48:00.000Z");
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
       cy.get("#username").type(users.email1);
       cy.get("#password").type(users.password1);
       cy.get("#continue").click();
+      cy.get("h1.govuk-fieldset__heading").contains(users.nextpage);
       cy.get("#main-content > div > div > form > fieldset > a").click();
-      cy.get(
-        "#main-content > div > div > form > fieldset > span > ol > li:nth-child(1) > ul > li.app-task-list__item > span > a"
-      ).click();
+      cy.get("#species").click();
+      cy.get("#continue").click();
+      cy.get("#yes-no-2").click();
+      cy.get("#continue").click();
       cy.get("#yes-no-2").click();
       cy.get("#continue").click();
       cy.get("#yes-no-2").click();
@@ -396,16 +482,18 @@ describe("Page title verification", () => {
     });
   });
   it("1b Verify Unhappy path - eligibility check after user logged in - user select No to Project permissions granted", () => {
+    cy.request("https://new-tst.aws.defra.cloud/set-sysdate?iso-string=2023-04-01T17:48:00.000Z");
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
       cy.get("#username").type(users.email1);
       cy.get("#password").type(users.password1);
       cy.get("#continue").click();
-      // cy.get("h1[class*='govuk-heading']").contains(users.nextpage);
+      cy.get("h1.govuk-fieldset__heading").contains(users.nextpage);
       cy.get("#main-content > div > div > form > fieldset > a").click();
-      cy.get(
-        "#main-content > div > div > form > fieldset > span > ol > li:nth-child(1) > ul > li.app-task-list__item > span > a"
-      ).click();
+      cy.get("#species").click();
+      cy.get("#continue").click();
+      cy.get("#yes-no-2").click();
+      cy.get("#continue").click();
       cy.get("#yes-no").click();
       cy.get("#continue").click();
       cy.get("#yes-no").click();
@@ -420,15 +508,18 @@ describe("Page title verification", () => {
     });
   });
   it("2a Verify Happy path - eligibility check after user logged in - user select No to Project permissions", () => {
+    cy.request("https://new-tst.aws.defra.cloud/set-sysdate?iso-string=2023-04-01T17:48:00.000Z");
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
       cy.get("#username").type(users.email1);
       cy.get("#password").type(users.password1);
       cy.get("#continue").click();
+      cy.get("h1.govuk-fieldset__heading").contains(users.nextpage);
       cy.get("#main-content > div > div > form > fieldset > a").click();
-      cy.get(
-        "#main-content > div > div > form > fieldset > span > ol > li:nth-child(1) > ul > li.app-task-list__item > span > a"
-      ).click();
+      cy.get("#species").click();
+      cy.get("#continue").click();
+      cy.get("#yes-no-2").click();
+      cy.get("#continue").click();
       cy.get("#yes-no-2").click();
       cy.get("#continue").click();
       cy.get("#yes-no").click();
@@ -447,15 +538,18 @@ describe("Page title verification", () => {
     });
   });
   it("2b Verify Happy path - eligibility check after user logged in - user select No to Project permissions", () => {
+    cy.request("https://new-tst.aws.defra.cloud/set-sysdate?iso-string=2023-04-01T17:48:00.000Z");
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
       cy.get("#username").type(users.email1);
       cy.get("#password").type(users.password1);
       cy.get("#continue").click();
+      cy.get("h1.govuk-fieldset__heading").contains(users.nextpage);
       cy.get("#main-content > div > div > form > fieldset > a").click();
-      cy.get(
-        "#main-content > div > div > form > fieldset > span > ol > li:nth-child(1) > ul > li.app-task-list__item > span > a"
-      ).click();
+      cy.get("#species").click();
+      cy.get("#continue").click();
+      cy.get("#yes-no-2").click();
+      cy.get("#continue").click();
       cy.get("#yes-no").click();
       cy.get("#continue").click();
       cy.get("#yes-no-2").click();
@@ -472,15 +566,18 @@ describe("Page title verification", () => {
     });
   });
   it("3a Verify Happy path - eligibility check after user logged in - user select Yes to Project permissions granted", () => {
+    cy.request("https://new-tst.aws.defra.cloud/set-sysdate?iso-string=2023-04-01T17:48:00.000Z");
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
       cy.get("#username").type(users.email1);
       cy.get("#password").type(users.password1);
       cy.get("#continue").click();
+      cy.get("h1.govuk-fieldset__heading").contains(users.nextpage);
       cy.get("#main-content > div > div > form > fieldset > a").click();
-      cy.get(
-        "#main-content > div > div > form > fieldset > span > ol > li:nth-child(1) > ul > li.app-task-list__item > span > a"
-      ).click();
+      cy.get("#species").click();
+      cy.get("#continue").click();
+      cy.get("#yes-no-2").click();
+      cy.get("#continue").click();
       cy.get("#yes-no-2").click();
       cy.get("#continue").click();
       cy.get("#yes-no").click();
@@ -501,15 +598,18 @@ describe("Page title verification", () => {
     });
   });
   it("3b Verify Happy path - eligibility check after user logged in - user select Yes to Project permissions granted", () => {
+        cy.request("https://new-tst.aws.defra.cloud/set-sysdate?iso-string=2023-04-01T17:48:00.000Z");
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
       cy.get("#username").type(users.email1);
       cy.get("#password").type(users.password1);
       cy.get("#continue").click();
+      cy.get("h1.govuk-fieldset__heading").contains(users.nextpage);
       cy.get("#main-content > div > div > form > fieldset > a").click();
-      cy.get(
-        "#main-content > div > div > form > fieldset > span > ol > li:nth-child(1) > ul > li.app-task-list__item > span > a"
-      ).click();
+      cy.get("#species").click();
+      cy.get("#continue").click();
+      cy.get("#yes-no-2").click();
+      cy.get("#continue").click();
       cy.get("#yes-no").click();
       cy.get("#continue").click();
       cy.get("#yes-no").click();
@@ -528,10 +628,24 @@ describe("Page title verification", () => {
     });
   });
   it("4a Verify Happy path - eligibility check before user logged in - user select 'No' to 'Project permissions’", () => {
-    cy.visit(Cypress.env("baseUrl") + Cypress.env("tasklist"));
-    cy.get(
-      "#main-content > div > div > form > fieldset > span > ol > li:nth-child(1) > ul > li.app-task-list__item > span > a"
-    ).click();
+    // cy.visit(Cypress.env("baseUrl") + Cypress.env("tasklist"));
+    cy.request("https://new-tst.aws.defra.cloud/set-sysdate?iso-string=2023-04-01T17:48:00.000Z");
+    cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
+    cy.fixture("users.json").then((users) => {
+      cy.get("#username").type(users.email1);
+      cy.get("#password").type(users.password1);
+      cy.get("#continue").click();
+      cy.get("#main-content > div > div > form > fieldset > a").click();
+
+      // cy.get("a").contains("Check if you’re eligible to apply").click();
+      cy.get("#species").click();
+      cy.get("#continue").click();
+      cy.get("#yes-no-2").click();
+      cy.get("#continue").click();
+    //  cy.visit(Cypress.env("baseUrl") + Cypress.env("tasklist"));
+    // cy.get(
+    //   "#main-content > div > div > form > fieldset > span > ol > li:nth-child(1) > ul > li.app-task-list__item > span > a"
+    // ).click();
     cy.get("#yes-no-2").click();
     cy.get("#continue").click();
     cy.get("#yes-no").click();
@@ -547,22 +661,32 @@ describe("Page title verification", () => {
         "#main-content > div > div > form > fieldset > legend > h1"
       ).contains(eligibility2.text5);
       cy.get("#continue").click();
-      cy.fixture("users.json").then((users) => {
-        cy.get("#username").type(users.email1);
-        cy.get("#password").type(users.password1);
-        cy.get("#continue").click();
-        cy.get("h1[class*='govuk-heading']").contains(users.taskListHeaderText);
+      // cy.fixture("users.json").then((users) => {
+      //   cy.get("#username").type(users.email1);
+      //   cy.get("#password").type(users.password1);
+      //   cy.get("#continue").click();
+        cy.get("h1.govuk-fieldset__heading").contains(users.taskListHeaderText);
         cy.get(
           "#main-content > div > div > form > fieldset > span > ol > li:nth-child(1) > ul"
         ).contains("COMPLETED");
-      });
+      // });
     });
   });
+});
   it("4b Verify Happy path - eligibility check before user logged in - user select 'No' to 'Project permissions'", () => {
-    cy.visit(Cypress.env("baseUrl") + Cypress.env("tasklist"));
-    cy.get(
-      "#main-content > div > div > form > fieldset > span > ol > li:nth-child(1) > ul > li.app-task-list__item > span > a"
-    ).click();
+    cy.request("https://new-tst.aws.defra.cloud/set-sysdate?iso-string=2023-04-01T17:48:00.000Z");
+    cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
+    cy.fixture("users.json").then((users) => {
+      cy.get("#username").type(users.email1);
+      cy.get("#password").type(users.password1);
+      cy.get("#continue").click();
+      cy.get("#main-content > div > div > form > fieldset > a").click();
+
+      // cy.get("a").contains("Check if you’re eligible to apply").click();
+      cy.get("#species").click();
+      cy.get("#continue").click();
+      cy.get("#yes-no-2").click();
+      cy.get("#continue").click();
     cy.get("#yes-no").click();
     cy.get("#continue").click();
     cy.get("#yes-no-2").click();
@@ -576,22 +700,32 @@ describe("Page title verification", () => {
         "#main-content > div > div > form > fieldset > legend > h1"
       ).contains(eligibility2.text5);
       cy.get("#continue").click();
-      cy.fixture("users.json").then((users) => {
-        cy.get("#username").type(users.email1);
-        cy.get("#password").type(users.password1);
-        cy.get("#continue").click();
-        cy.get("h1[class*='govuk-heading']").contains(users.taskListHeaderText);
+      // cy.fixture("users.json").then((users) => {
+      //   cy.get("#username").type(users.email1);
+      //   cy.get("#password").type(users.password1);
+      //   cy.get("#continue").click();
+        cy.get("h1.govuk-fieldset__heading").contains(users.taskListHeaderText);
         cy.get(
           "#main-content > div > div > form > fieldset > span > ol > li:nth-child(1) > ul"
         ).contains("COMPLETED");
       });
     });
   });
+// });
   it("5a Verify Happy path - eligibility check before user logged in - user select 'Yes' to 'Project permissions granted'", () => {
-    cy.visit(Cypress.env("baseUrl") + Cypress.env("tasklist"));
-    cy.get(
-      "#main-content > div > div > form > fieldset > span > ol > li:nth-child(1) > ul > li.app-task-list__item > span > a"
-    ).click();
+    cy.request("https://new-tst.aws.defra.cloud/set-sysdate?iso-string=2023-04-01T17:48:00.000Z");
+    cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
+    cy.fixture("users.json").then((users) => {
+      cy.get("#username").type(users.email1);
+      cy.get("#password").type(users.password1);
+      cy.get("#continue").click();
+      cy.get("#main-content > div > div > form > fieldset > a").click();
+
+      // cy.get("a").contains("Check if you’re eligible to apply").click();
+      cy.get("#species").click();
+      cy.get("#continue").click();
+      cy.get("#yes-no-2").click();
+      cy.get("#continue").click();
     cy.get("#yes-no-2").click();
     cy.get("#continue").click();
     cy.get("#yes-no").click();
@@ -609,23 +743,33 @@ describe("Page title verification", () => {
         "#main-content > div > div > form > fieldset > legend > h1"
       ).contains(eligibility2.text5);
       cy.get("#continue").click();
-      cy.fixture("users.json").then((users) => {
-        cy.get("#username").type(users.email1);
-        cy.get("#password").type(users.password1);
-        cy.get("#continue").click();
-        cy.get("h1[class*='govuk-heading']").contains(users.taskListHeaderText);
+      // cy.fixture("users.json").then((users) => {
+      //   cy.get("#username").type(users.email1);
+      //   cy.get("#password").type(users.password1);
+      //   cy.get("#continue").click();
+        cy.get("h1.govuk-fieldset__heading").contains(users.taskListHeaderText);
         cy.get(
           "#main-content > div > div > form > fieldset > span > ol > li:nth-child(1) > ul"
         ).contains("COMPLETED");
       });
     });
   });
+// });
 
   it("5b Verify Happy path - eligibility check before user logged in - user select 'Yes' to 'Project permissions granted", () => {
-    cy.visit(Cypress.env("baseUrl") + Cypress.env("tasklist"));
-    cy.get(
-      "#main-content > div > div > form > fieldset > span > ol > li:nth-child(1) > ul > li.app-task-list__item > span > a"
-    ).click();
+    cy.request("https://new-tst.aws.defra.cloud/set-sysdate?iso-string=2023-04-01T17:48:00.000Z");
+    cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
+    cy.fixture("users.json").then((users) => {
+      cy.get("#username").type(users.email1);
+      cy.get("#password").type(users.password1);
+      cy.get("#continue").click();
+      cy.get("#main-content > div > div > form > fieldset > a").click();
+
+      // cy.get("a").contains("Check if you’re eligible to apply").click();
+      cy.get("#species").click();
+      cy.get("#continue").click();
+      cy.get("#yes-no-2").click();
+      cy.get("#continue").click();
     cy.get("#yes-no").click();
     cy.get("#continue").click();
     cy.get("#yes-no").click();
@@ -641,17 +785,18 @@ describe("Page title verification", () => {
         "#main-content > div > div > form > fieldset > legend > h1"
       ).contains(eligibility2.text5);
       cy.get("#continue").click();
-      cy.fixture("users.json").then((users) => {
-        cy.get("#username").type(users.email1);
-        cy.get("#password").type(users.password1);
-        cy.get("#continue").click();
-        cy.get("h1[class*='govuk-heading']").contains(users.taskListHeaderText);
+      // cy.fixture("users.json").then((users) => {
+      //   cy.get("#username").type(users.email1);
+      //   cy.get("#password").type(users.password1);
+      //   cy.get("#continue").click();
+        cy.get("h1.govuk-fieldset__heading").contains(users.taskListHeaderText);
         cy.get(
           "#main-content > div > div > form > fieldset > span > ol > li:nth-child(1) > ul"
         ).contains("COMPLETED");
       });
     });
   });
+// });
 
   it("SDDSIP-650 - Not answered should be displaying on Check your answer screen…..", () => {
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
@@ -660,10 +805,14 @@ describe("Page title verification", () => {
       cy.get("#password").type(users.password1);
       cy.get("#continue").click();
       cy.get("#main-content > div > div > form > fieldset > a").click();
-      cy.get("h1[class*='govuk-heading']").contains(users.taskListHeaderText);
-      cy.get(
-        "#main-content > div > div > form > fieldset > span > ol > li:nth-child(1) > ul > li.app-task-list__item > span > a"
-      ).click();
+      cy.get("#species").click();
+      cy.get("#continue").click();
+      cy.get("#yes-no-2").click();
+      cy.get("#continue").click();
+      // cy.get("h1[class*='govuk-heading']").contains(users.taskListHeaderText);
+      // cy.get(
+      //   "#main-content > div > div > form > fieldset > span > ol > li:nth-child(1) > ul > li.app-task-list__item > span > a"
+      // ).click();
       cy.get("input[value='yes']").click();
       cy.get("#continue").click();
       cy.get("input[value='no']").click();
@@ -684,3 +833,4 @@ describe("Page title verification", () => {
     });
   });
 });
+
