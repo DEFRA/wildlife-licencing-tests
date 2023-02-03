@@ -7,5 +7,5 @@ COPY package*.json ./
 COPY . .
 RUN npm ci
 RUN npx --yes browserslist@latest --update-db
-#CMD [ "node", "./node_modules/.bin/cypress", "run" ]
-ENTRYPOINT ["tail", "-f", "/dev/null"]
+CMD [ "node", "./node_modules/.bin/cypress", "open" ]
+# ENTRYPOINT ["tail", "-f", "/dev/null"]
