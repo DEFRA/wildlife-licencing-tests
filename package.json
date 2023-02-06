@@ -1,5 +1,5 @@
 {
-  "name": "Wildlife Automation",
+  "name": "wildlife-automation",
   "version": "1.0.0",
   "description": "Wildlife Automation Scripts",
   "main": "index.js",
@@ -11,7 +11,7 @@
   "license": "ISC",
   "devDependencies": {
     "@faker-js/faker": "^6.2.0",
-    "cypress": "^9.5.4",
+    "cypress": "^12.5.1",
     "cypress-file-upload": "^5.0.8",
     "cypress-xpath": "^1.6.2"
   },
