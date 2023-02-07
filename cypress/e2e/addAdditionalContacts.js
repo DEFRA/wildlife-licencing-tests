@@ -2,7 +2,6 @@ const faker = require("faker");
 
 describe("Add an additional contact", () => {
   it(" 1 Verify happy path - Add an additional contact", () => {
-    cy.visit('/')
     cy.request('/set-sysdate?iso-string=2023-04-01T17:48:00.000Z');
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {

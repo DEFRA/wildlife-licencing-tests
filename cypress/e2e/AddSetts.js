@@ -2,7 +2,6 @@ const faker = require("faker");
 
 describe("Add sett", () => {
   it(" 1 Verify happy path -  Add setts ", () => {
-    cy.visit('/')
     cy.request('/set-sysdate?iso-string=2023-04-01T17:48:00.000Z');
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
@@ -57,7 +56,6 @@ describe("Add sett", () => {
     });
   });
   it(" 2 Verify happy path -  Add setts ", () => {
-    cy.visit('/')
     cy.request('/set-sysdate?iso-string=2023-04-01T17:48:00.000Z');
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
@@ -112,7 +110,6 @@ describe("Add sett", () => {
     });
   });
   it(" 3 Verify happy path -  Add setts ", () => {
-    cy.visit('/')
     cy.request('/set-sysdate?iso-string=2023-04-01T17:48:00.000Z');
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
@@ -167,7 +164,6 @@ describe("Add sett", () => {
     });
   });
   it("4 Verify happy path -  Add setts ", () => {
-    cy.visit('/')
     cy.request('/set-sysdate?iso-string=2023-04-01T17:48:00.000Z');
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {

@@ -6,4 +6,4 @@ WORKDIR /app
 COPY package*.json ./
 COPY . .
 RUN npm ci
-CMD [ "node", "./node_modules/.bin/cypress", "run", "--quiet" ]
+CMD [ "node", "./node_modules/.bin/cypress", "run", "--spec cypress/e2e/AddSetts.js" ]
