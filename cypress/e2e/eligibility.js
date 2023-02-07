@@ -20,7 +20,7 @@ describe("Page title verification", () => {
     //   cy.get("#continue").click();
     //   cy.get("#user-id").type(email);
     //   cy.get("#continue").click();
-
+    
     cy.request("https://new-tst.aws.defra.cloud/set-sysdate?iso-string=2023-04-01T17:48:00.000Z");
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
@@ -70,7 +70,7 @@ describe("Page title verification", () => {
     //   cy.get("#continue").click();
     //   cy.get("#user-id").type(email);
     //   cy.get("#continue").click();
-
+    
     cy.request("https://new-tst.aws.defra.cloud/set-sysdate?iso-string=2023-04-01T17:48:00.000Z");
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
@@ -114,7 +114,7 @@ describe("Page title verification", () => {
     //   cy.get("#continue").click();
     //   cy.get("#user-id").type(email);
     //   cy.get("#continue").click();
-
+    
     cy.request("https://new-tst.aws.defra.cloud/set-sysdate?iso-string=2023-04-01T17:48:00.000Z");
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
@@ -162,7 +162,7 @@ describe("Page title verification", () => {
     //   cy.get("#continue").click();
     //   cy.get("#user-id").type(email);
     //   cy.get("#continue").click();
-
+    
     cy.request("https://new-tst.aws.defra.cloud/set-sysdate?iso-string=2023-04-01T17:48:00.000Z");
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
@@ -206,7 +206,7 @@ describe("Page title verification", () => {
     //   cy.get("#continue").click();
     //   cy.get("#user-id").type(email);
     //   cy.get("#continue").click();
-
+    
     cy.request("https://new-tst.aws.defra.cloud/set-sysdate?iso-string=2023-04-01T17:48:00.000Z");
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
@@ -291,7 +291,7 @@ describe("Page title verification", () => {
     //   cy.get("#continue").click();
     //   cy.get("#user-id").type(email);
     //   cy.get("#continue").click();
-
+    
     cy.request("https://new-tst.aws.defra.cloud/set-sysdate?iso-string=2023-04-01T17:48:00.000Z");
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
@@ -410,7 +410,7 @@ describe("Page title verification", () => {
     //   cy.get("#continue").click();
     //   cy.get("#user-id").type(email);
     //   cy.get("#continue").click();
-
+    
     cy.request("https://new-tst.aws.defra.cloud/set-sysdate?iso-string=2023-04-01T17:48:00.000Z");
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
@@ -598,7 +598,7 @@ describe("Page title verification", () => {
     });
   });
   it("3b Verify Happy path - eligibility check after user logged in - user select Yes to Project permissions granted", () => {
-        cy.request("https://new-tst.aws.defra.cloud/set-sysdate?iso-string=2023-04-01T17:48:00.000Z");
+    cy.request("https://new-tst.aws.defra.cloud/set-sysdate?iso-string=2023-04-01T17:48:00.000Z");
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
       cy.get("#username").type(users.email1);
@@ -833,4 +833,3 @@ describe("Page title verification", () => {
     });
   });
 });
-

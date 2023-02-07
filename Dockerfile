@@ -6,4 +6,4 @@ WORKDIR /app
 COPY package*.json ./
 COPY . .
 RUN npm ci
-CMD [ "node", "./node_modules/.bin/cypress", "run", "--quiet" ]
+ENTRYPOINT [ "node", "./node_modules/.bin/cypress", "run" ]
