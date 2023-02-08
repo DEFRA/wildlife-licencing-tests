@@ -6,5 +6,5 @@ WORKDIR /app
 COPY package*.json ./
 COPY . .
 RUN npm ci
-CMD ["curl -i https://new-tst.aws.defra.cloud"]
-ENTRYPOINT [ "node", "./node_modules/.bin/cypress", "run" ]
+ENTRYPOINT ["curl -i https://new-tst.aws.defra.cloud"]
+#ENTRYPOINT [ "node", "./node_modules/.bin/cypress", "run" ]
