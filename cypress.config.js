@@ -21,7 +21,7 @@ module.exports = defineConfig({
   },
   reporter: 'cypress-mochawesome-reporter',
   reporterOptions: {
-    reportDir: 'cypress/reports',
+    reportDir: 'reports/cypress_reports',
     charts: true,
     reportPageTitle: 'My Test Suite',
     embeddedScreenshots: true,
