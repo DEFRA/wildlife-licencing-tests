@@ -1,3 +1,7 @@
+/**
+ * This can be used as a standalone smoke test
+ */
+
 const signIn = () => {
     cy.visit('/login');
     cy.fixture("users.json").then(users => {
