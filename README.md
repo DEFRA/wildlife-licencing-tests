@@ -7,7 +7,7 @@ A repository for storing end-to-end tests (For regression testing of the wildlif
 docker build -t cypress/wildlife-licencing:latest .
 docker run --env-file docker.env cypress/wildlife-licencing:latest --spec cypress/e2e/SmokeTest.js --no-exit
 ```
-## Misc
+## Misc, used for the Jenkins Pipeline Jobs
 ```shell
 docker build -t cypress/wildlife-licencing:latest .
 docker volume create cypress_reports

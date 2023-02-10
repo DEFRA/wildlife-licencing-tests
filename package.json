@@ -4,7 +4,8 @@
   "description": "Wildlife Automation Scripts",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/cypress run"
+    "test": "./node_modules/.bin/cypress run",
+    "open": "./node_modules/.bin/cypress open"
   },
   "keywords": [],
   "author": "",
