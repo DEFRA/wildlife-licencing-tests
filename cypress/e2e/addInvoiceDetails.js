@@ -84,8 +84,8 @@ describe("Add Invoice Details", () => {
       cy.get("#continue").click();
       cy.get("#yes-no-2").click();
       cy.get("#continue").click();
-      // cy.get("#new").click();
-      // cy.get("#continue").click();
+      cy.get("#new").click();
+      cy.get("#continue").click();
       cy.get("#name").type(faker.name.firstName() + faker.name.lastName());
       cy.get("#continue").click();
       cy.get("#email-address").clear();

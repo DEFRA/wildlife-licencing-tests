@@ -56,6 +56,7 @@ describe("Page title verification", () => {
         cy.get("div.govuk-width-container ").contains("No");
         cy.get("div.govuk-width-container ").contains("Back");
         cy.get("div.govuk-width-container ").contains("Continue");
+        cy.request("https://new-tst.aws.defra.cloud/reset-sysdate");
       });
     });
   });
@@ -100,6 +101,7 @@ describe("Page title verification", () => {
         cy.get("div.govuk-width-container ").contains("No");
         cy.get("div.govuk-width-container ").contains("Back");
         cy.get("div.govuk-width-container ").contains("Continue");
+        cy.request("https://new-tst.aws.defra.cloud/reset-sysdate");
       });
     });
   });
@@ -295,10 +297,12 @@ describe("Page title verification", () => {
     cy.request("https://new-tst.aws.defra.cloud/set-sysdate?iso-string=2023-04-01T17:48:00.000Z");
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email3);
-      cy.get("#password").type(users.password2);
+      // cy.get("#username").type(users.email3);
+      // cy.get("#password").type(users.password2);
+      cy.get("#username").type(users.email1);
+      cy.get("#password").type(users.password1);
       cy.get("#continue").click();
-      // cy.get("#main-content > div > div > form > fieldset > a").click();
+      cy.get("#main-content > div > div > form > fieldset > a").click();
 
       // cy.get("h1.govuk-fieldset__heading").contains(users.nextpage);
       // cy.get("a").contains("Check if you’re eligible to apply").click();
