@@ -4,7 +4,8 @@
   "description": "Wildlife Automation Scripts",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/cypress run"
+    "test": "./node_modules/.bin/cypress run",
+    "open": "./node_modules/.bin/cypress open"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +14,7 @@
     "@faker-js/faker": "^6.2.0",
     "cypress": "^12.5.1",
     "cypress-file-upload": "^5.0.8",
+    "cypress-mochawesome-reporter": "^3.2.3",
     "cypress-xpath": "^1.6.2"
   },
   "dependencies": {

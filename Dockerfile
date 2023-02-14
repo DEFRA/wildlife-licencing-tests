@@ -6,6 +6,6 @@ WORKDIR /app
 COPY package*.json ./
 COPY . .
 RUN npm ci
-RUN npx --yes browserslist@latest --update-db
-CMD [ "node", "./node_modules/.bin/cypress", "open" ]
-# ENTRYPOINT ["tail", "-f", "/dev/null"]
+#ENTRYPOINT ["tail", "-f", "/dev/null"]
+#ENTRYPOINT curl -i ${cypress_base_url}
+ENTRYPOINT [ "node", "./node_modules/.bin/cypress", "run" ]

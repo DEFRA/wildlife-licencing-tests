@@ -2,9 +2,9 @@ const faker = require("faker");
 
 describe("Page title verification", () => {
   it("1a Verify happy path - Licence holder contact", () => {
-  cy.request("https://new-tst.aws.defra.cloud/set-sysdate?iso-string=2023-04-01T17:48:00.000Z");
-  cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
-  cy.fixture("users.json").then((users) => {
+    cy.request("https://new-tst.aws.defra.cloud/set-sysdate?iso-string=2023-04-01T17:48:00.000Z");
+    cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
+    cy.fixture("users.json").then((users) => {
     cy.get("#username").type(users.email1);
     cy.get("#password").type(users.password1);
     cy.get("#continue").click();
@@ -474,7 +474,7 @@ describe("Page title verification", () => {
     //   cy.get("#continue").click();
     //   cy.get("#user-id").type(email);
     //   cy.get("#continue").click();
-
+    
     cy.request("https://new-tst.aws.defra.cloud/set-sysdate?iso-string=2023-04-01T17:48:00.000Z");
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {

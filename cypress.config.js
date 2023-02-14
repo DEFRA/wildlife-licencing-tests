@@ -2,7 +2,7 @@ const { defineConfig } = require('cypress')
 
 module.exports = defineConfig({
   chromeWebSecurity: false,
-  video: true,
+  video: false,
   projectId: 'wildlife test',
   env: {
     baseUrl: 'https://new-tst.aws.defra.cloud/',
@@ -19,4 +19,12 @@ module.exports = defineConfig({
     },
     specPattern: 'cypress/e2e/**/*.{js,jsx,ts,tsx}',
   },
+  reporter: 'cypress-mochawesome-reporter',
+  reporterOptions: {
+    reportDir: 'reports/cypress_reports',
+    charts: true,
+    reportPageTitle: 'My Test Suite',
+    embeddedScreenshots: true,
+    inlineAssets: true
+  }
 })
