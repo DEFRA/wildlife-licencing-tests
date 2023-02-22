@@ -2,7 +2,6 @@ const faker = require("faker");
 
 describe("Add authorised People", () => {
   it(" 1 Verify happy path - Add an authorised People", () => {
-    cy.request("https://new-tst.aws.defra.cloud/set-sysdate?iso-string=2023-04-01T17:48:00.000Z");
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
       cy.get("#username").type(users.email1);
@@ -24,8 +23,12 @@ describe("Add authorised People", () => {
       // Add authorised people
 
       cy.get("a").contains("Add authorised people").click();
-      cy.get("#main-content > div > div").contains("This is a person who will be responsible for everything done under the licence.");
-      cy.get("#main-content > div > div").contains("It does not include any assistants who will work under the direct supervision of the licence holder or any authorised people.");
+      cy.get("#main-content > div > div").contains(
+        "This is a person who will be responsible for everything done under the licence."
+      );
+      cy.get("#main-content > div > div").contains(
+        "It does not include any assistants who will work under the direct supervision of the licence holder or any authorised people."
+      );
       cy.get("#yes-no").click();
       cy.get("#continue").click();
       cy.get("#name").type(faker.name.firstName() + faker.name.lastName());
@@ -49,7 +52,6 @@ describe("Add authorised People", () => {
     });
   });
   it(" 2 Verify happy path - Add multiple authorised People", () => {
-    cy.request("https://new-tst.aws.defra.cloud/set-sysdate?iso-string=2023-04-01T17:48:00.000Z");
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
       cy.get("#username").type(users.email1);
@@ -106,7 +108,6 @@ describe("Add authorised People", () => {
     });
   });
   it(" 3 Verify happy path - Add an authorised People and remove then select no", () => {
-    cy.request("https://new-tst.aws.defra.cloud/set-sysdate?iso-string=2023-04-01T17:48:00.000Z");
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
       cy.get("#username").type(users.email1);
@@ -155,7 +156,6 @@ describe("Add authorised People", () => {
   });
 
   it(" 4 Verify happy path - Add multiple authorised People and change name", () => {
-    cy.request("https://new-tst.aws.defra.cloud/set-sysdate?iso-string=2023-04-01T17:48:00.000Z");
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
       cy.get("#username").type(users.email1);

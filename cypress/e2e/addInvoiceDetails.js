@@ -2,8 +2,6 @@ const faker = require("faker");
 
 describe("Add Invoice Details", () => {
   it(" 1 Verify happy path - Add Invoice Details", () => {
-    
-    cy.request("https://new-tst.aws.defra.cloud/set-sysdate?iso-string=2023-04-01T17:48:00.000Z");
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
       cy.get("#username").type(users.email1);
@@ -74,9 +72,7 @@ describe("Add Invoice Details", () => {
       cy.get("#continue").click();
       cy.get("#yes-no-2").click();
       cy.get("#continue").click();
-
       //   Add additional contacts
-
       cy.get("a").contains("Add additional contacts").click();
       cy.get("#yes-no-2").click();
       cy.get("#continue").click();
@@ -106,8 +102,6 @@ describe("Add Invoice Details", () => {
   });
 
   it(" 2 Verify happy path - Add Invoice Details", () => {
-    
-    cy.request("https://new-tst.aws.defra.cloud/set-sysdate?iso-string=2023-04-01T17:48:00.000Z");
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
       cy.get("#username").type(users.email1);
@@ -125,9 +119,7 @@ describe("Add Invoice Details", () => {
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get("#continue").click();
-
       //   Give licence holder details
-
       cy.get("a").contains("Give licence holder details").click();
       cy.get("#yes-no").click();
       cy.get("#continue").click();
@@ -144,9 +136,7 @@ describe("Add Invoice Details", () => {
       );
       cy.get("#continue").click();
       cy.get("#continue").click();
-
       //   Add authorised people
-
       cy.get("a").contains("Add authorised people").click();
       cy.get("#yes-no").click();
       cy.get("#continue").click();
@@ -228,8 +218,10 @@ describe("Add Invoice Details", () => {
     });
   });
   it(" 3 Verify happy path - Add Invoice Details", () => {
-    
-    cy.request("https://new-tst.aws.defra.cloud/set-sysdate?iso-string=2023-04-01T17:48:00.000Z");
+    cy.request(
+      Cypress.env("baseUrl") +
+        "/set-sysdate?iso-string=2023-03-30T17:48:00.000Z"
+    );
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
       cy.get("#username").type(users.email1);
@@ -352,7 +344,7 @@ describe("Add Invoice Details", () => {
   });
 
   it(" 4 Verify happy path - Add Invoice Details", () => {
-    cy.request("https://new-tst.aws.defra.cloud/set-sysdate?iso-string=2023-04-01T17:48:00.000Z");
+    // cy.request(Cypress.env("baseUrl") + ('/set-sysdate?iso-string=2023-03-30T17:48:00.000Z'));
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
       cy.get("#username").type(users.email1);
@@ -431,9 +423,7 @@ describe("Add Invoice Details", () => {
       cy.get("#continue").click();
       cy.get("#yes-no-2").click();
       cy.get("#continue").click();
-
       //   Add invoice details
-
       cy.get("a").contains("Add invoice details").click();
       cy.get("input[value='other']").click();
       cy.get("#continue").click();

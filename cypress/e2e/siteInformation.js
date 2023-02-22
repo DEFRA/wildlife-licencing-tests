@@ -1,8 +1,12 @@
 const faker = require("faker");
 
 describe("Site Information", () => {
+  it("1 change date1", () => {
+    cy.request(
+      Cypress.env("baseUrl") + "set-sysdate?iso-string=2023-04-01T01:00:00.000Z"
+    );
+  });
   it(" 1 Verify happy path - site information and selected all answers are correct", () => {
-    cy.request("https://new-tst.aws.defra.cloud/set-sysdate?iso-string=2023-04-01T17:48:00.000Z");
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
       cy.get("#username").type(users.email1);
@@ -64,7 +68,6 @@ describe("Site Information", () => {
     });
   });
   it(" 2 Verify happy path - site information", () => {
-    cy.request("https://new-tst.aws.defra.cloud/set-sysdate?iso-string=2023-04-01T17:48:00.000Z");
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
       cy.get("#username").type(users.email1);
@@ -140,7 +143,6 @@ describe("Site Information", () => {
     });
   });
   it(" 3 Verify happy path - site information", () => {
-    cy.request("https://new-tst.aws.defra.cloud/set-sysdate?iso-string=2023-04-01T17:48:00.000Z");
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
       cy.get("#username").type(users.email1);
@@ -203,7 +205,6 @@ describe("Site Information", () => {
   });
 
   it(" 4 Verify happy path - site information and selected all answers are correct", () => {
-    cy.request("https://new-tst.aws.defra.cloud/set-sysdate?iso-string=2023-04-01T17:48:00.000Z");
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
       cy.get("#username").type(users.email1);
@@ -265,7 +266,6 @@ describe("Site Information", () => {
     });
   });
   it("5 Verify happy path - site information", () => {
-    cy.request("https://new-tst.aws.defra.cloud/set-sysdate?iso-string=2023-04-01T17:48:00.000Z");
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
       cy.get("#username").type(users.email1);
@@ -345,7 +345,6 @@ describe("Site Information", () => {
     });
   });
   it(" 6 Verify happy path - site information", () => {
-    cy.request("https://new-tst.aws.defra.cloud/set-sysdate?iso-string=2023-04-01T17:48:00.000Z");
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
       cy.get("#username").type(users.email1);
@@ -427,7 +426,6 @@ describe("Site Information", () => {
     });
   });
   it(" 7 Verify happy path - site information - close proximity", () => {
-    cy.request("https://new-tst.aws.defra.cloud/set-sysdate?iso-string=2023-04-01T17:48:00.000Z");
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
       cy.get("#username").type(users.email1);

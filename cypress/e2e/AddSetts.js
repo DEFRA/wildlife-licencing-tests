@@ -2,7 +2,11 @@ const faker = require("faker");
 
 describe("Add sett", () => {
   it(" 1 Verify happy path -  Add setts ", () => {
-    cy.request('/set-sysdate?iso-string=2023-04-01T17:48:00.000Z');
+    cy.request(
+      Cypress.env("baseUrl") + "set-sysdate?iso-string=2023-04-01T01:00:00.000Z"
+    );
+  });
+  it(" 1 Verify happy path -  Add setts ", () => {
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
       cy.get("#username").type(users.email1);
@@ -24,7 +28,7 @@ describe("Add sett", () => {
         "#main-content > div > div > form > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(7) > span > a"
       ).click();
       cy.get("#continue").click();
-      cy.get("input[id='habitat-name']").type(faker.random.alphaNumeric(100));
+      cy.get("#habitat-name").type(faker.random.alphaNumeric(100));
       cy.get("#continue").click();
       cy.get("#habitat-types").click();
       cy.get("#continue").click();
@@ -48,15 +52,9 @@ describe("Add sett", () => {
       cy.get("#continue").click();
       cy.get("input[value='yes']").click();
       cy.get("#continue").click();
-      cy.get("#continue").click();
-      cy.get("#continue").click();
-      cy.get("#continue").click();
-      cy.get("#continue").click();
-      cy.get("#continue").click();
     });
   });
   it(" 2 Verify happy path -  Add setts ", () => {
-    cy.request('/set-sysdate?iso-string=2023-04-01T17:48:00.000Z');
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
       cy.get("#username").type(users.email1);
@@ -102,15 +100,10 @@ describe("Add sett", () => {
       cy.get("#continue").click();
       cy.get("input[value='yes']").click();
       cy.get("#continue").click();
-      cy.get("#continue").click();
-      cy.get("#continue").click();
-      cy.get("#continue").click();
-      cy.get("#continue").click();
-      cy.get("#continue").click();
     });
   });
   it(" 3 Verify happy path -  Add setts ", () => {
-    cy.request('/set-sysdate?iso-string=2023-04-01T17:48:00.000Z');
+    // cy.request(Cypress.env("baseUrl") + ('/set-sysdate?iso-string=2023-03-30T17:48:00.000Z'));
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
       cy.get("#username").type(users.email1);
@@ -156,15 +149,10 @@ describe("Add sett", () => {
       cy.get("#continue").click();
       cy.get("input[value='yes']").click();
       cy.get("#continue").click();
-      cy.get("#continue").click();
-      cy.get("#continue").click();
-      cy.get("#continue").click();
-      cy.get("#continue").click();
-      cy.get("#continue").click();
     });
   });
   it("4 Verify happy path -  Add setts ", () => {
-    cy.request('/set-sysdate?iso-string=2023-04-01T17:48:00.000Z');
+    // cy.request(Cypress.env("baseUrl") + ("/set-sysdate?iso-string=2023-05-01T01:01:00.000Z"));
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
       cy.get("#username").type(users.email1);
@@ -209,11 +197,6 @@ describe("Add sett", () => {
       cy.get("input[id='habitat-activities']").click();
       cy.get("#continue").click();
       cy.get("input[value='yes']").click();
-      cy.get("#continue").click();
-      cy.get("#continue").click();
-      cy.get("#continue").click();
-      cy.get("#continue").click();
-      cy.get("#continue").click();
       cy.get("#continue").click();
     });
   });

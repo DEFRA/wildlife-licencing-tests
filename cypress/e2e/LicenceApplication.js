@@ -8,7 +8,6 @@ const faker = require("faker");
 
 describe("Page title verification", () => {
   it("SDDSIP-509 and 1 verify Licence application screen", () => {
-      cy.request("https://new-tst.aws.defra.cloud/set-sysdate?iso-string=2023-04-01T17:48:00.000Z");
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
       cy.get("#username").type(users.email1);
@@ -59,7 +58,9 @@ describe("Page title verification", () => {
       cy.get("a").contains("Add authorised people").click();
       cy.get("#yes-no").click();
       cy.get("#continue").click();
-      cy.get("#name").type(faker.name.firstName() + ' ' + faker.name.lastName());
+      cy.get("#name").type(
+        faker.name.firstName() + " " + faker.name.lastName()
+      );
       cy.get("#continue").click();
       cy.get("#email-address").type(faker.internet.email());
       cy.get("#continue").click();
@@ -143,9 +144,7 @@ describe("Page title verification", () => {
         (uploadWorkSchedule) => {
           cy.get("#continue").click();
           cy.get("main[id*='main-']").contains("Uploaded file 1");
-          cy.get(".govuk-heading-l").contains(
-            uploadWorkSchedule.siteInfoText
-          );
+          cy.get(".govuk-heading-l").contains(uploadWorkSchedule.siteInfoText);
           cy.get("input[value='no']").click();
           cy.get("#continue").click();
           cy.get("a").contains("Add setts the work will affect").click();
@@ -236,7 +235,6 @@ describe("Page title verification", () => {
     });
   });
   it("SDDSIP-509 and 2 verify Licence application screen", () => {
-    cy.request("https://new-tst.aws.defra.cloud/set-sysdate?iso-string=2023-04-01T17:48:00.000Z");
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
       cy.get("#username").type(users.email1);
@@ -287,7 +285,9 @@ describe("Page title verification", () => {
       cy.get("a").contains("Add authorised people").click();
       cy.get("#yes-no").click();
       cy.get("#continue").click();
-      cy.get("#name").type(faker.name.firstName() + ' ' + faker.name.lastName());
+      cy.get("#name").type(
+        faker.name.firstName() + " " + faker.name.lastName()
+      );
       cy.get("#continue").click();
       cy.get("#email-address").type(faker.internet.email());
       cy.get("#continue").click();
@@ -371,9 +371,7 @@ describe("Page title verification", () => {
         (uploadWorkSchedule) => {
           cy.get("#continue").click();
           cy.get("main[id*='main-']").contains("Uploaded file 1");
-          cy.get(".govuk-heading-l").contains(
-            uploadWorkSchedule.siteInfoText
-          );
+          cy.get(".govuk-heading-l").contains(uploadWorkSchedule.siteInfoText);
           cy.get("input[value='no']").click();
           cy.get("#continue").click();
           cy.get("a").contains("Add setts the work will affect").click();
@@ -403,9 +401,6 @@ describe("Page title verification", () => {
           cy.get("#continue").click();
           cy.get("input[value='no']").click();
           cy.get("#continue").click();
-          // cy.get(
-          //   "#main-content > div > div > form > fieldset > span > ol > li:nth-child(4) > ul > li.app-task-list__item > span > a"
-          // ).click();
           cy.get("a").contains("Declare convictions").click();
           cy.get("#convictions-check-2").click();
           cy.get("#continue").click();
