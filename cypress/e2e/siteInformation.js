@@ -1,7 +1,7 @@
 const faker = require("faker");
 
 describe("Site Information", () => {
-  it("1 change date1", () => {
+  it("1a change date1", () => {
     cy.request(
       Cypress.env("baseUrl") + "set-sysdate?iso-string=2023-04-01T01:00:00.000Z"
     );
@@ -58,13 +58,20 @@ describe("Site Information", () => {
       ).click();
       cy.get("#site-name").type(faker.name.firstName());
       cy.get("#continue").click();
+
+      // cy.get("#address-line-1").type("3");
+      // cy.get("#address-line-2").type("man");
+      // cy.get("#address-town").type("manchester");
+      // cy.get("#address-county").type("Manchester");
       cy.get("#continue").click();
-      cy.get(
-        "#main-content > div > div > form > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(5)"
-      ).contains("COMPLETED");
-      cy.get(
-        "#main-content > div > div > form > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(5)"
-      ).contains("Give site information");
+      cy.get("#siteAddress").select(
+        "10, SATIN DRIVE, MIDDLETON, MANCHESTER, M24 6DH"
+      );
+      cy.get("#continue").click();
+      cy.get("#continue").click();
+      // cy.scrollTo(0, 1000)
+      cy.get("#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(5)").contains("COMPLETED");
+      cy.get("#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(5) > span > a").contains("Give site information");
     });
   });
   it(" 2 Verify happy path - site information", () => {
@@ -256,6 +263,18 @@ describe("Site Information", () => {
       ).click();
       cy.get("#site-name").type("test2");
       cy.get("#continue").click();
+      cy.get("#continue").click();
+      cy.get("#address-line-1").type("3");
+      cy.get("#address-line-2").type("man");
+      cy.get("#address-town").type("manchester");
+      cy.get("#address-county").type("Manchester");
+      cy.get("#continue").click();
+
+      // cy.get("#siteAddress").select(
+      //   "10, SATIN DRIVE, MIDDLETON, MANCHESTER, M24 6DH"
+      // );
+      // cy.get("#continue").click();
+      
       cy.get("#continue").click();
       cy.get(
         "#main-content > div > div > form > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(5)"

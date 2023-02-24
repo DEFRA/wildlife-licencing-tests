@@ -1299,6 +1299,14 @@ describe("Page title verification", () => {
             cy.get("#continue").click();
             cy.get("#conviction-details").type(faker.random.alphaNumeric(301));
             cy.get("#continue").click();
+            cy.get("#main-content").contains("You have entered too many characters")
+            cy.get("#main-content").contains("Convictions for animal or wildlife offences")
+            cy.get("#main-content").contains("You only need to tell us about convictions within the last 5 years or unspent convictions. Check whether your convictions are spent.")
+            cy.get("#main-content").contains("If people listed on this application have animal related or wildlife convictions the application may:")
+            cy.get("#main-content").contains("be subject to more checks")
+            cy.get("#main-content").contains("take more time to process")
+            cy.get("#main-content").contains("You may need to give Natural England more information about these offences.")
+            cy.get("#main-content").contains("Describe the convictions and their dates")
           }
         );
       });

@@ -106,8 +106,7 @@ describe("Page title verification", () => {
           "#main-content > div > div > form > fieldset > legend > h1"
         ).contains(eligibility2.text6);
         cy.get("div.govuk-width-container ").contains(eligibility2.text9a);
-        cy.get("div.govuk-width-container ").contains(eligibility2.text10);
-        cy.get("div.govuk-width-container ").contains(eligibility2.text11);
+        cy.get("div.govuk-width-container ").contains(eligibility2.text10a);
         cy.get("div.govuk-width-container ").contains("Back");
       });
     });
@@ -145,14 +144,15 @@ describe("Page title verification", () => {
   it("Verify CD53 - Not eligible (project) copy-deck", () => {
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email3);
-      cy.get("#password").type(users.password2);
+      cy.get("#username").type(users.email1);
+      cy.get("#password").type(users.password1);
       cy.get("#continue").click();
+      cy.get("h1.govuk-fieldset__heading").contains(users.nextpage);
       cy.get("#main-content > div > div > form > fieldset > a").click();
-      cy.get("h1[class*='govuk-heading']").contains(users.taskListHeaderText);
-      cy.get(
-        "#main-content > div > div > form > fieldset > span > ol > li:nth-child(1) > ul > li.app-task-list__item > span > a"
-      ).click();
+      cy.get("#species").click();
+      cy.get("#continue").click();
+      cy.get("#yes-no-2").click();
+      cy.get("#continue").click();
       cy.get("#yes-no").click();
       cy.get("#continue").click();
       cy.get("#yes-no").click();
@@ -164,8 +164,7 @@ describe("Page title verification", () => {
           "#main-content > div > div > form > fieldset > legend > h1"
         ).contains(eligibility2.text6);
         cy.get("div.govuk-width-container").contains(eligibility2.text12a);
-        cy.get("div.govuk-width-container").contains(eligibility2.text10);
-        cy.get("div.govuk-width-container").contains(eligibility2.text11);
+        cy.get("div.govuk-width-container").contains(eligibility2.text10a);
         cy.get("div.govuk-width-container ").contains("Back");
       });
     });
