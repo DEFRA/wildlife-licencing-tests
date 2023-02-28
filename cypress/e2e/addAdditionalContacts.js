@@ -59,6 +59,8 @@ describe("Add an additional contact", () => {
       cy.get("#continue").click();
       cy.get("#contact").click();
       cy.get("#continue").click();
+      // cy.get("#email-address").type(faker.internet.email());
+      // cy.get("#continue").click();
       cy.get("#yes-no-2").click();
       cy.get("#continue").click();
       cy.get("#continue").click();
