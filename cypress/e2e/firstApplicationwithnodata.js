@@ -121,7 +121,75 @@ describe("Page title verification", () => {
       );
       cy.get("#continue").click();
       cy.get("#continue").click();
-
+      // work activity
+      cy.get("a").contains("Give work activity details").click();
+      cy.get("#work-proposal").type(faker.random.alphaNumeric(40));
+      cy.get("#continue").click();
+      cy.get("#yes-no").click();
+      cy.get("#continue").click();
+      cy.get("#work-payment-exempt-reason-9").click();
+      cy.get("#exempt-details").type(faker.random.alphaNumeric(400));
+      cy.get("#continue").click();
+      cy.get("#work-category-13").click();
+      cy.get("#continue").click();
+      cy.get("#continue").click();
+      cy.get("#continue").click();
+      cy.get("#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)").contains(
+        "Give work activity details"
+      );
+      cy.get("#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)").contains(
+        "COMPLETED"
+      );
+      cy.get("a").contains("Give details of conservation issues").click();
+      cy.get("#yes-no").click();
+      cy.get("#continue").click();
+      cy.get("#continue").click();
+      cy.get("#site-name").type("a");
+      cy.get("#site-name__option--0").click();
+      cy.get("#continue").click();
+      cy.get("#yes-no").click();
+      cy.get("#continue").click();
+      cy.get("#permission-details").type(faker.random.alphaNumeric(40));
+      cy.get("#continue").click();
+      cy.get("#yes-no").click();
+      cy.get("#continue").click();
+      //   cy.get("#advice-from-who").type(
+      //     faker.name.firstName() + faker.name.lastName()
+      //   );
+      cy.get("#advice-from-who").type(faker.random.alphaNumeric(40));
+      cy.get("#advice-description").type(faker.random.alphaNumeric(40));
+      cy.get("#continue").click();
+      cy.get("#proximity").click();
+      cy.get("#continue").click();
+      cy.get("#yes-no-2").click();
+      cy.get("#continue").click();
+// permisssion details
+cy.get("a").contains("Give details of permissions to start work").click();
+cy.get("#continue").click();
+cy.get("#continue").click();
+cy.get("#consent-type-check").click(); 
+cy.get("#continue").click();
+cy.get("#authority-name").type("a");
+cy.get("#authority-name__option--0").click(); 
+cy.get("#continue").click();
+cy.get("#planning-type").click();
+cy.get("#continue").click();
+cy.get("#reference").type(faker.name.firstName());
+cy.get("#continue").click();
+cy.get("#add-another-permission-2").click();
+cy.get("#continue").click();
+cy.get("#conditions-met-2").click();
+cy.get("#continue").click();
+cy.get("#conditions-not-met-reason").type(faker.lorem.words(5));
+cy.get("#continue").click();
+cy.get("#potential-conflicts").click();
+cy.get("#continue").click();
+cy.get("#describe-potential-conflicts").type(faker.lorem.words(4));
+cy.get("#continue").click();
+cy.get("#continue").click();
+cy.get("#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(3)").contains("COMPLETED");
+cy.get("#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(3)").contains("Give details of permissions to start work");
+  // site info
       cy.get("a").contains("Give site information").click();
       cy.get("#site-name").type("test");
       cy.get("#continue").click();
@@ -147,9 +215,9 @@ describe("Page title verification", () => {
       cy.get("a").contains("Give ecologist’s experience").click();
       cy.get("input[value='no']").click();
       cy.get("#continue").click();
-      cy.get("#enter-experience").type(faker.random.alphaNumeric(4000));
+      cy.get("#enter-experience").type(faker.random.alphaNumeric(20));
       cy.get("#continue").click();
-      cy.get("#enter-methods").type(faker.random.alphaNumeric(4000));
+      cy.get("#enter-methods").type(faker.random.alphaNumeric(21));
       cy.get("#continue").click();
       cy.get("input[value='yes']").click();
       cy.get("#continue").click();
@@ -241,11 +309,16 @@ describe("Page title verification", () => {
             "Bat mitigation"
           );
           cy.get("#main-content > div > div > form > fieldset > dl").contains(
-            "Reference"
+            "Site"
           );
           cy.get("#main-content > div > div > form > fieldset > dl").contains(
-            "Licence holder"
+            "Applicant"
           );
+
+          cy.get("#main-content > div > div > form > fieldset > dl").contains(
+            "Application reference"
+          );
+    
           cy.get("#main-content > div > div > form > fieldset > dl").contains(
             "Submitted"
           );

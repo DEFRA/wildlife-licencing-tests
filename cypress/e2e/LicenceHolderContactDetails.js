@@ -570,9 +570,7 @@ describe("Page title verification", () => {
       cy.get("#continue").click();
       cy.get("input[value='new']").click();
       cy.get("#continue").click();
-      cy.get("input[type='text']").type(
-        faker.name.firstName() + faker.name.lastName()
-      );
+      cy.get("input[type='text']").type(faker.name.firstName());
       cy.get("#continue").click();
       cy.get("input[value='new']").click();
       cy.get("#continue").click();
@@ -595,3 +593,4 @@ describe("Page title verification", () => {
     });
   });
 });
+// });

@@ -70,8 +70,8 @@ describe("Site Information", () => {
       cy.get("#continue").click();
       cy.get("#continue").click();
       // cy.scrollTo(0, 1000)
-      cy.get("#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(5)").contains("COMPLETED");
-      cy.get("#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(5) > span > a").contains("Give site information");
+      cy.get("#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(7)").contains("COMPLETED");
+      cy.get("#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(7)").contains("Give site information");
     });
   });
   it(" 2 Verify happy path - site information", () => {
@@ -142,10 +142,10 @@ describe("Site Information", () => {
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get(
-        "#main-content > div > div > form > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(5)"
+        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(7)"
       ).contains("COMPLETED");
       cy.get(
-        "#main-content > div > div > form > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(5)"
+        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(7)"
       ).contains("Give site information");
     });
   });
@@ -203,10 +203,10 @@ describe("Site Information", () => {
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get(
-        "#main-content > div > div > form > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(5)"
+        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(7)"
       ).contains("COMPLETED");
       cy.get(
-        "#main-content > div > div > form > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(5)"
+        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(7)"
       ).contains("Give site information");
     });
   });
@@ -277,10 +277,10 @@ describe("Site Information", () => {
       
       cy.get("#continue").click();
       cy.get(
-        "#main-content > div > div > form > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(5)"
+        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(7)"
       ).contains("COMPLETED");
       cy.get(
-        "#main-content > div > div > form > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(5)"
+        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(7)"
       ).contains("Give site information");
     });
   });
@@ -356,10 +356,10 @@ describe("Site Information", () => {
 
       cy.get("#continue").click();
       cy.get(
-        "#main-content > div > div > form > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(5)"
+        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(7)"
       ).contains("COMPLETED");
       cy.get(
-        "#main-content > div > div > form > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(5)"
+        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(7)"
       ).contains("Give site information");
     });
   });
@@ -437,10 +437,10 @@ describe("Site Information", () => {
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get(
-        "#main-content > div > div > form > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(5)"
+        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(7)"
       ).contains("COMPLETED");
       cy.get(
-        "#main-content > div > div > form > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(5)"
+        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(7)"
       ).contains("Give site information");
     });
   });
@@ -484,10 +484,10 @@ describe("Site Information", () => {
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get(
-        "#main-content > div > div > form > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(5)"
+        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(7)"
       ).contains("COMPLETED");
       cy.get(
-        "#main-content > div > div > form > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(5)"
+        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(7)"
       ).contains("Give site information");
     });
   });

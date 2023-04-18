@@ -14,6 +14,7 @@ describe("Add sett", () => {
       cy.get("#continue").click();
       cy.get("h1.govuk-fieldset__heading").contains(users.nextpage);
       cy.get("#main-content > div > div > form > fieldset > a").click();
+      // cy.get("a.govuk-button").click();
       cy.get("#species").click();
       cy.get("#continue").click();
       cy.get("#yes-no-2").click();
@@ -24,9 +25,7 @@ describe("Add sett", () => {
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get("#continue").click();
-      cy.get(
-        "#main-content > div > div > form > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(7) > span > a"
-      ).click();
+      cy.get("a").contains("Add setts the work will affect").click();
       cy.get("#continue").click();
       cy.get("#habitat-name").type(faker.random.alphaNumeric(100));
       cy.get("#continue").click();
@@ -62,6 +61,7 @@ describe("Add sett", () => {
       cy.get("#continue").click();
       cy.get("h1.govuk-fieldset__heading").contains(users.nextpage);
       cy.get("#main-content > div > div > form > fieldset > a").click();
+      // cy.get("a.govuk-button").click();
       cy.get("#species").click();
       cy.get("#continue").click();
       cy.get("#yes-no-2").click();
@@ -72,9 +72,7 @@ describe("Add sett", () => {
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get("#continue").click();
-      cy.get(
-        "#main-content > div > div > form > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(7) > span > a"
-      ).click();
+      cy.get("a").contains("Add setts the work will affect").click();
       cy.get("#continue").click();
       cy.get("input[id='habitat-name']").type(faker.random.alphaNumeric(1));
       cy.get("#continue").click();
@@ -111,6 +109,7 @@ describe("Add sett", () => {
       cy.get("#continue").click();
       cy.get("h1.govuk-fieldset__heading").contains(users.nextpage);
       cy.get("#main-content > div > div > form > fieldset > a").click();
+      // cy.get("a.govuk-button").click();
       cy.get("#species").click();
       cy.get("#continue").click();
       cy.get("#yes-no-2").click();
@@ -121,9 +120,7 @@ describe("Add sett", () => {
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get("#continue").click();
-      cy.get(
-        "#main-content > div > div > form > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(7) > span > a"
-      ).click();
+      cy.get("a").contains("Add setts the work will affect").click();
       cy.get("#continue").click();
       cy.get("input[id='habitat-name']").type(faker.random.alphaNumeric(99));
       cy.get("#continue").click();
@@ -160,6 +157,7 @@ describe("Add sett", () => {
       cy.get("#continue").click();
       cy.get("h1.govuk-fieldset__heading").contains(users.nextpage);
       cy.get("#main-content > div > div > form > fieldset > a").click();
+      // cy.get("a.govuk-button").click();
       cy.get("#species").click();
       cy.get("#continue").click();
       cy.get("#yes-no-2").click();
@@ -170,11 +168,9 @@ describe("Add sett", () => {
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get("#continue").click();
-      cy.get(
-        "#main-content > div > div > form > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(7) > span > a"
-      ).click();
+      cy.get("a").contains("Add setts the work will affect").click();
       cy.get("#continue").click();
-      cy.get("input[id='habitat-name']").type(faker.random.alphaNumeric(50));
+      cy.get("#habitat-name").type(faker.random.alphaNumeric(50));
       cy.get("#continue").click();
       cy.get("#habitat-types-4").click();
       cy.get("#continue").click();

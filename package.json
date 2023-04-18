@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/.bin/cypress run",
-    "open": "./node_modules/.bin/cypress open"
+    "open": "./node_modules/.bin/cypress open",
+    "parallel": "./node_modules/.bin/cypress run --record --group 4x-chrome --browser chrome --parallel"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +16,7 @@
     "cypress": "^12.5.1",
     "cypress-file-upload": "^5.0.8",
     "cypress-mochawesome-reporter": "^3.2.3",
+    "cypress-parallel": "^0.12.0",
     "cypress-xpath": "^1.6.2"
   },
   "dependencies": {
