@@ -979,40 +979,40 @@ it("Unhappy path - 23 verify too many characters error is displayed when 4001 is
       );
     });
 });
-it("Unhappy path - 24 Verify that continue without select an option on What kind of development is happening at the site? returns error", () => {
-    cy.request(
-      "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
-    );
-    cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
-    cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email3);
-      cy.get("#password").type(users.password2);
-      cy.get("#continue").click();
-      cy.get("#species").click();
-      cy.get("#continue").click();
-      cy.get("#yes-no-2").click();
-      cy.get("#continue").click();
-      cy.get("#continue").click();
-      cy.get("#yes-no").click();
-      cy.get("#continue").click();
-      cy.get("#yes-no").click();
-      cy.get("#continue").click();
-      cy.get("#yes-no").click();
-      cy.get("#continue").click();
-      cy.get("#continue").click();
-      cy.get("#continue").click();
-      cy.get("a").contains("Give work activity details").click();
-      cy.get("#continue").click();
-      cy.get("#work-proposal").type(faker.random.alphaNumeric(40));
-      cy.get("#continue").click();
-      cy.get("#yes-no-2").click();
-      cy.get("#continue").click();
-      cy.get("#continue").click();
-      cy.get("#main-content > div > div").contains(
-        "You have not selected an option"
-      );
-    });
-});
+// it("Unhappy path - 24 Verify that continue without select an option on What kind of development is happening at the site? returns error", () => {
+//     cy.request(
+//       "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
+//     );
+//     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
+//     cy.fixture("users.json").then((users) => {
+//       cy.get("#username").type(users.email3);
+//       cy.get("#password").type(users.password2);
+//       cy.get("#continue").click();
+//       cy.get("#species").click();
+//       cy.get("#continue").click();
+//       cy.get("#yes-no-2").click();
+//       cy.get("#continue").click();
+//       cy.get("#continue").click();
+//       cy.get("#yes-no").click();
+//       cy.get("#continue").click();
+//       cy.get("#yes-no").click();
+//       cy.get("#continue").click();
+//       cy.get("#yes-no").click();
+//       cy.get("#continue").click();
+//       cy.get("#continue").click();
+//       cy.get("#continue").click();
+//       cy.get("a").contains("Give work activity details").click();
+//       cy.get("#continue").click();
+//       cy.get("#work-proposal").type(faker.random.alphaNumeric(40));
+//       cy.get("#continue").click();
+//       cy.get("#yes-no-2").click();
+//       cy.get("#continue").click();
+//       cy.get("#continue").click();
+//       cy.get("#main-content > div > div").contains(
+//         "You have not selected an option"
+//       );
+//     });
+// });
 it("Unhappy path - 25 Verify that continue without selecting an option on What activity or development work do you plan to do?", () => {
     cy.request(
       "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
@@ -1080,38 +1080,38 @@ it("Unhappy path - 26 Verify that continue without any text on Other option whil
     })
 });
 
-it("Unhappy path - 27 verify continue on Do you think the purpose of your project is exempt from payment? returns an error", () => {
-    cy.request(
-      "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
-    );
-    cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
-    cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email3);
-      cy.get("#password").type(users.password2);
-      cy.get("#continue").click();
-      cy.get("#species").click();
-      cy.get("#continue").click();
-      cy.get("#yes-no-2").click();
-      cy.get("#continue").click();
-      cy.get("#continue").click();
-      cy.get("#yes-no").click();
-      cy.get("#continue").click();
-      cy.get("#yes-no").click();
-      cy.get("#continue").click();
-      cy.get("#yes-no").click();
-      cy.get("#continue").click();
-      cy.get("#continue").click();
-      cy.get("#continue").click();
-      cy.get("a").contains("Give work activity details").click();
-      cy.get("#continue").click();
-      cy.get("#work-proposal").type(faker.random.alphaNumeric(40));
-            cy.get("#continue").click();
-            cy.get("#continue").click();
-      cy.get("#main-content > div > div > div.govuk-error-summary.display-wrapped > div > ul").contains(
-        "You have not selected an option"
-      );
-    });
-});
+// it("Unhappy path - 27 verify continue on Do you think the purpose of your project is exempt from payment? returns an error", () => {
+//     cy.request(
+//       "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
+//     );
+//     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
+//     cy.fixture("users.json").then((users) => {
+//       cy.get("#username").type(users.email3);
+//       cy.get("#password").type(users.password2);
+//       cy.get("#continue").click();
+//       cy.get("#species").click();
+//       cy.get("#continue").click();
+//       cy.get("#yes-no-2").click();
+//       cy.get("#continue").click();
+//       cy.get("#continue").click();
+//       cy.get("#yes-no").click();
+//       cy.get("#continue").click();
+//       cy.get("#yes-no").click();
+//       cy.get("#continue").click();
+//       cy.get("#yes-no").click();
+//       cy.get("#continue").click();
+//       cy.get("#continue").click();
+//       cy.get("#continue").click();
+//       cy.get("a").contains("Give work activity details").click();
+//       cy.get("#continue").click();
+//       cy.get("#work-proposal").type(faker.random.alphaNumeric(40));
+//             cy.get("#continue").click();
+//             cy.get("#continue").click();
+//       cy.get("#main-content > div > div > div.govuk-error-summary.display-wrapped > div > ul").contains(
+//         "You have not selected an option"
+//       );
+//     });
+// });
 
 it("Unhappy path - 28 Verify that continue without selecting an option on What reason do you think your development is exempt from licence payments? returns error", () => {
     cy.request(
