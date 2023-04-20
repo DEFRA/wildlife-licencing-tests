@@ -17,8 +17,8 @@ describe("Page title verification", () => {
     );
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email3);
-      cy.get("#password").type(users.password2);
+      cy.get("#username").fill(users.email3);
+      cy.get("#password").fill(users.password2);
       cy.get("#continue").click();
       cy.get("#species").click();
       cy.get("#continue").click();
@@ -37,20 +37,20 @@ describe("Page title verification", () => {
       cy.get("#yes-no").click();
       cy.get("#continue").click();
       cy.get("#continue").click();
-      cy.get("#site-name").type("a");
+      cy.get("#site-name").fill("a");
       cy.get("#site-name__option--0").click();
       cy.get("#continue").click();
       cy.get("#yes-no").click();
       cy.get("#continue").click();
-      cy.get("#permission-details").type(faker.random.alphaNumeric(4000));
+      cy.get("#permission-details").fill(faker.random.alphaNumeric(4000));
       cy.get("#continue").click();
       cy.get("#yes-no").click();
       cy.get("#continue").click();
-    //   cy.get("#advice-from-who").type(
+    //   cy.get("#advice-from-who").fill(
     //     faker.name.firstName() + faker.name.lastName()
     //   );
-      cy.get("#advice-from-who").type(faker.random.alphaNumeric(40))
-      cy.get("#advice-description").type(faker.random.alphaNumeric(40));
+      cy.get("#advice-from-who").fill(faker.random.alphaNumeric(40))
+      cy.get("#advice-description").fill(faker.random.alphaNumeric(40));
       cy.get("#continue").click();
       cy.get("#proximity").click();
       cy.get("#continue").click();

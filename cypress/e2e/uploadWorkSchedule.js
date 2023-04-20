@@ -10,8 +10,8 @@ describe("Page title verification", () => {
   it.only("Verify CD1 - Landowner copy-deck", () => {
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email1);
-      cy.get("#password").type(users.password1);
+      cy.get("#username").fill(users.email1);
+      cy.get("#password").fill(users.password1);
       cy.get("#continue").click();
       cy.get("h1.govuk-fieldset__heading").contains(users.nextpage);
       cy.get("#main-content > div > div > form > fieldset > a").click();
@@ -70,8 +70,8 @@ describe("Page title verification", () => {
 it.only("Verify CD2 - Landowner copy-deck", () => {
   cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
   cy.fixture("users.json").then((users) => {
-    cy.get("#username").type(users.email1);
-    cy.get("#password").type(users.password1);
+    cy.get("#username").fill(users.email1);
+    cy.get("#password").fill(users.password1);
     cy.get("#continue").click();
     cy.get("h1.govuk-fieldset__heading").contains(users.nextpage);
     cy.get("#main-content > div > div > form > fieldset > a").click();
@@ -104,8 +104,8 @@ it.only("Verify CD2 - Landowner copy-deck", () => {
 it("Verify CD3 - multi-file upload Landowner copy-deck", () => {
   cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
   cy.fixture("users.json").then((users) => {
-    cy.get("#username").type(users.email1);
-    cy.get("#password").type(users.password1);
+    cy.get("#username").fill(users.email1);
+    cy.get("#password").fill(users.password1);
     cy.get("#continue").click();
     cy.get("h1.govuk-fieldset__heading").contains(users.nextpage);
     cy.get("#main-content > div > div > form > fieldset > a").click();
@@ -142,8 +142,8 @@ it("Verify CD3 - multi-file upload Landowner copy-deck", () => {
   it("Verify CD4 - no additional upload Landowner copy-deck", () => {
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email1);
-      cy.get("#password").type(users.password1);
+      cy.get("#username").fill(users.email1);
+      cy.get("#password").fill(users.password1);
       cy.get("#continue").click();
       cy.get("h1.govuk-fieldset__heading").contains(users.nextpage);
       cy.get("#main-content > div > div > form > fieldset > a").click();

@@ -4,8 +4,8 @@ describe("Page title verification", () => {
   it("1a Verify happy path - Licence holder contact", () => {
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email1);
-      cy.get("#password").type(users.password1);
+      cy.get("#username").fill(users.email1);
+      cy.get("#password").fill(users.password1);
       cy.get("#continue").click();
       cy.get("h1.govuk-fieldset__heading").contains(users.nextpage);
       cy.get("#main-content > div > div > form > fieldset > a").click();
@@ -25,10 +25,10 @@ describe("Page title verification", () => {
       cy.get("input[value='new']").click();
       cy.get("#continue").click();
       cy.get("#is-organisation").click();
-      cy.get("#organisation-name").type(faker.company.bs());
+      cy.get("#organisation-name").fill(faker.company.bs());
       cy.get("#continue").click();
       cy.get("#continue").click();
-      cy.get("#postcode").type("M24 6DH");
+      cy.get("#postcode").fill("M24 6DH");
       cy.get("#continue").click();
       cy.get("#address").select(
         "1, SATIN DRIVE, MIDDLETON, MANCHESTER, M24 6DH"
@@ -51,8 +51,8 @@ describe("Page title verification", () => {
   it("2a Verify happy path - Licence holder contact", () => {
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email1);
-      cy.get("#password").type(users.password1);
+      cy.get("#username").fill(users.email1);
+      cy.get("#password").fill(users.password1);
       cy.get("#continue").click();
       cy.get("h1.govuk-fieldset__heading").contains(users.nextpage);
       cy.get("#main-content > div > div > form > fieldset > a").click();
@@ -72,14 +72,14 @@ describe("Page title verification", () => {
       cy.get("input[value='new']").click();
       cy.get("#continue").click();
       cy.get("#is-organisation").click();
-      cy.get("#organisation-name").type(faker.company.bs());
+      cy.get("#organisation-name").fill(faker.company.bs());
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get("a").contains("The address doesn’t have a postcode").click();
-      cy.get("#address-line-1").type("3");
-      cy.get("#address-line-2").type("man");
-      cy.get("#address-town").type("manchester");
-      cy.get("#address-county").type("Manchester");
+      cy.get("#address-line-1").fill("3");
+      cy.get("#address-line-2").fill("man");
+      cy.get("#address-town").fill("manchester");
+      cy.get("#address-county").fill("Manchester");
       cy.get("#continue").click();
       cy.fixture("eligibility-copydeck.json").then((eligibility2) => {
         cy.get(
@@ -99,8 +99,8 @@ describe("Page title verification", () => {
   it("2 Verify happy path - Licence holder contact", () => {
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email1);
-      cy.get("#password").type(users.password1);
+      cy.get("#username").fill(users.email1);
+      cy.get("#password").fill(users.password1);
       cy.get("#continue").click();
       cy.get("h1.govuk-fieldset__heading").contains(users.nextpage);
       cy.get("#main-content > div > div > form > fieldset > a").click();
@@ -119,15 +119,15 @@ describe("Page title verification", () => {
       cy.get("#continue").click();
       cy.get("input[value='new']").click();
       cy.get("#continue").click();
-      cy.get("#name").type(faker.name.firstName() + faker.name.lastName());
+      cy.get("#name").fill(faker.name.firstName() + faker.name.lastName());
       cy.get("#continue").click();
       cy.get("input[value='new']").click();
       cy.get("#continue").click();
       cy.get("#is-organisation-2").click();
       cy.get("#continue").click();
-      cy.get("#email-address").type(faker.internet.email());
+      cy.get("#email-address").fill(faker.internet.email());
       cy.get("#continue").click();
-      cy.get("#postcode").type("M24 6DH");
+      cy.get("#postcode").fill("M24 6DH");
       cy.get("#continue").click();
       cy.get("#address").select(
         "1, SATIN DRIVE, MIDDLETON, MANCHESTER, M24 6DH"
@@ -150,8 +150,8 @@ describe("Page title verification", () => {
   it("2a Verify happy path - Licence holder contact", () => {
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email1);
-      cy.get("#password").type(users.password1);
+      cy.get("#username").fill(users.email1);
+      cy.get("#password").fill(users.password1);
       cy.get("#continue").click();
       cy.get("h1.govuk-fieldset__heading").contains(users.nextpage);
       cy.get("#main-content > div > div > form > fieldset > a").click();
@@ -170,19 +170,19 @@ describe("Page title verification", () => {
       cy.get("#continue").click();
       cy.get("input[value='new']").click();
       cy.get("#continue").click();
-      cy.get("#name").type(faker.name.firstName() + faker.name.lastName());
+      cy.get("#name").fill(faker.name.firstName() + faker.name.lastName());
       cy.get("#continue").click();
       cy.get("input[value='new']").click();
       cy.get("#continue").click();
       cy.get("#is-organisation-2").click();
       cy.get("#continue").click();
-      cy.get("#email-address").type(faker.internet.email());
+      cy.get("#email-address").fill(faker.internet.email());
       cy.get("#continue").click();
       cy.get("a").contains("The address doesn’t have a postcode").click();
-      cy.get("#address-line-1").type("3");
-      cy.get("#address-line-2").type("man");
-      cy.get("#address-town").type("test");
-      cy.get("#address-county").type("Manchester");
+      cy.get("#address-line-1").fill("3");
+      cy.get("#address-line-2").fill("man");
+      cy.get("#address-town").fill("test");
+      cy.get("#address-county").fill("Manchester");
       cy.get("#continue").click();
       cy.fixture("eligibility-copydeck.json").then((eligibility2) => {
         cy.get(
@@ -202,8 +202,8 @@ describe("Page title verification", () => {
   it("3 Verify happy path - Licence holder contact", () => {
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email1);
-      cy.get("#password").type(users.password1);
+      cy.get("#username").fill(users.email1);
+      cy.get("#password").fill(users.password1);
       cy.get("#continue").click();
       cy.get("h1.govuk-fieldset__heading").contains(users.nextpage);
       cy.get("#main-content > div > div > form > fieldset > a").click();
@@ -224,7 +224,7 @@ describe("Page title verification", () => {
       cy.get("#continue").click();
       cy.get("#is-organisation-2").click();
       cy.get("#continue").click();
-      cy.get("#postcode").type("M24 6DH");
+      cy.get("#postcode").fill("M24 6DH");
       cy.get("#continue").click();
       cy.get("#address").select(
         "1, SATIN DRIVE, MIDDLETON, MANCHESTER, M24 6DH"
@@ -248,8 +248,8 @@ describe("Page title verification", () => {
   it("3a Verify happy path - Licence holder contact", () => {
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email1);
-      cy.get("#password").type(users.password1);
+      cy.get("#username").fill(users.email1);
+      cy.get("#password").fill(users.password1);
       cy.get("#continue").click();
       cy.get("h1.govuk-fieldset__heading").contains(users.nextpage);
       cy.get("#main-content > div > div > form > fieldset > a").click();
@@ -289,8 +289,8 @@ describe("Page title verification", () => {
   it("4 Verify happy path - Licence holder contact", () => {
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email1);
-      cy.get("#password").type(users.password1);
+      cy.get("#username").fill(users.email1);
+      cy.get("#password").fill(users.password1);
       cy.get("#continue").click();
       cy.get("h1.govuk-fieldset__heading").contains(users.nextpage);
       cy.get("#main-content > div > div > form > fieldset > a").click();
@@ -309,16 +309,16 @@ describe("Page title verification", () => {
       cy.get("#continue").click();
       cy.get("input[value='new']").click();
       cy.get("#continue").click();
-      cy.get("#name").type(faker.name.firstName() + faker.name.lastName());
+      cy.get("#name").fill(faker.name.firstName() + faker.name.lastName());
       cy.get("#continue").click();
       cy.get("input[value='new']").click();
       cy.get("#continue").click();
       cy.get("#is-organisation").click();
-      cy.get("#organisation-name").type(faker.company.bs());
+      cy.get("#organisation-name").fill(faker.company.bs());
       cy.get("#continue").click();
-      cy.get("#email-address").type(faker.internet.email());
+      cy.get("#email-address").fill(faker.internet.email());
       cy.get("#continue").click();
-      cy.get("#postcode").type("M24 6DH");
+      cy.get("#postcode").fill("M24 6DH");
       cy.get("#continue").click();
       cy.get("select").select("1, SATIN DRIVE, MIDDLETON, MANCHESTER, M24 6DH");
       cy.get("#continue").click();
@@ -340,8 +340,8 @@ describe("Page title verification", () => {
   it("4a Verify happy path - Licence holder contact", () => {
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email1);
-      cy.get("#password").type(users.password1);
+      cy.get("#username").fill(users.email1);
+      cy.get("#password").fill(users.password1);
       cy.get("#continue").click();
       cy.get("h1.govuk-fieldset__heading").contains(users.nextpage);
       cy.get("#main-content > div > div > form > fieldset > a").click();
@@ -360,20 +360,20 @@ describe("Page title verification", () => {
       cy.get("#continue").click();
       cy.get("input[value='new']").click();
       cy.get("#continue").click();
-      cy.get("#name").type(faker.name.firstName() + faker.name.lastName());
+      cy.get("#name").fill(faker.name.firstName() + faker.name.lastName());
       cy.get("#continue").click();
       cy.get("input[value='new']").click();
       cy.get("#continue").click();
       cy.get("#is-organisation").click();
-      cy.get("#organisation-name").type(faker.company.bs());
+      cy.get("#organisation-name").fill(faker.company.bs());
       cy.get("#continue").click();
-      cy.get("#email-address").type(faker.internet.email());
+      cy.get("#email-address").fill(faker.internet.email());
       cy.get("#continue").click();
       cy.get("a").contains("The address doesn’t have a postcode").click();
-      cy.get("#address-line-1").type("3");
-      cy.get("#address-line-2").type("man");
-      cy.get("#address-town").type("manchester");
-      cy.get("#address-county").type("Manchester");
+      cy.get("#address-line-1").fill("3");
+      cy.get("#address-line-2").fill("man");
+      cy.get("#address-town").fill("manchester");
+      cy.get("#address-county").fill("Manchester");
       cy.get("#continue").click();
       cy.fixture("eligibility-copydeck.json").then((eligibility2) => {
         cy.get(
@@ -393,8 +393,8 @@ describe("Page title verification", () => {
   it("5 Verify happy path - Licence holder contact", () => {
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email1);
-      cy.get("#password").type(users.password1);
+      cy.get("#username").fill(users.email1);
+      cy.get("#password").fill(users.password1);
       cy.get("#continue").click();
       cy.get("h1.govuk-fieldset__heading").contains(users.nextpage);
       cy.get("#main-content > div > div > form > fieldset > a").click();
@@ -414,17 +414,17 @@ describe("Page title verification", () => {
       cy.get("input[value='new']").click();
       cy.get("#continue").click();
       cy.get("#is-organisation").click();
-      cy.get("#organisation-name").type(faker.company.bs());
+      cy.get("#organisation-name").fill(faker.company.bs());
       cy.get("#continue").click();
       cy.get("#change-email").click();
       cy.get("#continue").click();
-      cy.get("#postcode").type("LB1 2CD");
+      cy.get("#postcode").fill("LB1 2CD");
       cy.get("#continue").click();
-      cy.get("#address-line-1").type("3");
-      cy.get("#address-line-2").type("man");
-      cy.get("#address-town").type("manchester");
-      cy.get("#address-county").type("Leeds");
-      cy.get("#address-postcode").type("LB1 2CD");
+      cy.get("#address-line-1").fill("3");
+      cy.get("#address-line-2").fill("man");
+      cy.get("#address-town").fill("manchester");
+      cy.get("#address-county").fill("Leeds");
+      cy.get("#address-postcode").fill("LB1 2CD");
 
       cy.get("#continue").click();
       cy.fixture("eligibility-copydeck.json").then((eligibility2) => {
@@ -445,8 +445,8 @@ describe("Page title verification", () => {
   it("5a Verify happy path - Licence holder contact", () => {
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email1);
-      cy.get("#password").type(users.password1);
+      cy.get("#username").fill(users.email1);
+      cy.get("#password").fill(users.password1);
       cy.get("#continue").click();
       cy.get("h1.govuk-fieldset__heading").contains(users.nextpage);
       cy.get("#main-content > div > div > form > fieldset > a").click();
@@ -466,18 +466,18 @@ describe("Page title verification", () => {
       cy.get("input[value='new']").click();
       cy.get("#continue").click();
       cy.get("#is-organisation").click();
-      cy.get("#organisation-name").type(faker.company.bs());
+      cy.get("#organisation-name").fill(faker.company.bs());
       cy.get("#continue").click();
       cy.get("#change-email-2").click();
-      cy.get("#email-address").type(faker.internet.email());
+      cy.get("#email-address").fill(faker.internet.email());
       cy.get("#continue").click();
-      cy.get("#postcode").type("LB1 2CD");
+      cy.get("#postcode").fill("LB1 2CD");
       cy.get("#continue").click();
-      cy.get("#address-line-1").type("3");
-      cy.get("#address-line-2").type("man");
-      cy.get("#address-town").type("manchester");
-      cy.get("#address-county").type("Leeds");
-      cy.get("#address-postcode").type("LB1 2CD");
+      cy.get("#address-line-1").fill("3");
+      cy.get("#address-line-2").fill("man");
+      cy.get("#address-town").fill("manchester");
+      cy.get("#address-county").fill("Leeds");
+      cy.get("#address-postcode").fill("LB1 2CD");
 
       cy.get("#continue").click();
       cy.fixture("eligibility-copydeck.json").then((eligibility2) => {
@@ -498,8 +498,8 @@ describe("Page title verification", () => {
   it("SDDSIP-613 Back button on postcode going showing what is the  name of user organisation", () => {
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email1);
-      cy.get("#password").type(users.password1);
+      cy.get("#username").fill(users.email1);
+      cy.get("#password").fill(users.password1);
       cy.get("#continue").click();
       cy.get("#main-content > div > div > form > fieldset > a").click();
       cy.get("#species").click();
@@ -518,10 +518,10 @@ describe("Page title verification", () => {
       cy.get("input[value='new']").click();
       cy.get("#continue").click();
       cy.get("#is-organisation").click();
-      cy.get("#organisation-name").type(faker.company.bs());
+      cy.get("#organisation-name").fill(faker.company.bs());
       cy.get("#continue").click();
       cy.get("#continue").click();
-      cy.get("#postcode").type("M24 6DH");
+      cy.get("#postcode").fill("M24 6DH");
       cy.get("#continue").click();
       cy.get("#address").select(
         "1, SATIN DRIVE, MIDDLETON, MANCHESTER, M24 6DH"
@@ -551,8 +551,8 @@ describe("Page title verification", () => {
   it("SDDSIP-617 Name and organisation option is not updating", () => {
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email1);
-      cy.get("#password").type(users.password1);
+      cy.get("#username").fill(users.email1);
+      cy.get("#password").fill(users.password1);
       cy.get("#continue").click();
       cy.get("#main-content > div > div > form > fieldset > a").click();
       cy.get("#species").click();
@@ -570,18 +570,18 @@ describe("Page title verification", () => {
       cy.get("#continue").click();
       cy.get("input[value='new']").click();
       cy.get("#continue").click();
-      cy.get("input[type='text']").type(faker.name.firstName());
+      cy.get("#name").fill(faker.name.firstName());
       cy.get("#continue").click();
       cy.get("input[value='new']").click();
       cy.get("#continue").click();
       cy.get("input[value='yes']").click();
 
-      cy.get("#organisation-name").type(faker.company.bs());
+      cy.get("#organisation-name").fill(faker.company.bs());
       cy.get("#continue").click();
-      cy.get("#email-address").type(faker.internet.email());
+      cy.get("#email-address").fill(faker.internet.email());
       cy.get("#continue").click();
 
-      cy.get("#postcode").type("M24 6DH");
+      cy.get("#postcode").fill("M24 6DH");
       cy.get("#continue").click();
       cy.get("#address").select(
         "1, SATIN DRIVE, MIDDLETON, MANCHESTER, M24 6DH"

@@ -17,8 +17,8 @@ describe("Page title verification", () => {
     );
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email3);
-      cy.get("#password").type(users.password2);
+      cy.get("#username").fill(users.email3);
+      cy.get("#password").fill(users.password2);
       cy.get("#continue").click();
       cy.get("#species").click();
       cy.get("#continue").click();
@@ -42,8 +42,8 @@ describe("Page title verification", () => {
       );
       cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
       cy.fixture("users.json").then((users) => {
-        cy.get("#username").type(users.email3);
-        cy.get("#password").type(users.password2);
+        cy.get("#username").fill(users.email3);
+        cy.get("#password").fill(users.password2);
         cy.get("#continue").click();
         cy.get("#species").click();
         cy.get("#continue").click();
@@ -69,8 +69,8 @@ describe("Page title verification", () => {
       );
       cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
       cy.fixture("users.json").then((users) => {
-        cy.get("#username").type(users.email3);
-        cy.get("#password").type(users.password2);
+        cy.get("#username").fill(users.email3);
+        cy.get("#password").fill(users.password2);
         cy.get("#continue").click();
         cy.get("#species").click();
         cy.get("#continue").click();
@@ -91,8 +91,8 @@ describe("Page title verification", () => {
       );
       cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
       cy.fixture("users.json").then((users) => {
-        cy.get("#username").type(users.email3);
-        cy.get("#password").type(users.password2);
+        cy.get("#username").fill(users.email3);
+        cy.get("#password").fill(users.password2);
         cy.get("#continue").click();
         cy.get("#species").click();
         cy.get("#continue").click();
@@ -113,8 +113,8 @@ describe("Page title verification", () => {
       );
       cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
       cy.fixture("users.json").then((users) => {
-        cy.get("#username").type(users.email3);
-        cy.get("#password").type(users.password2);
+        cy.get("#username").fill(users.email3);
+        cy.get("#password").fill(users.password2);
         cy.get("#continue").click();
         cy.get("#species").click();
         cy.get("#continue").click();
@@ -135,8 +135,8 @@ describe("Page title verification", () => {
       );
       cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
       cy.fixture("users.json").then((users) => {
-        cy.get("#username").type(users.email3);
-        cy.get("#password").type(users.password2);
+        cy.get("#username").fill(users.email3);
+        cy.get("#password").fill(users.password2);
         cy.get("#continue").click();
         cy.get("#species").click();
         cy.get("#continue").click();

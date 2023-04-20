@@ -163,6 +163,7 @@ describe("Page title verification", () => {
       cy.get("#continue").click();
       cy.get("#yes-no-2").click();
       cy.get("#continue").click();
+      cy.get("#continue").click();
 // permisssion details
 cy.get("a").contains("Give details of permissions to start work").click();
 cy.get("#continue").click();
@@ -309,16 +310,11 @@ cy.get("#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-chi
             "Bat mitigation"
           );
           cy.get("#main-content > div > div > form > fieldset > dl").contains(
-            "Site"
+            "Reference"
           );
           cy.get("#main-content > div > div > form > fieldset > dl").contains(
-            "Applicant"
+            "Licence holder"
           );
-
-          cy.get("#main-content > div > div > form > fieldset > dl").contains(
-            "Application reference"
-          );
-    
           cy.get("#main-content > div > div > form > fieldset > dl").contains(
             "Submitted"
           );

@@ -426,8 +426,8 @@ describe("Page title verification", () => {
   it("3b Verify Happy path - eligibility check after user logged in - user select Yes to Project permissions granted", () => {
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email1);
-      cy.get("#password").type(users.password1);
+      cy.get("#username").fill(users.email1);
+      cy.get("#password").fill(users.password1);
       cy.get("#continue").click();
       cy.get("h1.govuk-fieldset__heading").contains(users.nextpage);
       cy.get("#main-content > div > div > form > fieldset > a").click();
@@ -455,8 +455,8 @@ describe("Page title verification", () => {
   it("4a Verify Happy path - eligibility check before user logged in - user select 'No' to 'Project permissions’", () => {
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email1);
-      cy.get("#password").type(users.password1);
+      cy.get("#username").fill(users.email1);
+      cy.get("#password").fill(users.password1);
       cy.get("#continue").click();
       cy.get("#main-content > div > div > form > fieldset > a").click();
       cy.get("#species").click();
@@ -488,8 +488,8 @@ describe("Page title verification", () => {
   it("4b Verify Happy path - eligibility check before user logged in - user select 'No' to 'Project permissions'", () => {
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email1);
-      cy.get("#password").type(users.password1);
+      cy.get("#username").fill(users.email1);
+      cy.get("#password").fill(users.password1);
       cy.get("#continue").click();
       cy.get("#main-content > div > div > form > fieldset > a").click();
       cy.get("#species").click();
@@ -520,8 +520,8 @@ describe("Page title verification", () => {
   it("5a Verify Happy path - eligibility check before user logged in - user select 'Yes' to 'Project permissions granted'", () => {
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email1);
-      cy.get("#password").type(users.password1);
+      cy.get("#username").fill(users.email1);
+      cy.get("#password").fill(users.password1);
       cy.get("#continue").click();
       cy.get("#main-content > div > div > form > fieldset > a").click();
       cy.get("#species").click();
@@ -556,8 +556,8 @@ describe("Page title verification", () => {
   it("5b Verify Happy path - eligibility check before user logged in - user select 'Yes' to 'Project permissions granted", () => {
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email1);
-      cy.get("#password").type(users.password1);
+      cy.get("#username").fill(users.email1);
+      cy.get("#password").fill(users.password1);
       cy.get("#continue").click();
       cy.get("#main-content > div > div > form > fieldset > a").click();
       cy.get("#species").click();
@@ -591,8 +591,8 @@ describe("Page title verification", () => {
   it("SDDSIP-650 - Not answered should be displaying on Check your answer screen…..", () => {
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email1);
-      cy.get("#password").type(users.password1);
+      cy.get("#username").fill(users.email1);
+      cy.get("#password").fill(users.password1);
       cy.get("#continue").click();
       cy.get("#main-content > div > div > form > fieldset > a").click();
       cy.get("#species").click();

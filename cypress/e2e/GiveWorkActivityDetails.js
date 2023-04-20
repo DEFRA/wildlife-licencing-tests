@@ -44,17 +44,16 @@ describe("Work activities details", () => {
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get("#continue").click();
-      cy.get("#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)").contains(
-        "Give work activity details"
-      );
-      cy.get("#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)").contains(
-        "COMPLETED"
-      );
+      cy.get(
+        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
+      ).contains("Give work activity details");
+      cy.get(
+        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
+      ).contains("COMPLETED");
+    });
+  });
 
-    })
-});
-
-it("2 - verify user can complete work activity section when Preventing damage to livestock, crops, timber or property is selected", () => {
+  it("2 - verify user can complete work activity section when Preventing damage to livestock, crops, timber or property is selected", () => {
     cy.request(
       "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
     );
@@ -87,16 +86,15 @@ it("2 - verify user can complete work activity section when Preventing damage to
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get("#continue").click();
-      cy.get("#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)").contains(
-        "Give work activity details"
-      );
-      cy.get("#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)").contains(
-        "COMPLETED"
-      );
-
-    })
-});
-it("3 - verify user can complete work activity section when Preventing disease spreading is selected", () => {
+      cy.get(
+        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
+      ).contains("Give work activity details");
+      cy.get(
+        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
+      ).contains("COMPLETED");
+    });
+  });
+  it("3 - verify user can complete work activity section when Preventing disease spreading is selected", () => {
     cy.request(
       "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
     );
@@ -129,16 +127,15 @@ it("3 - verify user can complete work activity section when Preventing disease s
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get("#continue").click();
-      cy.get("#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)").contains(
-        "Give work activity details"
-      );
-      cy.get("#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)").contains(
-        "COMPLETED"
-      );
-
-    })
-});
-it("4 - verify user can complete work activity section when Home improvement through householder planning permission or permitted development is selected", () => {
+      cy.get(
+        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
+      ).contains("Give work activity details");
+      cy.get(
+        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
+      ).contains("COMPLETED");
+    });
+  });
+  it("4 - verify user can complete work activity section when Home improvement through householder planning permission or permitted development is selected", () => {
     cy.request(
       "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
     );
@@ -171,16 +168,15 @@ it("4 - verify user can complete work activity section when Home improvement thr
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get("#continue").click();
-      cy.get("#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)").contains(
-        "Give work activity details"
-      );
-      cy.get("#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)").contains(
-        "COMPLETED"
-      );
-
-    })
-});
-it("5 - verify user can complete work activity section when Scientific, research or educational purposes  is select", () => {
+      cy.get(
+        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
+      ).contains("Give work activity details");
+      cy.get(
+        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
+      ).contains("COMPLETED");
+    });
+  });
+  it("5 - verify user can complete work activity section when Scientific, research or educational purposes  is selected", () => {
     cy.request(
       "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
     );
@@ -212,17 +208,16 @@ it("5 - verify user can complete work activity section when Scientific, research
       cy.get("#work-category-5").click();
       cy.get("#continue").click();
       cy.get("#continue").click();
-      cy.get("#continue").click();      
-      cy.get("#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)").contains(
-        "Give work activity details"
-      );
-      cy.get("#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)").contains(
-        "COMPLETED"
-      );
-
-    })
-});
-it("6 - verify user can complete work activity section when Conservation of protected species, including protection of bat roosts  is select", () => {
+      cy.get("#continue").click();
+      cy.get(
+        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
+      ).contains("Give work activity details");
+      cy.get(
+        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
+      ).contains("COMPLETED");
+    });
+  });
+  it("6 - verify user can complete work activity section when Conservation of protected species, including protection of bat roosts  is selected", () => {
     cy.request(
       "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
     );
@@ -245,7 +240,7 @@ it("6 - verify user can complete work activity section when Conservation of prot
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get("a").contains("Give work activity details").click();
-      cy.get("#work-proposal").type(faker.random.alphaNumeric(40));
+      cy.get("#work-proposal").fill(faker.random.alphaNumeric(40));
       cy.get("#continue").click();
       cy.get("#yes-no").click();
       cy.get("#continue").click();
@@ -254,17 +249,16 @@ it("6 - verify user can complete work activity section when Conservation of prot
       cy.get("#work-category-6").click();
       cy.get("#continue").click();
       cy.get("#continue").click();
-      cy.get("#continue").click(); 
-      cy.get("#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)").contains(
-        "Give work activity details"
-      );
-      cy.get("#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)").contains(
-        "COMPLETED"
-      );
-
-    })
-});
-it("7 - verify user can complete work activity section when Conserve scheduled monuments, listed buildings, places of worship, or traditional farm buildings  is select", () => {
+      cy.get("#continue").click();
+      cy.get(
+        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
+      ).contains("Give work activity details");
+      cy.get(
+        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
+      ).contains("COMPLETED");
+    });
+  });
+  it("7 - verify user can complete work activity section when Conserve scheduled monuments, listed buildings, places of worship, or traditional farm buildings  is selected", () => {
     cy.request(
       "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
     );
@@ -296,18 +290,17 @@ it("7 - verify user can complete work activity section when Conserve scheduled m
       cy.get("#work-category-7").click();
       cy.get("#continue").click();
       cy.get("#continue").click();
-      cy.get("#continue").click(); 
-      cy.get("#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)").contains(
-        "Give work activity details"
-      );
-      cy.get("#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)").contains(
-        "COMPLETED"
-      );
+      cy.get("#continue").click();
+      cy.get(
+        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
+      ).contains("Give work activity details");
+      cy.get(
+        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
+      ).contains("COMPLETED");
+    });
+  });
 
-    })
-});
-
-it("8 - verify user can complete work activity section when Other is selected", () => {
+  it("8 - verify user can complete work activity section when Other is selected", () => {
     cy.request(
       "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
     );
@@ -340,31 +333,43 @@ it("8 - verify user can complete work activity section when Other is selected", 
       cy.get("#work-category-9").click();
       cy.get("#continue").click();
       cy.get("#main-content > fieldset").contains("Cost of this licence");
-      cy.get("#main-content > fieldset").contains("The cost of this licence typically ranges from £171 to £768.");
-      cy.get("#main-content > fieldset").contains("More complex licences cost more. Things that can increase the cost of a licence include:");
+      cy.get("#main-content > fieldset").contains(
+        "The cost of this licence typically ranges from £171 to £768."
+      );
+      cy.get("#main-content > fieldset").contains(
+        "More complex licences cost more. Things that can increase the cost of a licence include:"
+      );
       cy.get("#main-content > fieldset").contains("more setts affected");
-      cy.get("#main-content > fieldset").contains("if the development affects a protected site");
+      cy.get("#main-content > fieldset").contains(
+        "if the development affects a protected site"
+      );
       cy.get("#main-content > fieldset").contains("more setts affected");
-      cy.get("#main-content > fieldset").contains("if the development affects a protected site");
+      cy.get("#main-content > fieldset").contains(
+        "if the development affects a protected site"
+      );
       cy.get("#main-content > fieldset").contains("the presence of badgers");
       cy.get("#main-content > fieldset").contains("greater impact on badgers");
-      cy.get("#main-content > fieldset").contains("more complex methods being used");
-      cy.get("#main-content > fieldset").contains("incomplete or extensive information in the application");
-      cy.get("#main-content > fieldset").contains("The cost will be more if you need to make a change in your application once you have submitted it.");
+      cy.get("#main-content > fieldset").contains(
+        "more complex methods being used"
+      );
+      cy.get("#main-content > fieldset").contains(
+        "incomplete or extensive information in the application"
+      );
+      cy.get("#main-content > fieldset").contains(
+        "The cost will be more if you need to make a change in your application once you have submitted it."
+      );
       cy.get("#continue").click();
       cy.get("#continue").click();
-      cy.get("#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)").contains(
-        "Give work activity details"
-      );
-      cy.get("#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)").contains(
-        "COMPLETED"
-      );
+      cy.get(
+        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
+      ).contains("Give work activity details");
+      cy.get(
+        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
+      ).contains("COMPLETED");
+    });
+  });
 
-    })
-});
-
-
-it("9 - verify user can complete work activity section when Barn conversion is selected", () => {
+  it("9 - verify user can complete work activity section when Barn conversion is selected", () => {
     cy.request(
       "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
     );
@@ -395,18 +400,15 @@ it("9 - verify user can complete work activity section when Barn conversion is s
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get("#continue").click();
-      cy.get("#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)").contains(
-                "Give work activity details"
-              );
-              cy.get("#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)").contains(
-                "COMPLETED"
-              );
-   
-  
-
-    })
-});
-it("10 - verify user can complete work activity section when Commercial is selected", () => {
+      cy.get(
+        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
+      ).contains("Give work activity details");
+      cy.get(
+        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
+      ).contains("COMPLETED");
+    });
+  });
+  it("10 - verify user can complete work activity section when Commercial is selected", () => {
     cy.request(
       "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
     );
@@ -437,18 +439,15 @@ it("10 - verify user can complete work activity section when Commercial is selec
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get("#continue").click();
-      cy.get("#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)").contains(
-                "Give work activity details"
-              );
-              cy.get("#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)").contains(
-                "COMPLETED"
-              );
-   
-  
-
-    })
-});
-it("11 - verify user can complete work activity section when Communications is selected", () => {
+      cy.get(
+        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
+      ).contains("Give work activity details");
+      cy.get(
+        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
+      ).contains("COMPLETED");
+    });
+  });
+  it("11 - verify user can complete work activity section when Communications is selected", () => {
     cy.request(
       "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
     );
@@ -479,18 +478,15 @@ it("11 - verify user can complete work activity section when Communications is s
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get("#continue").click();
-      cy.get("#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)").contains(
-                "Give work activity details"
-              );
-              cy.get("#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)").contains(
-                "COMPLETED"
-              );
-   
-  
-
-    })
-});
-it("12 - verify user can complete work activity section when Energy generation and supply is selected", () => {
+      cy.get(
+        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
+      ).contains("Give work activity details");
+      cy.get(
+        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
+      ).contains("COMPLETED");
+    });
+  });
+  it("12 - verify user can complete work activity section when Energy generation and supply is selected", () => {
     cy.request(
       "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
     );
@@ -521,18 +517,15 @@ it("12 - verify user can complete work activity section when Energy generation a
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get("#continue").click();
-      cy.get("#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)").contains(
-                "Give work activity details"
-              );
-              cy.get("#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)").contains(
-                "COMPLETED"
-              );
-   
-  
-
-    })
-});
-it("13 - verify user can complete work activity section when Flood and coastal defences is selected", () => {
+      cy.get(
+        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
+      ).contains("Give work activity details");
+      cy.get(
+        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
+      ).contains("COMPLETED");
+    });
+  });
+  it("13 - verify user can complete work activity section when Flood and coastal defences is selected", () => {
     cy.request(
       "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
     );
@@ -563,18 +556,15 @@ it("13 - verify user can complete work activity section when Flood and coastal d
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get("#continue").click();
-      cy.get("#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)").contains(
-                "Give work activity details"
-              );
-              cy.get("#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)").contains(
-                "COMPLETED"
-              );
-   
-  
-
-    })
-});
-it("14 - verify user can complete work activity section when Residential housing (not householder improvements) is selected", () => {
+      cy.get(
+        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
+      ).contains("Give work activity details");
+      cy.get(
+        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
+      ).contains("COMPLETED");
+    });
+  });
+  it("14 - verify user can complete work activity section when Residential housing (not householder improvements) is selected", () => {
     cy.request(
       "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
     );
@@ -605,18 +595,15 @@ it("14 - verify user can complete work activity section when Residential housing
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get("#continue").click();
-      cy.get("#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)").contains(
-                "Give work activity details"
-              );
-              cy.get("#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)").contains(
-                "COMPLETED"
-              );
-   
-  
-
-    })
-});
-it("15 - verify user can complete work activity section when Residential housing (not householder improvements) is selected", () => {
+      cy.get(
+        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
+      ).contains("Give work activity details");
+      cy.get(
+        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
+      ).contains("COMPLETED");
+    });
+  });
+  it("15 - verify user can complete work activity section when Residential housing (not householder improvements) is selected", () => {
     cy.request(
       "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
     );
@@ -647,15 +634,15 @@ it("15 - verify user can complete work activity section when Residential housing
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get("#continue").click();
-      cy.get("#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)").contains(
-                "Give work activity details"
-              );
-              cy.get("#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)").contains(
-                "COMPLETED"
-              );
-    })
-});
-it("16 - verify user can complete work activity section when Quarrying and mining is selected", () => {
+      cy.get(
+        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
+      ).contains("Give work activity details");
+      cy.get(
+        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
+      ).contains("COMPLETED");
+    });
+  });
+  it("16 - verify user can complete work activity section when Quarrying and mining is selected", () => {
     cy.request(
       "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
     );
@@ -686,18 +673,15 @@ it("16 - verify user can complete work activity section when Quarrying and minin
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get("#continue").click();
-      cy.get("#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)").contains(
-                "Give work activity details"
-              );
-              cy.get("#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)").contains(
-                "COMPLETED"
-              );
-   
-  
-
-    })
-});
-it("17 - verify user can complete work activity section when Nationally significant infrastructure projects is selected", () => {
+      cy.get(
+        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
+      ).contains("Give work activity details");
+      cy.get(
+        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
+      ).contains("COMPLETED");
+    });
+  });
+  it("17 - verify user can complete work activity section when Nationally significant infrastructure projects is selected", () => {
     cy.request(
       "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
     );
@@ -728,18 +712,15 @@ it("17 - verify user can complete work activity section when Nationally signific
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get("#continue").click();
-      cy.get("#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)").contains(
-                "Give work activity details"
-              );
-              cy.get("#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)").contains(
-                "COMPLETED"
-              );
-   
-  
-
-    })
-});
-it("18 - verify user can complete work activity section when Public buildings and public land is selected", () => {
+      cy.get(
+        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
+      ).contains("Give work activity details");
+      cy.get(
+        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
+      ).contains("COMPLETED");
+    });
+  });
+  it("18 - verify user can complete work activity section when Public buildings and public land is selected", () => {
     cy.request(
       "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
     );
@@ -770,18 +751,15 @@ it("18 - verify user can complete work activity section when Public buildings an
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get("#continue").click();
-      cy.get("#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)").contains(
-                "Give work activity details"
-              );
-              cy.get("#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)").contains(
-                "COMPLETED"
-              );
-   
-  
-
-    })
-});
-it("19 - verify user can complete work activity section when Tourism and leisure is selected", () => {
+      cy.get(
+        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
+      ).contains("Give work activity details");
+      cy.get(
+        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
+      ).contains("COMPLETED");
+    });
+  });
+  it("19 - verify user can complete work activity section when Tourism and leisure is selected", () => {
     cy.request(
       "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
     );
@@ -812,18 +790,15 @@ it("19 - verify user can complete work activity section when Tourism and leisure
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get("#continue").click();
-      cy.get("#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)").contains(
-                "Give work activity details"
-              );
-              cy.get("#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)").contains(
-                "COMPLETED"
-              );
-   
-  
-
-    })
-});
-it("20 - verify user can complete work activity section when Transport, including roads is selected", () => {
+      cy.get(
+        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
+      ).contains("Give work activity details");
+      cy.get(
+        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
+      ).contains("COMPLETED");
+    });
+  });
+  it("20 - verify user can complete work activity section when Transport, including roads is selected", () => {
     cy.request(
       "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
     );
@@ -854,18 +829,15 @@ it("20 - verify user can complete work activity section when Transport, includin
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get("#continue").click();
-      cy.get("#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)").contains(
-                "Give work activity details"
-              );
-              cy.get("#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)").contains(
-                "COMPLETED"
-              );
-   
-  
-
-    })
-});
-it("21 - verify user can complete work activity section when Waste management is selected", () => {
+      cy.get(
+        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
+      ).contains("Give work activity details");
+      cy.get(
+        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
+      ).contains("COMPLETED");
+    });
+  });
+  it("21 - verify user can complete work activity section when Waste management is selected", () => {
     cy.request(
       "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
     );
@@ -896,18 +868,15 @@ it("21 - verify user can complete work activity section when Waste management is
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get("#continue").click();
-      cy.get("#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)").contains(
-                "Give work activity details"
-              );
-              cy.get("#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)").contains(
-                "COMPLETED"
-              );
-   
-  
-
-    })
-});
-it("22 - verify user can complete work activity section when Water bodies, water supply and treatment is selected", () => {
+      cy.get(
+        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
+      ).contains("Give work activity details");
+      cy.get(
+        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
+      ).contains("COMPLETED");
+    });
+  });
+  it("22 - verify user can complete work activity section when Water bodies, water supply and treatment is selected", () => {
     cy.request(
       "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
     );
@@ -938,18 +907,15 @@ it("22 - verify user can complete work activity section when Water bodies, water
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get("#continue").click();
-      cy.get("#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)").contains(
-                "Give work activity details"
-              );
-              cy.get("#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)").contains(
-                "COMPLETED"
-              );
-   
-  
-
-    })
-});
-it("Unhappy path - 23 verify too many characters error is displayed when 4001 is entered into What activity or development work do you plan to do?", () => {
+      cy.get(
+        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
+      ).contains("Give work activity details");
+      cy.get(
+        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
+      ).contains("COMPLETED");
+    });
+  });
+  it("Unhappy path - 23 verify too many characters error is displayed when 4001 is entered into What activity or development work do you plan to do?", () => {
     cy.request(
       "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
     );
@@ -974,46 +940,46 @@ it("Unhappy path - 23 verify too many characters error is displayed when 4001 is
       cy.get("a").contains("Give work activity details").click();
       cy.get("#work-proposal").type(faker.random.alphaNumeric(4001));
       cy.get("#continue").click();
-      cy.get("#main-content > div > div > div.govuk-error-summary.display-wrapped > div > ul").contains(
-        "You have entered too many characters"
-      );
+      cy.get(
+        "#main-content > div > div > div.govuk-error-summary.display-wrapped > div > ul"
+      ).contains("You have entered too many characters");
     });
-});
-// it("Unhappy path - 24 Verify that continue without select an option on What kind of development is happening at the site? returns error", () => {
-//     cy.request(
-//       "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
-//     );
-//     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
-//     cy.fixture("users.json").then((users) => {
-//       cy.get("#username").type(users.email3);
-//       cy.get("#password").type(users.password2);
-//       cy.get("#continue").click();
-//       cy.get("#species").click();
-//       cy.get("#continue").click();
-//       cy.get("#yes-no-2").click();
-//       cy.get("#continue").click();
-//       cy.get("#continue").click();
-//       cy.get("#yes-no").click();
-//       cy.get("#continue").click();
-//       cy.get("#yes-no").click();
-//       cy.get("#continue").click();
-//       cy.get("#yes-no").click();
-//       cy.get("#continue").click();
-//       cy.get("#continue").click();
-//       cy.get("#continue").click();
-//       cy.get("a").contains("Give work activity details").click();
-//       cy.get("#continue").click();
-//       cy.get("#work-proposal").type(faker.random.alphaNumeric(40));
-//       cy.get("#continue").click();
-//       cy.get("#yes-no-2").click();
-//       cy.get("#continue").click();
-//       cy.get("#continue").click();
-//       cy.get("#main-content > div > div").contains(
-//         "You have not selected an option"
-//       );
-//     });
-// });
-it("Unhappy path - 25 Verify that continue without selecting an option on What activity or development work do you plan to do?", () => {
+  });
+  // it("Unhappy path - 24 Verify that continue without select an option on What kind of development is happening at the site? returns error", () => {
+  //     cy.request(
+  //       "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
+  //     );
+  //     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
+  //     cy.fixture("users.json").then((users) => {
+  //       cy.get("#username").type(users.email3);
+  //       cy.get("#password").type(users.password2);
+  //       cy.get("#continue").click();
+  //       cy.get("#species").click();
+  //       cy.get("#continue").click();
+  //       cy.get("#yes-no-2").click();
+  //       cy.get("#continue").click();
+  //       cy.get("#continue").click();
+  //       cy.get("#yes-no").click();
+  //       cy.get("#continue").click();
+  //       cy.get("#yes-no").click();
+  //       cy.get("#continue").click();
+  //       cy.get("#yes-no").click();
+  //       cy.get("#continue").click();
+  //       cy.get("#continue").click();
+  //       cy.get("#continue").click();
+  //       cy.get("a").contains("Give work activity details").click();
+  //       cy.get("#continue").click();
+  //       cy.get("#work-proposal").type(faker.random.alphaNumeric(40));
+  //       cy.get("#continue").click();
+  //       cy.get("#yes-no-2").click();
+  //       cy.get("#continue").click();
+  //       cy.get("#continue").click();
+  //       cy.get("#main-content > div > div").contains(
+  //         "You have not selected an option"
+  //       );
+  //     });
+  // });
+  it("Unhappy path - 25 Verify that continue without selecting an option on What activity or development work do you plan to do?", () => {
     cy.request(
       "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
     );
@@ -1037,13 +1003,15 @@ it("Unhappy path - 25 Verify that continue without selecting an option on What a
       cy.get("#continue").click();
       cy.get("a").contains("Give work activity details").click();
       cy.get("#continue").click();
-      cy.get("#main-content > div > div > div.govuk-error-summary.display-wrapped > div > ul").contains(
+      cy.get(
+        "#main-content > div > div > div.govuk-error-summary.display-wrapped > div > ul"
+      ).contains(
         "You have not entered the activity or development work you plan to do"
       );
     });
-});
+  });
 
-it("Unhappy path - 26 Verify that continue without any text on Other option while on What reason do you think your development is exempt from licence payments?returns error", () => {
+  it("Unhappy path - 26 Verify that continue without any text on Other option while on What reason do you think your development is exempt from licence payments?returns error", () => {
     cy.request(
       "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
     );
@@ -1072,48 +1040,48 @@ it("Unhappy path - 26 Verify that continue without any text on Other option whil
       cy.get("#continue").click();
       cy.get("#work-payment-exempt-reason-9").click();
       cy.get("#continue").click();
-      cy.get("#main-content > div > div > div.govuk-error-summary.display-wrapped > div > ul").contains(
-                "You have not provided more detail on why your development is exempt"
-              );
-  
+      cy.get(
+        "#main-content > div > div > div.govuk-error-summary.display-wrapped > div > ul"
+      ).contains(
+        "You have not provided more detail on why your development is exempt"
+      );
+    });
+  });
 
-    })
-});
+  // it("Unhappy path - 27 verify continue on Do you think the purpose of your project is exempt from payment? returns an error", () => {
+  //     cy.request(
+  //       "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
+  //     );
+  //     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
+  //     cy.fixture("users.json").then((users) => {
+  //       cy.get("#username").type(users.email3);
+  //       cy.get("#password").type(users.password2);
+  //       cy.get("#continue").click();
+  //       cy.get("#species").click();
+  //       cy.get("#continue").click();
+  //       cy.get("#yes-no-2").click();
+  //       cy.get("#continue").click();
+  //       cy.get("#continue").click();
+  //       cy.get("#yes-no").click();
+  //       cy.get("#continue").click();
+  //       cy.get("#yes-no").click();
+  //       cy.get("#continue").click();
+  //       cy.get("#yes-no").click();
+  //       cy.get("#continue").click();
+  //       cy.get("#continue").click();
+  //       cy.get("#continue").click();
+  //       cy.get("a").contains("Give work activity details").click();
+  //       cy.get("#continue").click();
+  //       cy.get("#work-proposal").type(faker.random.alphaNumeric(40));
+  //             cy.get("#continue").click();
+  //             cy.get("#continue").click();
+  //       cy.get("#main-content > div > div > div.govuk-error-summary.display-wrapped > div > ul").contains(
+  //         "You have not selected an option"
+  //       );
+  //     });
+  // });
 
-// it("Unhappy path - 27 verify continue on Do you think the purpose of your project is exempt from payment? returns an error", () => {
-//     cy.request(
-//       "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
-//     );
-//     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
-//     cy.fixture("users.json").then((users) => {
-//       cy.get("#username").type(users.email3);
-//       cy.get("#password").type(users.password2);
-//       cy.get("#continue").click();
-//       cy.get("#species").click();
-//       cy.get("#continue").click();
-//       cy.get("#yes-no-2").click();
-//       cy.get("#continue").click();
-//       cy.get("#continue").click();
-//       cy.get("#yes-no").click();
-//       cy.get("#continue").click();
-//       cy.get("#yes-no").click();
-//       cy.get("#continue").click();
-//       cy.get("#yes-no").click();
-//       cy.get("#continue").click();
-//       cy.get("#continue").click();
-//       cy.get("#continue").click();
-//       cy.get("a").contains("Give work activity details").click();
-//       cy.get("#continue").click();
-//       cy.get("#work-proposal").type(faker.random.alphaNumeric(40));
-//             cy.get("#continue").click();
-//             cy.get("#continue").click();
-//       cy.get("#main-content > div > div > div.govuk-error-summary.display-wrapped > div > ul").contains(
-//         "You have not selected an option"
-//       );
-//     });
-// });
-
-it("Unhappy path - 28 Verify that continue without selecting an option on What reason do you think your development is exempt from licence payments? returns error", () => {
+  it("Unhappy path - 28 Verify that continue without selecting an option on What reason do you think your development is exempt from licence payments? returns error", () => {
     cy.request(
       "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
     );
@@ -1143,11 +1111,9 @@ it("Unhappy path - 28 Verify that continue without selecting an option on What r
       cy.get("#work-payment-exempt-reason-9").click();
       cy.get("#exempt-details").type(faker.random.alphaNumeric(4001));
       cy.get("#continue").click();
-      cy.get("#main-content > div > div > div.govuk-error-summary.display-wrapped > div > ul").contains(
-                "You have entered too many characters"
-              );
-    })
+      cy.get(
+        "#main-content > div > div > div.govuk-error-summary.display-wrapped > div > ul"
+      ).contains("You have entered too many characters");
+    });
+  });
 });
-
-});
-

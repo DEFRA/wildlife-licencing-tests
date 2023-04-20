@@ -4,8 +4,8 @@ describe("Add an additional contact", () => {
   it(" 1 Verify happy path - Add an additional contact", () => {
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email1);
-      cy.get("#password").type(users.password1);
+      cy.get("#username").fill(users.email1);
+      cy.get("#password").fill(users.password1);
       cy.get("#continue").click();
       cy.get("h1.govuk-fieldset__heading").contains(users.nextpage);
       cy.get("#main-content > div > div > form > fieldset > a").click();
@@ -41,11 +41,11 @@ describe("Add an additional contact", () => {
       cy.get("a").contains("Add authorised people").click();
       cy.get("#yes-no").click();
       cy.get("#continue").click();
-      cy.get("#name").type(faker.name.firstName() + faker.name.lastName());
+      cy.get("#name").fill(faker.name.firstName() + faker.name.lastName());
       cy.get("#continue").click();
-      cy.get("#email-address").type(faker.internet.email());
+      cy.get("#email-address").fill(faker.internet.email());
       cy.get("#continue").click();
-      cy.get("#postcode").type("M24 6DH");
+      cy.get("#postcode").fill("M24 6DH");
       cy.get("#continue").click();
       cy.get("#address").select(
         "1, SATIN DRIVE, MIDDLETON, MANCHESTER, M24 6DH"
@@ -59,7 +59,7 @@ describe("Add an additional contact", () => {
       cy.get("#continue").click();
       cy.get("#contact").click();
       cy.get("#continue").click();
-      // cy.get("#email-address").type(faker.internet.email());
+      // cy.get("#email-address").fill(faker.internet.email());
       // cy.get("#continue").click();
       cy.get("#yes-no-2").click();
       cy.get("#continue").click();
@@ -75,8 +75,8 @@ describe("Add an additional contact", () => {
   it("2 Verify happy path - Add an additional contact", () => {
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email1);
-      cy.get("#password").type(users.password1);
+      cy.get("#username").fill(users.email1);
+      cy.get("#password").fill(users.password1);
       cy.get("#continue").click();
       cy.get("h1.govuk-fieldset__heading").contains(users.nextpage);
       cy.get("#main-content > div > div > form > fieldset > a").click();
@@ -97,10 +97,10 @@ describe("Add an additional contact", () => {
       cy.get("input[value='new']").click();
       cy.get("#continue").click();
       cy.get("#is-organisation").click();
-      cy.get("#organisation-name").type(faker.company.bs());
+      cy.get("#organisation-name").fill(faker.company.bs());
       cy.get("#continue").click();
       cy.get("#continue").click();
-      cy.get("#postcode").type("M24 6DH");
+      cy.get("#postcode").fill("M24 6DH");
       cy.get("#continue").click();
       cy.get("#address").select(
         "1, SATIN DRIVE, MIDDLETON, MANCHESTER, M24 6DH"
@@ -120,11 +120,11 @@ describe("Add an additional contact", () => {
       cy.get("a").contains("Add authorised people").click();
       cy.get("#yes-no").click();
       cy.get("#continue").click();
-      cy.get("#name").type(faker.name.firstName() + faker.name.lastName());
+      cy.get("#name").fill(faker.name.firstName() + faker.name.lastName());
       cy.get("#continue").click();
-      cy.get("#email-address").type(faker.internet.email());
+      cy.get("#email-address").fill(faker.internet.email());
       cy.get("#continue").click();
-      cy.get("#postcode").type("M24 6DH");
+      cy.get("#postcode").fill("M24 6DH");
       cy.get("#continue").click();
       cy.get("#address").select(
         "1, SATIN DRIVE, MIDDLETON, MANCHESTER, M24 6DH"
@@ -138,9 +138,9 @@ describe("Add an additional contact", () => {
       cy.get("#continue").click();
       cy.get("input[value='new']").click();
       cy.get("#continue").click();
-      cy.get("#name").type(faker.name.firstName() + faker.name.lastName());
+      cy.get("#name").fill(faker.name.firstName() + faker.name.lastName());
       cy.get("#continue").click();
-      cy.get("#email-address").type(faker.internet.email());
+      cy.get("#email-address").fill(faker.internet.email());
       cy.get("#continue").click();
       cy.get("#yes-no-2").click();
       cy.get("#continue").click();
@@ -157,8 +157,8 @@ describe("Add an additional contact", () => {
     // cy.request(Cypress.env("baseUrl") + ("/set-sysdate?iso-string=2023-03-30T17:48:00.000Z"));
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email1);
-      cy.get("#password").type(users.password1);
+      cy.get("#username").fill(users.email1);
+      cy.get("#password").fill(users.password1);
       cy.get("#continue").click();
       cy.get("h1.govuk-fieldset__heading").contains(users.nextpage);
       cy.get("#main-content > div > div > form > fieldset > a").click();
@@ -179,10 +179,10 @@ describe("Add an additional contact", () => {
       cy.get("input[value='new']").click();
       cy.get("#continue").click();
       cy.get("#is-organisation").click();
-      cy.get("#organisation-name").type(faker.company.bs());
+      cy.get("#organisation-name").fill(faker.company.bs());
       cy.get("#continue").click();
       cy.get("#continue").click();
-      cy.get("#postcode").type("M24 6DH");
+      cy.get("#postcode").fill("M24 6DH");
       cy.get("#continue").click();
       cy.get("#address").select(
         "1, SATIN DRIVE, MIDDLETON, MANCHESTER, M24 6DH"
@@ -202,11 +202,11 @@ describe("Add an additional contact", () => {
       cy.get("a").contains("Add authorised people").click();
       cy.get("#yes-no").click();
       cy.get("#continue").click();
-      cy.get("#name").type(faker.name.firstName() + faker.name.lastName());
+      cy.get("#name").fill(faker.name.firstName() + faker.name.lastName());
       cy.get("#continue").click();
-      cy.get("#email-address").type(faker.internet.email());
+      cy.get("#email-address").fill(faker.internet.email());
       cy.get("#continue").click();
-      cy.get("#postcode").type("M24 6DH");
+      cy.get("#postcode").fill("M24 6DH");
       cy.get("#continue").click();
       cy.get("#address").select(
         "1, SATIN DRIVE, MIDDLETON, MANCHESTER, M24 6DH"
@@ -233,8 +233,8 @@ describe("Add an additional contact", () => {
     // cy.request(Cypress.env("baseUrl") + ("/set-sysdate?iso-string=2023-03-30T17:48:00.000Z"));
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email1);
-      cy.get("#password").type(users.password1);
+      cy.get("#username").fill(users.email1);
+      cy.get("#password").fill(users.password1);
       cy.get("#continue").click();
       cy.get("h1.govuk-fieldset__heading").contains(users.nextpage);
       cy.get("#main-content > div > div > form > fieldset > a").click();
@@ -255,10 +255,10 @@ describe("Add an additional contact", () => {
       cy.get("input[value='new']").click();
       cy.get("#continue").click();
       cy.get("#is-organisation").click();
-      cy.get("#organisation-name").type(faker.company.bs());
+      cy.get("#organisation-name").fill(faker.company.bs());
       cy.get("#continue").click();
       cy.get("#continue").click();
-      cy.get("#postcode").type("M24 6DH");
+      cy.get("#postcode").fill("M24 6DH");
       cy.get("#continue").click();
       cy.get("#address").select(
         "1, SATIN DRIVE, MIDDLETON, MANCHESTER, M24 6DH"
@@ -280,11 +280,11 @@ describe("Add an additional contact", () => {
       cy.get("a").contains("Add authorised people").click();
       cy.get("#yes-no").click();
       cy.get("#continue").click();
-      cy.get("#name").type(faker.name.firstName() + faker.name.lastName());
+      cy.get("#name").fill(faker.name.firstName() + faker.name.lastName());
       cy.get("#continue").click();
-      cy.get("#email-address").type(faker.internet.email());
+      cy.get("#email-address").fill(faker.internet.email());
       cy.get("#continue").click();
-      cy.get("#postcode").type("M24 6DH");
+      cy.get("#postcode").fill("M24 6DH");
       cy.get("#continue").click();
       cy.get("#address").select(
         "1, SATIN DRIVE, MIDDLETON, MANCHESTER, M24 6DH"
@@ -302,7 +302,7 @@ describe("Add an additional contact", () => {
       cy.contains("Blaine Gutierrez").click();
       cy.get("#continue").click();
       // cy.get("#email-address").clear();
-      // cy.get("#email-address").type(faker.internet.email());
+      // cy.get("#email-address").fill(faker.internet.email());
       // cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get(
