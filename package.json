@@ -4,9 +4,9 @@
   "description": "Wildlife Automation Scripts",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/cypress run",
+    "test": "npx cypress run --headless",
     "open": "./node_modules/.bin/cypress open",
-    "parallel": "./node_modules/.bin/cypress run --record --group 4x-chrome --browser chrome --parallel"
+    "cy:parallel": "cypress-parallel -d cypress/e2e -s test"
   },
   "keywords": [],
   "author": "",
