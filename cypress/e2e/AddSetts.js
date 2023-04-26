@@ -3,7 +3,7 @@ const faker = require('faker')
 describe('Add sett', () => {
   it(' 1 Verify happy path -  Add setts ', () => {
     cy.request(
-      'set-sysdate?iso-string=2023-04-01T01:00:00.000Z'
+      '/https://eaflood.atlassian.net/browse/SDDSIP-1274set-sysdate?iso-string=2023-04-01T01:00:00.000Z'
     )
   })
   it(' 1 Verify happy path -  Add setts ', () => {

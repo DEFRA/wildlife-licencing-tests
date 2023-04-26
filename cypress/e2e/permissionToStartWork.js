@@ -8,7 +8,7 @@ const faker = require('faker')
 
 describe('Page title verification', () => {
   it('1 and verify application season period screen', () => {
-    cy.request('/set-sysdate?iso-string=2023-12-01T01:00:00.000Z')
+    cy.request('/set-sysdate?iso-string=2023-07-01T01:00:00.000Z')
     cy.request('/reset?username=user1@email.com')
     cy.visit(Cypress.env('login'))
     cy.fixture('users.json').then((users) => {
@@ -185,10 +185,6 @@ describe('Page title verification', () => {
 
   it('2 and verify application season period screen', () => {
     cy.request(
-
-      '/set-sysdate?iso-string=2023-12-01T01:00:00.000Z'
-    )
-    cy.request(
       '/reset?username=user1@email.com'
     )
     cy.visit(Cypress.env('login'))
@@ -240,10 +236,6 @@ describe('Page title verification', () => {
     })
   })
   it('3 and verify application season period screen', () => {
-    cy.request(
-
-      '/set-sysdate?iso-string=2023-12-01T01:00:00.000Z'
-    )
     cy.request(
       '/reset?username=user1@email.com'
     )
@@ -297,10 +289,6 @@ describe('Page title verification', () => {
   })
   it('4 and verify application season period screen', () => {
     cy.request(
-
-      '/set-sysdate?iso-string=2023-12-01T01:00:00.000Z'
-    )
-    cy.request(
       '/reset?username=user1@email.com'
     )
     cy.visit(Cypress.env('login'))
@@ -352,9 +340,7 @@ describe('Page title verification', () => {
     })
   })
   it('5 and verify application season period screen', () => {
-    cy.request(
-      '/set-sysdate?iso-string=2023-04-30T01:00:00.000Z'
-    )
+
     cy.request(
       '/reset?username=user1@email.com'
     )
@@ -394,9 +380,7 @@ describe('Page title verification', () => {
     })
   })
   it('6 and verify application season period screen', () => {
-    cy.request(
-      '/set-sysdate?iso-string=2023-04-30T01:00:00.000Z'
-    )
+  
     cy.request(
       '/reset?username=user1@email.com'
     )
@@ -437,9 +421,7 @@ describe('Page title verification', () => {
     })
   })
   it('7 and verify application season period screen', () => {
-    cy.request(
-      '/set-sysdate?iso-string=2023-04-30T01:00:00.000Z'
-    )
+
     cy.request(
       '/reset?username=user1@email.com'
     )
@@ -484,9 +466,7 @@ describe('Page title verification', () => {
   // Yes
 
   it('8 and verify application season period screen', () => {
-    cy.request(
-      '/set-sysdate?iso-string=2023-04-30T01:00:00.000Z'
-    )
+  
     cy.request(
       '/reset?username=user1@email.com'
     )

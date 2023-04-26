@@ -2,6 +2,10 @@ const faker = require('faker')
 
 describe('Add Invoice Details', () => {
   it(' 1 Verify happy path - Add Invoice Details', () => {
+    cy.request(
+
+      '/set-sysdate?iso-string=2023-08-30T17:48:00.000Z'
+    )
     cy.visit(Cypress.env('login'))
     cy.fixture('users.json').then((users) => {
       cy.get('#username').fill(users.email1)
@@ -334,10 +338,6 @@ describe('Add Invoice Details', () => {
     })
   })
   it(' 3 Verify happy path - Add Invoice Details', () => {
-    cy.request(
-
-      '/set-sysdate?iso-string=2023-03-30T17:48:00.000Z'
-    )
     cy.visit(Cypress.env('login'))
     cy.fixture('users.json').then((users) => {
       cy.get('#username').fill(users.email1)
@@ -462,7 +462,6 @@ describe('Add Invoice Details', () => {
   })
 
   it(' 4 Verify happy path - Add Invoice Details', () => {
-    // cy.request( ('/set-sysdate?iso-string=2023-03-30T17:48:00.000Z'));
     cy.visit(Cypress.env('login'))
     cy.fixture('users.json').then((users) => {
       cy.get('#username').fill(users.email1)
@@ -473,6 +472,7 @@ describe('Add Invoice Details', () => {
       cy.get('#species').click()
       cy.get('#continue').click()
       cy.get('#yes-no-2').click()
+      cy.get('#continue').click()
       cy.get('#continue').click()
       cy.get('#yes-no').click()
       cy.get('#continue').click()

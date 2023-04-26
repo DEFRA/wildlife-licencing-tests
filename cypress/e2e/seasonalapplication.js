@@ -24,6 +24,7 @@ describe('Page title verification', () => {
       cy.get('#continue').click()
       cy.get('#yes-no-2').click()
       cy.get('#continue').click()
+      cy.get('#continue').click()
       cy.fixture('eligibility-copydeck.json').then((eligibility1) => {
         cy.get('div.govuk-width-container ').contains(eligibility1.text2)
         cy.get('div.govuk-width-container ').contains('Yes')
