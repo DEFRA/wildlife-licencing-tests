@@ -1,4 +1,4 @@
-const faker = require("faker");
+const faker = require('faker')
 
 /**
  * ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
@@ -106,6 +106,29 @@ describe("Page title verification", () => {
       // cy.get("#continue").click();
       // cy.get("#continue").click();
 
+      cy.get('#authority-name').type('b')
+      cy.get('#authority-name__option--0').click()
+      cy.get('#continue').click()
+      cy.get('#reference').type(faker.name.firstName())
+      cy.get('#continue').click()
+      cy.get('#main-content > fieldset > dl > div').contains(
+        'Planning permission'
+      )
+      cy.get('#main-content > fieldset > dl > div').contains(
+        'Planning authority'
+      )
+      cy.get('#main-content > fieldset > dl > div').contains(
+        'Planning type'
+      )
+      cy.get('#main-content > fieldset > dl > div').contains(
+        'Reference'
+      )
+      cy.get('#main-content > fieldset > dl > div').contains(
+        'Change'
+      )
+      cy.get('#main-content > fieldset > dl > div').contains(
+        'Remove'
+      )
 
       cy.get("#authority-name").fill("b");
        cy.get("#authority-name__option--0").click();
@@ -135,39 +158,39 @@ describe("Page title verification", () => {
         "Mineral consent"
       );
 
-      cy.get("#add-another-permission-2").click();
+      cy.get('#add-another-permission-2').click()
       // cy.get("#potential-conflicts").click();
       // cy.get("#continue").click();
       // cy.get("#describe-potential-conflicts").fill(faker.lorem.words(4));
       // cy.get("#continue").click();
-      cy.get("#continue").click();
-      cy.get("#main-content > fieldset").contains(
-        "Have all other wildlife or habitat-related conditions been met?"
-      );
-      cy.get("#main-content > fieldset").contains(
-        "These include:"
-      );
-      cy.get("#main-content > fieldset").contains(
-        "planning conditions"
-      );
-      cy.get("#main-content > fieldset").contains(
-        "reserved matters"
-      );
-      cy.get("#main-content > fieldset").contains(
-        "Section 106 agreements"
-      );
-      cy.get("#main-content > fieldset").contains(
-        "commitments made at a Public Enquiry or in an Environmental Statement"
-      );
-      cy.get("#conditions-met").click();
-      cy.get("#continue").click();
+      cy.get('#continue').click()
+      cy.get('#main-content > fieldset').contains(
+        'Have all other wildlife or habitat-related conditions been met?'
+      )
+      cy.get('#main-content > fieldset').contains(
+        'These include:'
+      )
+      cy.get('#main-content > fieldset').contains(
+        'planning conditions'
+      )
+      cy.get('#main-content > fieldset').contains(
+        'reserved matters'
+      )
+      cy.get('#main-content > fieldset').contains(
+        'Section 106 agreements'
+      )
+      cy.get('#main-content > fieldset').contains(
+        'commitments made at a Public Enquiry or in an Environmental Statement'
+      )
+      cy.get('#conditions-met').click()
+      cy.get('#continue').click()
 
-      cy.get("#potential-conflicts").click();
-      cy.get("#continue").click();
-      cy.get("#continue").click();
+      cy.get('#potential-conflicts').click()
+      cy.get('#continue').click()
+      cy.get('#continue').click()
       cy.get(
-        "#main-content > div > div > div.govuk-error-summary.display-wrapped > div > ul > li > a"
-      ).contains("You have not described the potential conflicts between this application and other legal commitments");
+        '#main-content > div > div > div.govuk-error-summary.display-wrapped > div > ul > li > a'
+      ).contains('You have not described the potential conflicts between this application and other legal commitments')
       cy.get(
         "#describe-potential-conflicts-error"
       ).contains("Describe the potential conflicts");
@@ -181,15 +204,15 @@ describe("Page title verification", () => {
       //   "#describe-potential-conflicts-error"
       // ).contains("Describe the potential conflicts");
       cy.get(
-        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(3)"
-      ).contains("COMPLETED");
+        '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(3)'
+      ).contains('COMPLETED')
       cy.get(
-        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(3)"
-      ).contains("Give details of permissions to start work");
-    });
-  });
+        '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(3)'
+      ).contains('Give details of permissions to start work')
+    })
+  })
 
-  it("2 and verify application season period screen", () => {
+  it('2 and verify application season period screen', () => {
     cy.request(
       Cypress.env("baseUrl") +
         "/set-sysdate?iso-string=2023-12-01T01:00:00.000Z"
@@ -238,18 +261,14 @@ describe("Page title verification", () => {
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get(
-        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(3)"
-      ).contains("COMPLETED");
+        '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(3)'
+      ).contains('COMPLETED')
       cy.get(
-        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(3)"
-      ).contains("Give details of permissions to start work");
-    });
-  });
-  it("3 and verify application season period screen", () => {
-    cy.request(
-      Cypress.env("baseUrl") +
-        "/set-sysdate?iso-string=2023-12-01T01:00:00.000Z"
-    );
+        '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(3)'
+      ).contains('Give details of permissions to start work')
+    })
+  })
+  it('3 and verify application season period screen', () => {
     cy.request(
       "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
     );
@@ -294,18 +313,14 @@ describe("Page title verification", () => {
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get(
-        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(3)"
-      ).contains("COMPLETED");
+        '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(3)'
+      ).contains('COMPLETED')
       cy.get(
-        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(3)"
-      ).contains("Give details of permissions to start work");
-    });
-  });
-  it("4 and verify application season period screen", () => {
-    cy.request(
-      Cypress.env("baseUrl") +
-        "/set-sysdate?iso-string=2023-12-01T01:00:00.000Z"
-    );
+        '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(3)'
+      ).contains('Give details of permissions to start work')
+    })
+  })
+  it('4 and verify application season period screen', () => {
     cy.request(
       "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
     );
@@ -350,17 +365,15 @@ describe("Page title verification", () => {
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get(
-        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(3)"
-      ).contains("COMPLETED");
+        '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(3)'
+      ).contains('COMPLETED')
       cy.get(
-        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(3)"
-      ).contains("Give details of permissions to start work");
-    });
-  });
-  it("5 and verify application season period screen", () => {
-    cy.request(
-      "https://new-tst.aws.defra.cloud/set-sysdate?iso-string=2023-04-30T01:00:00.000Z"
-    );
+        '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(3)'
+      ).contains('Give details of permissions to start work')
+    })
+  })
+  it('5 and verify application season period screen', () => {
+
     cy.request(
       "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
     );
@@ -381,28 +394,26 @@ describe("Page title verification", () => {
       cy.get("#continue").click();
       cy.get("a").contains("Give details of permissions to start work").click();
       // two ways remaining
-      cy.get("#continue").click();
-      cy.get("#no-permission").click();
-      cy.get("#continue").click();
+      cy.get('#continue').click()
+      cy.get('#no-permission').click()
+      cy.get('#continue').click()
       // no option remaining
-      cy.get("#potential-conflicts").click();
-      cy.get("#continue").click();
+      cy.get('#potential-conflicts').click()
+      cy.get('#continue').click()
       // 4000 words remaining
       cy.get("#describe-potential-conflicts").fill(faker.lorem.words(200));
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get(
-        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(3)"
-      ).contains("COMPLETED");
+        '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(3)'
+      ).contains('COMPLETED')
       cy.get(
-        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(3)"
-      ).contains("Give details of permissions to start work");
-    });
-  });
-  it("6 and verify application season period screen", () => {
-    cy.request(
-      "https://new-tst.aws.defra.cloud/set-sysdate?iso-string=2023-04-30T01:00:00.000Z"
-    );
+        '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(3)'
+      ).contains('Give details of permissions to start work')
+    })
+  })
+  it('6 and verify application season period screen', () => {
+  
     cy.request(
       "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
     );
@@ -425,27 +436,25 @@ describe("Page title verification", () => {
       cy.get("#continue").click();
 
       // two ways remaining
-      cy.get("#no-permission-2").click();
-      cy.get("#continue").click();
+      cy.get('#no-permission-2').click()
+      cy.get('#continue').click()
       // no option remaining
-      cy.get("#potential-conflicts-2").click();
-      cy.get("#continue").click();
+      cy.get('#potential-conflicts-2').click()
+      cy.get('#continue').click()
       // 4000 words remaining
       //   cy.get("#describe-potential-conflicts").fill(faker.lorem.words(200));
       //   cy.get("#continue").click();
-      cy.get("#continue").click();
+      cy.get('#continue').click()
       cy.get(
-        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(3)"
-      ).contains("COMPLETED");
+        '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(3)'
+      ).contains('COMPLETED')
       cy.get(
-        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(3)"
-      ).contains("Give details of permissions to start work");
-    });
-  });
-  it("7 and verify application season period screen", () => {
-    cy.request(
-      "https://new-tst.aws.defra.cloud/set-sysdate?iso-string=2023-04-30T01:00:00.000Z"
-    );
+        '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(3)'
+      ).contains('Give details of permissions to start work')
+    })
+  })
+  it('7 and verify application season period screen', () => {
+
     cy.request(
       "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
     );
@@ -475,24 +484,22 @@ describe("Page title verification", () => {
       //   cy.get("#potential-conflicts-2").click();
       //   cy.get("#continue").click();
       // 4000 words remaining
-      cy.get("#potential-conflicts-2").click();
-      cy.get("#continue").click();
-      cy.get("#continue").click();
+      cy.get('#potential-conflicts-2').click()
+      cy.get('#continue').click()
+      cy.get('#continue').click()
       cy.get(
-        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(3)"
-      ).contains("COMPLETED");
+        '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(3)'
+      ).contains('COMPLETED')
       cy.get(
-        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(3)"
-      ).contains("Give details of permissions to start work");
-    });
-  });
+        '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(3)'
+      ).contains('Give details of permissions to start work')
+    })
+  })
 
   // Yes
 
-  it("8 and verify application season period screen", () => {
-    cy.request(
-      "https://new-tst.aws.defra.cloud/set-sysdate?iso-string=2023-04-30T01:00:00.000Z"
-    );
+  it('8 and verify application season period screen', () => {
+  
     cy.request(
       "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
     );
@@ -528,11 +535,11 @@ describe("Page title verification", () => {
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get(
-        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(3)"
-      ).contains("COMPLETED");
+        '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(3)'
+      ).contains('COMPLETED')
       cy.get(
-        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(3)"
-      ).contains("Give details of permissions to start work");
-    });
-  });
-});
+        '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(3)'
+      ).contains('Give details of permissions to start work')
+    })
+  })
+})

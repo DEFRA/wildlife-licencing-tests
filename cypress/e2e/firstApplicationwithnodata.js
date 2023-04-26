@@ -1,4 +1,4 @@
-const faker = require("faker");
+const faker = require('faker')
 
 /**
  * ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
@@ -6,8 +6,8 @@ const faker = require("faker");
  * ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
  */
 
-describe("Page title verification", () => {
-  it("SDDSIP-509 and verify Licence application screen", () => {
+describe('Page title verification', () => {
+  it('SDDSIP-509 and verify Licence application screen', () => {
     cy.request(
       "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
     );
@@ -226,11 +226,11 @@ cy.get("#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-chi
       cy.get("#continue").click();
       cy.get("#continue").click();
 
-      cy.get("a").contains("Upload supporting information").click();
-      const yourFixturePath1 = "virusfile.pdf";
-      cy.get("#scan-file").attachFile(yourFixturePath1);
-      cy.wait(2000);
-      cy.fixture("uploadWorkSchedule-copydeck.json").then(
+      cy.get('a').contains('Upload supporting information').click()
+      const yourFixturePath1 = 'virusfile.pdf'
+      cy.get('#scan-file').attachFile(yourFixturePath1)
+      cy.wait(2000)
+      cy.fixture('uploadWorkSchedule-copydeck.json').then(
         (uploadWorkSchedule) => {
           cy.get("#continue").click();
           cy.get("main[id*='main-']").contains("Uploaded file 1");
@@ -271,55 +271,55 @@ cy.get("#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-chi
           cy.get("a").contains("Send application").click();
           cy.get("#main-content > div > div > form > fieldset").contains(
             users.text18
-          );
-          cy.get("#main-content > div > div > form > fieldset").contains(
-            "By sending the application you agree that you have given complete and correct information."
-          );
-          cy.get("#main-content > div > div > form > fieldset").contains(
-            "If you are making this application on behalf of another person, you confirm that you have their permission to do so. By sending the application, they agree that they will:"
-          );
-          cy.get("#main-content > div > div > form > fieldset").contains(
-            "will uphold any conditions applied to my licence if granted"
-          );
-          cy.get("#main-content > div > div > form > fieldset").contains(
-            "will abide by the terms and conditions of this service"
-          );
-          cy.get("#main-content > div > div > form > fieldset").contains(
-            "By sending the application you confirm that:"
-          );
-          cy.get("#main-content > div > div > form > fieldset").contains(
-            "an appropriate ecologist has been involved in the application and the design of any mitigations"
-          );
-          cy.get("#main-content > div > div > form > fieldset").contains(
-            "the ecologist supports the application"
-          );
-          cy.get("#main-content > div > div > form > fieldset").contains(
+          )
+          cy.get('#main-content > div > div > form > fieldset').contains(
+            'By sending the application you agree that you have given complete and correct information.'
+          )
+          cy.get('#main-content > div > div > form > fieldset').contains(
+            'If you are making this application on behalf of another person, you confirm that you have their permission to do so. By sending the application, they agree that they will:'
+          )
+          cy.get('#main-content > div > div > form > fieldset').contains(
+            'will uphold any conditions applied to my licence if granted'
+          )
+          cy.get('#main-content > div > div > form > fieldset').contains(
+            'will abide by the terms and conditions of this service'
+          )
+          cy.get('#main-content > div > div > form > fieldset').contains(
+            'By sending the application you confirm that:'
+          )
+          cy.get('#main-content > div > div > form > fieldset').contains(
+            'an appropriate ecologist has been involved in the application and the design of any mitigations'
+          )
+          cy.get('#main-content > div > div > form > fieldset').contains(
+            'the ecologist supports the application'
+          )
+          cy.get('#main-content > div > div > form > fieldset').contains(
             "the ecologist is content that the proposed methods, actions and mitigation are appropriate to address the findings of the ecologist's site assessment"
-          );
-          cy.get("#main-content > div > div > form > fieldset").contains(
+          )
+          cy.get('#main-content > div > div > form > fieldset').contains(
             "you will report any actions you took using this licence within 2 weeks of your licence expiring, even if you've taken no action"
-          );
-          cy.get("#continue").click();
-          cy.get("#continue").click();
-          const ls = cy.get("a").contains("Badger mitigation").first();
-          ls.click();
-          cy.get("#main-content > div > div > form > fieldset > dl").contains(
-            "SUBMITTED"
-          );
-          cy.get("#main-content > div > div > form > fieldset > dl").contains(
-            "Bat mitigation"
-          );
-          cy.get("#main-content > div > div > form > fieldset > dl").contains(
-            "Reference"
-          );
-          cy.get("#main-content > div > div > form > fieldset > dl").contains(
-            "Licence holder"
-          );
-          cy.get("#main-content > div > div > form > fieldset > dl").contains(
-            "Submitted"
-          );
+          )
+          cy.get('#continue').click()
+          cy.get('#continue').click()
+          const ls = cy.get('a').contains('Badger mitigation').first()
+          ls.click()
+          cy.get('#main-content > div > div > form > fieldset > dl').contains(
+            'SUBMITTED'
+          )
+          cy.get('#main-content > div > div > form > fieldset > dl').contains(
+            'Bat mitigation'
+          )
+          cy.get('#main-content > div > div > form > fieldset > dl').contains(
+            'Reference'
+          )
+          cy.get('#main-content > div > div > form > fieldset > dl').contains(
+            'Licence holder'
+          )
+          cy.get('#main-content > div > div > form > fieldset > dl').contains(
+            'Submitted'
+          )
         }
-      );
-    });
-  });
-});
+      )
+    })
+  })
+})

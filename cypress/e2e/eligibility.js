@@ -1,12 +1,12 @@
-const faker = require("faker");
+const faker = require('faker')
 /**
  * ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
  * Copy Deck Testing
  * ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
  */
 
-describe("Page title verification", () => {
-  it("1 change date", () => {
+describe('Page title verification', () => {
+  it('1 change date', () => {
     cy.request(
       Cypress.env("baseUrl") + "set-sysdate?iso-string=2023-04-01T01:00:00.000Z"
     );
@@ -225,9 +225,9 @@ describe("Page title verification", () => {
     cy.get("#continue").click();
     cy.fixture("eligibility-copydeck.json").then((eligibility2) => {
       cy.get(
-        "#main-content > div > div > form > fieldset > legend > h1"
-      ).contains(eligibility2.text4);
-      cy.get("#continue").click();
+        '#main-content > div > div > form > fieldset > legend > h1'
+      ).contains(eligibility2.text4)
+      cy.get('#continue').click()
       cy.get(
         "#main-content > div > div > form > fieldset > legend > h1"
       ).contains(eligibility2.text5);
@@ -242,14 +242,14 @@ describe("Page title verification", () => {
           cy.get("#continue").click();
           cy.get("h1.govuk-fieldset__heading").contains(
             users.taskListHeaderText
-          );
+          )
           cy.get(
-            "#main-content > div > div > form > fieldset > span > ol > li:nth-child(1) > ul"
-          ).contains("COMPLETED");
-        });
-      });
-    });
-  });
+            '#main-content > div > div > form > fieldset > span > ol > li:nth-child(1) > ul'
+          ).contains('COMPLETED')
+        })
+      })
+    })
+  })
 
   it("Verify CD62a - Eligible (Applicant) copy-deck - when user is logged in  to Government gateway", () => {
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
@@ -453,169 +453,169 @@ describe("Page title verification", () => {
     });
   });
   it("4a Verify Happy path - eligibility check before user logged in - user select 'No' to 'Project permissions’", () => {
-    cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
-    cy.fixture("users.json").then((users) => {
-      cy.get("#username").fill(users.email1);
-      cy.get("#password").fill(users.password1);
-      cy.get("#continue").click();
-      cy.get("#main-content > div > div > form > fieldset > a").click();
-      cy.get("#species").click();
-      cy.get("#continue").click();
-      cy.get("#yes-no-2").click();
-      cy.get("#continue").click();
-      cy.get("#yes-no-2").click();
-      cy.get("#continue").click();
-      cy.get("#yes-no").click();
-      cy.get("#continue").click();
-      cy.get("#yes-no-2").click();
-      cy.get("#continue").click();
-      cy.fixture("eligibility-copydeck.json").then((eligibility2) => {
+    cy.visit(Cypress.env('login'))
+    cy.fixture('users.json').then((users) => {
+      cy.get('#username').fill(users.email1)
+      cy.get('#password').fill(users.password1)
+      cy.get('#continue').click()
+      cy.get('#main-content > div > div > form > fieldset > a').click()
+      cy.get('#species').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no-2').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no-2').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no-2').click()
+      cy.get('#continue').click()
+      cy.fixture('eligibility-copydeck.json').then((eligibility2) => {
         cy.get(
-          "#main-content > div > div > form > fieldset > legend > h1"
-        ).contains(eligibility2.text4);
-        cy.get("#continue").click();
+          '#main-content > div > div > form > fieldset > legend > h1'
+        ).contains(eligibility2.text4)
+        cy.get('#continue').click()
         cy.get(
-          "#main-content > div > div > form > fieldset > legend > h1"
-        ).contains(eligibility2.text5);
-        cy.get("#continue").click();
-        cy.get("h1.govuk-fieldset__heading").contains(users.taskListHeaderText);
+          '#main-content > div > div > form > fieldset > legend > h1'
+        ).contains(eligibility2.text5)
+        cy.get('#continue').click()
+        cy.get('h1.govuk-fieldset__heading').contains(users.taskListHeaderText)
         cy.get(
-          "#main-content > div > div > form > fieldset > span > ol > li:nth-child(1) > ul"
-        ).contains("COMPLETED");
-      });
-    });
-  });
+          '#main-content > div > div > form > fieldset > span > ol > li:nth-child(1) > ul'
+        ).contains('COMPLETED')
+      })
+    })
+  })
   it("4b Verify Happy path - eligibility check before user logged in - user select 'No' to 'Project permissions'", () => {
-    cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
-    cy.fixture("users.json").then((users) => {
-      cy.get("#username").fill(users.email1);
-      cy.get("#password").fill(users.password1);
-      cy.get("#continue").click();
-      cy.get("#main-content > div > div > form > fieldset > a").click();
-      cy.get("#species").click();
-      cy.get("#continue").click();
-      cy.get("#yes-no-2").click();
-      cy.get("#continue").click();
-      cy.get("#yes-no").click();
-      cy.get("#continue").click();
-      cy.get("#yes-no-2").click();
-      cy.get("#continue").click();
-      cy.fixture("eligibility-copydeck.json").then((eligibility2) => {
+    cy.visit(Cypress.env('login'))
+    cy.fixture('users.json').then((users) => {
+      cy.get('#username').fill(users.email1)
+      cy.get('#password').fill(users.password1)
+      cy.get('#continue').click()
+      cy.get('#main-content > div > div > form > fieldset > a').click()
+      cy.get('#species').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no-2').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no-2').click()
+      cy.get('#continue').click()
+      cy.fixture('eligibility-copydeck.json').then((eligibility2) => {
         cy.get(
-          "#main-content > div > div > form > fieldset > legend > h1"
-        ).contains(eligibility2.text4);
-        cy.get("#continue").click();
+          '#main-content > div > div > form > fieldset > legend > h1'
+        ).contains(eligibility2.text4)
+        cy.get('#continue').click()
         cy.get(
-          "#main-content > div > div > form > fieldset > legend > h1"
-        ).contains(eligibility2.text5);
-        cy.get("#continue").click();
-        cy.get("h1.govuk-fieldset__heading").contains(users.taskListHeaderText);
+          '#main-content > div > div > form > fieldset > legend > h1'
+        ).contains(eligibility2.text5)
+        cy.get('#continue').click()
+        cy.get('h1.govuk-fieldset__heading').contains(users.taskListHeaderText)
         cy.get(
-          "#main-content > div > div > form > fieldset > span > ol > li:nth-child(1) > ul"
-        ).contains("COMPLETED");
-      });
-    });
-  });
+          '#main-content > div > div > form > fieldset > span > ol > li:nth-child(1) > ul'
+        ).contains('COMPLETED')
+      })
+    })
+  })
 
   it("5a Verify Happy path - eligibility check before user logged in - user select 'Yes' to 'Project permissions granted'", () => {
-    cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
-    cy.fixture("users.json").then((users) => {
-      cy.get("#username").fill(users.email1);
-      cy.get("#password").fill(users.password1);
-      cy.get("#continue").click();
-      cy.get("#main-content > div > div > form > fieldset > a").click();
-      cy.get("#species").click();
-      cy.get("#continue").click();
-      cy.get("#yes-no-2").click();
-      cy.get("#continue").click();
-      cy.get("#yes-no-2").click();
-      cy.get("#continue").click();
-      cy.get("#yes-no").click();
-      cy.get("#continue").click();
-      cy.get("#yes-no").click();
-      cy.get("#continue").click();
-      cy.get("#yes-no").click();
-      cy.get("#continue").click();
-      cy.fixture("eligibility-copydeck.json").then((eligibility2) => {
+    cy.visit(Cypress.env('login'))
+    cy.fixture('users.json').then((users) => {
+      cy.get('#username').fill(users.email1)
+      cy.get('#password').fill(users.password1)
+      cy.get('#continue').click()
+      cy.get('#main-content > div > div > form > fieldset > a').click()
+      cy.get('#species').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no-2').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no-2').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no').click()
+      cy.get('#continue').click()
+      cy.fixture('eligibility-copydeck.json').then((eligibility2) => {
         cy.get(
-          "#main-content > div > div > form > fieldset > legend > h1"
-        ).contains(eligibility2.text4);
-        cy.get("#continue").click();
+          '#main-content > div > div > form > fieldset > legend > h1'
+        ).contains(eligibility2.text4)
+        cy.get('#continue').click()
         cy.get(
-          "#main-content > div > div > form > fieldset > legend > h1"
-        ).contains(eligibility2.text5);
-        cy.get("#continue").click();
-        cy.get("h1.govuk-fieldset__heading").contains(users.taskListHeaderText);
+          '#main-content > div > div > form > fieldset > legend > h1'
+        ).contains(eligibility2.text5)
+        cy.get('#continue').click()
+        cy.get('h1.govuk-fieldset__heading').contains(users.taskListHeaderText)
         cy.get(
-          "#main-content > div > div > form > fieldset > span > ol > li:nth-child(1) > ul"
-        ).contains("COMPLETED");
-      });
-    });
-  });
+          '#main-content > div > div > form > fieldset > span > ol > li:nth-child(1) > ul'
+        ).contains('COMPLETED')
+      })
+    })
+  })
 
   it("5b Verify Happy path - eligibility check before user logged in - user select 'Yes' to 'Project permissions granted", () => {
-    cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
-    cy.fixture("users.json").then((users) => {
-      cy.get("#username").fill(users.email1);
-      cy.get("#password").fill(users.password1);
-      cy.get("#continue").click();
-      cy.get("#main-content > div > div > form > fieldset > a").click();
-      cy.get("#species").click();
-      cy.get("#continue").click();
-      cy.get("#yes-no-2").click();
-      cy.get("#continue").click();
-      cy.get("#yes-no").click();
-      cy.get("#continue").click();
-      cy.get("#yes-no").click();
-      cy.get("#continue").click();
-      cy.get("#yes-no").click();
-      cy.get("#continue").click();
-      cy.fixture("eligibility-copydeck.json").then((eligibility2) => {
+    cy.visit(Cypress.env('login'))
+    cy.fixture('users.json').then((users) => {
+      cy.get('#username').fill(users.email1)
+      cy.get('#password').fill(users.password1)
+      cy.get('#continue').click()
+      cy.get('#main-content > div > div > form > fieldset > a').click()
+      cy.get('#species').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no-2').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no').click()
+      cy.get('#continue').click()
+      cy.fixture('eligibility-copydeck.json').then((eligibility2) => {
         cy.get(
-          "#main-content > div > div > form > fieldset > legend > h1"
-        ).contains(eligibility2.text4);
-        cy.get("#continue").click();
+          '#main-content > div > div > form > fieldset > legend > h1'
+        ).contains(eligibility2.text4)
+        cy.get('#continue').click()
         cy.get(
-          "#main-content > div > div > form > fieldset > legend > h1"
-        ).contains(eligibility2.text5);
-        cy.get("#continue").click();
-        cy.get("h1.govuk-fieldset__heading").contains(users.taskListHeaderText);
+          '#main-content > div > div > form > fieldset > legend > h1'
+        ).contains(eligibility2.text5)
+        cy.get('#continue').click()
+        cy.get('h1.govuk-fieldset__heading').contains(users.taskListHeaderText)
         cy.get(
-          "#main-content > div > div > form > fieldset > span > ol > li:nth-child(1) > ul"
-        ).contains("COMPLETED");
-      });
-    });
-  });
+          '#main-content > div > div > form > fieldset > span > ol > li:nth-child(1) > ul'
+        ).contains('COMPLETED')
+      })
+    })
+  })
   // });
 
-  it("SDDSIP-650 - Not answered should be displaying on Check your answer screen…..", () => {
-    cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
-    cy.fixture("users.json").then((users) => {
-      cy.get("#username").fill(users.email1);
-      cy.get("#password").fill(users.password1);
-      cy.get("#continue").click();
-      cy.get("#main-content > div > div > form > fieldset > a").click();
-      cy.get("#species").click();
-      cy.get("#continue").click();
-      cy.get("#yes-no-2").click();
-      cy.get("#continue").click();
-      cy.get("input[value='yes']").click();
-      cy.get("#continue").click();
-      cy.get("input[value='no']").click();
-      cy.get("#continue").click();
+  it('SDDSIP-650 - Not answered should be displaying on Check your answer screen…..', () => {
+    cy.visit(Cypress.env('login'))
+    cy.fixture('users.json').then((users) => {
+      cy.get('#username').fill(users.email1)
+      cy.get('#password').fill(users.password1)
+      cy.get('#continue').click()
+      cy.get('#main-content > div > div > form > fieldset > a').click()
+      cy.get('#species').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no-2').click()
+      cy.get('#continue').click()
+      cy.get("input[value='yes']").click()
+      cy.get('#continue').click()
+      cy.get("input[value='no']").click()
+      cy.get('#continue').click()
       cy.get(
-        "#main-content > div > div > form > fieldset > dl > div:nth-child(1) > dd.govuk-summary-list__actions > a"
-      ).click();
-      cy.get("input[value='no']").click();
-      cy.get("#backlink-div > a").click();
-      cy.get("fieldset[class='govuk-fieldset']").contains("Yes");
-      cy.get("fieldset[class='govuk-fieldset']").contains("No");
-      cy.get("fieldset[class='govuk-fieldset']").contains("Confirm");
-      cy.get("fieldset[class='govuk-fieldset']").contains("Change");
+        '#main-content > div > div > form > fieldset > dl > div:nth-child(1) > dd.govuk-summary-list__actions > a'
+      ).click()
+      cy.get("input[value='no']").click()
+      cy.get('#backlink-div > a').click()
+      cy.get("fieldset[class='govuk-fieldset']").contains('Yes')
+      cy.get("fieldset[class='govuk-fieldset']").contains('No')
+      cy.get("fieldset[class='govuk-fieldset']").contains('Confirm')
+      cy.get("fieldset[class='govuk-fieldset']").contains('Change')
       cy.get("fieldset[class='govuk-fieldset']").should(
-        "not.include.text",
-        "Not answered"
-      );
-    });
-  });
-});
+        'not.include.text',
+        'Not answered'
+      )
+    })
+  })
+})

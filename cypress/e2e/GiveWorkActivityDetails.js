@@ -1,4 +1,4 @@
-const faker = require("faker");
+const faker = require('faker')
 
 /**
  * ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
@@ -6,12 +6,11 @@ const faker = require("faker");
  * ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
  */
 
-describe("Work activities details", () => {
-  it("1 - verify user can complete work activity section when Preserving public health", () => {
+describe('Work activities details', () => {
+  it('1 - verify user can complete work activity section when Preserving public health', () => {
     cy.request(
-      Cypress.env("baseUrl") +
-        "/set-sysdate?iso-string=2023-12-01T01:00:00.000Z"
-    );
+      '/set-sysdate?iso-string=2023-12-01T01:00:00.000Z'
+    )
     cy.request(
       "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
     );
@@ -45,13 +44,13 @@ describe("Work activities details", () => {
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get(
-        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
-      ).contains("Give work activity details");
+        '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)'
+      ).contains('Give work activity details')
       cy.get(
-        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
-      ).contains("COMPLETED");
-    });
-  });
+        '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)'
+      ).contains('COMPLETED')
+    })
+  })
 
   it("2 - verify user can complete work activity section when Preventing damage to livestock, crops, timber or property is selected", () => {
     cy.request(
@@ -87,8 +86,8 @@ describe("Work activities details", () => {
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get(
-        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
-      ).contains("Give work activity details");
+        '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)'
+      ).contains('Give work activity details')
       cy.get(
         "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
       ).contains("COMPLETED");
@@ -128,8 +127,8 @@ describe("Work activities details", () => {
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get(
-        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
-      ).contains("Give work activity details");
+        '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)'
+      ).contains('Give work activity details')
       cy.get(
         "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
       ).contains("COMPLETED");
@@ -169,8 +168,8 @@ describe("Work activities details", () => {
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get(
-        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
-      ).contains("Give work activity details");
+        '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)'
+      ).contains('Give work activity details')
       cy.get(
         "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
       ).contains("COMPLETED");
@@ -210,8 +209,8 @@ describe("Work activities details", () => {
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get(
-        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
-      ).contains("Give work activity details");
+        '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)'
+      ).contains('Give work activity details')
       cy.get(
         "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
       ).contains("COMPLETED");
@@ -251,8 +250,8 @@ describe("Work activities details", () => {
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get(
-        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
-      ).contains("Give work activity details");
+        '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)'
+      ).contains('Give work activity details')
       cy.get(
         "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
       ).contains("COMPLETED");
@@ -292,13 +291,13 @@ describe("Work activities details", () => {
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get(
-        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
-      ).contains("Give work activity details");
+        '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)'
+      ).contains('Give work activity details')
       cy.get(
-        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
-      ).contains("COMPLETED");
-    });
-  });
+        '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)'
+      ).contains('COMPLETED')
+    })
+  })
 
   it("8 - verify user can complete work activity section when Other is selected", () => {
     cy.request(
@@ -361,13 +360,13 @@ describe("Work activities details", () => {
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get(
-        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
-      ).contains("Give work activity details");
+        '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)'
+      ).contains('Give work activity details')
       cy.get(
-        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
-      ).contains("COMPLETED");
-    });
-  });
+        '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)'
+      ).contains('COMPLETED')
+    })
+  })
 
   it("9 - verify user can complete work activity section when Barn conversion is selected", () => {
     cy.request(
@@ -401,8 +400,8 @@ describe("Work activities details", () => {
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get(
-        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
-      ).contains("Give work activity details");
+        '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)'
+      ).contains('Give work activity details')
       cy.get(
         "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
       ).contains("COMPLETED");
@@ -440,8 +439,8 @@ describe("Work activities details", () => {
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get(
-        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
-      ).contains("Give work activity details");
+        '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)'
+      ).contains('Give work activity details')
       cy.get(
         "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
       ).contains("COMPLETED");
@@ -479,8 +478,8 @@ describe("Work activities details", () => {
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get(
-        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
-      ).contains("Give work activity details");
+        '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)'
+      ).contains('Give work activity details')
       cy.get(
         "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
       ).contains("COMPLETED");
@@ -518,8 +517,8 @@ describe("Work activities details", () => {
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get(
-        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
-      ).contains("Give work activity details");
+        '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)'
+      ).contains('Give work activity details')
       cy.get(
         "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
       ).contains("COMPLETED");
@@ -557,8 +556,8 @@ describe("Work activities details", () => {
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get(
-        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
-      ).contains("Give work activity details");
+        '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)'
+      ).contains('Give work activity details')
       cy.get(
         "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
       ).contains("COMPLETED");
@@ -596,8 +595,8 @@ describe("Work activities details", () => {
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get(
-        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
-      ).contains("Give work activity details");
+        '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)'
+      ).contains('Give work activity details')
       cy.get(
         "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
       ).contains("COMPLETED");
@@ -635,8 +634,8 @@ describe("Work activities details", () => {
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get(
-        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
-      ).contains("Give work activity details");
+        '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)'
+      ).contains('Give work activity details')
       cy.get(
         "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
       ).contains("COMPLETED");
@@ -674,8 +673,8 @@ describe("Work activities details", () => {
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get(
-        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
-      ).contains("Give work activity details");
+        '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)'
+      ).contains('Give work activity details')
       cy.get(
         "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
       ).contains("COMPLETED");
@@ -713,8 +712,8 @@ describe("Work activities details", () => {
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get(
-        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
-      ).contains("Give work activity details");
+        '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)'
+      ).contains('Give work activity details')
       cy.get(
         "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
       ).contains("COMPLETED");
@@ -752,8 +751,8 @@ describe("Work activities details", () => {
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get(
-        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
-      ).contains("Give work activity details");
+        '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)'
+      ).contains('Give work activity details')
       cy.get(
         "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
       ).contains("COMPLETED");
@@ -791,8 +790,8 @@ describe("Work activities details", () => {
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get(
-        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
-      ).contains("Give work activity details");
+        '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)'
+      ).contains('Give work activity details')
       cy.get(
         "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
       ).contains("COMPLETED");
@@ -830,8 +829,8 @@ describe("Work activities details", () => {
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get(
-        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
-      ).contains("Give work activity details");
+        '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)'
+      ).contains('Give work activity details')
       cy.get(
         "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
       ).contains("COMPLETED");
@@ -869,8 +868,8 @@ describe("Work activities details", () => {
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get(
-        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
-      ).contains("Give work activity details");
+        '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)'
+      ).contains('Give work activity details')
       cy.get(
         "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
       ).contains("COMPLETED");
@@ -908,8 +907,8 @@ describe("Work activities details", () => {
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get(
-        "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
-      ).contains("Give work activity details");
+        '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)'
+      ).contains('Give work activity details')
       cy.get(
         "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)"
       ).contains("COMPLETED");
@@ -941,44 +940,44 @@ describe("Work activities details", () => {
       cy.get("#work-proposal").fill(faker.random.alphaNumeric(4001));
       cy.get("#continue").click();
       cy.get(
-        "#main-content > div > div > div.govuk-error-summary.display-wrapped > div > ul"
-      ).contains("You have entered too many characters");
-    });
+        '#main-content > div > div > div.govuk-error-summary.display-wrapped > div > ul'
+      ).contains('You have entered too many characters')
+    })
+  })
+  it("Unhappy path - 24 Verify that continue without select an option on What kind of development is happening at the site? returns error", () => {
+      cy.request(
+        "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
+      );
+      cy.visit(Cypress.env("login"));
+      cy.fixture("users.json").then((users) => {
+        cy.get("#username").fill(users.email3);
+        cy.get("#password").fill(users.password2);
+        cy.get("#continue").click();
+        cy.get("#species").click();
+        cy.get("#continue").click();
+        cy.get("#yes-no-2").click();
+        cy.get("#continue").click();
+        cy.get("#continue").click();
+        cy.get("#yes-no").click();
+        cy.get("#continue").click();
+        cy.get("#yes-no").click();
+        cy.get("#continue").click();
+        cy.get("#yes-no").click();
+        cy.get("#continue").click();
+        cy.get("#continue").click();
+        cy.get("#continue").click();
+        cy.get("a").contains("Give work activity details").click();
+        cy.get("#continue").click();
+        cy.get("#work-proposal").fill(faker.random.alphaNumeric(40));
+        cy.get("#continue").click();
+        cy.get("#yes-no-2").click();
+        cy.get("#continue").click();
+        cy.get("#continue").click();
+        cy.get("#main-content > div > div").contains(
+          "You have not selected an option"
+        );
+      });
   });
-  // it("Unhappy path - 24 Verify that continue without select an option on What kind of development is happening at the site? returns error", () => {
-  //     cy.request(
-  //       "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
-  //     );
-  //     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
-  //     cy.fixture("users.json").then((users) => {
-  //       cy.get("#username").fill(users.email3);
-  //       cy.get("#password").fill(users.password2);
-  //       cy.get("#continue").click();
-  //       cy.get("#species").click();
-  //       cy.get("#continue").click();
-  //       cy.get("#yes-no-2").click();
-  //       cy.get("#continue").click();
-  //       cy.get("#continue").click();
-  //       cy.get("#yes-no").click();
-  //       cy.get("#continue").click();
-  //       cy.get("#yes-no").click();
-  //       cy.get("#continue").click();
-  //       cy.get("#yes-no").click();
-  //       cy.get("#continue").click();
-  //       cy.get("#continue").click();
-  //       cy.get("#continue").click();
-  //       cy.get("a").contains("Give work activity details").click();
-  //       cy.get("#continue").click();
-  //       cy.get("#work-proposal").fill(faker.random.alphaNumeric(40));
-  //       cy.get("#continue").click();
-  //       cy.get("#yes-no-2").click();
-  //       cy.get("#continue").click();
-  //       cy.get("#continue").click();
-  //       cy.get("#main-content > div > div").contains(
-  //         "You have not selected an option"
-  //       );
-  //     });
-  // });
   it("Unhappy path - 25 Verify that continue without selecting an option on What activity or development work do you plan to do?", () => {
     cy.request(
       "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
@@ -1004,12 +1003,12 @@ describe("Work activities details", () => {
       cy.get("a").contains("Give work activity details").click();
       cy.get("#continue").click();
       cy.get(
-        "#main-content > div > div > div.govuk-error-summary.display-wrapped > div > ul"
+        '#main-content > div > div > div.govuk-error-summary.display-wrapped > div > ul'
       ).contains(
-        "You have not entered the activity or development work you plan to do"
-      );
-    });
-  });
+        'You have not entered the activity or development work you plan to do'
+      )
+    })
+  })
 
   it("Unhappy path - 26 Verify that continue without any text on Other option while on What reason do you think your development is exempt from licence payments?returns error", () => {
     cy.request(
@@ -1041,45 +1040,45 @@ describe("Work activities details", () => {
       cy.get("#work-payment-exempt-reason-9").click();
       cy.get("#continue").click();
       cy.get(
-        "#main-content > div > div > div.govuk-error-summary.display-wrapped > div > ul"
+        '#main-content > div > div > div.govuk-error-summary.display-wrapped > div > ul'
       ).contains(
-        "You have not provided more detail on why your development is exempt"
-      );
-    });
-  });
+        'You have not provided more detail on why your development is exempt'
+      )
+    })
+  })
 
-  // it("Unhappy path - 27 verify continue on Do you think the purpose of your project is exempt from payment? returns an error", () => {
-  //     cy.request(
-  //       "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
-  //     );
-  //     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
-  //     cy.fixture("users.json").then((users) => {
-  //       cy.get("#username").fill(users.email3);
-  //       cy.get("#password").fill(users.password2);
-  //       cy.get("#continue").click();
-  //       cy.get("#species").click();
-  //       cy.get("#continue").click();
-  //       cy.get("#yes-no-2").click();
-  //       cy.get("#continue").click();
-  //       cy.get("#continue").click();
-  //       cy.get("#yes-no").click();
-  //       cy.get("#continue").click();
-  //       cy.get("#yes-no").click();
-  //       cy.get("#continue").click();
-  //       cy.get("#yes-no").click();
-  //       cy.get("#continue").click();
-  //       cy.get("#continue").click();
-  //       cy.get("#continue").click();
-  //       cy.get("a").contains("Give work activity details").click();
-  //       cy.get("#continue").click();
-  //       cy.get("#work-proposal").fill(faker.random.alphaNumeric(40));
-  //             cy.get("#continue").click();
-  //             cy.get("#continue").click();
-  //       cy.get("#main-content > div > div > div.govuk-error-summary.display-wrapped > div > ul").contains(
-  //         "You have not selected an option"
-  //       );
-  //     });
-  // });
+  it("Unhappy path - 27 verify continue on Do you think the purpose of your project is exempt from payment? returns an error", () => {
+      cy.request(
+        "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
+      );
+      cy.visit(Cypress.env("login"));
+      cy.fixture("users.json").then((users) => {
+        cy.get("#username").fill(users.email3);
+        cy.get("#password").fill(users.password2);
+        cy.get("#continue").click();
+        cy.get("#species").click();
+        cy.get("#continue").click();
+        cy.get("#yes-no-2").click();
+        cy.get("#continue").click();
+        cy.get("#continue").click();
+        cy.get("#yes-no").click();
+        cy.get("#continue").click();
+        cy.get("#yes-no").click();
+        cy.get("#continue").click();
+        cy.get("#yes-no").click();
+        cy.get("#continue").click();
+        cy.get("#continue").click();
+        cy.get("#continue").click();
+        cy.get("a").contains("Give work activity details").click();
+        cy.get("#continue").click();
+        cy.get("#work-proposal").fill(faker.random.alphaNumeric(40));
+              cy.get("#continue").click();
+              cy.get("#continue").click();
+        cy.get("#main-content > div > div > div.govuk-error-summary.display-wrapped > div > ul").contains(
+          "You have not selected an option"
+        );
+      });
+  });
 
   it("Unhappy path - 28 Verify that continue without selecting an option on What reason do you think your development is exempt from licence payments? returns error", () => {
     cy.request(
@@ -1112,8 +1111,8 @@ describe("Work activities details", () => {
       cy.get("#exempt-details").fill(faker.random.alphaNumeric(4001));
       cy.get("#continue").click();
       cy.get(
-        "#main-content > div > div > div.govuk-error-summary.display-wrapped > div > ul"
-      ).contains("You have entered too many characters");
-    });
-  });
-});
+        '#main-content > div > div > div.govuk-error-summary.display-wrapped > div > ul'
+      ).contains('You have entered too many characters')
+    })
+  })
+})
