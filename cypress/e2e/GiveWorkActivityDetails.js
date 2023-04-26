@@ -17,8 +17,8 @@ describe("Work activities details", () => {
     );
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email3);
-      cy.get("#password").type(users.password2);
+      cy.get("#username").fill(users.email3);
+      cy.get("#password").fill(users.password2);
       cy.get("#continue").click();
       cy.get("#species").click();
       cy.get("#continue").click();
@@ -34,7 +34,7 @@ describe("Work activities details", () => {
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get("a").contains("Give work activity details").click();
-      cy.get("#work-proposal").type(faker.random.alphaNumeric(40));
+      cy.get("#work-proposal").fill(faker.random.alphaNumeric(40));
       cy.get("#continue").click();
       cy.get("#yes-no").click();
       cy.get("#continue").click();
@@ -59,8 +59,8 @@ describe("Work activities details", () => {
     );
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email3);
-      cy.get("#password").type(users.password2);
+      cy.get("#username").fill(users.email3);
+      cy.get("#password").fill(users.password2);
       cy.get("#continue").click();
       cy.get("#species").click();
       cy.get("#continue").click();
@@ -76,7 +76,7 @@ describe("Work activities details", () => {
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get("a").contains("Give work activity details").click();
-      cy.get("#work-proposal").type(faker.random.alphaNumeric(40));
+      cy.get("#work-proposal").fill(faker.random.alphaNumeric(40));
       cy.get("#continue").click();
       cy.get("#yes-no").click();
       cy.get("#continue").click();
@@ -100,8 +100,8 @@ describe("Work activities details", () => {
     );
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email3);
-      cy.get("#password").type(users.password2);
+      cy.get("#username").fill(users.email3);
+      cy.get("#password").fill(users.password2);
       cy.get("#continue").click();
       cy.get("#species").click();
       cy.get("#continue").click();
@@ -117,7 +117,7 @@ describe("Work activities details", () => {
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get("a").contains("Give work activity details").click();
-      cy.get("#work-proposal").type(faker.random.alphaNumeric(40));
+      cy.get("#work-proposal").fill(faker.random.alphaNumeric(40));
       cy.get("#continue").click();
       cy.get("#yes-no").click();
       cy.get("#continue").click();
@@ -141,8 +141,8 @@ describe("Work activities details", () => {
     );
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email3);
-      cy.get("#password").type(users.password2);
+      cy.get("#username").fill(users.email3);
+      cy.get("#password").fill(users.password2);
       cy.get("#continue").click();
       cy.get("#species").click();
       cy.get("#continue").click();
@@ -158,7 +158,7 @@ describe("Work activities details", () => {
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get("a").contains("Give work activity details").click();
-      cy.get("#work-proposal").type(faker.random.alphaNumeric(40));
+      cy.get("#work-proposal").fill(faker.random.alphaNumeric(40));
       cy.get("#continue").click();
       cy.get("#yes-no").click();
       cy.get("#continue").click();
@@ -182,8 +182,8 @@ describe("Work activities details", () => {
     );
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email3);
-      cy.get("#password").type(users.password2);
+      cy.get("#username").fill(users.email3);
+      cy.get("#password").fill(users.password2);
       cy.get("#continue").click();
       cy.get("#species").click();
       cy.get("#continue").click();
@@ -199,7 +199,7 @@ describe("Work activities details", () => {
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get("a").contains("Give work activity details").click();
-      cy.get("#work-proposal").type(faker.random.alphaNumeric(40));
+      cy.get("#work-proposal").fill(faker.random.alphaNumeric(40));
       cy.get("#continue").click();
       cy.get("#yes-no").click();
       cy.get("#continue").click();
@@ -223,8 +223,8 @@ describe("Work activities details", () => {
     );
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email3);
-      cy.get("#password").type(users.password2);
+      cy.get("#username").fill(users.email3);
+      cy.get("#password").fill(users.password2);
       cy.get("#continue").click();
       cy.get("#species").click();
       cy.get("#continue").click();
@@ -264,8 +264,8 @@ describe("Work activities details", () => {
     );
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email3);
-      cy.get("#password").type(users.password2);
+      cy.get("#username").fill(users.email3);
+      cy.get("#password").fill(users.password2);
       cy.get("#continue").click();
       cy.get("#species").click();
       cy.get("#continue").click();
@@ -281,7 +281,7 @@ describe("Work activities details", () => {
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get("a").contains("Give work activity details").click();
-      cy.get("#work-proposal").type(faker.random.alphaNumeric(40));
+      cy.get("#work-proposal").fill(faker.random.alphaNumeric(40));
       cy.get("#continue").click();
       cy.get("#yes-no").click();
       cy.get("#continue").click();
@@ -306,8 +306,8 @@ describe("Work activities details", () => {
     );
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email3);
-      cy.get("#password").type(users.password2);
+      cy.get("#username").fill(users.email3);
+      cy.get("#password").fill(users.password2);
       cy.get("#continue").click();
       cy.get("#species").click();
       cy.get("#continue").click();
@@ -323,12 +323,12 @@ describe("Work activities details", () => {
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get("a").contains("Give work activity details").click();
-      cy.get("#work-proposal").type(faker.random.alphaNumeric(40));
+      cy.get("#work-proposal").fill(faker.random.alphaNumeric(40));
       cy.get("#continue").click();
       cy.get("#yes-no").click();
       cy.get("#continue").click();
       cy.get("#work-payment-exempt-reason-9").click();
-      cy.get("#exempt-details").type(faker.random.alphaNumeric(400));
+      cy.get("#exempt-details").fill(faker.random.alphaNumeric(400));
       cy.get("#continue").click();
       cy.get("#work-category-9").click();
       cy.get("#continue").click();
@@ -375,8 +375,8 @@ describe("Work activities details", () => {
     );
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email3);
-      cy.get("#password").type(users.password2);
+      cy.get("#username").fill(users.email3);
+      cy.get("#password").fill(users.password2);
       cy.get("#continue").click();
       cy.get("#species").click();
       cy.get("#continue").click();
@@ -392,7 +392,7 @@ describe("Work activities details", () => {
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get("a").contains("Give work activity details").click();
-      cy.get("#work-proposal").type(faker.random.alphaNumeric(40));
+      cy.get("#work-proposal").fill(faker.random.alphaNumeric(40));
       cy.get("#continue").click();
       cy.get("#yes-no-2").click();
       cy.get("#continue").click();
@@ -414,8 +414,8 @@ describe("Work activities details", () => {
     );
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email3);
-      cy.get("#password").type(users.password2);
+      cy.get("#username").fill(users.email3);
+      cy.get("#password").fill(users.password2);
       cy.get("#continue").click();
       cy.get("#species").click();
       cy.get("#continue").click();
@@ -431,7 +431,7 @@ describe("Work activities details", () => {
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get("a").contains("Give work activity details").click();
-      cy.get("#work-proposal").type(faker.random.alphaNumeric(40));
+      cy.get("#work-proposal").fill(faker.random.alphaNumeric(40));
       cy.get("#continue").click();
       cy.get("#yes-no-2").click();
       cy.get("#continue").click();
@@ -453,8 +453,8 @@ describe("Work activities details", () => {
     );
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email3);
-      cy.get("#password").type(users.password2);
+      cy.get("#username").fill(users.email3);
+      cy.get("#password").fill(users.password2);
       cy.get("#continue").click();
       cy.get("#species").click();
       cy.get("#continue").click();
@@ -470,7 +470,7 @@ describe("Work activities details", () => {
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get("a").contains("Give work activity details").click();
-      cy.get("#work-proposal").type(faker.random.alphaNumeric(40));
+      cy.get("#work-proposal").fill(faker.random.alphaNumeric(40));
       cy.get("#continue").click();
       cy.get("#yes-no-2").click();
       cy.get("#continue").click();
@@ -492,8 +492,8 @@ describe("Work activities details", () => {
     );
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email3);
-      cy.get("#password").type(users.password2);
+      cy.get("#username").fill(users.email3);
+      cy.get("#password").fill(users.password2);
       cy.get("#continue").click();
       cy.get("#species").click();
       cy.get("#continue").click();
@@ -509,7 +509,7 @@ describe("Work activities details", () => {
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get("a").contains("Give work activity details").click();
-      cy.get("#work-proposal").type(faker.random.alphaNumeric(40));
+      cy.get("#work-proposal").fill(faker.random.alphaNumeric(40));
       cy.get("#continue").click();
       cy.get("#yes-no-2").click();
       cy.get("#continue").click();
@@ -531,8 +531,8 @@ describe("Work activities details", () => {
     );
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email3);
-      cy.get("#password").type(users.password2);
+      cy.get("#username").fill(users.email3);
+      cy.get("#password").fill(users.password2);
       cy.get("#continue").click();
       cy.get("#species").click();
       cy.get("#continue").click();
@@ -548,7 +548,7 @@ describe("Work activities details", () => {
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get("a").contains("Give work activity details").click();
-      cy.get("#work-proposal").type(faker.random.alphaNumeric(40));
+      cy.get("#work-proposal").fill(faker.random.alphaNumeric(40));
       cy.get("#continue").click();
       cy.get("#yes-no-2").click();
       cy.get("#continue").click();
@@ -570,8 +570,8 @@ describe("Work activities details", () => {
     );
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email3);
-      cy.get("#password").type(users.password2);
+      cy.get("#username").fill(users.email3);
+      cy.get("#password").fill(users.password2);
       cy.get("#continue").click();
       cy.get("#species").click();
       cy.get("#continue").click();
@@ -587,7 +587,7 @@ describe("Work activities details", () => {
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get("a").contains("Give work activity details").click();
-      cy.get("#work-proposal").type(faker.random.alphaNumeric(40));
+      cy.get("#work-proposal").fill(faker.random.alphaNumeric(40));
       cy.get("#continue").click();
       cy.get("#yes-no-2").click();
       cy.get("#continue").click();
@@ -609,8 +609,8 @@ describe("Work activities details", () => {
     );
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email3);
-      cy.get("#password").type(users.password2);
+      cy.get("#username").fill(users.email3);
+      cy.get("#password").fill(users.password2);
       cy.get("#continue").click();
       cy.get("#species").click();
       cy.get("#continue").click();
@@ -626,7 +626,7 @@ describe("Work activities details", () => {
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get("a").contains("Give work activity details").click();
-      cy.get("#work-proposal").type(faker.random.alphaNumeric(40));
+      cy.get("#work-proposal").fill(faker.random.alphaNumeric(40));
       cy.get("#continue").click();
       cy.get("#yes-no-2").click();
       cy.get("#continue").click();
@@ -648,8 +648,8 @@ describe("Work activities details", () => {
     );
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email3);
-      cy.get("#password").type(users.password2);
+      cy.get("#username").fill(users.email3);
+      cy.get("#password").fill(users.password2);
       cy.get("#continue").click();
       cy.get("#species").click();
       cy.get("#continue").click();
@@ -665,7 +665,7 @@ describe("Work activities details", () => {
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get("a").contains("Give work activity details").click();
-      cy.get("#work-proposal").type(faker.random.alphaNumeric(40));
+      cy.get("#work-proposal").fill(faker.random.alphaNumeric(40));
       cy.get("#continue").click();
       cy.get("#yes-no-2").click();
       cy.get("#continue").click();
@@ -687,8 +687,8 @@ describe("Work activities details", () => {
     );
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email3);
-      cy.get("#password").type(users.password2);
+      cy.get("#username").fill(users.email3);
+      cy.get("#password").fill(users.password2);
       cy.get("#continue").click();
       cy.get("#species").click();
       cy.get("#continue").click();
@@ -704,7 +704,7 @@ describe("Work activities details", () => {
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get("a").contains("Give work activity details").click();
-      cy.get("#work-proposal").type(faker.random.alphaNumeric(40));
+      cy.get("#work-proposal").fill(faker.random.alphaNumeric(40));
       cy.get("#continue").click();
       cy.get("#yes-no-2").click();
       cy.get("#continue").click();
@@ -726,8 +726,8 @@ describe("Work activities details", () => {
     );
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email3);
-      cy.get("#password").type(users.password2);
+      cy.get("#username").fill(users.email3);
+      cy.get("#password").fill(users.password2);
       cy.get("#continue").click();
       cy.get("#species").click();
       cy.get("#continue").click();
@@ -743,7 +743,7 @@ describe("Work activities details", () => {
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get("a").contains("Give work activity details").click();
-      cy.get("#work-proposal").type(faker.random.alphaNumeric(40));
+      cy.get("#work-proposal").fill(faker.random.alphaNumeric(40));
       cy.get("#continue").click();
       cy.get("#yes-no-2").click();
       cy.get("#continue").click();
@@ -765,8 +765,8 @@ describe("Work activities details", () => {
     );
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email3);
-      cy.get("#password").type(users.password2);
+      cy.get("#username").fill(users.email3);
+      cy.get("#password").fill(users.password2);
       cy.get("#continue").click();
       cy.get("#species").click();
       cy.get("#continue").click();
@@ -782,7 +782,7 @@ describe("Work activities details", () => {
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get("a").contains("Give work activity details").click();
-      cy.get("#work-proposal").type(faker.random.alphaNumeric(40));
+      cy.get("#work-proposal").fill(faker.random.alphaNumeric(40));
       cy.get("#continue").click();
       cy.get("#yes-no-2").click();
       cy.get("#continue").click();
@@ -804,8 +804,8 @@ describe("Work activities details", () => {
     );
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email3);
-      cy.get("#password").type(users.password2);
+      cy.get("#username").fill(users.email3);
+      cy.get("#password").fill(users.password2);
       cy.get("#continue").click();
       cy.get("#species").click();
       cy.get("#continue").click();
@@ -821,7 +821,7 @@ describe("Work activities details", () => {
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get("a").contains("Give work activity details").click();
-      cy.get("#work-proposal").type(faker.random.alphaNumeric(40));
+      cy.get("#work-proposal").fill(faker.random.alphaNumeric(40));
       cy.get("#continue").click();
       cy.get("#yes-no-2").click();
       cy.get("#continue").click();
@@ -843,8 +843,8 @@ describe("Work activities details", () => {
     );
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email3);
-      cy.get("#password").type(users.password2);
+      cy.get("#username").fill(users.email3);
+      cy.get("#password").fill(users.password2);
       cy.get("#continue").click();
       cy.get("#species").click();
       cy.get("#continue").click();
@@ -860,7 +860,7 @@ describe("Work activities details", () => {
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get("a").contains("Give work activity details").click();
-      cy.get("#work-proposal").type(faker.random.alphaNumeric(40));
+      cy.get("#work-proposal").fill(faker.random.alphaNumeric(40));
       cy.get("#continue").click();
       cy.get("#yes-no-2").click();
       cy.get("#continue").click();
@@ -882,8 +882,8 @@ describe("Work activities details", () => {
     );
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email3);
-      cy.get("#password").type(users.password2);
+      cy.get("#username").fill(users.email3);
+      cy.get("#password").fill(users.password2);
       cy.get("#continue").click();
       cy.get("#species").click();
       cy.get("#continue").click();
@@ -899,7 +899,7 @@ describe("Work activities details", () => {
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get("a").contains("Give work activity details").click();
-      cy.get("#work-proposal").type(faker.random.alphaNumeric(40));
+      cy.get("#work-proposal").fill(faker.random.alphaNumeric(40));
       cy.get("#continue").click();
       cy.get("#yes-no-2").click();
       cy.get("#continue").click();
@@ -921,8 +921,8 @@ describe("Work activities details", () => {
     );
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email3);
-      cy.get("#password").type(users.password2);
+      cy.get("#username").fill(users.email3);
+      cy.get("#password").fill(users.password2);
       cy.get("#continue").click();
       cy.get("#species").click();
       cy.get("#continue").click();
@@ -938,7 +938,7 @@ describe("Work activities details", () => {
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get("a").contains("Give work activity details").click();
-      cy.get("#work-proposal").type(faker.random.alphaNumeric(4001));
+      cy.get("#work-proposal").fill(faker.random.alphaNumeric(4001));
       cy.get("#continue").click();
       cy.get(
         "#main-content > div > div > div.govuk-error-summary.display-wrapped > div > ul"
@@ -951,8 +951,8 @@ describe("Work activities details", () => {
   //     );
   //     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
   //     cy.fixture("users.json").then((users) => {
-  //       cy.get("#username").type(users.email3);
-  //       cy.get("#password").type(users.password2);
+  //       cy.get("#username").fill(users.email3);
+  //       cy.get("#password").fill(users.password2);
   //       cy.get("#continue").click();
   //       cy.get("#species").click();
   //       cy.get("#continue").click();
@@ -969,7 +969,7 @@ describe("Work activities details", () => {
   //       cy.get("#continue").click();
   //       cy.get("a").contains("Give work activity details").click();
   //       cy.get("#continue").click();
-  //       cy.get("#work-proposal").type(faker.random.alphaNumeric(40));
+  //       cy.get("#work-proposal").fill(faker.random.alphaNumeric(40));
   //       cy.get("#continue").click();
   //       cy.get("#yes-no-2").click();
   //       cy.get("#continue").click();
@@ -985,8 +985,8 @@ describe("Work activities details", () => {
     );
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email3);
-      cy.get("#password").type(users.password2);
+      cy.get("#username").fill(users.email3);
+      cy.get("#password").fill(users.password2);
       cy.get("#continue").click();
       cy.get("#species").click();
       cy.get("#continue").click();
@@ -1017,8 +1017,8 @@ describe("Work activities details", () => {
     );
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email3);
-      cy.get("#password").type(users.password2);
+      cy.get("#username").fill(users.email3);
+      cy.get("#password").fill(users.password2);
       cy.get("#continue").click();
       cy.get("#species").click();
       cy.get("#continue").click();
@@ -1034,7 +1034,7 @@ describe("Work activities details", () => {
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get("a").contains("Give work activity details").click();
-      cy.get("#work-proposal").type(faker.random.alphaNumeric(40));
+      cy.get("#work-proposal").fill(faker.random.alphaNumeric(40));
       cy.get("#continue").click();
       cy.get("#yes-no").click();
       cy.get("#continue").click();
@@ -1054,8 +1054,8 @@ describe("Work activities details", () => {
   //     );
   //     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
   //     cy.fixture("users.json").then((users) => {
-  //       cy.get("#username").type(users.email3);
-  //       cy.get("#password").type(users.password2);
+  //       cy.get("#username").fill(users.email3);
+  //       cy.get("#password").fill(users.password2);
   //       cy.get("#continue").click();
   //       cy.get("#species").click();
   //       cy.get("#continue").click();
@@ -1072,7 +1072,7 @@ describe("Work activities details", () => {
   //       cy.get("#continue").click();
   //       cy.get("a").contains("Give work activity details").click();
   //       cy.get("#continue").click();
-  //       cy.get("#work-proposal").type(faker.random.alphaNumeric(40));
+  //       cy.get("#work-proposal").fill(faker.random.alphaNumeric(40));
   //             cy.get("#continue").click();
   //             cy.get("#continue").click();
   //       cy.get("#main-content > div > div > div.govuk-error-summary.display-wrapped > div > ul").contains(
@@ -1087,8 +1087,8 @@ describe("Work activities details", () => {
     );
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email3);
-      cy.get("#password").type(users.password2);
+      cy.get("#username").fill(users.email3);
+      cy.get("#password").fill(users.password2);
       cy.get("#continue").click();
       cy.get("#species").click();
       cy.get("#continue").click();
@@ -1104,12 +1104,12 @@ describe("Work activities details", () => {
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get("a").contains("Give work activity details").click();
-      cy.get("#work-proposal").type(faker.random.alphaNumeric(40));
+      cy.get("#work-proposal").fill(faker.random.alphaNumeric(40));
       cy.get("#continue").click();
       cy.get("#yes-no").click();
       cy.get("#continue").click();
       cy.get("#work-payment-exempt-reason-9").click();
-      cy.get("#exempt-details").type(faker.random.alphaNumeric(4001));
+      cy.get("#exempt-details").fill(faker.random.alphaNumeric(4001));
       cy.get("#continue").click();
       cy.get(
         "#main-content > div > div > div.govuk-error-summary.display-wrapped > div > ul"

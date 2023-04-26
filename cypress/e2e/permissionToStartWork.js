@@ -17,8 +17,8 @@ describe("Page title verification", () => {
     );
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email3);
-      cy.get("#password").type(users.password2);
+      cy.get("#username").fill(users.email3);
+      cy.get("#password").fill(users.password2);
       cy.get("#continue").click();
       cy.get("#species").click();
       cy.get("#continue").click();
@@ -55,7 +55,7 @@ describe("Page title verification", () => {
       );
       cy.get("#consent-type-check").click();
       cy.get("#continue").click();
-      cy.get("#authority-name").type("a");
+      cy.get("#authority-name").fill("a");
       cy.get("#authority-name__option--0").click();
       cy.get("#continue").click();
       cy.get("#main-content > fieldset > div > div.govuk-radios.govuk-radios--conditional").contains(
@@ -70,9 +70,9 @@ describe("Page title verification", () => {
       cy.get("#main-content > fieldset > div > div.govuk-radios.govuk-radios--conditional").contains(
         "Other"
       );
-      cy.get("#planning-type").click();
+      cy.get("#planning-fill").click();
       cy.get("#continue").click();
-      cy.get("#reference").type(faker.name.firstName());
+      cy.get("#reference").fill(faker.name.firstName());
       cy.get("#continue").click();
       cy.get("#main-content > fieldset > dl > div").contains(
         "Planning permission"
@@ -81,7 +81,7 @@ describe("Page title verification", () => {
         "Planning authority"
       );
       cy.get("#main-content > fieldset > dl > div").contains(
-        "Planning type"
+        "Planning fill"
       );
       cy.get("#main-content > fieldset > dl > div").contains(
         "Reference"
@@ -98,19 +98,19 @@ describe("Page title verification", () => {
       cy.get("#continue").click();
 
       // cy.get("#continue").click();
-      // cy.get("#conditions-not-met-reason").type(faker.lorem.words(5));
+      // cy.get("#conditions-not-met-reason").fill(faker.lorem.words(5));
       // cy.get("#continue").click();
       // cy.get("#potential-conflicts").click();
       // cy.get("#continue").click();
-      // cy.get("#describe-potential-conflicts").type(faker.lorem.words(4));
+      // cy.get("#describe-potential-conflicts").fill(faker.lorem.words(4));
       // cy.get("#continue").click();
       // cy.get("#continue").click();
 
 
-      cy.get("#authority-name").type("b");
+      cy.get("#authority-name").fill("b");
        cy.get("#authority-name__option--0").click();
       cy.get("#continue").click();
-      cy.get("#reference").type(faker.name.firstName());
+      cy.get("#reference").fill(faker.name.firstName());
       cy.get("#continue").click();
       cy.get("#main-content > fieldset > dl > div").contains(
         "Planning permission"
@@ -119,7 +119,7 @@ describe("Page title verification", () => {
         "Planning authority"
       );
       cy.get("#main-content > fieldset > dl > div").contains(
-        "Planning type"
+        "Planning fill"
       );
       cy.get("#main-content > fieldset > dl > div").contains(
         "Reference"
@@ -138,7 +138,7 @@ describe("Page title verification", () => {
       cy.get("#add-another-permission-2").click();
       // cy.get("#potential-conflicts").click();
       // cy.get("#continue").click();
-      // cy.get("#describe-potential-conflicts").type(faker.lorem.words(4));
+      // cy.get("#describe-potential-conflicts").fill(faker.lorem.words(4));
       // cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get("#main-content > fieldset").contains(
@@ -171,7 +171,7 @@ describe("Page title verification", () => {
       cy.get(
         "#describe-potential-conflicts-error"
       ).contains("Describe the potential conflicts");
-      cy.get("#describe-potential-conflicts").type(faker.random.alphaNumeric(40));
+      cy.get("#describe-potential-conflicts").fill(faker.random.alphaNumeric(40));
       cy.get("#continue").click();
       cy.get("#continue").click()
       // cy.get(
@@ -199,8 +199,8 @@ describe("Page title verification", () => {
     );
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email3);
-      cy.get("#password").type(users.password2);
+      cy.get("#username").fill(users.email3);
+      cy.get("#password").fill(users.password2);
       cy.get("#continue").click();
       cy.get("#species").click();
       cy.get("#continue").click();
@@ -219,22 +219,22 @@ describe("Page title verification", () => {
       cy.get("#continue").click();
       cy.get("#consent-type-check-2").click();
       cy.get("#continue").click();
-      cy.get("#authority-name").type("a");
+      cy.get("#authority-name").fill("a");
       cy.get("#authority-name__option--0").click();
       cy.get("#continue").click();
       //   cy.get("#reference").click();
       //   cy.get("#continue").click();
-      cy.get("#reference").type(faker.name.firstName());
+      cy.get("#reference").fill(faker.name.firstName());
       cy.get("#continue").click();
       cy.get("#add-another-permission-2").click();
       cy.get("#continue").click();
       cy.get("#conditions-met-2").click();
       cy.get("#continue").click();
-      cy.get("#conditions-not-met-reason").type(faker.lorem.words(5));
+      cy.get("#conditions-not-met-reason").fill(faker.lorem.words(5));
       cy.get("#continue").click();
       cy.get("#potential-conflicts").click();
       cy.get("#continue").click();
-      cy.get("#describe-potential-conflicts").type(faker.lorem.words(4));
+      cy.get("#describe-potential-conflicts").fill(faker.lorem.words(4));
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get(
@@ -255,8 +255,8 @@ describe("Page title verification", () => {
     );
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email3);
-      cy.get("#password").type(users.password2);
+      cy.get("#username").fill(users.email3);
+      cy.get("#password").fill(users.password2);
       cy.get("#continue").click();
       cy.get("#species").click();
       cy.get("#continue").click();
@@ -275,22 +275,22 @@ describe("Page title verification", () => {
       cy.get("#continue").click();
       cy.get("#consent-type-check-3").click();
       cy.get("#continue").click();
-      cy.get("#authority-name").type("a");
+      cy.get("#authority-name").fill("a");
       cy.get("#authority-name__option--0").click();
       cy.get("#continue").click();
-      //   cy.get("#planning-type").click();
+      //   cy.get("#planning-fill").click();
       //           cy.get("#continue").click();
-      cy.get("#reference").type(faker.random.alphaNumeric(4000));
+      cy.get("#reference").fill(faker.random.alphaNumeric(4000));
       cy.get("#continue").click();
       cy.get("#add-another-permission-2").click();
       cy.get("#continue").click();
       cy.get("#conditions-met-2").click();
       cy.get("#continue").click();
-      cy.get("#conditions-not-met-reason").type(faker.lorem.words(5));
+      cy.get("#conditions-not-met-reason").fill(faker.lorem.words(5));
       cy.get("#continue").click();
       cy.get("#potential-conflicts").click();
       cy.get("#continue").click();
-      cy.get("#describe-potential-conflicts").type(faker.lorem.words(4));
+      cy.get("#describe-potential-conflicts").fill(faker.lorem.words(4));
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get(
@@ -311,8 +311,8 @@ describe("Page title verification", () => {
     );
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email3);
-      cy.get("#password").type(users.password2);
+      cy.get("#username").fill(users.email3);
+      cy.get("#password").fill(users.password2);
       cy.get("#continue").click();
       cy.get("#species").click();
       cy.get("#continue").click();
@@ -331,22 +331,22 @@ describe("Page title verification", () => {
       cy.get("#continue").click();
       cy.get("#consent-type-check-4").click();
       cy.get("#continue").click();
-      cy.get("#authority-name").type("a");
+      cy.get("#authority-name").fill("a");
       cy.get("#authority-name__option--0").click();
       cy.get("#continue").click();
-      //    cy.get("#planning-type").click();
+      //    cy.get("#planning-fill").click();
       //   cy.get("#continue").click();
-      cy.get("#reference").type(faker.name.firstName());
+      cy.get("#reference").fill(faker.name.firstName());
       cy.get("#continue").click();
       cy.get("#add-another-permission-2").click();
       cy.get("#continue").click();
       cy.get("#conditions-met-2").click();
       cy.get("#continue").click();
-      cy.get("#conditions-not-met-reason").type(faker.lorem.words(5));
+      cy.get("#conditions-not-met-reason").fill(faker.lorem.words(5));
       cy.get("#continue").click();
       cy.get("#potential-conflicts").click();
       cy.get("#continue").click();
-      cy.get("#describe-potential-conflicts").type(faker.lorem.words(4));
+      cy.get("#describe-potential-conflicts").fill(faker.lorem.words(4));
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get(
@@ -366,8 +366,8 @@ describe("Page title verification", () => {
     );
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email3);
-      cy.get("#password").type(users.password2);
+      cy.get("#username").fill(users.email3);
+      cy.get("#password").fill(users.password2);
       cy.get("#continue").click();
       cy.get("#species").click();
       cy.get("#continue").click();
@@ -388,7 +388,7 @@ describe("Page title verification", () => {
       cy.get("#potential-conflicts").click();
       cy.get("#continue").click();
       // 4000 words remaining
-      cy.get("#describe-potential-conflicts").type(faker.lorem.words(200));
+      cy.get("#describe-potential-conflicts").fill(faker.lorem.words(200));
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get(
@@ -408,8 +408,8 @@ describe("Page title verification", () => {
     );
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email3);
-      cy.get("#password").type(users.password2);
+      cy.get("#username").fill(users.email3);
+      cy.get("#password").fill(users.password2);
       cy.get("#continue").click();
       cy.get("#species").click();
       cy.get("#continue").click();
@@ -431,7 +431,7 @@ describe("Page title verification", () => {
       cy.get("#potential-conflicts-2").click();
       cy.get("#continue").click();
       // 4000 words remaining
-      //   cy.get("#describe-potential-conflicts").type(faker.lorem.words(200));
+      //   cy.get("#describe-potential-conflicts").fill(faker.lorem.words(200));
       //   cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get(
@@ -451,8 +451,8 @@ describe("Page title verification", () => {
     );
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email3);
-      cy.get("#password").type(users.password2);
+      cy.get("#username").fill(users.email3);
+      cy.get("#password").fill(users.password2);
       cy.get("#continue").click();
       cy.get("#species").click();
       cy.get("#continue").click();
@@ -469,7 +469,7 @@ describe("Page title verification", () => {
 
       // two ways remaining
       cy.get("#no-permission-3").click();
-      cy.get("#other-reason").type(faker.lorem.words(2));
+      cy.get("#other-reason").fill(faker.lorem.words(2));
       cy.get("#continue").click();
       // no option remaining
       //   cy.get("#potential-conflicts-2").click();
@@ -498,8 +498,8 @@ describe("Page title verification", () => {
     );
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email3);
-      cy.get("#password").type(users.password2);
+      cy.get("#username").fill(users.email3);
+      cy.get("#password").fill(users.password2);
       cy.get("#continue").click();
       cy.get("#species").click();
       cy.get("#continue").click();
@@ -516,7 +516,7 @@ describe("Page title verification", () => {
 
       // two ways remaining
       cy.get("#no-permission-3").click();
-      cy.get("#other-reason").type(faker.lorem.words(2));
+      cy.get("#other-reason").fill(faker.lorem.words(2));
       cy.get("#continue").click();
       // no option remaining
       //   cy.get("#conditions-met-2").click();
@@ -524,7 +524,7 @@ describe("Page title verification", () => {
       // 4000 words remaining
       cy.get("#potential-conflicts").click();
       cy.get("#continue").click();
-      cy.get("#describe-potential-conflicts").type(faker.lorem.words(200));
+      cy.get("#describe-potential-conflicts").fill(faker.lorem.words(200));
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get(

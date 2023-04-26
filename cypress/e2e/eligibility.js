@@ -14,8 +14,8 @@ describe("Page title verification", () => {
   it("Verify CD48 - Landowner copy-deck", () => {
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email1);
-      cy.get("#password").type(users.password1);
+      cy.get("#username").fill(users.email1);
+      cy.get("#password").fill(users.password1);
       cy.get("#continue").click();
       cy.get("h1.govuk-fieldset__heading").contains(users.nextpage);
       cy.get("#main-content > div > div > form > fieldset > a").click();
@@ -36,8 +36,8 @@ describe("Page title verification", () => {
   it("Verify CD49 - Landowner permission copy-deck", () => {
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email1);
-      cy.get("#password").type(users.password1);
+      cy.get("#username").fill(users.email1);
+      cy.get("#password").fill(users.password1);
       cy.get("#continue").click();
       cy.get("h1.govuk-fieldset__heading").contains(users.nextpage);
       cy.get("#main-content > div > div > form > fieldset > a").click();
@@ -62,8 +62,8 @@ describe("Page title verification", () => {
   it("Verify CD51 - Project permissions copy-deck", () => {
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email1);
-      cy.get("#password").type(users.password1);
+      cy.get("#username").fill(users.email1);
+      cy.get("#password").fill(users.password1);
       cy.get("#continue").click();
       cy.get("h1.govuk-fieldset__heading").contains(users.nextpage);
       cy.get("#main-content > div > div > form > fieldset > a").click();
@@ -88,8 +88,8 @@ describe("Page title verification", () => {
   it("Verify CD50 - Not eligible (landowner) copy-deck", () => {
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email1);
-      cy.get("#password").type(users.password1);
+      cy.get("#username").fill(users.email1);
+      cy.get("#password").fill(users.password1);
       cy.get("#continue").click();
       cy.get("h1.govuk-fieldset__heading").contains(users.nextpage);
       cy.get("#main-content > div > div > form > fieldset > a").click();
@@ -114,8 +114,8 @@ describe("Page title verification", () => {
   it("Verify CD52 - Project permissions granted copy-deck3", () => {
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email1);
-      cy.get("#password").type(users.password1);
+      cy.get("#username").fill(users.email1);
+      cy.get("#password").fill(users.password1);
       cy.get("#continue").click();
       cy.get("h1.govuk-fieldset__heading").contains(users.nextpage);
       cy.get("#main-content > div > div > form > fieldset > a").click();
@@ -144,8 +144,8 @@ describe("Page title verification", () => {
   it("Verify CD53 - Not eligible (project) copy-deck", () => {
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email1);
-      cy.get("#password").type(users.password1);
+      cy.get("#username").fill(users.email1);
+      cy.get("#password").fill(users.password1);
       cy.get("#continue").click();
       cy.get("h1.govuk-fieldset__heading").contains(users.nextpage);
       cy.get("#main-content > div > div > form > fieldset > a").click();
@@ -172,8 +172,8 @@ describe("Page title verification", () => {
   it("Verify CD54 - Check your answers (eligibility) copy-deck", () => {
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email1);
-      cy.get("#password").type(users.password1);
+      cy.get("#username").fill(users.email1);
+      cy.get("#password").fill(users.password1);
       cy.get("#continue").click();
       cy.get("#main-content > div > div > form > fieldset > a").click();
       cy.get("#species").click();
@@ -237,8 +237,8 @@ describe("Page title verification", () => {
       cy.get("#continue").click();
       cy.fixture("users.json").then((users) => {
         cy.fixture("users.json").then((users) => {
-          cy.get("#username").type(users.email3);
-          cy.get("#password").type(users.password2);
+          cy.get("#username").fill(users.email3);
+          cy.get("#password").fill(users.password2);
           cy.get("#continue").click();
           cy.get("h1.govuk-fieldset__heading").contains(
             users.taskListHeaderText
@@ -254,8 +254,8 @@ describe("Page title verification", () => {
   it("Verify CD62a - Eligible (Applicant) copy-deck - when user is logged in  to Government gateway", () => {
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email3);
-      cy.get("#password").type(users.password2);
+      cy.get("#username").fill(users.email3);
+      cy.get("#password").fill(users.password2);
       cy.get("#continue").click();
       cy.get("#main-content > div > div > form > fieldset > a").click();
       cy.get("#species").click();
@@ -291,8 +291,8 @@ describe("Page title verification", () => {
   it(" 1 Verify Unhappy path - eligibility check after user logged in - user select ‘No’ to Land owner permission question", () => {
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email1);
-      cy.get("#password").type(users.password1);
+      cy.get("#username").fill(users.email1);
+      cy.get("#password").fill(users.password1);
       cy.get("#continue").click();
       cy.get("h1.govuk-fieldset__heading").contains(users.nextpage);
       cy.get("#main-content > div > div > form > fieldset > a").click();
@@ -314,8 +314,8 @@ describe("Page title verification", () => {
   it("1b Verify Unhappy path - eligibility check after user logged in - user select No to Project permissions granted", () => {
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email1);
-      cy.get("#password").type(users.password1);
+      cy.get("#username").fill(users.email1);
+      cy.get("#password").fill(users.password1);
       cy.get("#continue").click();
       cy.get("h1.govuk-fieldset__heading").contains(users.nextpage);
       cy.get("#main-content > div > div > form > fieldset > a").click();
@@ -339,8 +339,8 @@ describe("Page title verification", () => {
   it("2a Verify Happy path - eligibility check after user logged in - user select No to Project permissions", () => {
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email1);
-      cy.get("#password").type(users.password1);
+      cy.get("#username").fill(users.email1);
+      cy.get("#password").fill(users.password1);
       cy.get("#continue").click();
       cy.get("h1.govuk-fieldset__heading").contains(users.nextpage);
       cy.get("#main-content > div > div > form > fieldset > a").click();
@@ -368,8 +368,8 @@ describe("Page title verification", () => {
   it("2b Verify Happy path - eligibility check after user logged in - user select No to Project permissions", () => {
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email1);
-      cy.get("#password").type(users.password1);
+      cy.get("#username").fill(users.email1);
+      cy.get("#password").fill(users.password1);
       cy.get("#continue").click();
       cy.get("h1.govuk-fieldset__heading").contains(users.nextpage);
       cy.get("#main-content > div > div > form > fieldset > a").click();
@@ -395,8 +395,8 @@ describe("Page title verification", () => {
   it("3a Verify Happy path - eligibility check after user logged in - user select Yes to Project permissions granted", () => {
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
-      cy.get("#username").type(users.email1);
-      cy.get("#password").type(users.password1);
+      cy.get("#username").fill(users.email1);
+      cy.get("#password").fill(users.password1);
       cy.get("#continue").click();
       cy.get("h1.govuk-fieldset__heading").contains(users.nextpage);
       cy.get("#main-content > div > div > form > fieldset > a").click();
