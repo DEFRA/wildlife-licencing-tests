@@ -70,7 +70,7 @@ describe("Page title verification", () => {
       cy.get("#main-content > fieldset > div > div.govuk-radios.govuk-radios--conditional").contains(
         "Other"
       );
-      cy.get("#planning-fill").click();
+      cy.get("#planning-type").click();
       cy.get("#continue").click();
       cy.get("#reference").fill(faker.name.firstName());
       cy.get("#continue").click();
@@ -81,7 +81,7 @@ describe("Page title verification", () => {
         "Planning authority"
       );
       cy.get("#main-content > fieldset > dl > div").contains(
-        "Planning fill"
+        "Planning type"
       );
       cy.get("#main-content > fieldset > dl > div").contains(
         "Reference"
@@ -129,7 +129,10 @@ describe("Page title verification", () => {
       cy.get('#main-content > fieldset > dl > div').contains(
         'Remove'
       )
-
+      cy.get('#add-another-permission').click()
+      cy.get("#continue").click();
+      cy.get("#consent-type-check-5").click();
+      cy.get("#continue").click();
       cy.get("#authority-name").fill("b");
        cy.get("#authority-name__option--0").click();
       cy.get("#continue").click();
@@ -142,7 +145,7 @@ describe("Page title verification", () => {
         "Planning authority"
       );
       cy.get("#main-content > fieldset > dl > div").contains(
-        "Planning fill"
+        "Planning type"
       );
       cy.get("#main-content > fieldset > dl > div").contains(
         "Reference"
@@ -299,7 +302,7 @@ describe("Page title verification", () => {
       cy.get("#continue").click();
       //   cy.get("#planning-fill").click();
       //           cy.get("#continue").click();
-      cy.get("#reference").fill(faker.random.alphaNumeric(4000));
+      cy.get("#reference").fill(faker.random.alphaNumeric(5));
       cy.get("#continue").click();
       cy.get("#add-another-permission-2").click();
       cy.get("#continue").click();

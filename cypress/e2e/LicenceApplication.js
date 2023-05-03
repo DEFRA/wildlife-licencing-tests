@@ -8,9 +8,6 @@ const faker = require('faker')
 
 describe('Page title verification', () => {
   it('SDDSIP-509 and 1 verify Licence application screen', () => {
-    cy.request(
-      '/set-sysdate?iso-string=2023-09-01T01:00:00.000Z'
-    )
     cy.visit(Cypress.env('login'))
     cy.fixture('users.json').then((users) => {
       cy.get('#username').fill(users.email1)
@@ -122,7 +119,7 @@ describe('Page title verification', () => {
       cy.get('#authority-name').fill('a')
       cy.get('#authority-name__option--0').click()
       cy.get('#continue').click()
-      cy.get('#planning-fill').click()
+      cy.get('#planning-type').click()
       cy.get('#continue').click()
       cy.get('#reference').fill(faker.name.firstName())
       cy.get('#continue').click()

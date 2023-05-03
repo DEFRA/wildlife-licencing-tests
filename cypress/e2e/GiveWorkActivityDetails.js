@@ -9,9 +9,6 @@ const faker = require('faker')
 describe('Work activities details', () => {
   it('1 - verify user can complete work activity section when Preserving public health', () => {
     cy.request(
-      '/set-sysdate?iso-string=2023-12-01T01:00:00.000Z'
-    )
-    cy.request(
       "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
     );
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
@@ -941,7 +938,8 @@ describe('Work activities details', () => {
       cy.get("#continue").click();
       cy.get(
         '#main-content > div > div > div.govuk-error-summary.display-wrapped > div > ul'
-      ).contains('You have entered too many characters')
+      ).contains('The description must be 4,000 characters or less')
+      // You have entered too many characters
     })
   })
   it("Unhappy path - 24 Verify that continue without select an option on What kind of development is happening at the site? returns error", () => {
