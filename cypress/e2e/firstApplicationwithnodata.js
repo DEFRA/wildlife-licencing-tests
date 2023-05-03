@@ -120,6 +120,8 @@ describe('Page title verification', () => {
         "12, SATIN DRIVE, MIDDLETON, MANCHESTER, M24 6DH"
       );
       cy.get("#continue").click();
+      cy.get('#purchase-order').fill(faker.internet.email())
+      cy.get('#continue').click()
       cy.get("#continue").click();
       // work activity
       cy.get("a").contains("Give work activity details").click();
@@ -163,7 +165,7 @@ describe('Page title verification', () => {
       cy.get("#continue").click();
       cy.get("#yes-no-2").click();
       cy.get("#continue").click();
-      cy.get("#continue").click();
+      // cy.get("#continue").click();
 // permisssion details
 cy.get("a").contains("Give details of permissions to start work").click();
 cy.get("#continue").click();
@@ -173,7 +175,7 @@ cy.get("#continue").click();
 cy.get("#authority-name").fill("a");
 cy.get("#authority-name__option--0").click(); 
 cy.get("#continue").click();
-cy.get("#planning-fill").click();
+cy.get("#planning-type").click();
 cy.get("#continue").click();
 cy.get("#reference").fill(faker.name.firstName());
 cy.get("#continue").click();
@@ -310,11 +312,16 @@ cy.get("#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-chi
             'Bat mitigation'
           )
           cy.get('#main-content > div > div > form > fieldset > dl').contains(
-            'Reference'
+            'Site'
           )
           cy.get('#main-content > div > div > form > fieldset > dl').contains(
-            'Licence holder'
+            'Applicant'
           )
+
+          cy.get('#main-content > div > div > form > fieldset > dl').contains(
+            'Application reference'
+          )
+    
           cy.get('#main-content > div > div > form > fieldset > dl').contains(
             'Submitted'
           )

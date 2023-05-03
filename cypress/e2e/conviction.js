@@ -87,12 +87,12 @@ describe('Page title verification', () => {
       cy.get("a").contains("Give details of permissions to start work").click();
       cy.get("#continue").click();
       cy.get("#continue").click();
-      cy.get("#consent-fill-check").click();
+      cy.get("#consent-type-check").click();
       cy.get("#continue").click();
       cy.get("#authority-name").fill("a");
       cy.get("#authority-name__option--0").click();
       cy.get("#continue").click();
-      cy.get("#planning-fill").click();
+      cy.get("#planning-type").click();
       cy.get("#continue").click();
       cy.get("#reference").fill(faker.name.firstName());
       cy.get("#continue").click();
@@ -180,8 +180,10 @@ describe('Page title verification', () => {
       cy.get("#address").select(
         "12, SATIN DRIVE, MIDDLETON, MANCHESTER, M24 6DH"
       );
-      cy.get("#continue").click();
-      cy.get("#continue").click();
+      cy.get('#continue').click()
+      cy.get('#purchase-order').fill(faker.internet.email())
+      cy.get('#continue').click()
+      cy.get('#continue').click()
 
       cy.get("a").contains("Give site information").click();
       cy.get("#site-name").fill("test");
@@ -394,12 +396,12 @@ describe('Page title verification', () => {
       cy.get('a').contains('Give details of permissions to start work').click()
       cy.get('#continue').click()
       cy.get('#continue').click()
-      cy.get('#consent-fill-check').click()
+      cy.get('#consent-type-check').click()
       cy.get('#continue').click()
       cy.get('#authority-name').fill('a')
       cy.get('#authority-name__option--0').click()
       cy.get('#continue').click()
-      cy.get('#planning-fill').click()
+      cy.get('#planning-type').click()
       cy.get('#continue').click()
       cy.get('#reference').fill(faker.name.firstName())
       cy.get('#continue').click()
@@ -487,6 +489,8 @@ describe('Page title verification', () => {
       cy.get('#address').select(
         '12, SATIN DRIVE, MIDDLETON, MANCHESTER, M24 6DH'
       )
+      cy.get('#continue').click()
+      cy.get('#purchase-order').fill(faker.internet.email())
       cy.get('#continue').click()
       cy.get('#continue').click()
 
@@ -700,12 +704,12 @@ describe('Page title verification', () => {
       cy.get("a").contains("Give details of permissions to start work").click();
       cy.get("#continue").click();
       cy.get("#continue").click();
-      cy.get("#consent-fill-check").click();
+      cy.get("#consent-type-check").click();
       cy.get("#continue").click();
       cy.get("#authority-name").fill("a");
       cy.get("#authority-name__option--0").click();
       cy.get("#continue").click();
-      cy.get("#planning-fill").click();
+      cy.get("#planning-type").click();
       cy.get("#continue").click();
       cy.get("#reference").fill(faker.name.firstName());
       cy.get("#continue").click();
@@ -793,8 +797,10 @@ describe('Page title verification', () => {
       cy.get("#address").select(
         "12, SATIN DRIVE, MIDDLETON, MANCHESTER, M24 6DH"
       );
-      cy.get("#continue").click();
-      cy.get("#continue").click();
+      cy.get('#continue').click()
+      cy.get('#purchase-order').fill(faker.internet.email())
+      cy.get('#continue').click()
+      cy.get('#continue').click()
 
       cy.get("a").contains("Give site information").click();
       cy.get("#site-name").fill("test");
@@ -956,12 +962,12 @@ describe('Page title verification', () => {
       cy.get("a").contains("Give details of permissions to start work").click();
       cy.get("#continue").click();
       cy.get("#continue").click();
-      cy.get("#consent-fill-check").click();
+      cy.get("#consent-type-check").click();
       cy.get("#continue").click();
       cy.get("#authority-name").fill("a");
       cy.get("#authority-name__option--0").click();
       cy.get("#continue").click();
-      cy.get("#planning-fill").click();
+      cy.get("#planning-type").click();
       cy.get("#continue").click();
       cy.get("#reference").fill(faker.name.firstName());
       cy.get("#continue").click();
@@ -1049,9 +1055,10 @@ describe('Page title verification', () => {
       cy.get("#address").select(
         "12, SATIN DRIVE, MIDDLETON, MANCHESTER, M24 6DH"
       );
-      cy.get("#continue").click();
-      cy.get("#continue").click();
-
+      cy.get('#continue').click()
+      cy.get('#purchase-order').fill(faker.internet.email())
+      cy.get('#continue').click()
+      cy.get('#continue').click()
       cy.get("a").contains("Give site information").click();
       cy.get("#site-name").fill("test");
       cy.get("#continue").click();
@@ -1212,12 +1219,12 @@ describe('Page title verification', () => {
       cy.get("a").contains("Give details of permissions to start work").click();
       cy.get("#continue").click();
       cy.get("#continue").click();
-      cy.get("#consent-fill-check").click();
+      cy.get("#consent-type-check").click();
       cy.get("#continue").click();
       cy.get("#authority-name").fill("a");
       cy.get("#authority-name__option--0").click();
       cy.get("#continue").click();
-      cy.get("#planning-fill").click();
+      cy.get("#planning-type").click();
       cy.get("#continue").click();
       cy.get("#reference").fill(faker.name.firstName());
       cy.get("#continue").click();
@@ -1305,8 +1312,10 @@ describe('Page title verification', () => {
       cy.get("#address").select(
         "12, SATIN DRIVE, MIDDLETON, MANCHESTER, M24 6DH"
       );
-      cy.get("#continue").click();
-      cy.get("#continue").click();
+      cy.get('#continue').click()
+      cy.get('#purchase-order').fill(faker.internet.email())
+      cy.get('#continue').click()
+      cy.get('#continue').click()
 
       cy.get("a").contains("Give site information").click();
       cy.get("#site-name").fill("test");
@@ -1473,12 +1482,12 @@ describe('Page title verification', () => {
       cy.get("a").contains("Give details of permissions to start work").click();
       cy.get("#continue").click();
       cy.get("#continue").click();
-      cy.get("#consent-fill-check").click();
+      cy.get("#consent-type-check").click();
       cy.get("#continue").click();
       cy.get("#authority-name").fill("a");
       cy.get("#authority-name__option--0").click();
       cy.get("#continue").click();
-      cy.get("#planning-fill").click();
+      cy.get("#planning-type").click();
       cy.get("#continue").click();
       cy.get("#reference").fill(faker.name.firstName());
       cy.get("#continue").click();
@@ -1566,8 +1575,10 @@ describe('Page title verification', () => {
         cy.get("#address").select(
           "12, SATIN DRIVE, MIDDLETON, MANCHESTER, M24 6DH"
         );
-        cy.get("#continue").click();
-        cy.get("#continue").click();
+        cy.get('#continue').click()
+      cy.get('#purchase-order').fill(faker.internet.email())
+      cy.get('#continue').click()
+      cy.get('#continue').click()
 
         cy.get("a").contains("Give site information").click();
         cy.get("#site-name").fill("test");
