@@ -9,7 +9,7 @@ const faker = require('faker')
 describe('Page title verification', () => {
   it('SDDSIP-509 and verify Licence application screen', () => {
     cy.request(
-      "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
+      "/reset?username=user1@email.com"
     );
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
@@ -83,7 +83,7 @@ describe('Page title verification', () => {
       cy.get("#continue").click();
 
       //   Add additional contacts
-      cy.get("a").contains("Add additional contacts").click();
+      cy.get("a").contains("Add alternative contacts").click();
       cy.get("#yes-no").click();
       cy.get("#continue").click();
       cy.get("#name").fill(
@@ -270,7 +270,7 @@ cy.get("#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-chi
           cy.get("#convictions-check-2").click();
           cy.get("#continue").click();
           cy.get("#continue").click();
-          cy.get("a").contains("Send application").click();
+          cy.get("a").contains("Agree to terms and send application").click();
           cy.get("#main-content > div > div > form > fieldset").contains(
             users.text18
           )
@@ -309,7 +309,7 @@ cy.get("#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-chi
             'SUBMITTED'
           )
           cy.get('#main-content > div > div > form > fieldset > dl').contains(
-            'Bat mitigation'
+            'Badger mitigation'
           )
           cy.get('#main-content > div > div > form > fieldset > dl').contains(
             'Site'

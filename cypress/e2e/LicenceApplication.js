@@ -161,7 +161,7 @@ describe('Page title verification', () => {
       cy.get('#continue').click()
 
       //   Add additional contacts
-      cy.get('a').contains('Add additional contacts').click()
+      cy.get('a').contains('Add alternative contacts').click()
       cy.get('#yes-no-2').click()
       cy.get('#continue').click()
       cy.get('#yes-no').click()
@@ -270,7 +270,7 @@ describe('Page title verification', () => {
           cy.get('#conviction-details').fill(faker.random.alphaNumeric(100))
           cy.get('#continue').click()
           cy.get('#continue').click()
-          cy.get('a').contains('Send application').click()
+          cy.get('a').contains('Agree to terms and send application').click()
           cy.get('#main-content > div > div > form > fieldset').contains(
             users.text18
           )
@@ -309,7 +309,7 @@ describe('Page title verification', () => {
             'SUBMITTED'
           )
           cy.get('#main-content > div > div > form > fieldset > dl').contains(
-            'Bat mitigation'
+            'Badger mitigation'
           )
           cy.get('#main-content > div > div > form > fieldset > dl').contains(
             'Site'
@@ -458,7 +458,7 @@ describe('Page title verification', () => {
       cy.get('#continue').click()
 
       //   Add additional contacts
-      cy.get('a').contains('Add additional contacts').click()
+      cy.get('a').contains('Add alternative contacts').click()
       cy.get('#yes-no-2').click()
       cy.get('#continue').click()
       cy.get('#yes-no').click()
@@ -561,7 +561,7 @@ describe('Page title verification', () => {
           cy.get('#convictions-check-2').click()
           cy.get('#continue').click()
           cy.get('#continue').click()
-          cy.get('a').contains('Send application').click()
+          cy.get('a').contains('Agree to terms and send application').click()
           cy.get('#main-content > div > div > form > fieldset').contains(
             users.text18
           )
@@ -603,7 +603,7 @@ describe('Page title verification', () => {
             'SUBMITTED'
           )
           cy.get('#main-content > div > div > form > fieldset > dl').contains(
-            'Bat mitigation'
+            'Badger mitigation'
           )
           cy.get('#main-content > div > div > form > fieldset > dl').contains(
             'Site'

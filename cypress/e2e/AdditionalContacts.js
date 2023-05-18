@@ -54,7 +54,7 @@ describe('Add an additional contact', () => {
       cy.get('#yes-no-2').click()
       cy.get('#continue').click()
       //   Add additional contacts
-      cy.get('a').contains('Add additional contacts').click()
+      cy.get('a').contains('Add alternative contacts').click()
       cy.get('#yes-no').click()
       cy.get('#continue').click()
       cy.get('#contact').click()
@@ -69,7 +69,7 @@ describe('Add an additional contact', () => {
       ).contains('COMPLETED')
       cy.get(
         '#main-content > div > div > form > fieldset > span > ol > li:nth-child(2) > ul > li:nth-child(7)'
-      ).contains('Add additional contacts')
+      ).contains('Add alternative contacts')
     })
   })
   it('2 Verify happy path - Add an additional contact', () => {
@@ -133,7 +133,7 @@ describe('Add an additional contact', () => {
       cy.get('#yes-no-2').click()
       cy.get('#continue').click()
       //   Add additional contacts
-      cy.get('a').contains('Add additional contacts').click()
+      cy.get('a').contains('Add alternative contacts').click()
       cy.get('#yes-no').click()
       cy.get('#continue').click()
       cy.get("input[value='new']").click()
@@ -150,7 +150,7 @@ describe('Add an additional contact', () => {
       ).contains('COMPLETED')
       cy.get(
         '#main-content > div > div > form > fieldset > span > ol > li:nth-child(2) > ul > li:nth-child(7)'
-      ).contains('Add additional contacts')
+      ).contains('Add alternative contacts')
     })
   })
   it('3 Verify happy path - Add an additional contact', () => {
@@ -215,7 +215,7 @@ describe('Add an additional contact', () => {
       cy.get('#yes-no-2').click()
       cy.get('#continue').click()
       //   Add additional contacts
-      cy.get('a').contains('Add additional contacts').click()
+      cy.get('a').contains('Add alternative contacts').click()
       cy.get('#yes-no-2').click()
       cy.get('#continue').click()
       cy.get('#yes-no-2').click()
@@ -226,7 +226,7 @@ describe('Add an additional contact', () => {
       ).contains('COMPLETED')
       cy.get(
         '#main-content > div > div > form > fieldset > span > ol > li:nth-child(2) > ul > li:nth-child(7)'
-      ).contains('Add additional contacts')
+      ).contains('Add alternative contacts')
     })
   })
   it('4 Verify happy path - Add an additional contact', () => {
@@ -294,7 +294,7 @@ describe('Add an additional contact', () => {
       cy.get('#continue').click()
 
       //   Add additional contacts
-      cy.get('a').contains('Add additional contacts').click()
+      cy.get('a').contains('Add alternative contacts').click()
       cy.get('#yes-no-2').click()
       cy.get('#continue').click()
       cy.get('#yes-no').click()
@@ -310,7 +310,7 @@ describe('Add an additional contact', () => {
       ).contains('COMPLETED')
       cy.get(
         '#main-content > div > div > form > fieldset > span > ol > li:nth-child(2) > ul > li:nth-child(7)'
-      ).contains('Add additional contacts')
+      ).contains('Add alternative contacts')
     })
   })
 })

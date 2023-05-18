@@ -9,7 +9,7 @@ const faker = require('faker')
 describe('Work activities details', () => {
   it('1 - verify user can complete work activity section when Preserving public health', () => {
     cy.request(
-      "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
+      "/reset?username=user1@email.com"
     );
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
@@ -92,7 +92,7 @@ describe('Work activities details', () => {
   });
   it("3 - verify user can complete work activity section when Preventing disease spreading is selected", () => {
     cy.request(
-      "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
+   "/reset?username=user1@email.com"
     );
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
@@ -133,7 +133,7 @@ describe('Work activities details', () => {
   });
   it("4 - verify user can complete work activity section when Home improvement through householder planning permission or permitted development is selected", () => {
     cy.request(
-      "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
+      "/reset?username=user1@email.com"
     );
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
@@ -174,7 +174,7 @@ describe('Work activities details', () => {
   });
   it("5 - verify user can complete work activity section when Scientific, research or educational purposes  is selected", () => {
     cy.request(
-      "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
+      "/reset?username=user1@email.com"
     );
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
@@ -215,7 +215,7 @@ describe('Work activities details', () => {
   });
   it("6 - verify user can complete work activity section when Conservation of protected species, including protection of bat roosts  is selected", () => {
     cy.request(
-      "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
+      "/reset?username=user1@email.com"
     );
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
@@ -256,7 +256,7 @@ describe('Work activities details', () => {
   });
   it("7 - verify user can complete work activity section when Conserve scheduled monuments, listed buildings, places of worship, or traditional farm buildings  is selected", () => {
     cy.request(
-      "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
+      "/reset?username=user1@email.com"
     );
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
@@ -298,7 +298,7 @@ describe('Work activities details', () => {
 
   it("8 - verify user can complete work activity section when Other is selected", () => {
     cy.request(
-      "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
+      "/reset?username=user1@email.com"
     );
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
@@ -330,26 +330,29 @@ describe('Work activities details', () => {
       cy.get("#continue").click();
       cy.get("#main-content > fieldset").contains("Cost of this licence");
       cy.get("#main-content > fieldset").contains(
-        "The cost of this licence typically ranges from £171 to £768."
+        "The cost of this licence typically ranges from £300 to £800."
       );
       cy.get("#main-content > fieldset").contains(
         "More complex licences cost more. Things that can increase the cost of a licence include:"
       );
-      cy.get("#main-content > fieldset").contains("more setts affected");
       cy.get("#main-content > fieldset").contains(
         "if the development affects a protected site"
       );
-      cy.get("#main-content > fieldset").contains("more setts affected");
+      cy.get("#main-content > fieldset").contains("if badgers are present");
       cy.get("#main-content > fieldset").contains(
-        "if the development affects a protected site"
+        "greater impact on badgers, such as disconnecting territories, affecting more setts, and proposals to close setts"
       );
-      cy.get("#main-content > fieldset").contains("the presence of badgers");
-      cy.get("#main-content > fieldset").contains("greater impact on badgers");
+      cy.get("#main-content > fieldset").contains("new or more complex methods being used");
       cy.get("#main-content > fieldset").contains(
-        "more complex methods being used"
+        "incomplete, inaccurate or unnecessary information in the application"
+      );
+      cy.get("#main-content > fieldset").contains("poor quality surveys");
+      cy.get("#main-content > fieldset").contains("issues with ecologist experience");
+      cy.get("#main-content > fieldset").contains(
+        "phased or multi-plot developments"
       );
       cy.get("#main-content > fieldset").contains(
-        "incomplete or extensive information in the application"
+        "planning permission is not fully in place"
       );
       cy.get("#main-content > fieldset").contains(
         "The cost will be more if you need to make a change in your application once you have submitted it."
@@ -367,7 +370,7 @@ describe('Work activities details', () => {
 
   it("9 - verify user can complete work activity section when Barn conversion is selected", () => {
     cy.request(
-      "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
+      "/reset?username=user1@email.com"
     );
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
@@ -406,7 +409,7 @@ describe('Work activities details', () => {
   });
   it("10 - verify user can complete work activity section when Commercial is selected", () => {
     cy.request(
-      "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
+      "/reset?username=user1@email.com"
     );
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
@@ -445,7 +448,7 @@ describe('Work activities details', () => {
   });
   it("11 - verify user can complete work activity section when Communications is selected", () => {
     cy.request(
-      "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
+      "/reset?username=user1@email.com"
     );
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
@@ -484,7 +487,7 @@ describe('Work activities details', () => {
   });
   it("12 - verify user can complete work activity section when Energy generation and supply is selected", () => {
     cy.request(
-      "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
+      "/reset?username=user1@email.com"
     );
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
@@ -523,7 +526,7 @@ describe('Work activities details', () => {
   });
   it("13 - verify user can complete work activity section when Flood and coastal defences is selected", () => {
     cy.request(
-      "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
+      "/reset?username=user1@email.com"
     );
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
@@ -562,7 +565,7 @@ describe('Work activities details', () => {
   });
   it("14 - verify user can complete work activity section when Residential housing (not householder improvements) is selected", () => {
     cy.request(
-      "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
+      "/reset?username=user1@email.com"
     );
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
@@ -601,7 +604,7 @@ describe('Work activities details', () => {
   });
   it("15 - verify user can complete work activity section when Residential housing (not householder improvements) is selected", () => {
     cy.request(
-      "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
+      "/reset?username=user1@email.com"
     );
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
@@ -640,7 +643,7 @@ describe('Work activities details', () => {
   });
   it("16 - verify user can complete work activity section when Quarrying and mining is selected", () => {
     cy.request(
-      "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
+      "/reset?username=user1@email.com"
     );
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
@@ -679,7 +682,7 @@ describe('Work activities details', () => {
   });
   it("17 - verify user can complete work activity section when Nationally significant infrastructure projects is selected", () => {
     cy.request(
-      "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
+      "/reset?username=user1@email.com"
     );
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
@@ -718,7 +721,7 @@ describe('Work activities details', () => {
   });
   it("18 - verify user can complete work activity section when Public buildings and public land is selected", () => {
     cy.request(
-      "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
+      "/reset?username=user1@email.com"
     );
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
@@ -757,7 +760,7 @@ describe('Work activities details', () => {
   });
   it("19 - verify user can complete work activity section when Tourism and leisure is selected", () => {
     cy.request(
-      "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
+      "/reset?username=user1@email.com"
     );
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
@@ -796,7 +799,7 @@ describe('Work activities details', () => {
   });
   it("20 - verify user can complete work activity section when Transport, including roads is selected", () => {
     cy.request(
-      "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
+      "/reset?username=user1@email.com"
     );
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
@@ -835,7 +838,7 @@ describe('Work activities details', () => {
   });
   it("21 - verify user can complete work activity section when Waste management is selected", () => {
     cy.request(
-      "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
+      "/reset?username=user1@email.com"
     );
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
@@ -874,7 +877,7 @@ describe('Work activities details', () => {
   });
   it("22 - verify user can complete work activity section when Water bodies, water supply and treatment is selected", () => {
     cy.request(
-      "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
+      "/reset?username=user1@email.com"
     );
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
@@ -913,7 +916,7 @@ describe('Work activities details', () => {
   });
   it("Unhappy path - 23 verify too many characters error is displayed when 4001 is entered into What activity or development work do you plan to do?", () => {
     cy.request(
-      "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
+      "/reset?username=user1@email.com"
     );
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
