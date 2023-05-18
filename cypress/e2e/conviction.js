@@ -9,7 +9,7 @@ const faker = require('faker')
 describe('Page title verification', () => {
   it("1 verify conviction details", () => {
     cy.request(
-      "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
+      '/reset?username=user1@email.com'
     );
     cy.visit(Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
@@ -144,7 +144,7 @@ describe('Page title verification', () => {
       cy.get("#continue").click();
 
       //   Add additional contacts
-      cy.get("a").contains("Add additional contacts").click();
+      cy.get("a").contains("Add alternative contacts").click();
       cy.get("#yes-no").click();
       cy.get("#continue").click();
       cy.get("#name").fill(
@@ -262,7 +262,7 @@ describe('Page title verification', () => {
           cy.get("#convictions-check-2").click();
           cy.get("#continue").click();
           cy.get("#continue").click();
-          cy.get("a").contains("Send application").click();
+          cy.get("a").contains("Agree to terms and send application").click();
           cy.get("#main-content > div > div > form > fieldset").contains(
             users.text18
           );
@@ -301,7 +301,7 @@ describe('Page title verification', () => {
             "SUBMITTED"
           );
           cy.get("#main-content > div > div > form > fieldset > dl").contains(
-            "Bat mitigation"
+            "Badger mitigation"
           );
           cy.get("#main-content > div > div > form > fieldset > dl").contains(
             "Site"
@@ -453,7 +453,7 @@ describe('Page title verification', () => {
       cy.get('#continue').click()
 
       //   Add additional contacts
-      cy.get('a').contains('Add additional contacts').click()
+      cy.get('a').contains('Add alternative contacts').click()
       cy.get('#yes-no').click()
       cy.get('#continue').click()
       cy.get('#name').fill(
@@ -571,7 +571,7 @@ describe('Page title verification', () => {
           cy.get('#convictions-check-2').click()
           cy.get('#continue').click()
           cy.get('#continue').click()
-          cy.get('a').contains('Send application').click()
+          cy.get('a').contains('Agree to terms and send application').click()
           cy.get('#main-content > div > div > form > fieldset').contains(
             users.text18
           )
@@ -610,7 +610,7 @@ describe('Page title verification', () => {
             'SUBMITTED'
           )
           cy.get('#main-content > div > div > form > fieldset > dl').contains(
-            'Bat mitigation'
+            'Badger mitigation'
           )
           cy.get('#main-content > div > div > form > fieldset > dl').contains(
             'Site'
@@ -628,7 +628,7 @@ describe('Page title verification', () => {
   })
   it("3 and verify application season period screen", () => {
     cy.request(
-      "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
+      '/reset?username=user1@email.com'
     );
     cy.visit(Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
@@ -761,7 +761,7 @@ describe('Page title verification', () => {
       cy.get("#continue").click();
 
       //   Add additional contacts
-      cy.get("a").contains("Add additional contacts").click();
+      cy.get("a").contains("Add alternative contacts").click();
       cy.get("#yes-no").click();
       cy.get("#continue").click();
       cy.get("#name").fill(
@@ -886,7 +886,7 @@ describe('Page title verification', () => {
   });
   it("4 and verify application season period screen", () => {
     cy.request(
-      "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
+      '/reset?username=user1@email.com'
     );
     cy.visit(Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
@@ -1019,7 +1019,7 @@ describe('Page title verification', () => {
       cy.get("#continue").click();
 
       //   Add additional contacts
-      cy.get("a").contains("Add additional contacts").click();
+      cy.get("a").contains("Add alternative contacts").click();
       cy.get("#yes-no").click();
       cy.get("#continue").click();
       cy.get("#name").fill(
@@ -1143,7 +1143,7 @@ describe('Page title verification', () => {
   });
   it("5 and verify application season period screen", () => {
     cy.request(
-      "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
+      '/reset?username=user1@email.com'
     );
     cy.visit(Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
@@ -1276,7 +1276,7 @@ describe('Page title verification', () => {
       cy.get("#continue").click();
 
       //   Add additional contacts
-      cy.get("a").contains("Add additional contacts").click();
+      cy.get("a").contains("Add alternative contacts").click();
       cy.get("#yes-no").click();
       cy.get("#continue").click();
       cy.get("#name").fill(
@@ -1402,8 +1402,8 @@ describe('Page title verification', () => {
   it("6 and verify application season period screen", () => {
     it(" 6a Verify happy path -  Add setts ", () => {
       cy.request(
-        "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
-      );
+        '/reset?username=user1@email.com'
+        );
       cy.visit(Cypress.env("login"));
       cy.fixture("users.json").then((users) => {
         cy.get("#username").fill(users.email3);
