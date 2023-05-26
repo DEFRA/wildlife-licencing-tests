@@ -31,10 +31,12 @@ describe('Site Information', () => {
       cy.get('#continue').click()
       cy.get('#scan-file').click()
       const yourFixturePath = 'virusfile.pdf'
+      const sbnFixturePath = 'magic_polygons.sbn'
+
       cy.get('#scan-file').attachFile(yourFixturePath)
       cy.get('#continue').click()
       cy.get('#scan-file').click()
-      cy.get('#scan-file').attachFile(yourFixturePath)
+      cy.get('#scan-file').attachFile(sbnFixturePath)
       cy.get('#continue').click()
       cy.get('#scan-file').click()
       cy.get('#scan-file').attachFile(yourFixturePath)
@@ -236,10 +238,11 @@ describe('Site Information', () => {
       cy.get('#continue').click()
       cy.get('#scan-file').click()
       const yourFixturePath = 'virusfile.pdf'
+      const sbxFixturePath = 'magic_polygons.sbx'
       cy.get('#scan-file').attachFile(yourFixturePath)
       cy.get('#continue').click()
       cy.get('#scan-file').click()
-      cy.get('#scan-file').attachFile(yourFixturePath)
+      cy.get('#scan-file').attachFile(sbxFixturePath)
       cy.get('#continue').click()
       cy.get('#scan-file').click()
       cy.get('#scan-file').attachFile(yourFixturePath)
@@ -309,13 +312,15 @@ describe('Site Information', () => {
       cy.get('#continue').click()
       cy.get('#scan-file').click()
       const yourFixturePath = 'virusfile.pdf'
+      const typewritterFixturePath = 'typewriter.jpg'
+      const shpxmlFixturePath = 'magic_polygons.shp.xml'
       cy.get('#scan-file').attachFile(yourFixturePath)
       cy.get('#continue').click()
       cy.get('#scan-file').click()
-      cy.get('#scan-file').attachFile(yourFixturePath)
+      cy.get('#scan-file').attachFile(typewritterFixturePath)
       cy.get('#continue').click()
       cy.get('#scan-file').click()
-      cy.get('#scan-file').attachFile(yourFixturePath)
+      cy.get('#scan-file').attachFile(shpxmlFixturePath)
       cy.get('#continue').click()
       cy.get('#site-grid-ref').clear()
       cy.get('#site-grid-ref').fill(
@@ -334,10 +339,10 @@ describe('Site Information', () => {
       cy.get('#scan-file').attachFile(yourFixturePath)
       cy.get('#continue').click()
       cy.get('#scan-file').click()
-      cy.get('#scan-file').attachFile(yourFixturePath)
+      cy.get('#scan-file').attachFile(typewritterFixturePath)
       cy.get('#continue').click()
       cy.get('#scan-file').click()
-      cy.get('#scan-file').attachFile(yourFixturePath)
+      cy.get('#scan-file').attachFile(shpxmlFixturePath)
       cy.get('#continue').click()
       cy.get('#site-grid-ref').clear()
       cy.get('#site-grid-ref').fill(
@@ -387,15 +392,16 @@ describe('Site Information', () => {
       cy.get('#address-county').fill('Manchester')
       cy.get('#continue').click()
       cy.get('#scan-file').click()
-
+      const shpFixturePath = 'magic_polygons.shp'
       const yourFixturePath = 'virusfile.pdf'
+      const shpxmlFixturePath = 'magic_polygons.shp.xml'
       cy.get('#scan-file').attachFile(yourFixturePath)
       cy.get('#continue').click()
       cy.get('#scan-file').click()
-      cy.get('#scan-file').attachFile(yourFixturePath)
+      cy.get('#scan-file').attachFile(shpFixturePath)
       cy.get('#continue').click()
       cy.get('#scan-file').click()
-      cy.get('#scan-file').attachFile(yourFixturePath)
+      cy.get('#scan-file').attachFile(shpxmlFixturePath)
       cy.get('#continue').click()
       cy.get('#site-grid-ref').clear()
       cy.get('#site-grid-ref').fill(
@@ -418,10 +424,10 @@ describe('Site Information', () => {
       cy.get('#scan-file').attachFile(yourFixturePath)
       cy.get('#continue').click()
       cy.get('#scan-file').click()
-      cy.get('#scan-file').attachFile(yourFixturePath)
+      cy.get('#scan-file').attachFile(shpFixturePath)
       cy.get('#continue').click()
       cy.get('#scan-file').click()
-      cy.get('#scan-file').attachFile(yourFixturePath)
+      cy.get('#scan-file').attachFile(shpxmlFixturePath)
       cy.get('#continue').click()
       cy.get('#site-grid-ref').clear()
       cy.get('#site-grid-ref').fill(
@@ -439,7 +445,7 @@ describe('Site Information', () => {
       ).contains('Give site information')
     })
   })
-  it(' 7 Verify happy path - site information - close proximity', () => {
+  it(' 7a Verify happy path - site information - close proximity', () => {
     cy.visit(Cypress.env('login'))
     cy.fixture('users.json').then((users) => {
       cy.get('#username').fill(users.email1)
@@ -466,16 +472,24 @@ describe('Site Information', () => {
       cy.get('#siteAddress').select('2, BAY TREE CLOSE, BIRMINGHAM, B38 9SH')
       cy.get('#continue').click()
       cy.get('#scan-file').click()
-      const yourFixturePath = 'virusfile.pdf'
-      cy.get('#scan-file').attachFile(yourFixturePath)
+      const emptyFixturePath = 'empty.pdf'
+
+      const dbfFixturePath = 'magic_polygons.dbf'
+      const prjFixturePath = 'magic_polygons.prj'
+      cy.get('#scan-file').attachFile(emptyFixturePath)
       cy.get('#continue').click()
       cy.get('#scan-file').click()
-      cy.get('#scan-file').attachFile(yourFixturePath)
+      cy.get('#scan-file').attachFile(dbfFixturePath)
       cy.get('#continue').click()
       cy.get('#scan-file').click()
-      cy.get('#scan-file').attachFile(yourFixturePath)
+      cy.get('#scan-file').attachFile(prjFixturePath)
       cy.get('#continue').click()
-      cy.get('#site-grid-ref').fill('SP039775')
+      cy.get('#site-grid-ref').clear()
+      cy.get('#site-grid-ref').fill(
+        'NY' + faker.datatype.number({ min: 100000 }).toString()
+      )
+      cy.get('#continue').click()
+      cy.get("input[value='correct']").click()
       cy.get('#continue').click()
       cy.get('#continue').click()
       cy.get(
@@ -484,6 +498,284 @@ describe('Site Information', () => {
       cy.get(
         '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(7)'
       ).contains('Give site information')
+    })
+  })
+  it(' 7b Verify happy path - site information - close proximity', () => {
+    cy.visit(Cypress.env('login'))
+    cy.fixture('users.json').then((users) => {
+      cy.get('#username').fill(users.email1)
+      cy.get('#password').fill(users.password1)
+      cy.get('#continue').click()
+      cy.get('h1.govuk-fieldset__heading').contains(users.nextpage)
+      cy.get('#main-content > div > div > form > fieldset > a').click()
+      cy.get('#species').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no-2').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no-2').click()
+      cy.get('#continue').click()
+      cy.get('#continue').click()
+      cy.get('#continue').click()
+      cy.get('a').contains('Give site information').click()
+      cy.get('#site-name').fill('test')
+      cy.get('#continue').click()
+      cy.get('#site-postcode-check').click()
+      cy.get('#site-postcode').fill('B38 9SH')
+      cy.get('#continue').click()
+      cy.get('#siteAddress').select('2, BAY TREE CLOSE, BIRMINGHAM, B38 9SH')
+      cy.get('#continue').click()
+      cy.get('#scan-file').click()
+      const CpgFixturePath = 'magic_polygons.cpg'
+      const sbnFixturePath = 'magic_polygons.sbn'
+      const sbxFixturePath = 'magic_polygons.sbx'
+      cy.get('#scan-file').attachFile(CpgFixturePath)
+      cy.get('#continue').click()
+      cy.get('#scan-file').click()
+      cy.get('#scan-file').attachFile(sbnFixturePath)
+      cy.get('#continue').click()
+      cy.get('#scan-file').click()
+      cy.get('#scan-file').attachFile(sbxFixturePath)
+      cy.get('#continue').click()
+      // cy.get('#site-grid-ref').clear()
+      cy.get('#site-grid-ref').fill(
+        'NY' + faker.datatype.number({ min: 100000 }).toString()
+      )
+      cy.get('#continue').click()
+      cy.get("input[value='correct']").click()
+      cy.get('#continue').click()
+      cy.get('#continue').click()
+      cy.get(
+        '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(7)'
+      ).contains('COMPLETED')
+      cy.get(
+        '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(7)'
+      ).contains('Give site information')
+    })
+  })
+  it(' 7c Verify happy path - site information - close proximity', () => {
+    cy.visit(Cypress.env('login'))
+    cy.fixture('users.json').then((users) => {
+      cy.get('#username').fill(users.email1)
+      cy.get('#password').fill(users.password1)
+      cy.get('#continue').click()
+      cy.get('h1.govuk-fieldset__heading').contains(users.nextpage)
+      cy.get('#main-content > div > div > form > fieldset > a').click()
+      cy.get('#species').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no-2').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no-2').click()
+      cy.get('#continue').click()
+      cy.get('#continue').click()
+      cy.get('#continue').click()
+      cy.get('a').contains('Give site information').click()
+      cy.get('#site-name').fill('test')
+      cy.get('#continue').click()
+      cy.get('#site-postcode-check').click()
+      cy.get('#site-postcode').fill('B38 9SH')
+      cy.get('#continue').click()
+      cy.get('#siteAddress').select('2, BAY TREE CLOSE, BIRMINGHAM, B38 9SH')
+      cy.get('#continue').click()
+      
+      const untitledFolderPath = 'untitled folder.zip'
+      const virusFixturePath = 'virus.doc'
+      const viruspdfFixturePath = 'virus.pdf'
+      cy.get('#scan-file').click()
+      cy.get('#scan-file').attachFile(untitledFolderPath)
+      cy.get('#continue').click()
+      cy.get("#main-content").contains('The selected file contains a virus. Upload a different file.')
+      cy.get('#scan-file').attachFile(viruspdfFixturePath)
+      cy.get('#continue').click()
+      cy.get("#main-content").contains('The selected file contains a virus. Upload a different file.')
+      cy.get('#scan-file').attachFile(virusFixturePath)
+      cy.get('#continue').click()
+      cy.get("#main-content").contains('The selected file must be a JPG, PNG, KML, Shape, GeoJSON, PDF or ZIP.')
+    
+    })
+  })
+  it(' 7d Verify happy path - site information - close proximity', () => {
+    cy.visit(Cypress.env('login'))
+    cy.fixture('users.json').then((users) => {
+      cy.get('#username').fill(users.email1)
+      cy.get('#password').fill(users.password1)
+      cy.get('#continue').click()
+      cy.get('h1.govuk-fieldset__heading').contains(users.nextpage)
+      cy.get('#main-content > div > div > form > fieldset > a').click()
+      cy.get('#species').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no-2').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no-2').click()
+      cy.get('#continue').click()
+      cy.get('#continue').click()
+      cy.get('#continue').click()
+      cy.get('a').contains('Give site information').click()
+      cy.get('#site-name').fill('test')
+      cy.get('#continue').click()
+      cy.get('#site-postcode-check').click()
+      cy.get('#site-postcode').fill('B38 9SH')
+      cy.get('#continue').click()
+      cy.get('#siteAddress').select('2, BAY TREE CLOSE, BIRMINGHAM, B38 9SH')
+      cy.get('#continue').click()
+      // cy.get('#scan-file').click()
+      const overviewFixturePath = 'OVERVIEW.jpg'
+      const typewritterFixturePath = 'typewriter.jpg'
+      const dbfFixturePath = 'magic_polygons.cpg'
+       cy.get('#scan-file').click()
+      cy.get('#scan-file').attachFile(dbfFixturePath)
+      cy.get('#continue').click()
+      cy.get('#scan-file').click()
+      cy.get('#scan-file').attachFile(overviewFixturePath)
+      cy.get('#continue').click()
+      cy.get('#scan-file').click()
+      cy.get('#scan-file').attachFile(typewritterFixturePath)
+      cy.get('#continue').click()
+      cy.get('#site-grid-ref').clear()
+      cy.get('#site-grid-ref').fill(
+        'NY' + faker.datatype.number({ min: 100000 }).toString()
+      )
+      cy.get('#continue').click()
+      cy.get("input[value='correct']").click()
+      cy.get('#continue').click()
+      cy.get('#continue').click()
+      cy.get(
+        '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(7)'
+      ).contains('Give site information')
+      cy.get(
+        '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(7)'
+      ).contains('COMPLETED')
+    
+    })
+  })
+  it(' 7e Verify happy path - site information - close proximity', () => {
+    cy.visit(Cypress.env('login'))
+    cy.fixture('users.json').then((users) => {
+      cy.get('#username').fill(users.email1)
+      cy.get('#password').fill(users.password1)
+      cy.get('#continue').click()
+      cy.get('h1.govuk-fieldset__heading').contains(users.nextpage)
+      cy.get('#main-content > div > div > form > fieldset > a').click()
+      cy.get('#species').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no-2').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no-2').click()
+      cy.get('#continue').click()
+      cy.get('#continue').click()
+      cy.get('#continue').click()
+      cy.get('a').contains('Give site information').click()
+      cy.get('#site-name').fill('test')
+      cy.get('#continue').click()
+      cy.get('#site-postcode-check').click()
+      cy.get('#site-postcode').fill('B38 9SH')
+      cy.get('#continue').click()
+      cy.get('#siteAddress').select('2, BAY TREE CLOSE, BIRMINGHAM, B38 9SH')
+      cy.get('#continue').click()
+     
+      const CpgFixturePath = 'magic_polygons.cpg'
+      const dbfFixturePath = 'magic_polygons.dbf'
+      const prjFixturePath = 'magic_polygons.prj' 
+     
+
+
+
+      cy.get('#scan-file').click()
+      cy.get('#scan-file').attachFile(CpgFixturePath)
+      cy.get('#continue').click()
+      cy.get('#scan-file').click()
+      cy.get('#scan-file').attachFile(dbfFixturePath)
+      cy.get('#continue').click()
+      cy.get('#scan-file').click()
+      cy.get('#scan-file').attachFile(prjFixturePath)
+      cy.get('#continue').click()
+      cy.get('#site-grid-ref').clear()
+      cy.get('#site-grid-ref').fill(
+        'NY' + faker.datatype.number({ min: 100000 }).toString()
+      )
+      cy.get('#continue').click()
+      cy.get("input[value='correct']").click()
+      cy.get('#continue').click()
+      cy.get('#continue').click()
+      cy.get(
+        '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(7)'
+      ).contains('COMPLETED')
+      cy.get(
+        '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(7)'
+      ).contains('Give site information')
+    })
+  })
+  it(' 7f Verify happy path - site information - close proximity', () => {
+    cy.visit(Cypress.env('login'))
+    cy.fixture('users.json').then((users) => {
+      cy.get('#username').fill(users.email1)
+      cy.get('#password').fill(users.password1)
+      cy.get('#continue').click()
+      cy.get('h1.govuk-fieldset__heading').contains(users.nextpage)
+      cy.get('#main-content > div > div > form > fieldset > a').click()
+      cy.get('#species').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no-2').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no-2').click()
+      cy.get('#continue').click()
+      cy.get('#continue').click()
+      cy.get('#continue').click()
+      cy.get('a').contains('Give site information').click()
+      cy.get('#site-name').fill('test')
+      cy.get('#continue').click()
+      cy.get('#site-postcode-check').click()
+      cy.get('#site-postcode').fill('B38 9SH')
+      cy.get('#continue').click()
+      cy.get('#siteAddress').select('2, BAY TREE CLOSE, BIRMINGHAM, B38 9SH')
+      cy.get('#continue').click()
+      cy.get('#scan-file').click()
+      const Geojson = 'GeoJSON.GeoJSON'
+      const kml = 'filee.KML'
+      const shpFixturePath = 'magic_polygons.shp'
+      cy.get('#scan-file').attachFile(Geojson)
+      cy.get('#scan-file').click()
+      cy.get('#continue').click()
+      cy.get('#scan-file').attachFile(kml)
+      cy.get('#scan-file').click()
+      cy.get('#continue').click()
+      cy.get('#scan-file').attachFile(shpFixturePath)
+      cy.get('#scan-file').click()
+      cy.get('#continue').click()
+    //  cy.get('#site-grid-ref').fill('SP039775')
+      cy.get('#continue').click()
+      cy.get('#site-grid-ref').clear()
+      cy.get('#site-grid-ref').fill(
+        'NY' + faker.datatype.number({ min: 100000 }).toString()
+      )
+      cy.get('#continue').click()
+      cy.get(
+        '#main-content > div > div > form > fieldset > div > fieldset > div > div:nth-child(4) > label'
+      ).click()
+      cy.get('#continue').click()
+      cy.get(
+        '#main-content > div > div > form > fieldset > dl > div:nth-child(1) > dd.govuk-summary-list__actions > a'
+      ).click()
+      cy.get('#site-name').fill(faker.name.firstName())
+      cy.get('#continue').click()
+      cy.get('#continue').click()
+      cy.get('#siteAddress').select(
+        '2, BAY TREE CLOSE, BIRMINGHAM, B38 9SH'
+      )
+      cy.get('#continue').click()
+      cy.get('#continue').click()
+      cy.get('#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(7)').contains('COMPLETED')
+      cy.get('#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(7)').contains('Give site information')
+    
     })
   })
 })

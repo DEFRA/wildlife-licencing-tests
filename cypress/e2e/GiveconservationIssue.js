@@ -5,18 +5,25 @@ const faker = require('faker')
  * Function Testing
  * ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
 //  */1.1
-//  1	Will the activity take place on or next to any designated sites?	Yes
+//  1	Will the activity take place on or next to any designated sites?	Yes   cy.get('#yes-no').click()
 //  2	Tell us about each designated site the activity will affect	Tell us about the first designated site
-//  3	What is the name of the designated site? 	Add site
-//  4	Do you have permission from the owner or occupier of the designated site?	 Yes
-//  5	Give details of the permission	4000 Characters free text
-//  6	Have you had advice or permission for the activity from Natural England?	 Yes
+//  3	What is the name of the designated site? 	Add site  cy.get('#site-name').fill('a')
+//  4	Do you have permission from the owner or occupier of the designated site?	 Yes  cy.get('#yes-no').click()
+//  5	Give details of the permission	4000 Characters free text       cy.get('#permission-details').fill(faker.random.alphaNumeric(4000))
+
+//  6	Have you had advice or permission for the activity from Natural England?	 Yes       cy.get('#yes-no').click()
+
 //  7	"Advice about the activity
-//  Who did you receive the advice from"	100 Characters free text
+//  Who did you receive the advice from"	100 Characters free text // cy.get('#advice-from-who').fill(faker.random.alphaNumeric(100))
+
 //  8	"Advice about the activity
-//  Describe the outcome of the advice"	4000 Characters free text
-//  9	Will the activity happen on the site or next to it	On the site
-//  10	Do you want to add another site?	No
+//  Describe the outcome of the advice"	4000 Characters free text //       cy.get('#advice-description').fill(faker.random.alphaNumeric(4000))
+
+
+//  9	Will the activity happen on the site or next to it	On the site       cy.get('#proximity').click()
+
+//  10	Do you want to add another site?	No       cy.get('#yes-no-2').click()
+
 1.2
 // Will the activity take place on or next to any designated sites?	Yes
 // Tell us about each designated site the activity will affect	Tell us about the first designated site
@@ -142,7 +149,208 @@ describe('Page title verification', () => {
       ).contains('COMPLETED')
     })
   })
-  
+  it('1.1 and verify application season period screen', () => {
+    cy.visit(Cypress.env('login'))
+    cy.fixture('users.json').then((users) => {
+      cy.get('#username').fill(users.email3)
+      cy.get('#password').fill(users.password2)
+      cy.get('#continue').click()
+      cy.get('#main-content > div > div > form > fieldset > a').click()
+      cy.get('#species').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no-2').click()
+      cy.get('#continue').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no').click()
+      cy.get('#continue').click()
+      cy.get('#continue').click()
+      cy.get('#continue').click()
+      cy.get('a').contains('Give details of conservation issues').click()
+      cy.get('#yes-no').click()
+      cy.get('#continue').click()
+      cy.get('#continue').click()
+      cy.get('#site-name').fill('a')
+      cy.get('#site-name__option--0').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no').click()
+      cy.get('#continue').click()
+      cy.get('#permission-details').fill(faker.random.alphaNumeric(4000))
+      cy.get('#continue').click()
+      cy.get('#yes-no-2').click()
+      cy.get('#continue').click()
+      cy.get('#proximity-2').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no-2').click()
+      cy.get('#continue').click()
+      // cy.get("#continue").click();
+      cy.get(
+        '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(5)'
+      ).contains('Give details of conservation issues')
+      cy.get(
+        '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(5)'
+      ).contains('COMPLETED')
+    })
+  })
+  it('1.1 and verify application season period screen', () => {
+    cy.visit(Cypress.env('login'))
+    cy.fixture('users.json').then((users) => {
+      cy.get('#username').fill(users.email3)
+      cy.get('#password').fill(users.password2)
+      cy.get('#continue').click()
+      cy.get('#main-content > div > div > form > fieldset > a').click()
+      cy.get('#species').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no-2').click()
+      cy.get('#continue').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no').click()
+      cy.get('#continue').click()
+      cy.get('#continue').click()
+      cy.get('#continue').click()
+      cy.get('a').contains('Give details of conservation issues').click()
+      cy.get('#yes-no').click()
+      cy.get('#continue').click()
+      cy.get('#continue').click()
+      cy.get('#site-name').fill('a')
+      cy.get('#site-name__option--0').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no-2').click()
+      cy.get('#continue').click()
+      cy.get('#permission-details').fill(faker.random.alphaNumeric(4000))
+      cy.get('#continue').click()
+      cy.get('#yes-no').click()
+      cy.get('#continue').click()
+      //   cy.get("#advice-from-who").fill(
+      //     faker.name.firstName() + faker.name.lastName()
+      //   );
+      cy.get('#advice-from-who').fill(faker.random.alphaNumeric(100))
+      cy.get('#advice-description').fill(faker.random.alphaNumeric(4000))
+      cy.get('#continue').click()
+      cy.get('#proximity').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no-2').click()
+      cy.get('#continue').click()
+      // cy.get("#continue").click();
+      cy.get(
+        '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(5)'
+      ).contains('Give details of conservation issues')
+      cy.get(
+        '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(5)'
+      ).contains('COMPLETED')
+    })
+  })
+  it('1.1 and verify application season period screen', () => {
+    cy.visit(Cypress.env('login'))
+    cy.fixture('users.json').then((users) => {
+      cy.get('#username').fill(users.email3)
+      cy.get('#password').fill(users.password2)
+      cy.get('#continue').click()
+      cy.get('#main-content > div > div > form > fieldset > a').click()
+      cy.get('#species').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no-2').click()
+      cy.get('#continue').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no').click()
+      cy.get('#continue').click()
+      cy.get('#continue').click()
+      cy.get('#continue').click()
+      cy.get('a').contains('Give details of conservation issues').click()
+      cy.get('#yes-no').click()
+      cy.get('#continue').click()
+      cy.get('#continue').click()
+      cy.get('#site-name').fill('a')
+      cy.get('#site-name__option--0').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no').click()
+      cy.get('#continue').click()
+      cy.get('#permission-details').fill(faker.random.alphaNumeric(4000))
+      cy.get('#continue').click()
+      cy.get('#yes-no').click()
+      cy.get('#continue').click()
+      //   cy.get("#advice-from-who").fill(
+      //     faker.name.firstName() + faker.name.lastName()
+      //   );
+      cy.get('#advice-from-who').fill(faker.random.alphaNumeric(100))
+      cy.get('#advice-description').fill(faker.random.alphaNumeric(4000))
+      cy.get('#continue').click()
+      cy.get('#proximity-2').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no-2').click()
+      cy.get('#continue').click()
+      // cy.get("#continue").click();
+      cy.get(
+        '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(5)'
+      ).contains('Give details of conservation issues')
+      cy.get(
+        '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(5)'
+      ).contains('COMPLETED')
+    })
+  })
+  it('1.1 and verify application season period screen', () => {
+    cy.visit(Cypress.env('login'))
+    cy.fixture('users.json').then((users) => {
+      cy.get('#username').fill(users.email3)
+      cy.get('#password').fill(users.password2)
+      cy.get('#continue').click()
+      cy.get('#main-content > div > div > form > fieldset > a').click()
+      cy.get('#species').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no-2').click()
+      cy.get('#continue').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no').click()
+      cy.get('#continue').click()
+      cy.get('#continue').click()
+      cy.get('#continue').click()
+      cy.get('a').contains('Give details of conservation issues').click()
+      cy.get('#yes-no').click()
+      cy.get('#continue').click()
+      cy.get('#continue').click()
+      cy.get('#site-name').fill('a')
+      cy.get('#site-name__option--0').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no').click()
+      cy.get('#continue').click()
+      cy.get('#permission-details').fill(faker.random.alphaNumeric(4000))
+      cy.get('#continue').click()
+      cy.get('#yes-no').click()
+      cy.get('#continue').click()
+      //   cy.get("#advice-from-who").fill(
+      //     faker.name.firstName() + faker.name.lastName()
+      //   );
+      cy.get('#advice-from-who').fill(faker.random.alphaNumeric(100))
+      cy.get('#advice-description').fill(faker.random.alphaNumeric(4000))
+      cy.get('#continue').click()
+      cy.get('#proximity-2').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no-2').click()
+      cy.get('#continue').click()
+      // cy.get("#continue").click();
+      cy.get(
+        '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(5)'
+      ).contains('Give details of conservation issues')
+      cy.get(
+        '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(5)'
+      ).contains('COMPLETED')
+    })
+  })
   it('2 and verify application season period screen', () => {
     cy.visit(Cypress.env('login'))
     cy.fixture('users.json').then((users) => {
@@ -640,6 +848,52 @@ describe('Page title verification', () => {
       cy.get('#yes-no-2').click()
       cy.get('#continue').click()
       cy.get('#proximity-2').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no-2').click()
+      cy.get('#continue').click()
+      // cy.get("#continue").click();
+      cy.get(
+        '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(5)'
+      ).contains('Give details of conservation issues')
+      cy.get(
+        '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(5)'
+      ).contains('COMPLETED')
+    })
+  })
+  it('13a and verify application season period screen', () => {
+    cy.visit(Cypress.env('login'))
+    cy.fixture('users.json').then((users) => {
+      cy.get('#username').fill(users.email3)
+      cy.get('#password').fill(users.password2)
+      cy.get('#continue').click()
+      cy.get('#main-content > div > div > form > fieldset > a').click()
+      cy.get('#species').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no-2').click()
+      cy.get('#continue').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no').click()
+      cy.get('#continue').click()
+      cy.get('#continue').click()
+      cy.get('#continue').click()
+      cy.get('a').contains('Give details of conservation issues').click()
+      cy.get('#yes-no').click()
+      cy.get('#continue').click()
+      cy.get('#continue').click()
+      cy.get('#site-name').fill('a')
+      cy.get('#site-name__option--0').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no').click()
+      cy.get('#continue').click()
+      cy.get('#permission-details').fill(faker.random.alphaNumeric(4000))
+      cy.get('#continue').click()
+      cy.get('#yes-no-2').click()
+      cy.get('#continue').click()
+      cy.get('#proximity').click()
       cy.get('#continue').click()
       cy.get('#yes-no-2').click()
       cy.get('#continue').click()

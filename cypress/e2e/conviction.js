@@ -1539,7 +1539,7 @@ describe('Page title verification', () => {
         cy.get("#continue").click();
 
         //   Add additional contacts
-        cy.get("a").contains("Add additional contacts").click();
+        cy.get("a").contains("Add alternative contacts").click();
         cy.get("#yes-no").click();
         cy.get("#continue").click();
         cy.get("#name").fill(

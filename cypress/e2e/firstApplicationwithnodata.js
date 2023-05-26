@@ -201,16 +201,23 @@ cy.get("#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-chi
       cy.get("#continue").click();
       cy.get("#siteAddress").select("2, BAY TREE CLOSE, BIRMINGHAM, B38 9SH");
       cy.get("#continue").click();
-      cy.get("#scan-file").click();
-      const yourFixturePath = "virusfile.pdf";
-      cy.get("#scan-file").attachFile(yourFixturePath);
-      cy.get("#continue").click();
-      cy.get("#scan-file").click();
-      cy.get("#scan-file").attachFile(yourFixturePath);
-      cy.get("#continue").click();
-      cy.get("#scan-file").click();
-      cy.get("#scan-file").attachFile(yourFixturePath);
-      cy.get("#continue").click();
+      cy.get('#scan-file').click()
+      const yourFixturePath = 'virusfile.pdf'
+      const dbfFixturePath = 'magic_polygons.dbf'
+      const prjFixturePath = 'magic_polygons.prj'
+      cy.get('#scan-file').attachFile(yourFixturePath)
+      cy.get('#continue').click()
+      cy.get('#scan-file').click()
+      cy.get('#scan-file').attachFile(dbfFixturePath)
+      cy.get('#continue').click()
+      cy.get('#scan-file').click()
+      cy.get('#scan-file').attachFile(prjFixturePath)
+      cy.get('#continue').click()
+      cy.get('#site-grid-ref').clear()
+      cy.get('#site-grid-ref').fill(
+        'NY' + faker.datatype.number({ min: 100000 }).toString()
+      )
+      cy.get('#continue').click()
       cy.get("#site-grid-ref").fill("SP039775");
       cy.get("#continue").click();
       cy.get("#continue").click();
