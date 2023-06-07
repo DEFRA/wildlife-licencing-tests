@@ -218,10 +218,9 @@ cy.get("#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-chi
         'NY' + faker.datatype.number({ min: 100000 }).toString()
       )
       cy.get('#continue').click()
-      cy.get("#site-grid-ref").fill("SP039775");
-      cy.get("#continue").click();
-      cy.get("#continue").click();
-
+      cy.get("input[value='correct']").click()
+      cy.get('#continue').click()
+      cy.get('#continue').click()
       cy.get("a").contains("Give ecologist’s experience").click();
       cy.get("input[value='no']").click();
       cy.get("#continue").click();

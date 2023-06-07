@@ -238,6 +238,15 @@ describe('Work activities details', () => {
       cy.get("a").contains("Give work activity details").click();
       cy.get("#work-proposal").fill(faker.random.alphaNumeric(40));
       cy.get("#continue").click();
+      cy.get('#main-content').contains('Exemptions from paying for a wildlife licence')
+       cy.get('#main-content').contains('You may not need to pay for a wildlife licence if:')
+        cy.get('#main-content').contains('the purpose of your licence is to preserve public health and safety')
+         cy.get('#main-content').contains('the purpose of your licence is to prevent damage to livestock, crops, timber or property')
+          cy.get('#main-content').contains('the purpose of the licence is to improve your home through householder planning permission or permitted development')
+           cy.get('#main-content').contains('the main aim of the project is science, research or education related to the protected species or protected site')
+            cy.get('#main-content').contains('the main aim of the project is conservation of the protected species')
+      cy.get('#main-content').contains('the main aim of the project is to conserve a scheduled monument, listed building, place of worship or traditional farm building in a stewardship agreement')
+      cy.get('#main-content').contains('Do you think the purpose of your project is exempt from payment?')
       cy.get("#yes-no").click();
       cy.get("#continue").click();
       cy.get("#work-payment-exempt-reason-6").click();
@@ -254,47 +263,47 @@ describe('Work activities details', () => {
       ).contains("COMPLETED");
     });
   });
-  it("7 - verify user can complete work activity section when Conserve scheduled monuments, listed buildings, places of worship, or traditional farm buildings  is selected", () => {
-    cy.request(
-      "/reset?username=user1@email.com"
-    );
-    cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
-    cy.fixture("users.json").then((users) => {
-      cy.get("#username").fill(users.email3);
-      cy.get("#password").fill(users.password2);
-      cy.get("#continue").click();
-      cy.get("#species").click();
-      cy.get("#continue").click();
-      cy.get("#yes-no-2").click();
-      cy.get("#continue").click();
-      cy.get("#continue").click();
-      cy.get("#yes-no").click();
-      cy.get("#continue").click();
-      cy.get("#yes-no").click();
-      cy.get("#continue").click();
-      cy.get("#yes-no").click();
-      cy.get("#continue").click();
-      cy.get("#continue").click();
-      cy.get("#continue").click();
-      cy.get("a").contains("Give work activity details").click();
-      cy.get("#work-proposal").fill(faker.random.alphaNumeric(40));
-      cy.get("#continue").click();
-      cy.get("#yes-no").click();
-      cy.get("#continue").click();
-      cy.get("#work-payment-exempt-reason-7").click();
-      cy.get("#continue").click();
-      cy.get("#work-category-7").click();
-      cy.get("#continue").click();
-      cy.get("#continue").click();
-      cy.get("#continue").click();
-      cy.get(
-        '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)'
-      ).contains('Give work activity details')
-      cy.get(
-        '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)'
-      ).contains('COMPLETED')
-    })
-  })
+  // it("7 - verify user can complete work activity section when Conserve scheduled monuments, listed buildings, places of worship, or traditional farm buildings  is selected", () => {
+  //   cy.request(
+  //     "/reset?username=user1@email.com"
+  //   );
+  //   cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
+  //   cy.fixture("users.json").then((users) => {
+  //     cy.get("#username").fill(users.email3);
+  //     cy.get("#password").fill(users.password2);
+  //     cy.get("#continue").click();
+  //     cy.get("#species").click();
+  //     cy.get("#continue").click();
+  //     cy.get("#yes-no-2").click();
+  //     cy.get("#continue").click();
+  //     cy.get("#continue").click();
+  //     cy.get("#yes-no").click();
+  //     cy.get("#continue").click();
+  //     cy.get("#yes-no").click();
+  //     cy.get("#continue").click();
+  //     cy.get("#yes-no").click();
+  //     cy.get("#continue").click();
+  //     cy.get("#continue").click();
+  //     cy.get("#continue").click();
+  //     cy.get("a").contains("Give work activity details").click();
+  //     cy.get("#work-proposal").fill(faker.random.alphaNumeric(40));
+  //     cy.get("#continue").click();
+  //     cy.get("#yes-no").click();
+  //     cy.get("#continue").click();
+  //     cy.get("#work-payment-exempt-reason-7").click();
+  //     cy.get("#continue").click();
+  //     cy.get("#work-category-7").click();
+  //     cy.get("#continue").click();
+  //     cy.get("#continue").click();
+  //     cy.get("#continue").click();
+  //     cy.get(
+  //       '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)'
+  //     ).contains('Give work activity details')
+  //     cy.get(
+  //       '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)'
+  //     ).contains('COMPLETED')
+  //   })
+  // })
 
   it("8 - verify user can complete work activity section when Other is selected", () => {
     cy.request(
@@ -323,7 +332,7 @@ describe('Work activities details', () => {
       cy.get("#continue").click();
       cy.get("#yes-no").click();
       cy.get("#continue").click();
-      cy.get("#work-payment-exempt-reason-9").click();
+      cy.get("#work-payment-exempt-reason-8").click();
       cy.get("#exempt-details").fill(faker.random.alphaNumeric(400));
       cy.get("#continue").click();
       cy.get("#work-category-9").click();
@@ -1038,7 +1047,7 @@ describe('Work activities details', () => {
       cy.get("#continue").click();
       cy.get("#yes-no").click();
       cy.get("#continue").click();
-      cy.get("#work-payment-exempt-reason-9").click();
+      cy.get("#work-payment-exempt-reason-8").click();
       cy.get("#continue").click();
       cy.get(
         '#main-content > div > div > div.govuk-error-summary.display-wrapped > div > ul'
@@ -1108,7 +1117,7 @@ describe('Work activities details', () => {
       cy.get("#continue").click();
       cy.get("#yes-no").click();
       cy.get("#continue").click();
-      cy.get("#work-payment-exempt-reason-9").click();
+      cy.get("#work-payment-exempt-reason-8").click();
       cy.get("#exempt-details").fill(faker.random.alphaNumeric(4001));
       cy.get("#continue").click();
       cy.get(

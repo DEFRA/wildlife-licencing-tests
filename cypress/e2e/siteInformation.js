@@ -472,7 +472,7 @@ describe('Site Information', () => {
       cy.get('#siteAddress').select('2, BAY TREE CLOSE, BIRMINGHAM, B38 9SH')
       cy.get('#continue').click()
       cy.get('#scan-file').click()
-      const emptyFixturePath = 'empty.pdf'
+      const emptyFixturePath = 'magic_polygons.shp'
 
       const dbfFixturePath = 'magic_polygons.dbf'
       const prjFixturePath = 'magic_polygons.prj'

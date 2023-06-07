@@ -7,28 +7,56 @@ const faker = require('faker')
  */
 
 describe('Page title verification', () => {
+  beforeEach(() =>{
+     cy.request(
+        '/reset?username=user1@email.com'
+      );
+      cy.visit(Cypress.env("login"));
+      cy.fixture("users.json").then((users) => {
+        cy.get("#username").fill(users.email3);
+        cy.get("#password").fill(users.password2);
+        cy.get("#continue").click();
+        cy.get("#species").click();
+        cy.get("#continue").click();
+        cy.get("#yes-no-2").click();
+        cy.get("#continue").click();
+        cy.get("#continue").click();
+        cy.get("#yes-no").click();
+        cy.get("#continue").click();
+        cy.get("#yes-no").click();
+        cy.get("#continue").click();
+        cy.get("#yes-no").click();
+        cy.get("#continue").click();
+        cy.get("#continue").click();
+        cy.get("#continue").click();
+    
+  });
+});
+
+
+
   it("1 verify conviction details", () => {
-    cy.request(
-      '/reset?username=user1@email.com'
-    );
-    cy.visit(Cypress.env("login"));
-    cy.fixture("users.json").then((users) => {
-      cy.get("#username").fill(users.email3);
-      cy.get("#password").fill(users.password2);
-      cy.get("#continue").click();
-      cy.get("#species").click();
-      cy.get("#continue").click();
-      cy.get("#yes-no-2").click();
-      cy.get("#continue").click();
-      cy.get("#continue").click();
-      cy.get("#yes-no").click();
-      cy.get("#continue").click();
-      cy.get("#yes-no").click();
-      cy.get("#continue").click();
-      cy.get("#yes-no").click();
-      cy.get("#continue").click();
-      cy.get("#continue").click();
-      cy.get("#continue").click();
+    // cy.request(
+    //   '/reset?username=user1@email.com'
+    // );
+    // cy.visit(Cypress.env("login"));
+    // cy.fixture("users.json").then((users) => {
+    //   cy.get("#username").fill(users.email3);
+    //   cy.get("#password").fill(users.password2);
+    //   cy.get("#continue").click();
+    //   cy.get("#species").click();
+    //   cy.get("#continue").click();
+    //   cy.get("#yes-no-2").click();
+    //   cy.get("#continue").click();
+    //   cy.get("#continue").click();
+    //   cy.get("#yes-no").click();
+    //   cy.get("#continue").click();
+    //   cy.get("#yes-no").click();
+    //   cy.get("#continue").click();
+    //   cy.get("#yes-no").click();
+    //   cy.get("#continue").click();
+    //   cy.get("#continue").click();
+    //   cy.get("#continue").click();
 
       cy.get("a").contains("Give licence holder details").click();
       cy.get("#yes-no").click();
@@ -55,7 +83,7 @@ describe('Page title verification', () => {
       cy.get("#continue").click();
       cy.get("#yes-no").click();
       cy.get("#continue").click();
-      cy.get("#work-payment-exempt-reason-9").click();
+      cy.get("#work-payment-exempt-reason-8").click();
       cy.get("#exempt-details").fill(faker.random.alphaNumeric(400));
       cy.get("#continue").click();
       cy.get("#work-category").click();
@@ -263,6 +291,7 @@ describe('Page title verification', () => {
           cy.get("#continue").click();
           cy.get("#continue").click();
           cy.get("a").contains("Agree to terms and send application").click();
+          cy.fixture("users.json").then((users) => {
           cy.get("#main-content > div > div > form > fieldset").contains(
             users.text18
           );
@@ -270,7 +299,7 @@ describe('Page title verification', () => {
             "By sending the application you agree that you have given complete and correct information."
           );
           cy.get("#main-content > div > div > form > fieldset").contains(
-            "If you are making this application on behalf of another person, you confirm that you have their permission to do so. By sending the application, they agree that they will:"
+            "If you are making this application on behalf of another person, you confirm that you have their permission to do so. By sending the application, they agree they will:"
           );
           cy.get("#main-content > div > div > form > fieldset").contains(
             "will uphold any conditions applied to my licence if granted"
@@ -279,19 +308,25 @@ describe('Page title verification', () => {
             "will abide by the terms and conditions of this service"
           );
           cy.get("#main-content > div > div > form > fieldset").contains(
+            "will abide by the terms and conditions of paying for wildlife licences (opens in new tab) and agree to pay relevant charges"
+          );
+          cy.get("#main-content > div > div > form > fieldset").contains(
             "By sending the application you confirm that:"
           );
           cy.get("#main-content > div > div > form > fieldset").contains(
-            "an appropriate ecologist has been involved in the application and the design of any mitigations"
+            "an appropriate ecologist has been involved in the application and design of any mitigations"
           );
           cy.get("#main-content > div > div > form > fieldset").contains(
             "the ecologist supports the application"
           );
           cy.get("#main-content > div > div > form > fieldset").contains(
-            "the ecologist is content that the proposed methods, actions and mitigation are appropriate to address the findings of the ecologist's site assessment"
+            "the ecologist is content that the proposed methods, actions and mitigation are appropriate to address the findings of the ecologist’s site assessment"
           );
           cy.get("#main-content > div > div > form > fieldset").contains(
-            "you will report any actions you took using this licence within 2 weeks of your licence expiring, even if you've taken no action"
+            "you will report any actions you took using this licence within 2 weeks of your licence expiring, even if you have taken no action"
+          );
+          cy.get("#main-content > div > div > form > fieldset").contains(
+            "you will pay any charges that apply"
           );
           cy.get("#continue").click();
           cy.get("#continue").click();
@@ -317,28 +352,29 @@ describe('Page title verification', () => {
       );
     });
   });
+ // });
   it('2 Verify conviction detail', () => {
-    cy.request(
-      '/reset?username=user1@email.com'
-    )
-    cy.visit(Cypress.env('login'))
-    cy.fixture('users.json').then((users) => {
-      cy.get('#username').fill(users.email3)
-      cy.get('#password').fill(users.password2)
-      cy.get('#continue').click()
-      cy.get('#species').click()
-      cy.get('#continue').click()
-      cy.get('#yes-no-2').click()
-      cy.get('#continue').click()
-      cy.get('#continue').click()
-      cy.get('#yes-no').click()
-      cy.get('#continue').click()
-      cy.get('#yes-no').click()
-      cy.get('#continue').click()
-      cy.get('#yes-no').click()
-      cy.get('#continue').click()
-      cy.get('#continue').click()
-      cy.get('#continue').click()
+    // cy.request(
+    //   '/reset?username=user1@email.com'
+    // )
+    // cy.visit(Cypress.env('login'))
+    // cy.fixture('users.json').then((users) => {
+    //   cy.get('#username').fill(users.email3)
+    //   cy.get('#password').fill(users.password2)
+    //   cy.get('#continue').click()
+    //   cy.get('#species').click()
+    //   cy.get('#continue').click()
+    //   cy.get('#yes-no-2').click()
+    //   cy.get('#continue').click()
+    //   cy.get('#continue').click()
+    //   cy.get('#yes-no').click()
+    //   cy.get('#continue').click()
+    //   cy.get('#yes-no').click()
+    //   cy.get('#continue').click()
+    //   cy.get('#yes-no').click()
+    //   cy.get('#continue').click()
+    //   cy.get('#continue').click()
+    //   cy.get('#continue').click()
 
       cy.get('a').contains('Give licence holder details').click()
       cy.get('#yes-no').click()
@@ -364,7 +400,7 @@ describe('Page title verification', () => {
       cy.get('#continue').click()
       cy.get('#yes-no').click()
       cy.get('#continue').click()
-      cy.get('#work-payment-exempt-reason-9').click()
+      cy.get('#work-payment-exempt-reason-8').click()
       cy.get('#exempt-details').fill(faker.random.alphaNumeric(400))
       cy.get('#continue').click()
       cy.get('#work-category').click()
@@ -572,36 +608,42 @@ describe('Page title verification', () => {
           cy.get('#continue').click()
           cy.get('#continue').click()
           cy.get('a').contains('Agree to terms and send application').click()
+          cy.fixture("users.json").then((users) => {
           cy.get('#main-content > div > div > form > fieldset').contains(
             users.text18
           )
-          cy.get('#main-content > div > div > form > fieldset').contains(
-            'By sending the application you agree that you have given complete and correct information.'
-          )
-          cy.get('#main-content > div > div > form > fieldset').contains(
-            'If you are making this application on behalf of another person, you confirm that you have their permission to do so. By sending the application, they agree that they will:'
-          )
-          cy.get('#main-content > div > div > form > fieldset').contains(
-            'will uphold any conditions applied to my licence if granted'
-          )
-          cy.get('#main-content > div > div > form > fieldset').contains(
-            'will abide by the terms and conditions of this service'
-          )
-          cy.get('#main-content > div > div > form > fieldset').contains(
-            'By sending the application you confirm that:'
-          )
-          cy.get('#main-content > div > div > form > fieldset').contains(
-            'an appropriate ecologist has been involved in the application and the design of any mitigations'
-          )
-          cy.get('#main-content > div > div > form > fieldset').contains(
-            'the ecologist supports the application'
-          )
-          cy.get('#main-content > div > div > form > fieldset').contains(
-            "the ecologist is content that the proposed methods, actions and mitigation are appropriate to address the findings of the ecologist's site assessment"
-          )
-          cy.get('#main-content > div > div > form > fieldset').contains(
-            "you will report any actions you took using this licence within 2 weeks of your licence expiring, even if you've taken no action"
-          )
+          cy.get("#main-content > div > div > form > fieldset").contains(
+            "By sending the application you agree that you have given complete and correct information."
+          );
+          cy.get("#main-content > div > div > form > fieldset").contains(
+            "If you are making this application on behalf of another person, you confirm that you have their permission to do so. By sending the application, they agree they will:"
+          );
+          cy.get("#main-content > div > div > form > fieldset").contains(
+            "will uphold any conditions applied to my licence if granted"
+          );
+          cy.get("#main-content > div > div > form > fieldset").contains(
+            "will abide by the terms and conditions of this service"
+          );
+          cy.get("#main-content > div > div > form > fieldset").contains(
+            "will abide by the terms and conditions of paying for wildlife licences (opens in new tab) and agree to pay relevant charges"
+          );
+          cy.get("#main-content > div > div > form > fieldset").contains(
+            "By sending the application you confirm that:"
+          );
+          cy.get("#main-content > div > div > form > fieldset").contains(
+            "an appropriate ecologist has been involved in the application and design of any mitigations"
+          );
+          cy.get("#main-content > div > div > form > fieldset").contains(
+            "the ecologist supports the application"
+          );
+          cy.get("#main-content > div > div > form > fieldset").contains(
+            "the ecologist is content that the proposed methods, actions and mitigation are appropriate to address the findings of the ecologist’s site assessment"
+          );
+          cy.get("#main-content > div > div > form > fieldset").contains(
+            "you will report any actions you took using this licence within 2 weeks of your licence expiring, even if you have taken no action"
+          );
+          cy.get("#main-content > div > div > form > fieldset").contains(
+            "you will pay any charges that apply")
           cy.get('#continue').click()
           cy.get('#continue').click()
           const ls = cy.get('a').contains('Badger mitigation').first()
@@ -626,27 +668,28 @@ describe('Page title verification', () => {
       )
     })
   })
+ // })
   it("3 and verify application season period screen", () => {
-    cy.request(
-      '/reset?username=user1@email.com'
-    );
-    cy.visit(Cypress.env("login"));
-    cy.fixture("users.json").then((users) => {
-      cy.get("#username").fill(users.email3);
-      cy.get("#password").fill(users.password2);
-      cy.get("#continue").click();
-      cy.get("#species").click();
-      cy.get("#continue").click();
-      cy.get("#yes-no-2").click();
-      cy.get("#continue").click();
-      cy.get("#yes-no").click();
-      cy.get("#continue").click();
-      cy.get("#yes-no").click();
-      cy.get("#continue").click();
-      cy.get("#yes-no").click();
-      cy.get("#continue").click();
-      cy.get("#continue").click();
-      cy.get("#continue").click();
+    // cy.request(
+    //   '/reset?username=user1@email.com'
+    // );
+    // cy.visit(Cypress.env("login"));
+    // cy.fixture("users.json").then((users) => {
+    //   cy.get("#username").fill(users.email3);
+    //   cy.get("#password").fill(users.password2);
+    //   cy.get("#continue").click();
+    //   cy.get("#species").click();
+    //   cy.get("#continue").click();
+    //   cy.get("#yes-no-2").click();
+    //   cy.get("#continue").click();
+    //   cy.get("#yes-no").click();
+    //   cy.get("#continue").click();
+    //   cy.get("#yes-no").click();
+    //   cy.get("#continue").click();
+    //   cy.get("#yes-no").click();
+    //   cy.get("#continue").click();
+    //   cy.get("#continue").click();
+    //   cy.get("#continue").click();
 
       cy.get("a").contains("Give licence holder details").click();
       cy.get("#yes-no").click();
@@ -672,7 +715,7 @@ describe('Page title verification', () => {
       cy.get("#continue").click();
       cy.get("#yes-no").click();
       cy.get("#continue").click();
-      cy.get("#work-payment-exempt-reason-9").click();
+      cy.get("#work-payment-exempt-reason-8").click();
       cy.get("#exempt-details").fill(faker.random.alphaNumeric(400));
       cy.get("#continue").click();
       cy.get("#work-category").click();
@@ -883,28 +926,28 @@ describe('Page title verification', () => {
         }
       );
     });
-  });
+ // });
   it("4 and verify application season period screen", () => {
-    cy.request(
-      '/reset?username=user1@email.com'
-    );
-    cy.visit(Cypress.env("login"));
-    cy.fixture("users.json").then((users) => {
-      cy.get("#username").fill(users.email3);
-      cy.get("#password").fill(users.password2);
-      cy.get("#continue").click();
-      cy.get("#species").click();
-      cy.get("#continue").click();
-      cy.get("#yes-no-2").click();
-      cy.get("#continue").click();
-      cy.get("#yes-no").click();
-      cy.get("#continue").click();
-      cy.get("#yes-no").click();
-      cy.get("#continue").click();
-      cy.get("#yes-no").click();
-      cy.get("#continue").click();
-      cy.get("#continue").click();
-      cy.get("#continue").click();
+    // cy.request(
+    //   '/reset?username=user1@email.com'
+    // );
+    // cy.visit(Cypress.env("login"));
+    // cy.fixture("users.json").then((users) => {
+    //   cy.get("#username").fill(users.email3);
+    //   cy.get("#password").fill(users.password2);
+    //   cy.get("#continue").click();
+    //   cy.get("#species").click();
+    //   cy.get("#continue").click();
+    //   cy.get("#yes-no-2").click();
+    //   cy.get("#continue").click();
+    //   cy.get("#yes-no").click();
+    //   cy.get("#continue").click();
+    //   cy.get("#yes-no").click();
+    //   cy.get("#continue").click();
+    //   cy.get("#yes-no").click();
+    //   cy.get("#continue").click();
+    //   cy.get("#continue").click();
+    //   cy.get("#continue").click();
 
       cy.get("a").contains("Give licence holder details").click();
       cy.get("#yes-no").click();
@@ -930,7 +973,7 @@ describe('Page title verification', () => {
       cy.get("#continue").click();
       cy.get("#yes-no").click();
       cy.get("#continue").click();
-      cy.get("#work-payment-exempt-reason-9").click();
+      cy.get("#work-payment-exempt-reason-8").click();
       cy.get("#exempt-details").fill(faker.random.alphaNumeric(400));
       cy.get("#continue").click();
       cy.get("#work-category").click();
@@ -1140,28 +1183,28 @@ describe('Page title verification', () => {
         }
       );
     });
-  });
+  //});
   it("5 and verify application season period screen", () => {
-    cy.request(
-      '/reset?username=user1@email.com'
-    );
-    cy.visit(Cypress.env("login"));
-    cy.fixture("users.json").then((users) => {
-      cy.get("#username").fill(users.email3);
-      cy.get("#password").fill(users.password2);
-      cy.get("#continue").click();
-      cy.get("#species").click();
-      cy.get("#continue").click();
-      cy.get("#yes-no-2").click();
-      cy.get("#continue").click();
-      cy.get("#yes-no").click();
-      cy.get("#continue").click();
-      cy.get("#yes-no").click();
-      cy.get("#continue").click();
-      cy.get("#yes-no").click();
-      cy.get("#continue").click();
-      cy.get("#continue").click();
-      cy.get("#continue").click();
+    // cy.request(
+    //   '/reset?username=user1@email.com'
+    // );
+    // cy.visit(Cypress.env("login"));
+    // cy.fixture("users.json").then((users) => {
+    //   cy.get("#username").fill(users.email3);
+    //   cy.get("#password").fill(users.password2);
+    //   cy.get("#continue").click();
+    //   cy.get("#species").click();
+    //   cy.get("#continue").click();
+    //   cy.get("#yes-no-2").click();
+    //   cy.get("#continue").click();
+    //   cy.get("#yes-no").click();
+    //   cy.get("#continue").click();
+    //   cy.get("#yes-no").click();
+    //   cy.get("#continue").click();
+    //   cy.get("#yes-no").click();
+    //   cy.get("#continue").click();
+    //   cy.get("#continue").click();
+    //   cy.get("#continue").click();
 
       cy.get("a").contains("Give licence holder details").click();
       cy.get("#yes-no").click();
@@ -1187,7 +1230,7 @@ describe('Page title verification', () => {
       cy.get("#continue").click();
       cy.get("#yes-no").click();
       cy.get("#continue").click();
-      cy.get("#work-payment-exempt-reason-9").click();
+      cy.get("#work-payment-exempt-reason-8").click();
       cy.get("#exempt-details").fill(faker.random.alphaNumeric(400));
       cy.get("#continue").click();
       cy.get("#work-category").click();
@@ -1398,33 +1441,33 @@ describe('Page title verification', () => {
         }
       );
     });
-  });
+ // });
   it("6 and verify application season period screen", () => {
-    it(" 6a Verify happy path -  Add setts ", () => {
-      cy.request(
-        '/reset?username=user1@email.com'
-        );
-      cy.visit(Cypress.env("login"));
-      cy.fixture("users.json").then((users) => {
-        cy.get("#username").fill(users.email3);
-        cy.get("#password").fill(users.password2);
-        cy.get("#continue").click();
-        cy.get("#species").click();
-        cy.get("#continue").click();
-        cy.get("#yes-no-2").click();
-        cy.get("#continue").click();
-        cy.get("h1.govuk-fieldset__heading").contains(
-          "Licences are typically issued between July and November to protect badger welfare"
-        );
-        cy.get("#continue").click();
-        cy.get("#yes-no").click();
-        cy.get("#continue").click();
-        cy.get("#yes-no").click();
-        cy.get("#continue").click();
-        cy.get("#yes-no").click();
-        cy.get("#continue").click();
-        cy.get("#continue").click();
-        cy.get("#continue").click();
+  //  it(" 6a Verify happy path -  Add setts ", () => {
+      // cy.request(
+      //   '/reset?username=user1@email.com'
+      //   );
+      // cy.visit(Cypress.env("login"));
+      // cy.fixture("users.json").then((users) => {
+      //   cy.get("#username").fill(users.email3);
+      //   cy.get("#password").fill(users.password2);
+      //   cy.get("#continue").click();
+      //   cy.get("#species").click();
+      //   cy.get("#continue").click();
+      //   cy.get("#yes-no-2").click();
+      //   cy.get("#continue").click();
+        // cy.get("h1.govuk-fieldset__heading").contains(
+        //   "Licences are typically issued between July and November to protect badger welfare"
+        // );
+        // cy.get("#continue").click();
+        // cy.get("#yes-no").click();
+        // cy.get("#continue").click();
+        // cy.get("#yes-no").click();
+        // cy.get("#continue").click();
+        // cy.get("#yes-no").click();
+        // cy.get("#continue").click();
+        // cy.get("#continue").click();
+        // cy.get("#continue").click();
 
         cy.get("a").contains("Give licence holder details").click();
         cy.get("#yes-no").click();
@@ -1450,7 +1493,7 @@ describe('Page title verification', () => {
       cy.get("#continue").click();
       cy.get("#yes-no").click();
       cy.get("#continue").click();
-      cy.get("#work-payment-exempt-reason-9").click();
+      cy.get("#work-payment-exempt-reason-8").click();
       cy.get("#exempt-details").fill(faker.random.alphaNumeric(400));
       cy.get("#continue").click();
       cy.get("#work-category").click();
@@ -1684,5 +1727,5 @@ describe('Page title verification', () => {
         );
       });
     });
-  });
-})
+ // });
+//})
