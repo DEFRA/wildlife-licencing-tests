@@ -1,7 +1,7 @@
 const faker = require('faker')
 
 describe('Add an additional contact', () => {
-  beforeEach(() =>{
+  it(' 1 Verify happy path - Add an additional contact', () => {
     cy.visit(Cypress.env('login'))
     cy.fixture('users.json').then((users) => {
       cy.get('#username').fill(users.email1)
@@ -19,28 +19,6 @@ describe('Add an additional contact', () => {
       cy.get('#continue').click()
       cy.get('#continue').click()
       cy.get('#continue').click()
-    
-  });
-});
-   
-  it(' 1 Verify happy path - Add an additional contact', () => {
-    // cy.visit(Cypress.env('login'))
-    // cy.fixture('users.json').then((users) => {
-    //   cy.get('#username').fill(users.email1)
-    //   cy.get('#password').fill(users.password1)
-    //   cy.get('#continue').click()
-    //   cy.get('h1.govuk-fieldset__heading').contains(users.nextpage)
-    //   cy.get('#main-content > div > div > form > fieldset > a').click()
-    //   cy.get('#species').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no-2').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no-2').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
       //  Give licence holder details
       cy.get('a').contains('Give licence holder details').click()
       cy.get('#yes-no').click()
@@ -93,25 +71,25 @@ describe('Add an additional contact', () => {
         '#main-content > div > div > form > fieldset > span > ol > li:nth-child(2) > ul > li:nth-child(7)'
       ).contains('Add alternative contacts')
     })
-  //})
+  })
   it('2 Verify happy path - Add an additional contact', () => {
-    // cy.visit(Cypress.env('login'))
-    // cy.fixture('users.json').then((users) => {
-    //   cy.get('#username').fill(users.email1)
-    //   cy.get('#password').fill(users.password1)
-    //   cy.get('#continue').click()
-    //   cy.get('h1.govuk-fieldset__heading').contains(users.nextpage)
-    //   cy.get('#main-content > div > div > form > fieldset > a').click()
-    //   cy.get('#species').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no-2').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no-2').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
+    cy.visit(Cypress.env('login'))
+    cy.fixture('users.json').then((users) => {
+      cy.get('#username').fill(users.email1)
+      cy.get('#password').fill(users.password1)
+      cy.get('#continue').click()
+      cy.get('h1.govuk-fieldset__heading').contains(users.nextpage)
+      cy.get('#main-content > div > div > form > fieldset > a').click()
+      cy.get('#species').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no-2').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no-2').click()
+      cy.get('#continue').click()
+      cy.get('#continue').click()
+      cy.get('#continue').click()
       //   Give licence holder details
       cy.get('a').contains('Give licence holder details').click()
       cy.get('#yes-no').click()
@@ -174,26 +152,26 @@ describe('Add an additional contact', () => {
         '#main-content > div > div > form > fieldset > span > ol > li:nth-child(2) > ul > li:nth-child(7)'
       ).contains('Add alternative contacts')
     })
-  //})
+  })
   it('3 Verify happy path - Add an additional contact', () => {
     // cy.request( ("/set-sysdate?iso-string=2023-03-30T17:48:00.000Z"));
-    // cy.visit(Cypress.env('login'))
-    // cy.fixture('users.json').then((users) => {
-    //   cy.get('#username').fill(users.email1)
-    //   cy.get('#password').fill(users.password1)
-    //   cy.get('#continue').click()
-    //   cy.get('h1.govuk-fieldset__heading').contains(users.nextpage)
-    //   cy.get('#main-content > div > div > form > fieldset > a').click()
-    //   cy.get('#species').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no-2').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no-2').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
+    cy.visit(Cypress.env('login'))
+    cy.fixture('users.json').then((users) => {
+      cy.get('#username').fill(users.email1)
+      cy.get('#password').fill(users.password1)
+      cy.get('#continue').click()
+      cy.get('h1.govuk-fieldset__heading').contains(users.nextpage)
+      cy.get('#main-content > div > div > form > fieldset > a').click()
+      cy.get('#species').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no-2').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no-2').click()
+      cy.get('#continue').click()
+      cy.get('#continue').click()
+      cy.get('#continue').click()
       //   Give licence holder details
       cy.get('a').contains('Give licence holder details').click()
       cy.get('#yes-no').click()
@@ -250,26 +228,26 @@ describe('Add an additional contact', () => {
         '#main-content > div > div > form > fieldset > span > ol > li:nth-child(2) > ul > li:nth-child(7)'
       ).contains('Add alternative contacts')
     })
-  //})
+  })
   it('4 Verify happy path - Add an additional contact', () => {
     // cy.request( ("/set-sysdate?iso-string=2023-03-30T17:48:00.000Z"));
-    // cy.visit(Cypress.env('login'))
-    // cy.fixture('users.json').then((users) => {
-    //   cy.get('#username').fill(users.email1)
-    //   cy.get('#password').fill(users.password1)
-    //   cy.get('#continue').click()
-    //   cy.get('h1.govuk-fieldset__heading').contains(users.nextpage)
-    //   cy.get('#main-content > div > div > form > fieldset > a').click()
-    //   cy.get('#species').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no-2').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no-2').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
+    cy.visit(Cypress.env('login'))
+    cy.fixture('users.json').then((users) => {
+      cy.get('#username').fill(users.email1)
+      cy.get('#password').fill(users.password1)
+      cy.get('#continue').click()
+      cy.get('h1.govuk-fieldset__heading').contains(users.nextpage)
+      cy.get('#main-content > div > div > form > fieldset > a').click()
+      cy.get('#species').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no-2').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no-2').click()
+      cy.get('#continue').click()
+      cy.get('#continue').click()
+      cy.get('#continue').click()
       //   Give licence holder details
       cy.get('a').contains('Give licence holder details').click()
       cy.get('#yes-no').click()
@@ -335,4 +313,4 @@ describe('Add an additional contact', () => {
       ).contains('Add alternative contacts')
     })
   })
-//})
+})

@@ -324,9 +324,9 @@ describe("Page title verification", () => {
           cy.get("#continue").click();
           cy.get("input[value='true']").click();
           cy.get("#continue").click();
-          cy.get("#habitat-entrances").fill("7");
+          cy.get("#habitat-entrances").fill("0100");
           cy.get("#continue").click();
-          cy.get("#habitat-active-entrances").fill("5");
+          cy.get("#habitat-active-entrances").fill("0050");
           cy.get("#continue").click();
           cy.get("#habitat-grid-ref").clear();
           cy.get("#habitat-grid-ref").fill("NY123456");

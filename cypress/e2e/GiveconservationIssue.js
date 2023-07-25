@@ -476,10 +476,10 @@ describe('Page title verification', () => {
       // cy.get("#continue").click();
       cy.get(
         '#main-content > div > div'
-      ).contains('Choose whether you want to add another designated site')
+      ).contains('You have not selected an option')
       cy.get(
         '#main-content > div > div'
-      ).contains('Choose whether you want to add another designated site')
+      ).contains('You have not selected an option')
     })
   //})
   it('5 and verify application season period screen', () => {
@@ -732,7 +732,7 @@ describe('Page title verification', () => {
       cy.get('#continue').click()
       cy.get('#yes-no').click()
       cy.get('#continue').click()
-      cy.get('#advice-from-who').fill(faker.random.alphaNumeric(300))
+      cy.get('#advice-from-who').fill(faker.random.alphaNumeric(100))
       cy.get('#advice-description').fill(faker.random.alphaNumeric(4001))
       cy.get('#continue').click()
     
@@ -741,7 +741,7 @@ describe('Page title verification', () => {
       ).contains('You have entered too many characters')
       cy.get(
         '#main-content > div > div'
-      ).contains('Enter a description of the advice given')
+      ).contains('Enter a description of the outcome')
     })
  // })
   it('11 and verify application season period screen', () => {
@@ -781,10 +781,10 @@ describe('Page title verification', () => {
       cy.get('#continue').click()
       cy.get(
         '#main-content > div > div'
-      ).contains('You have not entered a description of the advice')
+      ).contains('You have entered too many characters')
       cy.get(
         '#main-content > div > div'
-      ).contains('Enter a description of the advice given')
+      ).contains('You have not entered a description of the outcome')
     })
 //  })
   it('12 and verify application season period screen', () => {

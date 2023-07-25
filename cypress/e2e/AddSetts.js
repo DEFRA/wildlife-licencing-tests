@@ -386,7 +386,7 @@ describe('Add sett', () => {
       cy.get("input[id='habitat-work-end-month']").fill('11')
       cy.get("input[id='habitat-work-end-year']").fill('2024')
       cy.get('#continue').click()
-      cy.get("#habitat-activities-3").click()
+      cy.get("#habitat-activities-4").click()
       cy.get('#continue').click()
       cy.get("#additional-sett-2").click()
       cy.get('#continue').click()
