@@ -198,7 +198,7 @@ describe('Page title verification', () => {
         ).contains(eligibility2.text4);
         cy.get("div.govuk-width-container ").contains("Yes");
         cy.get("div.govuk-width-container ").contains("Change");
-        cy.get("div.govuk-width-container ").contains("Confirm");
+        cy.get("div.govuk-width-container ").contains("Continue");
         cy.get("#continue").click();
         cy.get(
           "#main-content > div > div > form > fieldset > legend > h1"
@@ -610,7 +610,7 @@ describe('Page title verification', () => {
       cy.get('#backlink-div > a').click()
       cy.get("fieldset[class='govuk-fieldset']").contains('Yes')
       cy.get("fieldset[class='govuk-fieldset']").contains('No')
-      cy.get("fieldset[class='govuk-fieldset']").contains('Confirm')
+      cy.get("fieldset[class='govuk-fieldset']").contains('Continue')
       cy.get("fieldset[class='govuk-fieldset']").contains('Change')
       cy.get("fieldset[class='govuk-fieldset']").should(
         'not.include.text',

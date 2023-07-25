@@ -1,7 +1,7 @@
 const faker = require('faker')
 
 describe('Add authorised People', () => {
-  it(' 1 Verify happy path - Add an authorised People', () => {
+  beforeEach(() =>{
     cy.visit(Cypress.env('login'))
     cy.fixture('users.json').then((users) => {
       cy.get('#username').fill(users.email1)
@@ -19,6 +19,27 @@ describe('Add authorised People', () => {
       cy.get('#continue').click()
       cy.get('#continue').click()
       cy.get('#continue').click()
+    
+  });
+});
+  it(' 1 Verify happy path - Add an authorised People', () => {
+    // cy.visit(Cypress.env('login'))
+    // cy.fixture('users.json').then((users) => {
+    //   cy.get('#username').fill(users.email1)
+    //   cy.get('#password').fill(users.password1)
+    //   cy.get('#continue').click()
+    //   cy.get('h1.govuk-fieldset__heading').contains(users.nextpage)
+    //   cy.get('#main-content > div > div > form > fieldset > a').click()
+    //   cy.get('#species').click()
+    //   cy.get('#continue').click()
+    //   cy.get('#yes-no-2').click()
+    //   cy.get('#continue').click()
+    //   cy.get('#yes-no').click()
+    //   cy.get('#continue').click()
+    //   cy.get('#yes-no-2').click()
+    //   cy.get('#continue').click()
+    //   cy.get('#continue').click()
+    //   cy.get('#continue').click()
 
       // Add authorised people
 
@@ -50,25 +71,25 @@ describe('Add authorised People', () => {
         '#main-content > div > div > form > fieldset > span > ol > li:nth-child(2) > ul > li:nth-child(5)'
       ).contains('Add authorised people')
     })
-  })
+  //})
   it(' 2 Verify happy path - Add multiple authorised People', () => {
-    cy.visit(Cypress.env('login'))
-    cy.fixture('users.json').then((users) => {
-      cy.get('#username').fill(users.email1)
-      cy.get('#password').fill(users.password1)
-      cy.get('#continue').click()
-      cy.get('h1.govuk-fieldset__heading').contains(users.nextpage)
-      cy.get('#main-content > div > div > form > fieldset > a').click()
-      cy.get('#species').click()
-      cy.get('#continue').click()
-      cy.get('#yes-no-2').click()
-      cy.get('#continue').click()
-      cy.get('#yes-no').click()
-      cy.get('#continue').click()
-      cy.get('#yes-no-2').click()
-      cy.get('#continue').click()
-      cy.get('#continue').click()
-      cy.get('#continue').click()
+    // cy.visit(Cypress.env('login'))
+    // cy.fixture('users.json').then((users) => {
+    //   cy.get('#username').fill(users.email1)
+    //   cy.get('#password').fill(users.password1)
+    //   cy.get('#continue').click()
+    //   cy.get('h1.govuk-fieldset__heading').contains(users.nextpage)
+    //   cy.get('#main-content > div > div > form > fieldset > a').click()
+    //   cy.get('#species').click()
+    //   cy.get('#continue').click()
+    //   cy.get('#yes-no-2').click()
+    //   cy.get('#continue').click()
+    //   cy.get('#yes-no').click()
+    //   cy.get('#continue').click()
+    //   cy.get('#yes-no-2').click()
+    //   cy.get('#continue').click()
+    //   cy.get('#continue').click()
+    //   cy.get('#continue').click()
 
       // Add authorised people
 
@@ -106,25 +127,25 @@ describe('Add authorised People', () => {
         '#main-content > div > div > form > fieldset > span > ol > li:nth-child(2) > ul > li:nth-child(5)'
       ).contains('Add authorised people')
     })
-  })
+ // })
   it(' 3 Verify happy path - Add an authorised People and remove then select no', () => {
-    cy.visit(Cypress.env('login'))
-    cy.fixture('users.json').then((users) => {
-      cy.get('#username').fill(users.email1)
-      cy.get('#password').fill(users.password1)
-      cy.get('#continue').click()
-      cy.get('h1.govuk-fieldset__heading').contains(users.nextpage)
-      cy.get('#main-content > div > div > form > fieldset > a').click()
-      cy.get('#species').click()
-      cy.get('#continue').click()
-      cy.get('#yes-no-2').click()
-      cy.get('#continue').click()
-      cy.get('#yes-no').click()
-      cy.get('#continue').click()
-      cy.get('#yes-no-2').click()
-      cy.get('#continue').click()
-      cy.get('#continue').click()
-      cy.get('#continue').click()
+    // cy.visit(Cypress.env('login'))
+    // cy.fixture('users.json').then((users) => {
+    //   cy.get('#username').fill(users.email1)
+    //   cy.get('#password').fill(users.password1)
+    //   cy.get('#continue').click()
+    //   cy.get('h1.govuk-fieldset__heading').contains(users.nextpage)
+    //   cy.get('#main-content > div > div > form > fieldset > a').click()
+    //   cy.get('#species').click()
+    //   cy.get('#continue').click()
+    //   cy.get('#yes-no-2').click()
+    //   cy.get('#continue').click()
+    //   cy.get('#yes-no').click()
+    //   cy.get('#continue').click()
+    //   cy.get('#yes-no-2').click()
+    //   cy.get('#continue').click()
+    //   cy.get('#continue').click()
+    //   cy.get('#continue').click()
 
       // Add authorised people
 
@@ -153,26 +174,26 @@ describe('Add authorised People', () => {
         '#main-content > div > div > form > fieldset > span > ol > li:nth-child(2) > ul > li:nth-child(5)'
       ).contains('Add authorised people')
     })
-  })
+  //})
 
   it(' 4 Verify happy path - Add multiple authorised People and change name', () => {
-    cy.visit(Cypress.env('login'))
-    cy.fixture('users.json').then((users) => {
-      cy.get('#username').fill(users.email1)
-      cy.get('#password').fill(users.password1)
-      cy.get('#continue').click()
-      cy.get('h1.govuk-fieldset__heading').contains(users.nextpage)
-      cy.get('#main-content > div > div > form > fieldset > a').click()
-      cy.get('#species').click()
-      cy.get('#continue').click()
-      cy.get('#yes-no-2').click()
-      cy.get('#continue').click()
-      cy.get('#yes-no').click()
-      cy.get('#continue').click()
-      cy.get('#yes-no-2').click()
-      cy.get('#continue').click()
-      cy.get('#continue').click()
-      cy.get('#continue').click()
+    // cy.visit(Cypress.env('login'))
+    // cy.fixture('users.json').then((users) => {
+    //   cy.get('#username').fill(users.email1)
+    //   cy.get('#password').fill(users.password1)
+    //   cy.get('#continue').click()
+    //   cy.get('h1.govuk-fieldset__heading').contains(users.nextpage)
+    //   cy.get('#main-content > div > div > form > fieldset > a').click()
+    //   cy.get('#species').click()
+    //   cy.get('#continue').click()
+    //   cy.get('#yes-no-2').click()
+    //   cy.get('#continue').click()
+    //   cy.get('#yes-no').click()
+    //   cy.get('#continue').click()
+    //   cy.get('#yes-no-2').click()
+    //   cy.get('#continue').click()
+    //   cy.get('#continue').click()
+    //   cy.get('#continue').click()
 
       // Add authorised people
 
@@ -216,4 +237,4 @@ describe('Add authorised People', () => {
       ).contains('Add authorised people')
     })
   })
-})
+//})
