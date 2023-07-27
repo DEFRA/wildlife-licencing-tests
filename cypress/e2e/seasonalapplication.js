@@ -34,6 +34,7 @@ describe('Page title verification', () => {
         cy.request('/reset-sysdate')
       })
     })
+     })
     it('2 and verify application season period screen', () => {
       cy.request(
         '/set-sysdate?iso-string=2023-04-30T01:00:00.000Z'
@@ -149,4 +150,4 @@ describe('Page title verification', () => {
       })
     })
   })
-})
+
