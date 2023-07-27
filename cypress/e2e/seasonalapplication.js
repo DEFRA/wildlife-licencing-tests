@@ -150,4 +150,3 @@ describe('Page title verification', () => {
       })
     })
   })
-
