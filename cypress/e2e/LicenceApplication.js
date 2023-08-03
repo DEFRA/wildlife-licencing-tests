@@ -717,6 +717,23 @@ describe("Page title verification", () => {
           cy.get("#main-content > div > div > form > fieldset").contains(
             users.text18
           );
+
+
+//           By sending the application you agree that you have given complete and correct information.
+
+// If you are making this application on behalf of another person, you confirm that you have their permission to do so. By sending the application, they agree they will:
+
+// will uphold any conditions applied to my licence if granted
+// will abide by the terms and conditions of this service
+// will abide by the terms and conditions of paying for wildlife licences (opens in new tab) and agree to pay relevant charges
+// By sending the application you confirm that:
+
+// an appropriate ecologist has been involved in the application and design of any mitigations
+// the ecologist supports the application
+// the ecologist is content that the proposed methods, actions and mitigation are appropriate to address the findings of the ecologist’s site assessment
+// you will report any actions you took using this licence within 2 weeks of your licence expiring, even if you have taken no action
+// you will pay any charges that apply
+
           cy.get("#main-content > div > div > form > fieldset").contains(
             "By sending the application you agree that you have given complete and correct information."
           );
@@ -750,7 +767,14 @@ describe("Page title verification", () => {
           cy.get("#main-content > div > div > form > fieldset").contains(
             "you will pay any charges that apply"
           );
+          cy.get("#main-content > div > div > form > fieldset").contains(
+            "you will pay any charges that apply"
+          );
+          
           cy.get("#continue").click();
+          cy.get("#main-content > div > div > form").contains("Application sent");
+          cy.get("#main-content > div > div > form").contains("Your reference number");
+
           cy.get("#continue").click();
           const ls = cy.get("a").contains("Badger mitigation").first();
           ls.click();

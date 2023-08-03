@@ -7,28 +7,56 @@ const faker = require('faker')
  */
 
 describe('Page title verification', () => {
+  beforeEach(() =>{
+     cy.request(
+        '/reset?username=user1@email.com'
+      );
+      cy.visit(Cypress.env("login"));
+      cy.fixture("users.json").then((users) => {
+        cy.get("#username").fill(users.email3);
+        cy.get("#password").fill(users.password2);
+        cy.get("#continue").click();
+        cy.get("#species").click();
+        cy.get("#continue").click();
+        cy.get("#yes-no-2").click();
+        cy.get("#continue").click();
+        cy.get("#continue").click();
+        cy.get("#yes-no").click();
+        cy.get("#continue").click();
+        cy.get("#yes-no").click();
+        cy.get("#continue").click();
+        cy.get("#yes-no").click();
+        cy.get("#continue").click();
+        cy.get("#continue").click();
+        cy.get("#continue").click();
+    
+  });
+});
+
+
+
   it("1 verify conviction details", () => {
-    cy.request(
-      '/reset?username=user1@email.com'
-    );
-    cy.visit(Cypress.env("login"));
-    cy.fixture("users.json").then((users) => {
-      cy.get("#username").fill(users.email3);
-      cy.get("#password").fill(users.password2);
-      cy.get("#continue").click();
-      cy.get("#species").click();
-      cy.get("#continue").click();
-      cy.get("#yes-no-2").click();
-      cy.get("#continue").click();
-      cy.get("#continue").click();
-      cy.get("#yes-no").click();
-      cy.get("#continue").click();
-      cy.get("#yes-no").click();
-      cy.get("#continue").click();
-      cy.get("#yes-no").click();
-      cy.get("#continue").click();
-      cy.get("#continue").click();
-      cy.get("#continue").click();
+    // cy.request(
+    //   '/reset?username=user1@email.com'
+    // );
+    // cy.visit(Cypress.env("login"));
+    // cy.fixture("users.json").then((users) => {
+    //   cy.get("#username").fill(users.email3);
+    //   cy.get("#password").fill(users.password2);
+    //   cy.get("#continue").click();
+    //   cy.get("#species").click();
+    //   cy.get("#continue").click();
+    //   cy.get("#yes-no-2").click();
+    //   cy.get("#continue").click();
+    //   cy.get("#continue").click();
+    //   cy.get("#yes-no").click();
+    //   cy.get("#continue").click();
+    //   cy.get("#yes-no").click();
+    //   cy.get("#continue").click();
+    //   cy.get("#yes-no").click();
+    //   cy.get("#continue").click();
+    //   cy.get("#continue").click();
+    //   cy.get("#continue").click();
 
       cy.get("a").contains("Give licence holder details").click();
       cy.get("#yes-no").click();
@@ -263,6 +291,7 @@ describe('Page title verification', () => {
           cy.get("#continue").click();
           cy.get("#continue").click();
           cy.get("a").contains("Agree to terms and send application").click();
+          cy.fixture("users.json").then((users) => {
           cy.get("#main-content > div > div > form > fieldset").contains(
             users.text18
           );
@@ -279,6 +308,9 @@ describe('Page title verification', () => {
             "will abide by the terms and conditions of this service"
           );
             cy.get("#main-content > div > div > form > fieldset").contains(
+            "will abide by the terms and conditions of paying for wildlife licences (opens in new tab) and agree to pay relevant charges"
+          );
+          cy.get("#main-content > div > div > form > fieldset").contains(
             "will abide by the terms and conditions of paying for wildlife licences (opens in new tab) and agree to pay relevant charges"
           );
           cy.get("#main-content > div > div > form > fieldset").contains(
@@ -323,28 +355,29 @@ describe('Page title verification', () => {
       );
     });
   });
+ // });
   it('2 Verify conviction detail', () => {
-    cy.request(
-      '/reset?username=user1@email.com'
-    )
-    cy.visit(Cypress.env('login'))
-    cy.fixture('users.json').then((users) => {
-      cy.get('#username').fill(users.email3)
-      cy.get('#password').fill(users.password2)
-      cy.get('#continue').click()
-      cy.get('#species').click()
-      cy.get('#continue').click()
-      cy.get('#yes-no-2').click()
-      cy.get('#continue').click()
-      cy.get('#continue').click()
-      cy.get('#yes-no').click()
-      cy.get('#continue').click()
-      cy.get('#yes-no').click()
-      cy.get('#continue').click()
-      cy.get('#yes-no').click()
-      cy.get('#continue').click()
-      cy.get('#continue').click()
-      cy.get('#continue').click()
+    // cy.request(
+    //   '/reset?username=user1@email.com'
+    // )
+    // cy.visit(Cypress.env('login'))
+    // cy.fixture('users.json').then((users) => {
+    //   cy.get('#username').fill(users.email3)
+    //   cy.get('#password').fill(users.password2)
+    //   cy.get('#continue').click()
+    //   cy.get('#species').click()
+    //   cy.get('#continue').click()
+    //   cy.get('#yes-no-2').click()
+    //   cy.get('#continue').click()
+    //   cy.get('#continue').click()
+    //   cy.get('#yes-no').click()
+    //   cy.get('#continue').click()
+    //   cy.get('#yes-no').click()
+    //   cy.get('#continue').click()
+    //   cy.get('#yes-no').click()
+    //   cy.get('#continue').click()
+    //   cy.get('#continue').click()
+    //   cy.get('#continue').click()
 
       cy.get('a').contains('Give licence holder details').click()
       cy.get('#yes-no').click()
@@ -578,6 +611,7 @@ describe('Page title verification', () => {
           cy.get('#continue').click()
           cy.get('#continue').click()
           cy.get('a').contains('Agree to terms and send application').click()
+          cy.fixture("users.json").then((users) => {
           cy.get('#main-content > div > div > form > fieldset').contains(
             users.text18
           )
@@ -638,27 +672,28 @@ describe('Page title verification', () => {
       )
     })
   })
+ // })
   it("3 and verify application season period screen", () => {
-    cy.request(
-      '/reset?username=user1@email.com'
-    );
-    cy.visit(Cypress.env("login"));
-    cy.fixture("users.json").then((users) => {
-      cy.get("#username").fill(users.email3);
-      cy.get("#password").fill(users.password2);
-      cy.get("#continue").click();
-      cy.get("#species").click();
-      cy.get("#continue").click();
-      cy.get("#yes-no-2").click();
-      cy.get("#continue").click();
-      cy.get("#yes-no").click();
-      cy.get("#continue").click();
-      cy.get("#yes-no").click();
-      cy.get("#continue").click();
-      cy.get("#yes-no").click();
-      cy.get("#continue").click();
-      cy.get("#continue").click();
-      cy.get("#continue").click();
+    // cy.request(
+    //   '/reset?username=user1@email.com'
+    // );
+    // cy.visit(Cypress.env("login"));
+    // cy.fixture("users.json").then((users) => {
+    //   cy.get("#username").fill(users.email3);
+    //   cy.get("#password").fill(users.password2);
+    //   cy.get("#continue").click();
+    //   cy.get("#species").click();
+    //   cy.get("#continue").click();
+    //   cy.get("#yes-no-2").click();
+    //   cy.get("#continue").click();
+    //   cy.get("#yes-no").click();
+    //   cy.get("#continue").click();
+    //   cy.get("#yes-no").click();
+    //   cy.get("#continue").click();
+    //   cy.get("#yes-no").click();
+    //   cy.get("#continue").click();
+    //   cy.get("#continue").click();
+    //   cy.get("#continue").click();
 
       cy.get("a").contains("Give licence holder details").click();
       cy.get("#yes-no").click();
@@ -895,28 +930,28 @@ describe('Page title verification', () => {
         }
       );
     });
-  });
+ // });
   it("4 and verify application season period screen", () => {
-    cy.request(
-      '/reset?username=user1@email.com'
-    );
-    cy.visit(Cypress.env("login"));
-    cy.fixture("users.json").then((users) => {
-      cy.get("#username").fill(users.email3);
-      cy.get("#password").fill(users.password2);
-      cy.get("#continue").click();
-      cy.get("#species").click();
-      cy.get("#continue").click();
-      cy.get("#yes-no-2").click();
-      cy.get("#continue").click();
-      cy.get("#yes-no").click();
-      cy.get("#continue").click();
-      cy.get("#yes-no").click();
-      cy.get("#continue").click();
-      cy.get("#yes-no").click();
-      cy.get("#continue").click();
-      cy.get("#continue").click();
-      cy.get("#continue").click();
+    // cy.request(
+    //   '/reset?username=user1@email.com'
+    // );
+    // cy.visit(Cypress.env("login"));
+    // cy.fixture("users.json").then((users) => {
+    //   cy.get("#username").fill(users.email3);
+    //   cy.get("#password").fill(users.password2);
+    //   cy.get("#continue").click();
+    //   cy.get("#species").click();
+    //   cy.get("#continue").click();
+    //   cy.get("#yes-no-2").click();
+    //   cy.get("#continue").click();
+    //   cy.get("#yes-no").click();
+    //   cy.get("#continue").click();
+    //   cy.get("#yes-no").click();
+    //   cy.get("#continue").click();
+    //   cy.get("#yes-no").click();
+    //   cy.get("#continue").click();
+    //   cy.get("#continue").click();
+    //   cy.get("#continue").click();
 
       cy.get("a").contains("Give licence holder details").click();
       cy.get("#yes-no").click();
@@ -1152,28 +1187,28 @@ describe('Page title verification', () => {
         }
       );
     });
-  });
+  //});
   it("5 and verify application season period screen", () => {
-    cy.request(
-      '/reset?username=user1@email.com'
-    );
-    cy.visit(Cypress.env("login"));
-    cy.fixture("users.json").then((users) => {
-      cy.get("#username").fill(users.email3);
-      cy.get("#password").fill(users.password2);
-      cy.get("#continue").click();
-      cy.get("#species").click();
-      cy.get("#continue").click();
-      cy.get("#yes-no-2").click();
-      cy.get("#continue").click();
-      cy.get("#yes-no").click();
-      cy.get("#continue").click();
-      cy.get("#yes-no").click();
-      cy.get("#continue").click();
-      cy.get("#yes-no").click();
-      cy.get("#continue").click();
-      cy.get("#continue").click();
-      cy.get("#continue").click();
+    // cy.request(
+    //   '/reset?username=user1@email.com'
+    // );
+    // cy.visit(Cypress.env("login"));
+    // cy.fixture("users.json").then((users) => {
+    //   cy.get("#username").fill(users.email3);
+    //   cy.get("#password").fill(users.password2);
+    //   cy.get("#continue").click();
+    //   cy.get("#species").click();
+    //   cy.get("#continue").click();
+    //   cy.get("#yes-no-2").click();
+    //   cy.get("#continue").click();
+    //   cy.get("#yes-no").click();
+    //   cy.get("#continue").click();
+    //   cy.get("#yes-no").click();
+    //   cy.get("#continue").click();
+    //   cy.get("#yes-no").click();
+    //   cy.get("#continue").click();
+    //   cy.get("#continue").click();
+    //   cy.get("#continue").click();
 
       cy.get("a").contains("Give licence holder details").click();
       cy.get("#yes-no").click();
@@ -1410,33 +1445,33 @@ describe('Page title verification', () => {
         }
       );
     });
-  });
+ // });
   it("6 and verify application season period screen", () => {
-    it(" 6a Verify happy path -  Add setts ", () => {
-      cy.request(
-        '/reset?username=user1@email.com'
-        );
-      cy.visit(Cypress.env("login"));
-      cy.fixture("users.json").then((users) => {
-        cy.get("#username").fill(users.email3);
-        cy.get("#password").fill(users.password2);
-        cy.get("#continue").click();
-        cy.get("#species").click();
-        cy.get("#continue").click();
-        cy.get("#yes-no-2").click();
-        cy.get("#continue").click();
-        cy.get("h1.govuk-fieldset__heading").contains(
-          "Licences are typically issued between July and November to protect badger welfare"
-        );
-        cy.get("#continue").click();
-        cy.get("#yes-no").click();
-        cy.get("#continue").click();
-        cy.get("#yes-no").click();
-        cy.get("#continue").click();
-        cy.get("#yes-no").click();
-        cy.get("#continue").click();
-        cy.get("#continue").click();
-        cy.get("#continue").click();
+  //  it(" 6a Verify happy path -  Add setts ", () => {
+      // cy.request(
+      //   '/reset?username=user1@email.com'
+      //   );
+      // cy.visit(Cypress.env("login"));
+      // cy.fixture("users.json").then((users) => {
+      //   cy.get("#username").fill(users.email3);
+      //   cy.get("#password").fill(users.password2);
+      //   cy.get("#continue").click();
+      //   cy.get("#species").click();
+      //   cy.get("#continue").click();
+      //   cy.get("#yes-no-2").click();
+      //   cy.get("#continue").click();
+        // cy.get("h1.govuk-fieldset__heading").contains(
+        //   "Licences are typically issued between July and November to protect badger welfare"
+        // );
+        // cy.get("#continue").click();
+        // cy.get("#yes-no").click();
+        // cy.get("#continue").click();
+        // cy.get("#yes-no").click();
+        // cy.get("#continue").click();
+        // cy.get("#yes-no").click();
+        // cy.get("#continue").click();
+        // cy.get("#continue").click();
+        // cy.get("#continue").click();
 
         cy.get("a").contains("Give licence holder details").click();
         cy.get("#yes-no").click();
@@ -1696,5 +1731,5 @@ describe('Page title verification', () => {
         );
       });
     });
-  });
-})
+ // });
+//})

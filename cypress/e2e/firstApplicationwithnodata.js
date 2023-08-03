@@ -205,7 +205,7 @@ cy.get("#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-chi
       cy.get('#address-county').fill(faker.random.alpha(20))
       cy.get('#continue').click()
       cy.get('#scan-file').click()
-      const yourFixturePath = 'virusfile.pdf'
+      const yourFixturePath = 'magic_polygons.cpg'
       const dbfFixturePath = 'magic_polygons.dbf'
       const prjFixturePath = 'magic_polygons.prj'
       cy.get('#scan-file').attachFile(yourFixturePath)

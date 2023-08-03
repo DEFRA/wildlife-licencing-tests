@@ -238,6 +238,15 @@ describe('Work activities details', () => {
       cy.get("a").contains("Give work activity details").click();
       cy.get("#work-proposal").fill(faker.random.alphaNumeric(40));
       cy.get("#continue").click();
+      cy.get('#main-content').contains('Exemptions from paying for a wildlife licence')
+       cy.get('#main-content').contains('You may not need to pay for a wildlife licence if:')
+        cy.get('#main-content').contains('the purpose of your licence is to preserve public health and safety')
+         cy.get('#main-content').contains('the purpose of your licence is to prevent damage to livestock, crops, timber or property')
+          cy.get('#main-content').contains('the purpose of the licence is to improve your home through householder planning permission or permitted development')
+           cy.get('#main-content').contains('the main aim of the project is science, research or education related to the protected species or protected site')
+            cy.get('#main-content').contains('the main aim of the project is conservation of the protected species')
+      cy.get('#main-content').contains('the main aim of the project is to conserve a scheduled monument, listed building, place of worship or traditional farm building in a stewardship agreement')
+      cy.get('#main-content').contains('Do you think the purpose of your project is exempt from payment?')
       cy.get("#yes-no").click();
       cy.get("#continue").click();
       cy.get("#work-payment-exempt-reason-6").click();
