@@ -1,7 +1,13 @@
 const faker = require('faker')
 
 describe('Site Information', () => {
-  it(' 1 Verify happy path - site information and selected all answers are correct', () => {
+
+it(' 0 Verify happy path -  switch date time ', () => {
+    cy.request(
+      '/set-sysdate?iso-string=2023-04-01T01:00:00.000Z'
+    )
+  })
+it(' 1 Verify happy path - site information and selected all answers are correct', () => {
     cy.visit(Cypress.env('login'))
     cy.fixture('users.json').then((users) => {
       cy.get('#username').fill(users.email1)
@@ -20,7 +26,7 @@ describe('Site Information', () => {
       cy.get('#continue').click()
       cy.get('#continue').click()
       cy.get('a').contains('Give site information').click()
-      cy.get('#site-name').fill(faker.name.firstName())
+      cy.get('#site-name').fill(faker.random.alphaNumeric(100))
       cy.get('#continue').click()
       cy.get('#site-postcode-check').click()
       cy.get('#site-postcode').fill('M24 6dh')
@@ -386,10 +392,10 @@ describe('Site Information', () => {
       cy.get('#continue').click()
       cy.get('#site-postcode-check-2').click()
       cy.get('#continue').click()
-      cy.get('#address-line-1').fill('3')
-      cy.get('#address-line-2').fill('man')
-      cy.get('#address-town').fill('manchester')
-      cy.get('#address-county').fill('Manchester')
+      cy.get('#address-line-1').fill(faker.random.alpha(80))
+      cy.get('#address-line-2').fill(faker.random.alpha(80))
+      cy.get('#address-town').fill(faker.random.alpha(80))
+      cy.get('#address-county').fill(faker.random.alpha(20))
       cy.get('#continue').click()
       cy.get('#scan-file').click()
       const shpFixturePath = 'magic_polygons.shp'
@@ -472,7 +478,7 @@ describe('Site Information', () => {
       cy.get('#siteAddress').select('2, BAY TREE CLOSE, BIRMINGHAM, B38 9SH')
       cy.get('#continue').click()
       cy.get('#scan-file').click()
-      const emptyFixturePath = 'empty.pdf'
+      const emptyFixturePath = 'magic_polygons.shp'
 
       const dbfFixturePath = 'magic_polygons.dbf'
       const prjFixturePath = 'magic_polygons.prj'
@@ -778,4 +784,48 @@ describe('Site Information', () => {
     
     })
   })
+  it('7g Verify happy path - site information', () => {
+    cy.visit(Cypress.env('login'))
+    cy.fixture('users.json').then((users) => {
+      cy.get('#username').fill(users.email1)
+      cy.get('#password').fill(users.password1)
+      cy.get('#continue').click()
+      cy.get('h1.govuk-fieldset__heading').contains(users.nextpage)
+      cy.get('#main-content > div > div > form > fieldset > a').click()
+      cy.get('#species').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no-2').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no-2').click()
+      cy.get('#continue').click()
+      cy.get('#continue').click()
+      cy.get('#continue').click()
+      cy.get('a').contains('Give site information').click()
+      cy.get('#site-name').fill('test')
+      cy.get('#continue').click()
+      cy.get('#site-postcode-check').click()
+      cy.get('#site-postcode').fill('M24 6dh')
+      cy.get('#continue').click()
+      cy.get('#siteAddress').select(
+        '1, SATIN DRIVE, MIDDLETON, MANCHESTER, M24 6DH'
+      )
+      cy.get('#continue').click()
+      cy.get('#scan-file').click()
+      const yourFixturePath = 'virusfile.pdf'
+      cy.get('#scan-file').attachFile(yourFixturePath)
+      cy.get('#continue').click()
+      cy.get('#scan-file').click()
+      cy.get('#scan-file').attachFile(yourFixturePath)
+      cy.get('#continue').click()
+      cy.get('#scan-file').click()
+      cy.get('#scan-file').attachFile(yourFixturePath)
+      cy.get('#continue').click()
+      cy.get('#site-grid-ref').fill('NY3955578939555789083955578908')
+      cy.get('#continue').click()
+      cy.get('#main-content').contains('The grid reference you have entered is not in the right format')
+      cy.get('#main-content').contains('Enter a national grid reference for the site')
+})
+})
 })

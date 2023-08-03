@@ -129,7 +129,7 @@ describe('Page title verification', () => {
       cy.get("#continue").click();
       cy.get("#yes-no").click();
       cy.get("#continue").click();
-      cy.get("#work-payment-exempt-reason-9").click();
+      cy.get("#work-payment-exempt-reason-8").click();
       cy.get("#exempt-details").fill(faker.random.alphaNumeric(400));
       cy.get("#continue").click();
       cy.get("#work-category-13").click();
@@ -194,13 +194,16 @@ cy.get("#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-chi
 cy.get("#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(3)").contains("Give details of permissions to start work");
   // site info
       cy.get("a").contains("Give site information").click();
-      cy.get("#site-name").fill("test");
+      cy.get("#site-name").fill(faker.random.alphaNumeric(100))
       cy.get("#continue").click();
-      cy.get("#site-postcode-check").click();
-      cy.get("#site-postcode").fill("B38 9SH");
-      cy.get("#continue").click();
-      cy.get("#siteAddress").select("2, BAY TREE CLOSE, BIRMINGHAM, B38 9SH");
-      cy.get("#continue").click();
+     cy.get('#continue').click()
+      cy.get('#site-postcode-check-2').click()
+      cy.get('#continue').click()
+      cy.get('#address-line-1').fill(faker.random.alpha(80))
+      cy.get('#address-line-2').fill(faker.random.alpha(80))
+      cy.get('#address-town').fill(faker.random.alpha(80))
+      cy.get('#address-county').fill(faker.random.alpha(20))
+      cy.get('#continue').click()
       cy.get('#scan-file').click()
       const yourFixturePath = 'virusfile.pdf'
       const dbfFixturePath = 'magic_polygons.dbf'
@@ -213,13 +216,34 @@ cy.get("#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-chi
       cy.get('#scan-file').click()
       cy.get('#scan-file').attachFile(prjFixturePath)
       cy.get('#continue').click()
+
+      //  cy.get('#continue').click()
+      // cy.get('#scan-file').click()
+      // const shpFixturePath = 'magic_polygons.shp'
+      // const yourFixturePath = 'virusfile.pdf'
+      // const shpxmlFixturePath = 'magic_polygons.shp.xml'
+      // cy.get('#scan-file').attachFile(yourFixturePath)
+      // cy.get('#continue').click()
+      // cy.get('#scan-file').click()
+      // cy.get('#scan-file').attachFile(shpFixturePath)
+      // cy.get('#continue').click()
+      // cy.get('#scan-file').click()
+      // cy.get('#scan-file').attachFile(shpxmlFixturePath)
+      // cy.get('#continue').click()
+      // cy.get('#site-grid-ref').clear()
+      // cy.get('#site-grid-ref').fill(
+      //   'NY' + faker.datatype.number({ min: 100000 }).toString()
+      // )
+      // cy.get('#continue').click()
+      // cy.get('#address-and-grid-reference-mismatch').click()
+      // cy.get('#continue').click()
       cy.get('#site-grid-ref').clear()
       cy.get('#site-grid-ref').fill(
         'NY' + faker.datatype.number({ min: 100000 }).toString()
       )
       cy.get('#continue').click()
-      cy.get("#site-grid-ref").fill("SP039775");
-      cy.get("#continue").click();
+      cy.get('#address-and-grid-reference-mismatch-4').click()
+      cy.get('#continue').click()
       cy.get("#continue").click();
 
       cy.get("a").contains("Give ecologist’s experience").click();
@@ -281,33 +305,39 @@ cy.get("#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-chi
           cy.get("#main-content > div > div > form > fieldset").contains(
             users.text18
           )
-          cy.get('#main-content > div > div > form > fieldset').contains(
-            'By sending the application you agree that you have given complete and correct information.'
-          )
-          cy.get('#main-content > div > div > form > fieldset').contains(
-            'If you are making this application on behalf of another person, you confirm that you have their permission to do so. By sending the application, they agree that they will:'
-          )
-          cy.get('#main-content > div > div > form > fieldset').contains(
-            'will uphold any conditions applied to my licence if granted'
-          )
-          cy.get('#main-content > div > div > form > fieldset').contains(
-            'will abide by the terms and conditions of this service'
-          )
-          cy.get('#main-content > div > div > form > fieldset').contains(
-            'By sending the application you confirm that:'
-          )
-          cy.get('#main-content > div > div > form > fieldset').contains(
-            'an appropriate ecologist has been involved in the application and the design of any mitigations'
-          )
-          cy.get('#main-content > div > div > form > fieldset').contains(
-            'the ecologist supports the application'
-          )
-          cy.get('#main-content > div > div > form > fieldset').contains(
-            "the ecologist is content that the proposed methods, actions and mitigation are appropriate to address the findings of the ecologist's site assessment"
-          )
-          cy.get('#main-content > div > div > form > fieldset').contains(
-            "you will report any actions you took using this licence within 2 weeks of your licence expiring, even if you've taken no action"
-          )
+         cy.get("#main-content > div > div > form > fieldset").contains(
+            "By sending the application you agree that you have given complete and correct information."
+          );
+          cy.get("#main-content > div > div > form > fieldset").contains(
+            "If you are making this application on behalf of another person, you confirm that you have their permission to do so. By sending the application, they agree they will:"
+          );
+          cy.get("#main-content > div > div > form > fieldset").contains(
+            "will uphold any conditions applied to my licence if granted"
+          );
+          cy.get("#main-content > div > div > form > fieldset").contains(
+            "will abide by the terms and conditions of this service"
+          );
+            cy.get("#main-content > div > div > form > fieldset").contains(
+            "will abide by the terms and conditions of paying for wildlife licences (opens in new tab) and agree to pay relevant charges"
+          );
+          cy.get("#main-content > div > div > form > fieldset").contains(
+            "By sending the application you confirm that:"
+          );
+          cy.get("#main-content > div > div > form > fieldset").contains(
+            "an appropriate ecologist has been involved in the application and design of any mitigations"
+          );
+          cy.get("#main-content > div > div > form > fieldset").contains(
+            "the ecologist supports the application"
+          );
+          cy.get("#main-content > div > div > form > fieldset").contains(
+            "the ecologist is content that the proposed methods, actions and mitigation are appropriate to address the findings of the ecologist’s site assessment"
+          );
+          cy.get("#main-content > div > div > form > fieldset").contains(
+            "you will report any actions you took using this licence within 2 weeks of your licence expiring, even if you have taken no action"
+          );
+          cy.get("#main-content > div > div > form > fieldset").contains(
+            "you will pay any charges that apply"
+          );
           cy.get('#continue').click()
           cy.get('#continue').click()
           const ls = cy.get('a').contains('Badger mitigation').first()

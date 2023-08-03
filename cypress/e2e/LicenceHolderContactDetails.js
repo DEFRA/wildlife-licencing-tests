@@ -468,7 +468,7 @@ describe('Page title verification', () => {
       cy.get('#is-organisation').click()
       cy.get('#organisation-name').fill(faker.company.bs())
       cy.get('#continue').click()
-      cy.get('#change-email-2').click()
+      cy.get('#change-email-3').click()
       cy.get('#email-address').fill(faker.internet.email())
       cy.get('#continue').click()
       cy.get('#postcode').fill('LB1 2CD')

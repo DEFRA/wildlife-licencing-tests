@@ -59,7 +59,7 @@ describe("Page title verification", () => {
       cy.get("#continue").click();
       cy.get("#yes-no").click();
       cy.get("#continue").click();
-      cy.get("#work-payment-exempt-reason-9").click();
+      cy.get("#work-payment-exempt-reason-8").click();
       cy.get("#exempt-details").fill(faker.random.alphaNumeric(400));
       cy.get("#continue").click();
       cy.get("#work-category").click();
@@ -86,7 +86,7 @@ describe("Page title verification", () => {
       cy.get("#continue").click();
       cy.get("#yes-no").click();
       cy.get("#continue").click();
-      cy.get("#advice-from-who").fill(faker.random.alphaNumeric(40));
+      cy.get("#advice-from-who").fill(faker.random.alphaNumeric(100));
       cy.get("#advice-description").fill(faker.random.alphaNumeric(40));
       cy.get("#continue").click();
       cy.get("#proximity").click();
@@ -95,7 +95,7 @@ describe("Page title verification", () => {
       cy.get("#continue").click();
 
       // Permission
-      cy.get("a").contains("Give details of permissions to start work").click();
+       cy.get("a").contains("Give details of permissions to start work").click();
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get("#consent-type-check").click();
@@ -103,21 +103,19 @@ describe("Page title verification", () => {
       cy.get("#authority-name").fill("a");
       cy.get("#authority-name__option--0").click();
       cy.get("#continue").click();
-      cy.get("#planning-type").click();
+      cy.get("#planning-type-4").click();
       cy.get("#continue").click();
-      cy.get("#reference").fill(faker.name.firstName());
+       cy.get("#other-description").fill(faker.random.alphaNumeric(100))
+      cy.get("#continue").click();
+      cy.get("#reference").fill('text');
       cy.get("#continue").click();
       cy.get("#add-another-permission-2").click();
       cy.get("#continue").click();
-      cy.get("#conditions-met-2").click();
+      cy.get("#conditions-met").click();
       cy.get("#continue").click();
-      cy.get("#conditions-not-met-reason").fill(faker.lorem.words(300));
+      cy.get("#potential-conflicts-2").click()
       cy.get("#continue").click();
-      cy.get("#potential-conflicts").click();
-      cy.get("#continue").click();
-      cy.get("#describe-potential-conflicts").fill(faker.lorem.words(450));
-      cy.get("#continue").click();
-      cy.get("#continue").click();
+      cy.get('#continue').click()
       cy.get(
         "#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(3)"
       ).contains("COMPLETED");
@@ -168,7 +166,7 @@ describe("Page title verification", () => {
       cy.get("#continue").click();
       cy.get("#account").click();
       cy.get("#continue").click();
-      cy.get("#change-email-2").click();
+      cy.get("#change-email-3").click();
       cy.get("#email-address").fill(faker.internet.email());
       cy.get("#continue").click();
       cy.get("#purchase-order").fill(faker.internet.email());
@@ -324,9 +322,9 @@ describe("Page title verification", () => {
           cy.get("#continue").click();
           cy.get("input[value='true']").click();
           cy.get("#continue").click();
-          cy.get("#habitat-entrances").fill("7");
+          cy.get("#habitat-entrances").fill("100");
           cy.get("#continue").click();
-          cy.get("#habitat-active-entrances").fill("5");
+          cy.get("#habitat-active-entrances").fill("100");
           cy.get("#continue").click();
           cy.get("#habitat-grid-ref").clear();
           cy.get("#habitat-grid-ref").fill("NY123456");
@@ -357,7 +355,7 @@ describe("Page title verification", () => {
             "By sending the application you agree that you have given complete and correct information."
           );
           cy.get("#main-content > div > div > form > fieldset").contains(
-            "If you are making this application on behalf of another person, you confirm that you have their permission to do so. By sending the application, they agree that they will:"
+            "If you are making this application on behalf of another person, you confirm that you have their permission to do so. By sending the application, they agree they will:"
           );
           cy.get("#main-content > div > div > form > fieldset").contains(
             "will uphold any conditions applied to my licence if granted"
@@ -365,20 +363,26 @@ describe("Page title verification", () => {
           cy.get("#main-content > div > div > form > fieldset").contains(
             "will abide by the terms and conditions of this service"
           );
+            cy.get("#main-content > div > div > form > fieldset").contains(
+            "will abide by the terms and conditions of paying for wildlife licences (opens in new tab) and agree to pay relevant charges"
+          );
           cy.get("#main-content > div > div > form > fieldset").contains(
             "By sending the application you confirm that:"
           );
           cy.get("#main-content > div > div > form > fieldset").contains(
-            "an appropriate ecologist has been involved in the application and the design of any mitigations"
+            "an appropriate ecologist has been involved in the application and design of any mitigations"
           );
           cy.get("#main-content > div > div > form > fieldset").contains(
             "the ecologist supports the application"
           );
           cy.get("#main-content > div > div > form > fieldset").contains(
-            "the ecologist is content that the proposed methods, actions and mitigation are appropriate to address the findings of the ecologist's site assessment"
+            "the ecologist is content that the proposed methods, actions and mitigation are appropriate to address the findings of the ecologist’s site assessment"
           );
           cy.get("#main-content > div > div > form > fieldset").contains(
-            "you will report any actions you took using this licence within 2 weeks of your licence expiring, even if you've taken no action"
+            "you will report any actions you took using this licence within 2 weeks of your licence expiring, even if you have taken no action"
+          );
+          cy.get("#main-content > div > div > form > fieldset").contains(
+            "you will pay any charges that apply"
           );
           cy.get("#continue").click();
           cy.get("#continue").click();
@@ -494,7 +498,7 @@ describe("Page title verification", () => {
       cy.get("#authority-name").fill("a");
       cy.get("#authority-name__option--0").click();
       cy.get("#continue").click();
-      cy.get("#reference").fill(faker.name.firstName());
+      cy.get("#reference").fill(faker.random.alphaNumeric(100));
       cy.get("#continue").click();
       cy.get("#add-another-permission-2").click();
       cy.get("#continue").click();
@@ -601,7 +605,7 @@ describe("Page title verification", () => {
       cy.get("#continue").click();
       cy.get("input[value='yes']").click();
       cy.get("#continue").click();
-      cy.get("#enter-class-mitigation-details").fill("BAD-2022-agsss1");
+      cy.get('#enter-class-mitigation-details').fill(faker.random.alphaNumeric(100))
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get('a').contains('Upload supporting information').click()
@@ -717,7 +721,7 @@ describe("Page title verification", () => {
             "By sending the application you agree that you have given complete and correct information."
           );
           cy.get("#main-content > div > div > form > fieldset").contains(
-            "If you are making this application on behalf of another person, you confirm that you have their permission to do so. By sending the application, they agree that they will:"
+            "If you are making this application on behalf of another person, you confirm that you have their permission to do so. By sending the application, they agree they will:"
           );
           cy.get("#main-content > div > div > form > fieldset").contains(
             "will uphold any conditions applied to my licence if granted"
@@ -725,20 +729,26 @@ describe("Page title verification", () => {
           cy.get("#main-content > div > div > form > fieldset").contains(
             "will abide by the terms and conditions of this service"
           );
+            cy.get("#main-content > div > div > form > fieldset").contains(
+            "will abide by the terms and conditions of paying for wildlife licences (opens in new tab) and agree to pay relevant charges"
+          );
           cy.get("#main-content > div > div > form > fieldset").contains(
             "By sending the application you confirm that:"
           );
           cy.get("#main-content > div > div > form > fieldset").contains(
-            "an appropriate ecologist has been involved in the application and the design of any mitigations"
+            "an appropriate ecologist has been involved in the application and design of any mitigations"
           );
           cy.get("#main-content > div > div > form > fieldset").contains(
             "the ecologist supports the application"
           );
           cy.get("#main-content > div > div > form > fieldset").contains(
-            "the ecologist is content that the proposed methods, actions and mitigation are appropriate to address the findings of the ecologist's site assessment"
+            "the ecologist is content that the proposed methods, actions and mitigation are appropriate to address the findings of the ecologist’s site assessment"
           );
           cy.get("#main-content > div > div > form > fieldset").contains(
-            "you will report any actions you took using this licence within 2 weeks of your licence expiring, even if you've taken no action"
+            "you will report any actions you took using this licence within 2 weeks of your licence expiring, even if you have taken no action"
+          );
+          cy.get("#main-content > div > div > form > fieldset").contains(
+            "you will pay any charges that apply"
           );
           cy.get("#continue").click();
           cy.get("#continue").click();
@@ -747,9 +757,7 @@ describe("Page title verification", () => {
           cy.get("#main-content > div > div > form > fieldset > dl").contains(
             "SUBMITTED"
           );
-          cy.get("#main-content > div > div > form > fieldset > dl").contains(
-            "SUBMITTED"
-          );
+        
           cy.get("#main-content > div > div > form > fieldset > dl").contains(
             "Badger mitigation"
           );

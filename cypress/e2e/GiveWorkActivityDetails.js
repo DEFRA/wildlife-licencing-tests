@@ -281,7 +281,7 @@ describe('Work activities details', () => {
       cy.get("#continue").click();
       cy.get("#yes-no").click();
       cy.get("#continue").click();
-      cy.get("#work-payment-exempt-reason-7").click();
+      cy.get("#work-payment-exempt-reason-6").click();
       cy.get("#continue").click();
       cy.get("#work-category-7").click();
       cy.get("#continue").click();
@@ -323,7 +323,7 @@ describe('Work activities details', () => {
       cy.get("#continue").click();
       cy.get("#yes-no").click();
       cy.get("#continue").click();
-      cy.get("#work-payment-exempt-reason-9").click();
+      cy.get("#work-payment-exempt-reason-8").click();
       cy.get("#exempt-details").fill(faker.random.alphaNumeric(400));
       cy.get("#continue").click();
       cy.get("#work-category-9").click();
@@ -707,7 +707,7 @@ describe('Work activities details', () => {
       cy.get("#continue").click();
       cy.get("#yes-no-2").click();
       cy.get("#continue").click();
-      cy.get("#work-category-9").click();
+      cy.get("#work-category-8").click();
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get("#continue").click();
@@ -1038,7 +1038,7 @@ describe('Work activities details', () => {
       cy.get("#continue").click();
       cy.get("#yes-no").click();
       cy.get("#continue").click();
-      cy.get("#work-payment-exempt-reason-9").click();
+      cy.get("#work-payment-exempt-reason-8").click();
       cy.get("#continue").click();
       cy.get(
         '#main-content > div > div > div.govuk-error-summary.display-wrapped > div > ul'
@@ -1108,7 +1108,7 @@ describe('Work activities details', () => {
       cy.get("#continue").click();
       cy.get("#yes-no").click();
       cy.get("#continue").click();
-      cy.get("#work-payment-exempt-reason-9").click();
+      cy.get("#work-payment-exempt-reason-8").click();
       cy.get("#exempt-details").fill(faker.random.alphaNumeric(4001));
       cy.get("#continue").click();
       cy.get(

@@ -35,7 +35,7 @@ describe('Ecologist experience', () => {
       cy.get('#continue').click()
       cy.get('#yes-no').click()
       cy.get('#continue').click()
-      cy.get('#enter-class-mitigation-details').fill('BAD-2022-agsss1')
+      cy.get('#enter-class-mitigation-details').fill(faker.random.alphaNumeric(100))
       cy.get('#continue').click()
       cy.get('#continue').click()
     })
@@ -219,7 +219,7 @@ describe('Ecologist experience', () => {
       cy.get('#main-content').contains('You have entered too many characters')
     })
   })
-  it(' 6 Verify happy path - ecologist experience', () => {
+  it(' 7 Verify happy path - ecologist experience', () => {
     cy.visit(Cypress.env('login'))
     cy.fixture('users.json').then((users) => {
       cy.get('#username').fill(users.email1)

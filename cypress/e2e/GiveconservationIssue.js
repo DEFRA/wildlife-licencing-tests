@@ -104,6 +104,7 @@ describe('Page title verification', () => {
       cy.get('#password').fill(users.password2)
       cy.get('#continue').click()
       cy.get('#main-content > div > div > form > fieldset > a').click()
+
       cy.get('#species').click()
       cy.get('#continue').click()
       cy.get('#yes-no-2').click()
@@ -149,7 +150,7 @@ describe('Page title verification', () => {
       ).contains('COMPLETED')
     })
   })
-  it('1.1 and verify application season period screen', () => {
+  it('1.2 and verify application season period screen', () => {
     cy.visit(Cypress.env('login'))
     cy.fixture('users.json').then((users) => {
       cy.get('#username').fill(users.email3)
@@ -195,59 +196,7 @@ describe('Page title verification', () => {
       ).contains('COMPLETED')
     })
   })
-  it('1.1 and verify application season period screen', () => {
-    cy.visit(Cypress.env('login'))
-    cy.fixture('users.json').then((users) => {
-      cy.get('#username').fill(users.email3)
-      cy.get('#password').fill(users.password2)
-      cy.get('#continue').click()
-      cy.get('#main-content > div > div > form > fieldset > a').click()
-      cy.get('#species').click()
-      cy.get('#continue').click()
-      cy.get('#yes-no-2').click()
-      cy.get('#continue').click()
-      cy.get('#continue').click()
-      cy.get('#yes-no').click()
-      cy.get('#continue').click()
-      cy.get('#yes-no').click()
-      cy.get('#continue').click()
-      cy.get('#yes-no').click()
-      cy.get('#continue').click()
-      cy.get('#continue').click()
-      cy.get('#continue').click()
-      cy.get('a').contains('Give details of conservation issues').click()
-      cy.get('#yes-no').click()
-      cy.get('#continue').click()
-      cy.get('#continue').click()
-      cy.get('#site-name').fill('a')
-      cy.get('#site-name__option--0').click()
-      cy.get('#continue').click()
-      cy.get('#yes-no-2').click()
-      cy.get('#continue').click()
-      cy.get('#permission-details').fill(faker.random.alphaNumeric(4000))
-      cy.get('#continue').click()
-      cy.get('#yes-no').click()
-      cy.get('#continue').click()
-      //   cy.get("#advice-from-who").fill(
-      //     faker.name.firstName() + faker.name.lastName()
-      //   );
-      cy.get('#advice-from-who').fill(faker.random.alphaNumeric(100))
-      cy.get('#advice-description').fill(faker.random.alphaNumeric(4000))
-      cy.get('#continue').click()
-      cy.get('#proximity').click()
-      cy.get('#continue').click()
-      cy.get('#yes-no-2').click()
-      cy.get('#continue').click()
-      // cy.get("#continue").click();
-      cy.get(
-        '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(5)'
-      ).contains('Give details of conservation issues')
-      cy.get(
-        '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(5)'
-      ).contains('COMPLETED')
-    })
-  })
-  it('1.1 and verify application season period screen', () => {
+  it('1.3 and verify application season period screen', () => {
     cy.visit(Cypress.env('login'))
     cy.fixture('users.json').then((users) => {
       cy.get('#username').fill(users.email3)
@@ -286,6 +235,58 @@ describe('Page title verification', () => {
       cy.get('#advice-from-who').fill(faker.random.alphaNumeric(100))
       cy.get('#advice-description').fill(faker.random.alphaNumeric(4000))
       cy.get('#continue').click()
+      cy.get('#proximity').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no-2').click()
+      cy.get('#continue').click()
+      // cy.get("#continue").click();
+      cy.get(
+        '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(5)'
+      ).contains('Give details of conservation issues')
+      cy.get(
+        '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(5)'
+      ).contains('COMPLETED')
+    })
+  })
+  it('1.4 and verify application season period screen', () => {
+    cy.visit(Cypress.env('login'))
+    cy.fixture('users.json').then((users) => {
+      cy.get('#username').fill(users.email3)
+      cy.get('#password').fill(users.password2)
+      cy.get('#continue').click()
+      cy.get('#main-content > div > div > form > fieldset > a').click()
+      cy.get('#species').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no-2').click()
+      cy.get('#continue').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no').click()
+      cy.get('#continue').click()
+      cy.get('#continue').click()
+      cy.get('#continue').click()
+      cy.get('a').contains('Give details of conservation issues').click()
+      cy.get('#yes-no').click()
+      cy.get('#continue').click()
+      cy.get('#continue').click()
+      cy.get('#site-name').fill('a')
+      cy.get('#site-name__option--0').click()
+      cy.get('#continue').click()
+      cy.get('#yes-no').click()
+      cy.get('#continue').click()
+      cy.get('#permission-details').fill(faker.random.alphaNumeric(4000))
+      cy.get('#continue').click()
+      cy.get('#yes-no').click()
+      cy.get('#continue').click()
+      //   cy.get("#advice-from-who").fill(
+      //     faker.name.firstName() + faker.name.lastName()
+      //   );
+      cy.get('#advice-from-who').fill(faker.random.alphaNumeric(100))
+      cy.get('#advice-description').fill(faker.random.alphaNumeric(4000))
+      cy.get('#continue').click()
       cy.get('#proximity-2').click()
       cy.get('#continue').click()
       cy.get('#yes-no-2').click()
@@ -299,7 +300,7 @@ describe('Page title verification', () => {
       ).contains('COMPLETED')
     })
   })
-  it('1.1 and verify application season period screen', () => {
+  it('1.5 and verify application season period screen', () => {
     cy.visit(Cypress.env('login'))
     cy.fixture('users.json').then((users) => {
       cy.get('#username').fill(users.email3)
@@ -458,10 +459,10 @@ describe('Page title verification', () => {
       // cy.get("#continue").click();
       cy.get(
         '#main-content > div > div'
-      ).contains('Choose whether you want to add another designated site')
+      ).contains('You have not selected an option')
       cy.get(
         '#main-content > div > div'
-      ).contains('Choose whether you want to add another designated site')
+      ).contains('You have not selected an option')
     })
   })
   it('5 and verify application season period screen', () => {
@@ -723,7 +724,10 @@ describe('Page title verification', () => {
       ).contains('You have entered too many characters')
       cy.get(
         '#main-content > div > div'
-      ).contains('Enter a description of the advice given')
+      ).contains('Enter the name of who gave you the advice')
+      cy.get(
+        '#main-content > div > div'
+      ).contains('Enter a description of the outcome')
     })
   })
   it('11 and verify application season period screen', () => {
@@ -763,10 +767,16 @@ describe('Page title verification', () => {
       cy.get('#continue').click()
       cy.get(
         '#main-content > div > div'
-      ).contains('You have not entered a description of the advice')
+      ).contains('Enter the name of who gave you the advice')
       cy.get(
         '#main-content > div > div'
-      ).contains('Enter a description of the advice given')
+      ).contains('Enter a description of the outcome')
+      cy.get(
+        '#main-content > div > div'
+      ).contains('You have not entered a description of the outcome')
+      cy.get(
+        '#main-content > div > div'
+      ).contains('You have entered too many characters')
     })
   })
   it('12 and verify application season period screen', () => {
