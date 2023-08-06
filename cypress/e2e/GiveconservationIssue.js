@@ -100,11 +100,10 @@ describe('Page title verification', () => {
   beforeEach(() =>{
     cy.visit(Cypress.env('login'))
     cy.fixture('users.json').then((users) => {
-      cy.get('#username').fill(users.email3)
-      cy.get('#password').fill(users.password2)
+      cy.get('#username').fill(users.email1)
+      cy.get('#password').fill(users.password1)
       cy.get('#continue').click()
-      cy.get('#main-content > div > div > form > fieldset > a').click()
-
+     cy.get('#main-content > div > div > form > fieldset > a').click()
       cy.get('#species').click()
       cy.get('#continue').click()
       cy.get('#yes-no-2').click()
@@ -119,29 +118,11 @@ describe('Page title verification', () => {
       cy.get('#continue').click()
       cy.get('#continue').click()
     
-  });
-});
+  })
+})
    
   it('1.1 and verify application season period screen', () => {
-    // cy.visit(Cypress.env('login'))
-    // cy.fixture('users.json').then((users) => {
-    //   cy.get('#username').fill(users.email3)
-    //   cy.get('#password').fill(users.password2)
-    //   cy.get('#continue').click()
-    //   cy.get('#main-content > div > div > form > fieldset > a').click()
-    //   cy.get('#species').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no-2').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
+  
       cy.get('a').contains('Give details of conservation issues').click()
       cy.get('#yes-no').click()
       cy.get('#continue').click()
@@ -173,27 +154,9 @@ describe('Page title verification', () => {
         '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(5)'
       ).contains('COMPLETED')
     })
-  })
+//  })
   it('1.2 and verify application season period screen', () => {
-    cy.visit(Cypress.env('login'))
-    cy.fixture('users.json').then((users) => {
-      cy.get('#username').fill(users.email3)
-      cy.get('#password').fill(users.password2)
-      cy.get('#continue').click()
-      cy.get('#main-content > div > div > form > fieldset > a').click()
-      cy.get('#species').click()
-      cy.get('#continue').click()
-      cy.get('#yes-no-2').click()
-      cy.get('#continue').click()
-      cy.get('#continue').click()
-      cy.get('#yes-no').click()
-      cy.get('#continue').click()
-      cy.get('#yes-no').click()
-      cy.get('#continue').click()
-      cy.get('#yes-no').click()
-      cy.get('#continue').click()
-      cy.get('#continue').click()
-      cy.get('#continue').click()
+   
       cy.get('a').contains('Give details of conservation issues').click()
       cy.get('#yes-no').click()
       cy.get('#continue').click()
@@ -219,73 +182,35 @@ describe('Page title verification', () => {
         '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(5)'
       ).contains('COMPLETED')
     })
-  })
-  it('1.3 and verify application season period screen', () => {
-    cy.visit(Cypress.env('login'))
-    cy.fixture('users.json').then((users) => {
-      cy.get('#username').fill(users.email3)
-      cy.get('#password').fill(users.password2)
-      cy.get('#continue').click()
-      cy.get('#main-content > div > div > form > fieldset > a').click()
-      cy.get('#species').click()
-      cy.get('#continue').click()
-      cy.get('#yes-no-2').click()
-      cy.get('#continue').click()
-      cy.get('#continue').click()
-      cy.get('#yes-no').click()
-      cy.get('#continue').click()
-      cy.get('#yes-no').click()
-      cy.get('#continue').click()
-      cy.get('#yes-no').click()
-      cy.get('#continue').click()
-      cy.get('#continue').click()
-      cy.get('#continue').click()
-      cy.get('a').contains('Give details of conservation issues').click()
-      cy.get('#yes-no').click()
-      cy.get('#continue').click()
-      cy.get('#continue').click()
-      cy.get('#site-name').fill('a')
-      cy.get('#site-name__option--0').click()
-      cy.get('#continue').click()
-      cy.get('#yes-no').click()
-      cy.get('#continue').click()
-      cy.get('#yes-no').click()
-      cy.get('#continue').click()
-      cy.get('#advice-from-who').fill(faker.random.alphaNumeric(100))
-      cy.get('#advice-description').fill(faker.random.alphaNumeric(4000))
-      cy.get('#continue').click()
-      cy.get('#proximity').click()
-      cy.get('#continue').click()
-      cy.get('#yes-no-2').click()
-      cy.get('#continue').click()
-      cy.get(
-        '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(5)'
-      ).contains('Give details of conservation issues')
-      cy.get(
-        '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(5)'
-      ).contains('COMPLETED')
-    })
+ it('1.3 and verify application season period screen', () => {
+ 
+    cy.get('a').contains('Give details of conservation issues').click()
+    cy.get('#yes-no').click()
+    cy.get('#continue').click()
+    cy.get('#continue').click()
+    cy.get('#site-name').fill('a')
+    cy.get('#site-name__option--0').click()
+    cy.get('#continue').click()
+    cy.get('#yes-no-2').click()
+    cy.get('#continue').click()
+    cy.get('#yes-no').click()
+    cy.get('#continue').click()
+    cy.get('#advice-from-who').fill(faker.random.alphaNumeric(100))
+    cy.get('#advice-description').fill(faker.random.alphaNumeric(4000))
+    cy.get('#continue').click()
+    cy.get('#proximity').click()
+    cy.get('#continue').click()
+    cy.get('#yes-no-2').click()
+    cy.get('#continue').click()
+    cy.get(
+      '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(5)'
+    ).contains('Give details of conservation issues')
+    cy.get(
+      '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(5)'
+    ).contains('COMPLETED')
   })
   it('1.4 and verify application season period screen', () => {
-    cy.visit(Cypress.env('login'))
-    cy.fixture('users.json').then((users) => {
-      cy.get('#username').fill(users.email3)
-      cy.get('#password').fill(users.password2)
-      cy.get('#continue').click()
-      cy.get('#main-content > div > div > form > fieldset > a').click()
-      cy.get('#species').click()
-      cy.get('#continue').click()
-      cy.get('#yes-no-2').click()
-      cy.get('#continue').click()
-      cy.get('#continue').click()
-      cy.get('#yes-no').click()
-      cy.get('#continue').click()
-      cy.get('#yes-no').click()
-      cy.get('#continue').click()
-      cy.get('#yes-no').click()
-      cy.get('#continue').click()
-      cy.get('#continue').click()
-      cy.get('#continue').click()
+  
       cy.get('a').contains('Give details of conservation issues').click()
       cy.get('#yes-no').click()
       cy.get('#continue').click()
@@ -317,27 +242,9 @@ describe('Page title verification', () => {
         '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(5)'
       ).contains('COMPLETED')
     })
-  })
+
   it('1.5 and verify application season period screen', () => {
-    cy.visit(Cypress.env('login'))
-    cy.fixture('users.json').then((users) => {
-      cy.get('#username').fill(users.email3)
-      cy.get('#password').fill(users.password2)
-      cy.get('#continue').click()
-      cy.get('#main-content > div > div > form > fieldset > a').click()
-      cy.get('#species').click()
-      cy.get('#continue').click()
-      cy.get('#yes-no-2').click()
-      cy.get('#continue').click()
-      cy.get('#continue').click()
-      cy.get('#yes-no').click()
-      cy.get('#continue').click()
-      cy.get('#yes-no').click()
-      cy.get('#continue').click()
-      cy.get('#yes-no').click()
-      cy.get('#continue').click()
-      cy.get('#continue').click()
-      cy.get('#continue').click()
+  
       cy.get('a').contains('Give details of conservation issues').click()
       cy.get('#yes-no').click()
       cy.get('#continue').click()
@@ -369,27 +276,9 @@ describe('Page title verification', () => {
         '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(5)'
       ).contains('COMPLETED')
     })
- // })
+
   it('2 and verify application season period screen', () => {
-    // cy.visit(Cypress.env('login'))
-    // cy.fixture('users.json').then((users) => {
-    //   cy.get('#username').fill(users.email3)
-    //   cy.get('#password').fill(users.password2)
-    //   cy.get('#continue').click()
-    //   cy.get('#main-content > div > div > form > fieldset > a').click()
-    //   cy.get('#species').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no-2').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
+   
       cy.get('a').contains('Give details of conservation issues').click()
       cy.get('#yes-no-2').click()
       cy.get('#continue').click()
@@ -403,25 +292,7 @@ describe('Page title verification', () => {
     })
  // })
   it('3 and verify application season period screen', () => {
-    // cy.visit(Cypress.env('login'))
-    // cy.fixture('users.json').then((users) => {
-    //   cy.get('#username').fill(users.email3)
-    //   cy.get('#password').fill(users.password2)
-    //   cy.get('#continue').click()
-    //   cy.get('#main-content > div > div > form > fieldset > a').click()
-    //   cy.get('#species').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no-2').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
+    
       cy.get('a').contains('Give details of conservation issues').click()
       cy.get("#continue").click();
       cy.get(
@@ -431,27 +302,9 @@ describe('Page title verification', () => {
         '#main-content > div > div'
       ).contains('Select an option')
     })
- // })
+
   it('4 and verify application season period screen', () => {
-    // cy.visit(Cypress.env('login'))
-    // cy.fixture('users.json').then((users) => {
-    //   cy.get('#username').fill(users.email3)
-    //   cy.get('#password').fill(users.password2)
-    //   cy.get('#continue').click()
-    //   cy.get('#main-content > div > div > form > fieldset > a').click()
-    //   cy.get('#species').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no-2').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
+  
       cy.get('a').contains('Give details of conservation issues').click()
       cy.get('#yes-no').click()
       cy.get('#continue').click()
@@ -482,27 +335,9 @@ describe('Page title verification', () => {
         '#main-content > div > div'
       ).contains('You have not selected an option')
     })
-  //})
+
   it('5 and verify application season period screen', () => {
-    // cy.visit(Cypress.env('login'))
-    // cy.fixture('users.json').then((users) => {
-    //   cy.get('#username').fill(users.email3)
-    //   cy.get('#password').fill(users.password2)
-    //   cy.get('#continue').click()
-    //   cy.get('#main-content > div > div > form > fieldset > a').click()
-    //   cy.get('#species').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no-2').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
+   
       cy.get('a').contains('Give details of conservation issues').click()
       cy.get('#yes-no').click()
       cy.get('#continue').click()
@@ -515,27 +350,9 @@ describe('Page title verification', () => {
         '#main-content > div > div'
       ).contains('Enter a designated site name')
     })
- // })
+
   it('6 and verify application season period screen', () => {
-    // cy.visit(Cypress.env('login'))
-    // cy.fixture('users.json').then((users) => {
-    //   cy.get('#username').fill(users.email3)
-    //   cy.get('#password').fill(users.password2)
-    //   cy.get('#continue').click()
-    //   cy.get('#main-content > div > div > form > fieldset > a').click()
-    //   cy.get('#species').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no-2').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
+  
       cy.get('a').contains('Give details of conservation issues').click()
       cy.get('#yes-no').click()
       cy.get('#continue').click()
@@ -551,27 +368,9 @@ describe('Page title verification', () => {
         '#main-content > div > div'
       ).contains('Select an option')
     })
-  //})
+
   it('7 and verify application season period screen', () => {
-    // cy.visit(Cypress.env('login'))
-    // cy.fixture('users.json').then((users) => {
-    //   cy.get('#username').fill(users.email3)
-    //   cy.get('#password').fill(users.password2)
-    //   cy.get('#continue').click()
-    //   cy.get('#main-content > div > div > form > fieldset > a').click()
-    //   cy.get('#species').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no-2').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
+   
       cy.get('a').contains('Give details of conservation issues').click()
       cy.get('#yes-no').click()
       cy.get('#continue').click()
@@ -590,27 +389,9 @@ describe('Page title verification', () => {
         '#main-content > div > div'
       ).contains('Enter details of the permission')
     })
- // })
+
   it('8 and verify application season period screen', () => {
-    // cy.visit(Cypress.env('login'))
-    // cy.fixture('users.json').then((users) => {
-    //   cy.get('#username').fill(users.email3)
-    //   cy.get('#password').fill(users.password2)
-    //   cy.get('#continue').click()
-    //   cy.get('#main-content > div > div > form > fieldset > a').click()
-    //   cy.get('#species').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no-2').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
+    
       cy.get('a').contains('Give details of conservation issues').click()
       cy.get('#yes-no').click()
       cy.get('#continue').click()
@@ -628,27 +409,9 @@ describe('Page title verification', () => {
         '#main-content > div > div'
       ).contains('Enter details of the permission')
     })
- // })
+ 
   it('9 and verify application season period screen', () => {
-    // cy.visit(Cypress.env('login'))
-    // cy.fixture('users.json').then((users) => {
-    //   cy.get('#username').fill(users.email3)
-    //   cy.get('#password').fill(users.password2)
-    //   cy.get('#continue').click()
-    //   cy.get('#main-content > div > div > form > fieldset > a').click()
-    //   cy.get('#species').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no-2').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
+   
       cy.get('a').contains('Give details of conservation issues').click()
       cy.get('#yes-no').click()
       cy.get('#continue').click()
@@ -699,27 +462,9 @@ describe('Page title verification', () => {
         '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(5)'
       ).contains('COMPLETED')
     })
- // })
+ 
   it('10 and verify application season period screen', () => {
-    // cy.visit(Cypress.env('login'))
-    // cy.fixture('users.json').then((users) => {
-    //   cy.get('#username').fill(users.email3)
-    //   cy.get('#password').fill(users.password2)
-    //   cy.get('#continue').click()
-    //   cy.get('#main-content > div > div > form > fieldset > a').click()
-    //   cy.get('#species').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no-2').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
+    
       cy.get('a').contains('Give details of conservation issues').click()
       cy.get('#yes-no').click()
       cy.get('#continue').click()
@@ -736,38 +481,19 @@ describe('Page title verification', () => {
       cy.get('#advice-from-who').fill(faker.random.alphaNumeric(100))
       cy.get('#advice-description').fill(faker.random.alphaNumeric(4001))
       cy.get('#continue').click()
-    
       cy.get(
         '#main-content > div > div'
       ).contains('You have entered too many characters')
-      cy.get(
-        '#main-content > div > div'
-      ).contains('Enter the name of who gave you the advice')
+      // cy.get(
+      //   '#main-content > div > div'
+      // ).contains('Enter the name of who gave you the advice')
       cy.get(
         '#main-content > div > div'
       ).contains('Enter a description of the outcome')
     })
- // })
+
   it('11 and verify application season period screen', () => {
-    // cy.visit(Cypress.env('login'))
-    // cy.fixture('users.json').then((users) => {
-    //   cy.get('#username').fill(users.email3)
-    //   cy.get('#password').fill(users.password2)
-    //   cy.get('#continue').click()
-    //   cy.get('#main-content > div > div > form > fieldset > a').click()
-    //   cy.get('#species').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no-2').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
+    
       cy.get('a').contains('Give details of conservation issues').click()
       cy.get('#yes-no').click()
       cy.get('#continue').click()
@@ -796,27 +522,9 @@ describe('Page title verification', () => {
         '#main-content > div > div'
       ).contains('You have entered too many characters')
     })
-//  })
+
   it('12 and verify application season period screen', () => {
-    // cy.visit(Cypress.env('login'))
-    // cy.fixture('users.json').then((users) => {
-    //   cy.get('#username').fill(users.email3)
-    //   cy.get('#password').fill(users.password2)
-    //   cy.get('#continue').click()
-    //   cy.get('#main-content > div > div > form > fieldset > a').click()
-    //   cy.get('#species').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no-2').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
+   
       cy.get('a').contains('Give details of conservation issues').click()
       cy.get('#yes-no').click()
       cy.get('#continue').click()
@@ -841,27 +549,9 @@ describe('Page title verification', () => {
         '#main-content > div > div'
       ).contains('Enter the name of who gave you the advice')
     })
-  //})
+  
   it('13 and verify application season period screen', () => {
-    // cy.visit(Cypress.env('login'))
-    // cy.fixture('users.json').then((users) => {
-    //   cy.get('#username').fill(users.email3)
-    //   cy.get('#password').fill(users.password2)
-    //   cy.get('#continue').click()
-    //   cy.get('#main-content > div > div > form > fieldset > a').click()
-    //   cy.get('#species').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no-2').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
+  
       cy.get('a').contains('Give details of conservation issues').click()
       cy.get('#yes-no').click()
       cy.get('#continue').click()
@@ -887,27 +577,9 @@ describe('Page title verification', () => {
         '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(5)'
       ).contains('COMPLETED')
     })
- // })
+
   it('13a and verify application season period screen', () => {
-    // cy.visit(Cypress.env('login'))
-    // cy.fixture('users.json').then((users) => {
-    //   cy.get('#username').fill(users.email3)
-    //   cy.get('#password').fill(users.password2)
-    //   cy.get('#continue').click()
-    //   cy.get('#main-content > div > div > form > fieldset > a').click()
-    //   cy.get('#species').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no-2').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
+   
       cy.get('a').contains('Give details of conservation issues').click()
       cy.get('#yes-no').click()
       cy.get('#continue').click()
@@ -933,28 +605,9 @@ describe('Page title verification', () => {
         '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(5)'
       ).contains('COMPLETED')
     })
- // })
-  it('14 and verify application season period screen', () => {
-    // cy.visit(Cypress.env('login'))
-    // cy.fixture('users.json').then((users) => {
-    //   cy.get('#username').fill(users.email3)
-    //   cy.get('#password').fill(users.password2)
-    //   cy.get('#continue').click()
-    //   cy.get('#main-content > div > div > form > fieldset > a').click()
 
-    //   cy.get('#species').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no-2').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
+  it('14 and verify application season period screen', () => {
+   
       cy.get('a').contains('Give details of conservation issues').click()
       cy.get('#yes-no').click()
       cy.get('#continue').click()
@@ -993,28 +646,9 @@ describe('Page title verification', () => {
         '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(5)'
       ).contains('COMPLETED')
     })
- // })
-  it('15 and verify application season period screen', () => {
-    // cy.visit(Cypress.env('login'))
-    // cy.fixture('users.json').then((users) => {
-    //   cy.get('#username').fill(users.email3)
-    //   cy.get('#password').fill(users.password2)
-    //   cy.get('#continue').click()
-    //   cy.get('#main-content > div > div > form > fieldset > a').click()
 
-    //   cy.get('#species').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no-2').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
+  it('15 and verify application season period screen', () => {
+   
       cy.get('a').contains('Give details of conservation issues').click()
       cy.get('#yes-no').click()
       cy.get('#continue').click()
@@ -1037,27 +671,9 @@ describe('Page title verification', () => {
         '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(5)'
       ).contains('COMPLETED')
     })
- // })
+
   it('16 and verify application season period screen', () => {
-    // cy.visit(Cypress.env('login'))
-    // cy.fixture('users.json').then((users) => {
-    //   cy.get('#username').fill(users.email3)
-    //   cy.get('#password').fill(users.password2)
-    //   cy.get('#continue').click()
-    //   cy.get('#main-content > div > div > form > fieldset > a').click()
-    //   cy.get('#species').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no-2').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
+   
       cy.get('a').contains('Give details of conservation issues').click()
       cy.get('#yes-no').click()
       cy.get('#continue').click()
@@ -1082,175 +698,3 @@ describe('Page title verification', () => {
       ).contains('Enter the name of who gave you the advice')
     })
   })
-//})
-
-// 1
-// Will the activity take place on or next to any designated sites? YES
-// Tell us about each designated site the activity will affect continue button
-// What is the name of the designated site? add a name
-// Do you have permission from the owner or occupier of the designated site? Yes
-// Give details of the permission added 4000 words
-// Have you had advice or permission for the activity from Natural England? Yes
-// Who did you receive the advice from? add 100
-// Describe the outcome of the advice add 4000 words
-// continue
-// Will the activity happen on the site or next to it? on the site
-// continue
-// Check your answer
-// Do you want to add another site? NO
-
-// 2
-// Will the activity take place on or next to any designated sites? NO
-// Check your answer
-// Continue to task list
-
-/3
-// Will the activity take place on or next to any designated sites? 
-// continue
-// Erorr is displayed
-
-
-
-// 4
-// Will the activity take place on or next to any designated sites? YES
-// Tell us about each designated site the activity will affect continue button
-// What is the name of the designated site? add a name
-// Do you have permission from the owner or occupier of the designated site? Yes
-// Give details of the permission added 4000 words
-// Have you had advice or permission for the activity from Natural England? Yes
-// Who did you receive the advice from? add 100
-// Describe the outcome of the advice add 4000 words
-// continue
-// Will the activity happen on the site or next to it? on the site
-// continue
-// Check your answer
-// Do you want to add another site? 
-// continue  error is displayed
-
-
-/5
-// Will the activity take place on or next to any designated sites? YES
-// Tell us about each designated site the activity will affect continue button
-// What is the name of the designated site? 
-// continue
-// Error is displayed
-
-/6
-// Will the activity take place on or next to any designated sites? YES
-// Tell us about each designated site the activity will affect continue button
-// What is the name of the designated site? add a name
-// Do you have permission from the owner or occupier of the designated site?
-// continue
-// error is displayed
-// 7
-// Will the activity take place on or next to any designated sites? YES
-// Tell us about each designated site the activity will affect continue button
-// What is the name of the designated site? add a name
-// Do you have permission from the owner or occupier of the designated site? Yes
-// Give details of the permission added 4001 words
-// validate error message
-// 8
-// Will the activity take place on or next to any designated sites? YES
-// Tell us about each designated site the activity will affect continue button
-// What is the name of the designated site? add a name
-// Do you have permission from the owner or occupier of the designated site? Yes
-// coninue
-// validate error message
-
-// 9
-// Will the activity take place on or next to any designated sites? YES
-// Tell us about each designated site the activity will affect continue button
-// What is the name of the designated site? add a name
-// Do you have permission from the owner or occupier of the designated site? Yes
-// Give details of the permission added 4000 words
-// Have you had advice or permission for the activity from Natural England? Yes
-// Who did you receive the advice from? add 100
-// Describe the outcome of the advice add 4000 words
-// continue
-// Will the activity happen on the site or next to it? Next to the site
-// continue
-// Check your answer
-// Do you want to add another site? Yes
-// 10
-// Will the activity take place on or next to any designated sites? YES
-// Tell us about each designated site the activity will affect continue button
-// What is the name of the designated site? add a name
-// Do you have permission from the owner or occupier of the designated site? Yes
-// Give details of the permission added 4000 words
-// Have you had advice or permission for the activity from Natural England? Yes
-// Who did you receive the advice from? add 100
-// Describe the outcome of the advice add 4001 words
-// continue
-// validate error message
-// 11
-// Will the activity take place on or next to any designated sites? YES
-// Tell us about each designated site the activity will affect continue button
-// What is the name of the designated site? add a name
-// Do you have permission from the owner or occupier of the designated site? Yes
-// Give details of the permission added 4000 words
-// Have you had advice or permission for the activity from Natural England? Yes
-// Who did you receive the advice from? add 100
-// continue
-// Error is displayed for only Give permission's field
-
-// 12
-// Will the activity take place on or next to any designated sites? YES
-// Tell us about each designated site the activity will affect continue button
-// What is the name of the designated site? add a name
-// Do you have permission from the owner or occupier of the designated site? Yes
-// Give details of the permission added 4000 words
-// Have you had advice or permission for the activity from Natural England? Yes
-// Who did you receive the advice from? add 101
-// continue
-// Error is displayed on the above field and empty erorr on Describe the outcome of the advice
-
-
-
-// 13
-// Will the activity take place on or next to any designated sites? YES
-// Tell us about each designated site the activity will affect continue button
-// What is the name of the designated site? add a name
-// Do you have permission from the owner or occupier of the designated site? Yes
-// Give details of the permission added 4000 words
-// continue
-// Have you had advice or permission for the activity from Natural England? No
-// continue
-// Will the activity happen on the site or next to it? Next to the site
-// continue
-// Check your answer
-// Do you want to add another site? no
-// 14
-// Will the activity take place on or next to any designated sites? YES
-// Tell us about each designated site the activity will affect continue button
-// What is the name of the designated site? add a name
-// Do you have permission from the owner or occupier of the designated site? No
-// continue
-// Have you had advice or permission for the activity from Natural England? NO
-// continue
-// Will the activity happen on the site or next to it? Next to the site
-// continue
-// Check your answer
-// Do you want to add another site? Yes
-// 15
-// Will the activity take place on or next to any designated sites? YES
-// Tell us about each designated site the activity will affect continue button
-// What is the name of the designated site? add a name
-// Do you have permission from the owner or occupier of the designated site? No
-// continue
-// Have you had advice or permission for the activity from Natural England? NO
-// continue
-// Will the activity happen on the site or next to it? on the site
-// continue
-// Check your answer
-// Do you want to add another site? No
-16
-// Will the activity take place on or next to any designated sites? YES
-// Tell us about each designated site the activity will affect continue button
-// What is the name of the designated site? add a name
-// Do you have permission from the owner or occupier of the designated site? Yes
-// Give details of the permission added 4000 words
-// Have you had advice or permission for the activity from Natural England? Yes
-// Who did you receive the advice from? add 101
-// Describe the outcome of the advice add 4000 words
-// continue
-// continue  error is displayed
