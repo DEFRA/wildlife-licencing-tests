@@ -263,47 +263,47 @@ describe('Work activities details', () => {
       ).contains("COMPLETED");
     });
   });
-  // it("7 - verify user can complete work activity section when Conserve scheduled monuments, listed buildings, places of worship, or traditional farm buildings  is selected", () => {
-  //   cy.request(
-  //     "/reset?username=user1@email.com"
-  //   );
-  //   cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
-  //   cy.fixture("users.json").then((users) => {
-  //     cy.get("#username").fill(users.email3);
-  //     cy.get("#password").fill(users.password2);
-  //     cy.get("#continue").click();
-  //     cy.get("#species").click();
-  //     cy.get("#continue").click();
-  //     cy.get("#yes-no-2").click();
-  //     cy.get("#continue").click();
-  //     cy.get("#continue").click();
-  //     cy.get("#yes-no").click();
-  //     cy.get("#continue").click();
-  //     cy.get("#yes-no").click();
-  //     cy.get("#continue").click();
-  //     cy.get("#yes-no").click();
-  //     cy.get("#continue").click();
-  //     cy.get("#continue").click();
-  //     cy.get("#continue").click();
-  //     cy.get("a").contains("Give work activity details").click();
-  //     cy.get("#work-proposal").fill(faker.random.alphaNumeric(40));
-  //     cy.get("#continue").click();
-  //     cy.get("#yes-no").click();
-  //     cy.get("#continue").click();
-  //     cy.get("#work-payment-exempt-reason-7").click();
-  //     cy.get("#continue").click();
-  //     cy.get("#work-category-7").click();
-  //     cy.get("#continue").click();
-  //     cy.get("#continue").click();
-  //     cy.get("#continue").click();
-  //     cy.get(
-  //       '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)'
-  //     ).contains('Give work activity details')
-  //     cy.get(
-  //       '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)'
-  //     ).contains('COMPLETED')
-  //   })
-  // })
+  it("7 - verify user can complete work activity section when Conserve scheduled monuments, listed buildings, places of worship, or traditional farm buildings  is selected", () => {
+    cy.request(
+      "/reset?username=user1@email.com"
+    );
+    cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
+    cy.fixture("users.json").then((users) => {
+      cy.get("#username").fill(users.email3);
+      cy.get("#password").fill(users.password2);
+      cy.get("#continue").click();
+      cy.get("#species").click();
+      cy.get("#continue").click();
+      cy.get("#yes-no-2").click();
+      cy.get("#continue").click();
+      cy.get("#continue").click();
+      cy.get("#yes-no").click();
+      cy.get("#continue").click();
+      cy.get("#yes-no").click();
+      cy.get("#continue").click();
+      cy.get("#yes-no").click();
+      cy.get("#continue").click();
+      cy.get("#continue").click();
+      cy.get("#continue").click();
+      cy.get("a").contains("Give work activity details").click();
+      cy.get("#work-proposal").fill(faker.random.alphaNumeric(40));
+      cy.get("#continue").click();
+      cy.get("#yes-no").click();
+      cy.get("#continue").click();
+      cy.get("#work-payment-exempt-reason-6").click();
+      cy.get("#continue").click();
+      cy.get("#work-category-7").click();
+      cy.get("#continue").click();
+      cy.get("#continue").click();
+      cy.get("#continue").click();
+      cy.get(
+        '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)'
+      ).contains('Give work activity details')
+      cy.get(
+        '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(1)'
+      ).contains('COMPLETED')
+    })
+  })
 
   it("8 - verify user can complete work activity section when Other is selected", () => {
     cy.request(
@@ -716,7 +716,7 @@ describe('Work activities details', () => {
       cy.get("#continue").click();
       cy.get("#yes-no-2").click();
       cy.get("#continue").click();
-      cy.get("#work-category-9").click();
+      cy.get("#work-category-8").click();
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get("#continue").click();

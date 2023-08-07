@@ -136,7 +136,7 @@ describe("Page title verification", () => {
       cy.get("#authority-name").fill("b");
        cy.get("#authority-name__option--0").click();
       cy.get("#continue").click();
-      cy.get("#reference").fill(faker.name.firstName());
+      cy.get("#reference").fill(faker.random.alphaNumeric(100));
       cy.get("#continue").click();
       cy.get("#main-content > fieldset > dl > div").contains(
         "Planning permission"
@@ -218,10 +218,10 @@ describe("Page title verification", () => {
   it('2 and verify application season period screen', () => {
     cy.request(
       Cypress.env("baseUrl") +
-        "/set-sysdate?iso-string=2023-12-01T01:00:00.000Z"
+     "/set-sysdate?iso-string=2023-12-01T01:00:00.000Z"
     );
     cy.request(
-      "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
+    "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
     );
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
     cy.fixture("users.json").then((users) => {
@@ -481,7 +481,7 @@ describe("Page title verification", () => {
 
       // two ways remaining
       cy.get("#no-permission-3").click();
-      cy.get("#other-reason").fill(faker.lorem.words(2));
+      cy.get("#other-reason").fill(faker.random.alphaNumeric(100));
       cy.get("#continue").click();
       // no option remaining
       //   cy.get("#potential-conflicts-2").click();
@@ -545,4 +545,163 @@ describe("Page title verification", () => {
       ).contains('Give details of permissions to start work')
     })
   })
+  it("9 and verify application season period screen", () => {
+    cy.request(
+      Cypress.env("baseUrl") +
+        "/set-sysdate?iso-string=2023-12-01T01:00:00.000Z"
+    );
+    cy.request(
+      "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
+    );
+    cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
+    cy.fixture("users.json").then((users) => {
+      cy.get("#username").fill(users.email3);
+      cy.get("#password").fill(users.password2);
+      cy.get("#continue").click();
+      cy.get("#species").click();
+      cy.get("#continue").click();
+      cy.get("#yes-no-2").click();
+      cy.get("#continue").click();
+      cy.get("#yes-no").click();
+      cy.get("#continue").click();
+      cy.get("#yes-no").click();
+      cy.get("#continue").click();
+      cy.get("#yes-no").click();
+      cy.get("#continue").click();
+      cy.get("#continue").click();
+      cy.get("#continue").click();
+      cy.get("a").contains("Give details of permissions to start work").click();
+      cy.get("#continue").click();
+      cy.get("#continue").click();
+      cy.get("#consent-type-check").click();
+      cy.get("#continue").click();
+      cy.get("#authority-name").fill("a");
+      cy.get("#authority-name__option--0").click();
+      cy.get("#continue").click();
+      cy.get("#planning-type-2").click();
+      cy.get("#continue").click();
+      cy.get("#reference").fill('text');
+      cy.get("#continue").click();
+      cy.get("#add-another-permission-2").click();
+      cy.get("#continue").click();
+      cy.get("#conditions-met").click();
+      cy.get("#continue").click();
+      cy.get("#potential-conflicts-2").click()
+      cy.get("#continue").click();
+      cy.get('#continue').click()
+            cy.get(
+        '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(3)'
+      ).contains('COMPLETED')
+      cy.get(
+        '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(3)'
+      ).contains('Give details of permissions to start work')
+
+})
+})
+it("10 and verify application season period screen", () => {
+    cy.request(
+      Cypress.env("baseUrl") +
+        "/set-sysdate?iso-string=2023-12-01T01:00:00.000Z"
+    );
+    cy.request(
+      "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
+    );
+    cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
+    cy.fixture("users.json").then((users) => {
+      cy.get("#username").fill(users.email3);
+      cy.get("#password").fill(users.password2);
+      cy.get("#continue").click();
+      cy.get("#species").click();
+      cy.get("#continue").click();
+      cy.get("#yes-no-2").click();
+      cy.get("#continue").click();
+      cy.get("#yes-no").click();
+      cy.get("#continue").click();
+      cy.get("#yes-no").click();
+      cy.get("#continue").click();
+      cy.get("#yes-no").click();
+      cy.get("#continue").click();
+      cy.get("#continue").click();
+      cy.get("#continue").click();
+      cy.get("a").contains("Give details of permissions to start work").click();
+      cy.get("#continue").click();
+      cy.get("#continue").click();
+      cy.get("#consent-type-check").click();
+      cy.get("#continue").click();
+      cy.get("#authority-name").fill("a");
+      cy.get("#authority-name__option--0").click();
+      cy.get("#continue").click();
+      cy.get("#planning-type-3").click();
+      cy.get("#continue").click();
+      cy.get("#reference").fill('text');
+      cy.get("#continue").click();
+      cy.get("#add-another-permission-2").click();
+      cy.get("#continue").click();
+      cy.get("#conditions-met").click();
+      cy.get("#continue").click();
+      cy.get("#potential-conflicts-2").click()
+      cy.get("#continue").click();
+      cy.get('#continue').click()
+            cy.get(
+        '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(3)'
+      ).contains('COMPLETED')
+      cy.get(
+        '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(3)'
+      ).contains('Give details of permissions to start work')
+})
+})
+it("11 and verify application season period screen", () => {
+    cy.request(
+      Cypress.env("baseUrl") +
+        "/set-sysdate?iso-string=2023-12-01T01:00:00.000Z"
+    );
+    cy.request(
+      "https://new-tst.aws.defra.cloud/reset?username=user1@email.com"
+    );
+    cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
+    cy.fixture("users.json").then((users) => {
+      cy.get("#username").fill(users.email3);
+      cy.get("#password").fill(users.password2);
+      cy.get("#continue").click();
+      cy.get("#species").click();
+      cy.get("#continue").click();
+      cy.get("#yes-no-2").click();
+      cy.get("#continue").click();
+      cy.get("#yes-no").click();
+      cy.get("#continue").click();
+      cy.get("#yes-no").click();
+      cy.get("#continue").click();
+      cy.get("#yes-no").click();
+      cy.get("#continue").click();
+      cy.get("#continue").click();
+      cy.get("#continue").click();
+      cy.get("a").contains("Give details of permissions to start work").click();
+      cy.get("#continue").click();
+      cy.get("#continue").click();
+      cy.get("#consent-type-check").click();
+      cy.get("#continue").click();
+      cy.get("#authority-name").fill("a");
+      cy.get("#authority-name__option--0").click();
+      cy.get("#continue").click();
+      cy.get("#planning-type-4").click();
+      cy.get("#continue").click();
+       cy.get("#other-description").fill(faker.random.alphaNumeric(100))
+      cy.get("#continue").click();
+      cy.get("#reference").fill('text');
+      cy.get("#continue").click();
+      cy.get("#add-another-permission-2").click();
+      cy.get("#continue").click();
+      cy.get("#conditions-met").click();
+      cy.get("#continue").click();
+      cy.get("#potential-conflicts-2").click()
+      cy.get("#continue").click();
+      cy.get('#continue').click()
+            cy.get(
+        '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(3)'
+      ).contains('COMPLETED')
+      cy.get(
+        '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(3)'
+      ).contains('Give details of permissions to start work')
+})
+})
 })

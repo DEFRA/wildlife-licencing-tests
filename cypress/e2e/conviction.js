@@ -295,7 +295,7 @@ describe('Page title verification', () => {
           cy.get("#main-content > div > div > form > fieldset").contains(
             users.text18
           );
-          cy.get("#main-content > div > div > form > fieldset").contains(
+           cy.get("#main-content > div > div > form > fieldset").contains(
             "By sending the application you agree that you have given complete and correct information."
           );
           cy.get("#main-content > div > div > form > fieldset").contains(
@@ -306,6 +306,9 @@ describe('Page title verification', () => {
           );
           cy.get("#main-content > div > div > form > fieldset").contains(
             "will abide by the terms and conditions of this service"
+          );
+            cy.get("#main-content > div > div > form > fieldset").contains(
+            "will abide by the terms and conditions of paying for wildlife licences (opens in new tab) and agree to pay relevant charges"
           );
           cy.get("#main-content > div > div > form > fieldset").contains(
             "will abide by the terms and conditions of paying for wildlife licences (opens in new tab) and agree to pay relevant charges"
@@ -612,7 +615,7 @@ describe('Page title verification', () => {
           cy.get('#main-content > div > div > form > fieldset').contains(
             users.text18
           )
-          cy.get("#main-content > div > div > form > fieldset").contains(
+           cy.get("#main-content > div > div > form > fieldset").contains(
             "By sending the application you agree that you have given complete and correct information."
           );
           cy.get("#main-content > div > div > form > fieldset").contains(
@@ -624,7 +627,7 @@ describe('Page title verification', () => {
           cy.get("#main-content > div > div > form > fieldset").contains(
             "will abide by the terms and conditions of this service"
           );
-          cy.get("#main-content > div > div > form > fieldset").contains(
+            cy.get("#main-content > div > div > form > fieldset").contains(
             "will abide by the terms and conditions of paying for wildlife licences (opens in new tab) and agree to pay relevant charges"
           );
           cy.get("#main-content > div > div > form > fieldset").contains(
@@ -643,7 +646,8 @@ describe('Page title verification', () => {
             "you will report any actions you took using this licence within 2 weeks of your licence expiring, even if you have taken no action"
           );
           cy.get("#main-content > div > div > form > fieldset").contains(
-            "you will pay any charges that apply")
+            "you will pay any charges that apply"
+          );
           cy.get('#continue').click()
           cy.get('#continue').click()
           const ls = cy.get('a').contains('Badger mitigation').first()

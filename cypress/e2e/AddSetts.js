@@ -26,7 +26,7 @@ describe('Add sett', () => {
     cy.request(
       '/set-sysdate?iso-string=2023-04-01T01:00:00.000Z'
     )
-  })
+  //})
   it(' 1 Verify happy path -  Add setts ', () => {
     // cy.visit(Cypress.env('login'))
     // cy.fixture('users.json').then((users) => {
@@ -54,9 +54,9 @@ describe('Add sett', () => {
       cy.get('#continue').click()
       cy.get("input[value='true']").click()
       cy.get('#continue').click()
-      cy.get('#habitat-entrances').fill('7')
+      cy.get('#habitat-entrances').fill('100')
       cy.get('#continue').click()
-      cy.get('#habitat-active-entrances').fill('5')
+      cy.get('#habitat-active-entrances').fill('100')
       cy.get('#continue').click()
       cy.get('#habitat-grid-ref').fill('NY123456')
       cy.get('#continue').click()
@@ -79,7 +79,7 @@ describe('Add sett', () => {
         '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(9)'
       ).contains('COMPLETED')
     })
- // })
+  })
   it(' 2 Verify happy path -  Add setts ', () => {
     // cy.visit(Cypress.env('login'))
     // cy.fixture('users.json').then((users) => {
@@ -394,6 +394,43 @@ describe('Add sett', () => {
       cy.get('body > div:nth-child(5)').contains('You cannot apply for this licence if the badger sett is inactive')
       cy.get('body > div:nth-child(5)').contains('To apply for a license the badger sett must be active.')
       })
-  })
-  
+  //})
+  it('6a Verify happy path -  Add setts ', () => {
+    // cy.visit(Cypress.env('login'))
+    // cy.fixture('users.json').then((users) => {
+    //   cy.get('#username').fill(users.email1)
+    //   cy.get('#password').fill(users.password1)
+    //   cy.get('#continue').click()
+    //   cy.get('h1.govuk-fieldset__heading').contains(users.nextpage)
+    //   cy.get('#main-content > div > div > form > fieldset > a').click()
+    //   // cy.get("a.govuk-button").click();
+    //   cy.get('#species').click()
+    //   cy.get('#continue').click()
+    //   cy.get('#yes-no-2').click()
+    //   cy.get('#continue').click()
+    //   cy.get('#yes-no').click()
+    //   cy.get('#continue').click()
+    //   cy.get('#yes-no-2').click()
+    //   cy.get('#continue').click()
+    //   cy.get('#continue').click()
+    //   cy.get('#continue').click()
+      cy.get('a').contains('Add setts the work will affect').click()
+      cy.get('#continue').click()
+      cy.get('#habitat-name').fill(faker.random.alphaNumeric(50))
+      cy.get('#continue').click()
+      cy.get('#habitat-types').click()
+      cy.get('#continue').click()
+      cy.get('#habitat-reopen').click()
+      cy.get('#continue').click()
+      cy.get('#habitat-entrances').fill('3')
+      cy.get('#continue').click()
+      cy.get('#habitat-active-entrances').fill('0')
+      cy.get('#continue').click()
+      cy.get('#habitat-grid-ref').fill('NY3955578939555789083955578908')
+      cy.get('#continue').click()
+      cy.get('#main-content').contains('Enter a national grid reference that is 2 letters and 6 digits. ')
+      cy.get('#main-content').contains('The grid reference you have entered is not in the right format')
+
+ }) 
+})
 //})
