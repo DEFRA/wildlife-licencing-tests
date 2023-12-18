@@ -12,95 +12,172 @@ describe('Page title verification', () => {
       "/reset?username=user1@email.com"
     );
     cy.visit(Cypress.env("baseUrl") + Cypress.env("login"));
+    cy.injectAxe()
+    cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
     cy.fixture("users.json").then((users) => {
       cy.get("#username").fill(users.email3);
       cy.get("#password").fill(users.password2);
       cy.get("#continue").click();
+      cy.injectAxe()
+      cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
       cy.get("#species").click();
       cy.get("#continue").click();
+      cy.injectAxe()
+      cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
       cy.get("#yes-no-2").click();
       cy.get("#continue").click();
+      cy.injectAxe()
+      cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
       cy.get("#yes-no").click();
       cy.get("#continue").click();
+      cy.injectAxe()
+      cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
       cy.get("#yes-no").click();
       cy.get("#continue").click();
+      cy.injectAxe()
+      cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
       cy.get("#yes-no").click();
       cy.get("#continue").click();
+      cy.injectAxe()
+      cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
       cy.get("#continue").click();
+      cy.injectAxe()
+      cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
       cy.get("#continue").click();
+      cy.injectAxe()
+      cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
       cy.get("a").contains("Give licence holder details").click();
+      cy.injectAxe()
+      cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
       cy.get("#yes-no").click();
       cy.get("#continue").click();
+    //   cy.injectAxe()
+    //   cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
       cy.get("#name").fill(
         faker.name.firstName() + " " + faker.name.lastName()
       );
       cy.get("#continue").click();
+    //   cy.injectAxe()
+    //   cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
       cy.get("#is-organisation").click();
       cy.get("#organisation-name").fill(faker.company.bs());
       cy.get("#continue").click();
+      cy.injectAxe()
+      cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
       cy.get("#continue").click();
       cy.get("#postcode").fill("M24 6DH");
       cy.get("#continue").click();
+      cy.injectAxe()
+      cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
       cy.get("#address").select(
         "1, SATIN DRIVE, MIDDLETON, MANCHESTER, M24 6DH"
       );
       cy.get("#continue").click();
+      cy.injectAxe()
+      cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
       cy.get("#continue").click();
+      cy.injectAxe()
+      cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
       //   Give ecologist details
       cy.get("a").contains("Give ecologist details").click();
+      cy.injectAxe()
+      cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
       cy.get("#yes-no").click();
       cy.get("#continue").click();
+      cy.injectAxe()
+      cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
       cy.get("#is-organisation").click();
       cy.get("#organisation-name").fill(faker.company.bs());
+      cy.injectAxe()
+      cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
       cy.get("#continue").click();
+      cy.injectAxe()
+      cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
       cy.get("#change-email").click();
       cy.get("#continue").click();
+      // cy.get("#continue").click();
+
+      cy.injectAxe()
+      cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
       cy.get("#postcode").fill("M24 6DH");
       cy.get("#continue").click();
       cy.get("#address").select(
         "1, SATIN DRIVE, MIDDLETON, MANCHESTER, M24 6DH"
       );
+      cy.injectAxe()
+      cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
       cy.get("#continue").click();
+      cy.injectAxe()
+      cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
       cy.get("#continue").click();
-
+      cy.injectAxe()
+      cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
       // Authorised person
       cy.get("a").contains("Add authorised people").click();
+      cy.injectAxe()
+      cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
       cy.get("#yes-no").click();
       cy.get("#continue").click();
+      cy.injectAxe()
+      cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
       cy.get("#name").fill(
         faker.name.firstName() + " " + faker.name.lastName()
       );
       cy.get("#continue").click();
+      cy.injectAxe()
+      cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
       cy.get("#email-address").fill(faker.internet.email());
       cy.get("#continue").click();
+      cy.injectAxe()
+      cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
       cy.get("#postcode").fill("M24 6DH");
       cy.get("#continue").click();
       cy.get("#address").select(
         "1, SATIN DRIVE, MIDDLETON, MANCHESTER, M24 6DH"
       );
       cy.get("#continue").click();
+      cy.injectAxe()
+      cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
       cy.get("#yes-no-2").click();
       cy.get("#continue").click();
-
+      cy.injectAxe()
+      cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
       //   Add additional contacts
       cy.get("a").contains("Add alternative contacts").click();
+      cy.injectAxe()
+      cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
       cy.get("#yes-no").click();
+      cy.injectAxe()
+      cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
       cy.get("#continue").click();
+      cy.injectAxe()
+      cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
       cy.get("#name").fill(
         faker.name.firstName() + " " + faker.name.lastName()
       );
       cy.get("#continue").click();
+      cy.injectAxe()
+      cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
       cy.get("#email-address").fill(faker.internet.email());
       cy.get("#continue").click();
+      cy.injectAxe()
+      cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
       cy.get("#yes-no").click();
       cy.get("#continue").click();
+      cy.injectAxe()
+      cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
       cy.get("#name").fill(faker.name.firstName() + faker.name.lastName());
       cy.get("#continue").click();
+      cy.injectAxe()
+      cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
       cy.get("#email-address").clear();
       cy.get("#email-address").fill(faker.internet.email());
       cy.get("#continue").click();
+      cy.injectAxe()
+      cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
       cy.get("#continue").click();
-
+      cy.injectAxe()
+      cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
       cy.get("a").contains("Add invoice details").click();
       cy.get("input[value='other']").click();
       cy.get("#continue").click();

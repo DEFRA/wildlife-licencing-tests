@@ -1,7 +1,12 @@
 const faker = require('faker')
 
-describe('Add sett', () => { 
-  beforeEach(() =>{
+describe('Add sett', () => {
+   it(' 1 Verify happy path -  Add setts ', () => {
+    cy.request(
+      '/set-sysdate?iso-string=2023-04-01T01:00:00.000Z'
+    )
+});
+  beforeEach(() =>{ 
     cy.visit(Cypress.env('login'))
     cy.fixture('users.json').then((users) => {
       cy.get('#username').fill(users.email1)
@@ -19,33 +24,15 @@ describe('Add sett', () => {
       cy.get('#continue').click()
       cy.get('#continue').click()
       cy.get('#continue').click()
+      cy.injectAxe()
+      cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
     
   });
 });
+
+
   it(' 1 Verify happy path -  Add setts ', () => {
-    cy.request(
-      '/set-sysdate?iso-string=2023-04-01T01:00:00.000Z'
-    )
-  //})
-  it(' 1 Verify happy path -  Add setts ', () => {
-    // cy.visit(Cypress.env('login'))
-    // cy.fixture('users.json').then((users) => {
-    //   cy.get('#username').fill(users.email1)
-    //   cy.get('#password').fill(users.password1)
-    //   cy.get('#continue').click()
-    //   cy.get('h1.govuk-fieldset__heading').contains(users.nextpage)
-    //   cy.get('#main-content > div > div > form > fieldset > a').click()
-    //   // cy.get("a.govuk-button").click();
-    //   cy.get('#species').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no-2').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no-2').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
+   
       cy.get('a').contains('Add setts the work will affect').click()
       cy.get('#continue').click()
       cy.get('#habitat-name').fill(faker.random.alphaNumeric(100))
@@ -79,26 +66,9 @@ describe('Add sett', () => {
         '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(9)'
       ).contains('COMPLETED')
     })
-  })
+  
   it(' 2 Verify happy path -  Add setts ', () => {
-    // cy.visit(Cypress.env('login'))
-    // cy.fixture('users.json').then((users) => {
-    //   cy.get('#username').fill(users.email1)
-    //   cy.get('#password').fill(users.password1)
-    //   cy.get('#continue').click()
-    //   cy.get('h1.govuk-fieldset__heading').contains(users.nextpage)
-    //   cy.get('#main-content > div > div > form > fieldset > a').click()
-    //   // cy.get("a.govuk-button").click();
-    //   cy.get('#species').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no-2').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no-2').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
+ 
       cy.get('a').contains('Add setts the work will affect').click()
       cy.get('#continue').click()
       cy.get("input[id='habitat-name']").fill(faker.random.alphaNumeric(1))
@@ -132,26 +102,9 @@ describe('Add sett', () => {
         '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(9)'
       ).contains('COMPLETED')
     })
- // })
+
   it(' 3 Verify happy path -  Add setts ', () => {
-    // cy.visit(Cypress.env('login'))
-    // cy.fixture('users.json').then((users) => {
-    //   cy.get('#username').fill(users.email1)
-    //   cy.get('#password').fill(users.password1)
-    //   cy.get('#continue').click()
-    //   cy.get('h1.govuk-fieldset__heading').contains(users.nextpage)
-    //   cy.get('#main-content > div > div > form > fieldset > a').click()
-    //   // cy.get("a.govuk-button").click();
-    //   cy.get('#species').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no-2').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no-2').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
+   
       cy.get('a').contains('Add setts the work will affect').click()
       cy.get('#continue').click()
       cy.get("input[id='habitat-name']").fill(faker.random.alphaNumeric(99))
@@ -185,26 +138,8 @@ describe('Add sett', () => {
         '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(9)'
       ).contains('COMPLETED')
     })
- // })
-  it('4 Verify happy path -  Add setts ', () => {
-    // cy.visit(Cypress.env('login'))
-    // cy.fixture('users.json').then((users) => {
-    //   cy.get('#username').fill(users.email1)
-    //   cy.get('#password').fill(users.password1)
-    //   cy.get('#continue').click()
-    //   cy.get('h1.govuk-fieldset__heading').contains(users.nextpage)
-    //   cy.get('#main-content > div > div > form > fieldset > a').click()
-    //   // cy.get("a.govuk-button").click();
-    //   cy.get('#species').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no-2').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no-2').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
+
+  it('4 Verify happy path -  Add setts ', () => { 
       cy.get('a').contains('Add setts the work will affect').click()
       cy.get('#continue').click()
       cy.get('#habitat-name').fill(faker.random.alphaNumeric(50))
@@ -226,6 +161,7 @@ describe('Add sett', () => {
       cy.get("input[id='habitat-work-end-day']").fill('30')
       cy.get("input[id='habitat-work-end-month']").fill('11')
       cy.get("input[id='habitat-work-end-year']").fill('2024')
+
       cy.get('#continue').click()
       cy.get("input[id='habitat-activities']").click()
       cy.get('#continue').click()
@@ -238,27 +174,9 @@ describe('Add sett', () => {
         '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(9)'
       ).contains('COMPLETED')
     })
-  //})
+
 
   it('5 Verify happy path -  Add setts ', () => {
-    // cy.visit(Cypress.env('login'))
-    // cy.fixture('users.json').then((users) => {
-    //   cy.get('#username').fill(users.email1)
-    //   cy.get('#password').fill(users.password1)
-    //   cy.get('#continue').click()
-    //   cy.get('h1.govuk-fieldset__heading').contains(users.nextpage)
-    //   cy.get('#main-content > div > div > form > fieldset > a').click()
-    //   // cy.get("a.govuk-button").click();
-    //   cy.get('#species').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no-2').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no-2').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
       cy.get('a').contains('Add setts the work will affect').click()
       cy.get('#continue').click()
       cy.get('#habitat-name').fill(faker.random.alphaNumeric(50))
@@ -341,29 +259,12 @@ describe('Add sett', () => {
         '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(9)'
       ).contains('Add setts the work will affect')
       cy.get(
-        '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(9)'
+       '#main-content > fieldset > span > ol > li:nth-child(3) > ul > li:nth-child(9)'
       ).contains('COMPLETED')
     })
-  //})
+
   it('6 Verify happy path -  Add setts ', () => {
-    // cy.visit(Cypress.env('login'))
-    // cy.fixture('users.json').then((users) => {
-    //   cy.get('#username').fill(users.email1)
-    //   cy.get('#password').fill(users.password1)
-    //   cy.get('#continue').click()
-    //   cy.get('h1.govuk-fieldset__heading').contains(users.nextpage)
-    //   cy.get('#main-content > div > div > form > fieldset > a').click()
-    //   // cy.get("a.govuk-button").click();
-    //   cy.get('#species').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no-2').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no-2').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
+   
       cy.get('a').contains('Add setts the work will affect').click()
       cy.get('#continue').click()
       cy.get('#habitat-name').fill(faker.random.alphaNumeric(50))
@@ -396,24 +297,6 @@ describe('Add sett', () => {
       })
   //})
   it('6a Verify happy path -  Add setts ', () => {
-    // cy.visit(Cypress.env('login'))
-    // cy.fixture('users.json').then((users) => {
-    //   cy.get('#username').fill(users.email1)
-    //   cy.get('#password').fill(users.password1)
-    //   cy.get('#continue').click()
-    //   cy.get('h1.govuk-fieldset__heading').contains(users.nextpage)
-    //   cy.get('#main-content > div > div > form > fieldset > a').click()
-    //   // cy.get("a.govuk-button").click();
-    //   cy.get('#species').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no-2').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no-2').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
       cy.get('a').contains('Add setts the work will affect').click()
       cy.get('#continue').click()
       cy.get('#habitat-name').fill(faker.random.alphaNumeric(50))
@@ -433,4 +316,3 @@ describe('Add sett', () => {
 
  }) 
 })
-//})

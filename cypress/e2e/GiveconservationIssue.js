@@ -124,6 +124,8 @@ describe('Page title verification', () => {
   it('1.1 and verify application season period screen', () => {
   
       cy.get('a').contains('Give details of conservation issues').click()
+      cy.injectAxe()
+    cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
       cy.get('#yes-no').click()
       cy.get('#continue').click()
       cy.get('#continue').click()

@@ -23,23 +23,6 @@ describe('Give ecologist details', () => {
   });
 });
   it('1 Verify happy path - Give ecologist details', () => {
-    // cy.visit(Cypress.env('login'))
-    // cy.fixture('users.json').then((users) => {
-    //   cy.get('#username').fill(users.email1)
-    //   cy.get('#password').fill(users.password1)
-    //   cy.get('#continue').click()
-    //   cy.get('h1.govuk-fieldset__heading').contains(users.nextpage)
-    //   cy.get('#main-content > div > div > form > fieldset > a').click()
-    //   cy.get('#species').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no-2').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no-2').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
       cy.get('a').contains('Give ecologist details').click()
       cy.get('#yes-no').click()
       cy.get('#continue').click()
@@ -64,25 +47,8 @@ describe('Give ecologist details', () => {
         '#main-content > div > div > form > fieldset > span > ol > li:nth-child(2) > ul > li:nth-child(3)'
       ).contains('Give ecologist details')
     })
-  //})
+
   it('2 Verify happy path - Give ecologist details', () => {
-    // cy.visit(Cypress.env('login'))
-    // cy.fixture('users.json').then((users) => {
-    //   cy.get('#username').fill(users.email1)
-    //   cy.get('#password').fill(users.password1)
-    //   cy.get('#continue').click()
-    //   cy.get('h1.govuk-fieldset__heading').contains(users.nextpage)
-    //   cy.get('#main-content > div > div > form > fieldset > a').click()
-    //   cy.get('#species').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no-2').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no-2').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
     cy.get('a').contains('Give ecologist details').click()
     cy.get('#yes-no-2').click()
     cy.get('#continue').click()
@@ -95,25 +61,8 @@ describe('Give ecologist details', () => {
     cy.get('#main-content > div > div > form > fieldset > span > ol > li:nth-child(2) > ul > li:nth-child(3)').contains('COMPLETED')
     cy.get('#main-content > div > div > form > fieldset > span > ol > li:nth-child(2) > ul > li:nth-child(3)').contains('Give ecologist details')
   })
-  //})
+
   it('3 Verify happy path - Give ecologist details', () => {
-    // cy.visit(Cypress.env('login'))
-    // cy.fixture('users.json').then((users) => {
-    //   cy.get('#username').fill(users.email1)
-    //   cy.get('#password').fill(users.password1)
-    //   cy.get('#continue').click()
-    //   cy.get('h1.govuk-fieldset__heading').contains(users.nextpage)
-    //   cy.get('#main-content > div > div > form > fieldset > a').click()
-    //   cy.get('#species').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no-2').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no-2').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
       cy.get('a').contains('Give ecologist details').click()
       cy.get('#yes-no-2').click()
       cy.get('#continue').click()
@@ -142,25 +91,9 @@ describe('Give ecologist details', () => {
         '#main-content > div > div > form > fieldset > span > ol > li:nth-child(2) > ul > li:nth-child(3)'
       ).contains('Give ecologist details')
     })
- // })
+
   it('3a Verify happy path - Give ecologist details', () => {
-    // cy.visit(Cypress.env('login'))
-    // cy.fixture('users.json').then((users) => {
-    //   cy.get('#username').fill(users.email1)
-    //   cy.get('#password').fill(users.password1)
-    //   cy.get('#continue').click()
-    //   cy.get('h1.govuk-fieldset__heading').contains(users.nextpage)
-    //   cy.get('#main-content > div > div > form > fieldset > a').click()
-    //   cy.get('#species').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no-2').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no-2').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
+  
       cy.get('a').contains('Give ecologist details').click()
       cy.get('#yes-no-2').click()
       cy.get('#continue').click()
@@ -184,26 +117,8 @@ describe('Give ecologist details', () => {
         '#main-content > div > div'
       ).contains('Enter the postcode')
     })
- // })
+ 
   it('4 Verify happy path - Give ecologist details', () => {
-    // cy.request( ('/set-sysdate?iso-string=2023-04-01T17:48:00.000Z'));
-    // cy.visit(Cypress.env('login'))
-    // cy.fixture('users.json').then((users) => {
-    //   cy.get('#username').fill(users.email1)
-    //   cy.get('#password').fill(users.password1)
-    //   cy.get('#continue').click()
-    //   cy.get('h1.govuk-fieldset__heading').contains(users.nextpage)
-    //   cy.get('#main-content > div > div > form > fieldset > a').click()
-    //   cy.get('#species').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no-2').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#yes-no-2').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
-    //   cy.get('#continue').click()
       cy.get('a').contains('Give ecologist details').click()
       cy.get('#yes-no-2').click()
       cy.get('#continue').click()
@@ -221,4 +136,4 @@ describe('Give ecologist details', () => {
       ).contains('Give ecologist details')
     })
   })
-//})
+
