@@ -7,9 +7,6 @@ describe('Add sett', () => {
     )
 });
   beforeEach(() =>{ 
-  //   cy.request(
-  //   '/set-sysdate?iso-string=2023-04-01T01:00:00.000Z'
-  // )
     cy.visit(Cypress.env('login'))
     cy.fixture('users.json').then((users) => {
       cy.get('#username').fill(users.email1)
@@ -33,10 +30,6 @@ describe('Add sett', () => {
   });
 });
 
-  // it(' 1 Verify happy path -  Add setts ', () => {
-  //   cy.request(
-  //     '/set-sysdate?iso-string=2023-04-01T01:00:00.000Z'
-  //   )
 
   it(' 1 Verify happy path -  Add setts ', () => {
    
