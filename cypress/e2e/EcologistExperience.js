@@ -22,9 +22,7 @@ describe('Ecologist experience', () => {
   });
 });
   it(' 1 Verify happy path - ecologist experience', () => {
-   
       // Give ecologist’s experience
-
       cy.get('a').contains('Give ecologist’s experience').click()
       cy.get('#yes-no').click()
       cy.get('#continue').click()
@@ -45,7 +43,6 @@ describe('Ecologist experience', () => {
 
   it(' 2 Verify happy path - ecologist experience', () => {
       // Give ecologist’s experience
-
       cy.get('a').contains('Give ecologist’s experience').click()
       cy.get('#yes-no').click()
       cy.get('#continue').click()
@@ -67,7 +64,7 @@ describe('Ecologist experience', () => {
       cy.get('#continue').click()
       cy.get('#continue').click()
     })
- // })
+ 
   it(' 3 Verify happy path - ecologist experience', () => {
       // Give ecologist’s experience
       cy.get('a').contains('Give ecologist’s experience').click()
@@ -119,7 +116,6 @@ describe('Ecologist experience', () => {
 
   it(' 6 Verify happy path - ecologist experience', () => {
       // Give ecologist’s experience
-
       cy.get('a').contains('Give ecologist’s experience').click()
       cy.get("input[value='no']").click()
       cy.get('#continue').click()

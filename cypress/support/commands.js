@@ -25,3 +25,4 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 import 'cypress-file-upload'
 import 'cypress-fill-command'
+import 'cypress-axe'

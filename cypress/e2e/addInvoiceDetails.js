@@ -50,6 +50,8 @@ describe('Add Invoice Details', () => {
       cy.get('#continue').click()
       cy.get('#continue').click()
       cy.get('a').contains('Add authorised people').click()
+      cy.injectAxe()
+      cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
       cy.get('#yes-no').click()
       cy.get('#continue').click()
       cy.get('#name').fill(faker.name.firstName() + faker.name.lastName())
@@ -78,6 +80,8 @@ describe('Add Invoice Details', () => {
       cy.get('#continue').click()
       //   Add additional contacts
       cy.get('a').contains('Add alternative contacts').click()
+      cy.injectAxe()
+      cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
       cy.get('#yes-no-2').click()
       cy.get('#continue').click()
       cy.get('#yes-no').click()
@@ -93,6 +97,8 @@ describe('Add Invoice Details', () => {
       cy.get('#continue').click()
       cy.get('#continue').click()
       cy.get('a').contains('Add invoice details').click()
+      cy.injectAxe()
+      cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
       cy.get('#responsible').click()
       cy.get('#continue').click()
       cy.get(
