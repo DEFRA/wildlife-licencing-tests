@@ -17,7 +17,7 @@ describe("Page title verification", () => {
       cy.get("#main-content > div > div > form > fieldset > a").click();
       cy.get("#species").click();
       cy.get("#continue").click();
-      cy.get("#yes-no-2").click();
+      cy.get("#yes-no").click();
       cy.get("#continue").click();
       cy.get("#yes-no").click();
       cy.get("#continue").click();
@@ -422,6 +422,7 @@ describe("Page title verification", () => {
         cy.get("#main-content > div > div > form > fieldset > a").click();
         cy.get("#species").click();
         cy.get("#continue").click();
+        cy.get("#continue").click();
         cy.get("#yes-no-2").click();
         cy.get("#continue").click();
         cy.get("#yes-no").click();
@@ -825,6 +826,7 @@ describe("Page title verification", () => {
       cy.get("h1.govuk-fieldset__heading").contains(users.nextpage);
       cy.get("#main-content > div > div > form > fieldset > a").click();
       cy.get("#species").click();
+      cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get("#yes-no-2").click();
       cy.get("#continue").click();
