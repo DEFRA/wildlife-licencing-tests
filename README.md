@@ -16,3 +16,17 @@ docker cp cypress_container:/app/reports .
 docker container rm cypress_container
 docker volume rm cypress_reports
 ```
+
+## To run on Test environment using cypress interface
+```
+Open project on Visual studio code
+Do npm install
+export cypress_base_url=https://new-tst.aws.defra.cloud/; npm run open (it will launched the Cypress interface and user can select the test to run)
+```
+
+## To run on Test environment using command line
+```
+Open project on Visual studio code
+Do npm install
+export cypress_base_url=https://new-tst.aws.defra.cloud/; npm run test
+```
