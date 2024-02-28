@@ -23,6 +23,6 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
-import 'cypress-file-upload'
-import 'cypress-fill-command'
+import '/node_modules/cypress-file-upload'
+import '/node_modules/cypress-fill-command'
 import 'cypress-axe'

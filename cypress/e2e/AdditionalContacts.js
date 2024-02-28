@@ -2,9 +2,9 @@ const faker = require('faker')
 
 describe('Add an additional contact', () => {
   it(' 1 Verify happy path - Add an additional contact', () => {
-    cy.visit(Cypress.env('login'))
+    cy.visit('/')
     cy.fixture('users.json').then((users) => {
-      cy.get('#username').fill(users.email1)
+      cy.get('#user_id').fill(users.email1)
       cy.get('#password').fill(users.password1)
       cy.get('#continue').click()
       cy.get('h1.govuk-fieldset__heading').contains(users.nextpage)
@@ -12,6 +12,9 @@ describe('Add an additional contact', () => {
       cy.get('#species').click()
       cy.get('#continue').click()
       cy.get('#yes-no-2').click()
+      cy.get('#continue').click()
+      cy.get('#continue').click()
+      cy.get('#user-role-2').click()
       cy.get('#continue').click()
       cy.get('#yes-no').click()
       cy.get('#continue').click()
@@ -21,7 +24,10 @@ describe('Add an additional contact', () => {
       cy.get('#continue').click()
       //  Give licence holder details
       cy.get('a').contains('Give licence holder details').click()
-      cy.get('#yes-no').click()
+      cy.get('#continue').click()
+      // cy.get('#yes-no').click()
+      // cy.get('#continue').click()
+      cy.get('#phone-number').fill(faker.phone.phoneNumber())
       cy.get('#continue').click()
       cy.get('#account').click()
       cy.get('#continue').click()
@@ -73,9 +79,9 @@ describe('Add an additional contact', () => {
     })
   })
   it('2 Verify happy path - Add an additional contact', () => {
-    cy.visit(Cypress.env('login'))
+    cy.visit('/')
     cy.fixture('users.json').then((users) => {
-      cy.get('#username').fill(users.email1)
+      cy.get('#user_id').fill(users.email1)
       cy.get('#password').fill(users.password1)
       cy.get('#continue').click()
       cy.get('h1.govuk-fieldset__heading').contains(users.nextpage)
@@ -83,6 +89,8 @@ describe('Add an additional contact', () => {
       cy.get('#species').click()
       cy.get('#continue').click()
       cy.get('#yes-no-2').click()
+      cy.get('#continue').click()
+      cy.get('#user-role-4').click()
       cy.get('#continue').click()
       cy.get('#yes-no').click()
       cy.get('#continue').click()
@@ -155,9 +163,9 @@ describe('Add an additional contact', () => {
   })
   it('3 Verify happy path - Add an additional contact', () => {
     // cy.request( ("/set-sysdate?iso-string=2023-03-30T17:48:00.000Z"));
-    cy.visit(Cypress.env('login'))
+    cy.visit('/')
     cy.fixture('users.json').then((users) => {
-      cy.get('#username').fill(users.email1)
+      cy.get('#user_id').fill(users.email1)
       cy.get('#password').fill(users.password1)
       cy.get('#continue').click()
       cy.get('h1.govuk-fieldset__heading').contains(users.nextpage)
@@ -165,6 +173,8 @@ describe('Add an additional contact', () => {
       cy.get('#species').click()
       cy.get('#continue').click()
       cy.get('#yes-no-2').click()
+      cy.get('#continue').click()
+      cy.get('#user-role-4').click()
       cy.get('#continue').click()
       cy.get('#yes-no').click()
       cy.get('#continue').click()
@@ -231,9 +241,9 @@ describe('Add an additional contact', () => {
   })
   it('4 Verify happy path - Add an additional contact', () => {
     // cy.request( ("/set-sysdate?iso-string=2023-03-30T17:48:00.000Z"));
-    cy.visit(Cypress.env('login'))
+    cy.visit('/')
     cy.fixture('users.json').then((users) => {
-      cy.get('#username').fill(users.email1)
+      cy.get('#user_id').fill(users.email1)
       cy.get('#password').fill(users.password1)
       cy.get('#continue').click()
       cy.get('h1.govuk-fieldset__heading').contains(users.nextpage)
@@ -241,6 +251,8 @@ describe('Add an additional contact', () => {
       cy.get('#species').click()
       cy.get('#continue').click()
       cy.get('#yes-no-2').click()
+      cy.get('#continue').click()
+      cy.get('#user-role-4').click()
       cy.get('#continue').click()
       cy.get('#yes-no').click()
       cy.get('#continue').click()

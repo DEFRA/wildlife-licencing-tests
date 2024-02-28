@@ -8,17 +8,28 @@ const faker = require("faker");
 
 describe("Page title verification", () => {
   it("SDDSIP-509 and 1 verify Licence application screen", () => {
-    cy.visit(Cypress.env("login"));
-    cy.fixture("users.json").then((users) => {
-      cy.get("#username").fill(users.email1);
-      cy.get("#password").fill(users.password1);
-      cy.get("#continue").click();
+    cy.visit("/");
+    cy.fixture('users.json').then((users) => {
+      cy.get('#user_id').fill(users.email1)
+      cy.get('#password').fill(users.password1)
+      cy.get('#continue').click()
+      cy.origin('https://new-tst.aws.defra.cloud', () => {
+cy.on('uncaught:exception', (e) => {
+if (e.message.includes('Things went bad')) {
+// we expected this error, so let's ignore it
+// and let the test continue
+return false
+}
+})
+})
       cy.get("h1.govuk-fieldset__heading").contains(users.nextpage);
       cy.get("#main-content > div > div > form > fieldset > a").click();
       cy.get("#species").click();
       cy.get("#continue").click();
       cy.get("#yes-no").click();
       cy.get("#continue").click();
+      cy.get('#user-role-2').click()
+      cy.get('#continue').click()
       cy.get("#yes-no").click();
       cy.get("#continue").click();
       cy.get("#yes-no").click();
@@ -28,14 +39,19 @@ describe("Page title verification", () => {
       cy.get("#continue").click();
       cy.get("#continue").click();
       cy.get("a").contains("Give licence holder details").click();
-      cy.get("#yes-no").click();
-      cy.get("#continue").click();
-      cy.get("input[value='new']").click();
-      cy.get("#continue").click();
-      cy.get("#is-organisation").click();
-      cy.get("#organisation-name").fill(faker.company.bs());
-      cy.get("#continue").click();
-      cy.get("#continue").click();
+      cy.get('#continue').click()
+      // cy.get('#yes-no').click()
+      // cy.get('#continue').click()
+      cy.get('#phone-number').fill(faker.phone.phoneNumber())
+      cy.get('#continue').click()
+      // cy.get("#yes-no").click();
+      // cy.get("#continue").click();
+      // cy.get("input[value='new']").click();
+      // cy.get("#continue").click();
+      // cy.get("#is-organisation").click();
+      // cy.get("#organisation-name").fill(faker.company.bs());
+      // cy.get("#continue").click();
+      // cy.get("#continue").click();
       cy.get("#postcode").fill("M24 6DH");
       cy.get("#continue").click();
       cy.get("#address").select(
@@ -45,11 +61,25 @@ describe("Page title verification", () => {
       cy.get("#continue").click();
       //   Give ecologist details
       cy.get("a").contains("Give ecologist details").click();
-      cy.get("#yes-no").click();
+      cy.get("#name").fill(
+        faker.name.firstName() + " " + faker.name.lastName()
+      );
       cy.get("#continue").click();
-      cy.get("#account").click();
+      // cy.get('#yes-no').click() // existing
+      //cy.get("#is-organisation").click(); //new
+      cy.get("#is-organisation-2").click();  //new
       cy.get("#continue").click();
-      cy.get("#change-email").click();
+     // cy.get("#account").click();
+     cy.get("#email-address").fill(faker.internet.email()); //new
+      cy.get("#continue").click();  //new
+      cy.get("#continue").click();
+      // cy.get("#change-email").click();
+      // cy.get("#continue").click();
+      cy.get("#postcode").fill("M24 6DH");
+      cy.get("#continue").click();
+      cy.get("#address").select(
+        "1, SATIN DRIVE, MIDDLETON, MANCHESTER, M24 6DH"
+      );
       cy.get("#continue").click();
       cy.get("#continue").click();
 
@@ -413,17 +443,29 @@ describe("Page title verification", () => {
       );
     });
     it("SDDSIP-509 and 2 verify Licence application screen", () => {
-      cy.visit(Cypress.env("login"));
-      cy.fixture("users.json").then((users) => {
-        cy.get("#username").fill(users.email1);
-        cy.get("#password").fill(users.password1);
-        cy.get("#continue").click();
+      cy.visit("/");
+      cy.fixture('users.json').then((users) => {
+        cy.get('#user_id').fill(users.email1)
+        cy.get('#password').fill(users.password1)
+        cy.get('#continue').click()
+        cy.origin('https://new-tst.aws.defra.cloud', () => {
+  cy.on('uncaught:exception', (e) => {
+  if (e.message.includes('Things went bad')) {
+  // we expected this error, so let's ignore it
+  // and let the test continue
+  return false
+  }
+  })
+  })
         cy.get("h1.govuk-fieldset__heading").contains(users.nextpage);
         cy.get("#main-content > div > div > form > fieldset > a").click();
         cy.get("#species").click();
         cy.get("#continue").click();
-        cy.get("#continue").click();
         cy.get("#yes-no-2").click();
+        cy.get("#continue").click();
+        cy.get("#continue").click();
+        cy.get('#user-role-2').click()
+        cy.get('#continue').click()
         cy.get("#continue").click();
         cy.get("#yes-no").click();
         cy.get("#continue").click();
@@ -818,7 +860,7 @@ describe("Page title verification", () => {
         );
       });
   it("SDDSIP-509 and 3 verify Licence application screen", () => {
-    cy.visit(Cypress.env("login"));
+    cy.visit('/');
     cy.fixture("users.json").then((users) => {
       cy.get("#username").fill(users.email1);
       cy.get("#password").fill(users.password1);

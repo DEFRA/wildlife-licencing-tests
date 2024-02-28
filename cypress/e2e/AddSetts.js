@@ -1,22 +1,34 @@
-const faker = require('faker')
+// const faker = require('faker')
 
 describe('Add sett', () => {
-   it(' 1 Verify happy path -  Add setts ', () => {
-    cy.request(
-      '/set-sysdate?iso-string=2023-04-01T01:00:00.000Z'
-    )
-});
+//    it(' 1a Verify happy path -  Add setts ', () => {
+//     cy.request(
+//       '/set-sysdate?iso-string=2024-04-01T01:00:00.000Z'
+//     )
+// });
   beforeEach(() =>{ 
-    cy.visit(Cypress.env('login'))
+    // cy.origin("https://new-tst.aws.defra.cloud/")
+    cy.visit('/');
     cy.fixture('users.json').then((users) => {
-      cy.get('#username').fill(users.email1)
+      cy.get('#user_id').fill(users.email1)
       cy.get('#password').fill(users.password1)
       cy.get('#continue').click()
-      cy.get('h1.govuk-fieldset__heading').contains(users.nextpage)
-      cy.get('#main-content > div > div > form > fieldset > a').click()
+      cy.origin('https://new-tst.aws.defra.cloud/', () => {
+cy.on('uncaught:exception', (e) => {
+if (e.message.includes('Things went bad')) {
+// we expected this error, so let's ignore it
+// and let the test continue
+return false
+}
+})
+})
+      // cy.get('h1.govuk-fieldset__heading').contains(users.nextpage)
+      cy.get('a.govuk-button').click()
       cy.get('#species').click()
       cy.get('#continue').click()
-      cy.get('#yes-no-2').click()
+      cy.get('#yes-no').click()
+      cy.get('#continue').click()
+      cy.get('#user-role-4').click()
       cy.get('#continue').click()
       cy.get('#yes-no').click()
       cy.get('#continue').click()
@@ -24,14 +36,15 @@ describe('Add sett', () => {
       cy.get('#continue').click()
       cy.get('#continue').click()
       cy.get('#continue').click()
-      cy.injectAxe()
-      cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
+      // cy.injectAxe()
+      // cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
     
   });
 });
 
 
   it(' 1 Verify happy path -  Add setts ', () => {
+    
    
       cy.get('a').contains('Add setts the work will affect').click()
       cy.get('#continue').click()

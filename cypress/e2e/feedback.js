@@ -136,10 +136,15 @@ describe("Feedback", () => {
       cy.get("#nps-satisfaction-5").click();
       cy.get("#with-hint").fill(faker.random.alphaNumeric(4001));
       cy.get("#continue").click();
-      cy.get("#main-content > div > div").contains("Thank you for your feedback");
-      cy.get("#main-content > div > div").contains("We will use your feedback to improve our services.");
-      cy.get("#main-content > div > div").contains("You can now view all your wildlife licences and applications or close this browser tab to return to the service at the same point.");
-      cy.get("#main-content > div > div").contains("If you want to leave this service, you can sign out or close this browser window.");
+      cy.get("#main-content > div > div").contains("You have entered too many characters");
+      cy.get("#main-content > div > div").contains("Feedback must be 4000 characters or less");
+      cy.get("#main-content > div > div").contains("You have 1 character too many");
+    });
+    it("14 Feedback screen - very satisfied flow", () => {
+      cy.get('div.govuk-phase-banner').should('not.contain', 'Your feedback (opens in new tab) can help us to improve this new service.')
+      cy.get("#continue").click();
+      cy.get("#main-content > div > div").contains("You have not selected an option");
+      cy.get("a").contains("You have not selected an option").click();
     });
 });
  

@@ -4,7 +4,7 @@ describe('Site Information', () => {
 
 it(' 0 Verify happy path -  switch date time ', () => {
     cy.request(
-      '/set-sysdate?iso-string=2023-04-01T01:00:00.000Z'
+      '/set-sysdate?iso-string=2024-04-01T01:00:00.000Z'
     )
   })
 it(' 1 Verify happy path - site information and selected all answers are correct', () => {

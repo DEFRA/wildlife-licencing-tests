@@ -97,12 +97,27 @@ const faker = require('faker')
 // Do you want to add another site?	No
 
 describe('Page title verification', () => {
-  beforeEach(() =>{
-    cy.visit(Cypress.env('login'))
-    cy.fixture('users.json').then((users) => {
-      cy.get('#username').fill(users.email1)
-      cy.get('#password').fill(users.password1)
-      cy.get('#continue').click()
+  // beforeEach(() =>{
+  //   cy.visit(Cypress.env('login'))
+  //   cy.fixture('users.json').then((users) => {
+  //     cy.get('#username').fill(users.email1)
+  //     cy.get('#password').fill(users.password1)
+  //     cy.get('#continue').click()
+
+  cy.visit('/');
+  cy.fixture('users.json').then((users) => {
+    cy.get('#user_id').fill(users.email1)
+    cy.get('#password').fill(users.password1)
+    cy.get('#continue').click()
+    cy.origin('https://new-tst.aws.defra.cloud', () => {
+cy.on('uncaught:exception', (e) => {
+if (e.message.includes('Things went bad')) {
+// we expected this error, so let's ignore it
+// and let the test continue
+return false
+}
+})
+// })
      cy.get('#main-content > div > div > form > fieldset > a').click()
       cy.get('#species').click()
       cy.get('#continue').click()

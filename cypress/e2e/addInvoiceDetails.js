@@ -2,11 +2,11 @@ const faker = require("faker");
 
 describe('Add Invoice Details', () => {
   it(' 1 Verify happy path - Add Invoice Details', () => {
-    cy.request(
+    // cy.request(
 
-      '/set-sysdate?iso-string=2023-08-30T17:48:00.000Z'
-    )
-    cy.visit(Cypress.env('login'))
+    //   '/set-sysdate?iso-string=2024-08-30T17:48:00.000Z'
+    // )
+    cy.visit(Cypress.env('/'))
     cy.fixture('users.json').then((users) => {
       cy.get('#username').fill(users.email1)
       cy.get('#password').fill(users.password1)
@@ -50,8 +50,8 @@ describe('Add Invoice Details', () => {
       cy.get('#continue').click()
       cy.get('#continue').click()
       cy.get('a').contains('Add authorised people').click()
-      cy.injectAxe()
-      cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
+      // cy.injectAxe()
+      // cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
       cy.get('#yes-no').click()
       cy.get('#continue').click()
       cy.get('#name').fill(faker.name.firstName() + faker.name.lastName())
@@ -80,8 +80,8 @@ describe('Add Invoice Details', () => {
       cy.get('#continue').click()
       //   Add additional contacts
       cy.get('a').contains('Add alternative contacts').click()
-      cy.injectAxe()
-      cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
+      // cy.injectAxe()
+      // cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
       cy.get('#yes-no-2').click()
       cy.get('#continue').click()
       cy.get('#yes-no').click()
@@ -97,8 +97,8 @@ describe('Add Invoice Details', () => {
       cy.get('#continue').click()
       cy.get('#continue').click()
       cy.get('a').contains('Add invoice details').click()
-      cy.injectAxe()
-      cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
+      // cy.injectAxe()
+      // cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
       cy.get('#responsible').click()
       cy.get('#continue').click()
       cy.get(

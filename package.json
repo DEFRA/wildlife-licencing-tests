@@ -5,9 +5,26 @@
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/.bin/cypress run",
+    "tests": "./node_modules/.bin/cypress run",
+    "browserstack": "./node_modules/.bin/cypress run",
     "open": "./node_modules/.bin/cypress open",
     "format": "npx standard --fix",
-    "parallel": "./node_modules/.bin/cypress run --record --group 4x-chrome --browser chrome --parallel"
+    "parallel": "./node_modules/.bin/cypress run --record --group 4x-chrome --browser chrome --parallel",
+    "postinstall": "npm update browserstack-node-sdk",
+    "test-browserstack": "browserstack-node-sdk ./node_modules/.bin/cypress run",
+    "tests-browserstack": "browserstack-node-sdk ./node_modules/.bin/cypress run",
+    "browserstack-browserstack": "browserstack-node-sdk ./node_modules/.bin/cypress run",
+    "open-browserstack": "browserstack-node-sdk ./node_modules/.bin/cypress open",
+    "parallel-browserstack": "browserstack-node-sdk ./node_modules/.bin/cypress run --record --group 4x-chrome --browser chrome --parallel"
+  },
+  "reporter": "cypress-mochawesome-reporter",
+  "reporterOptions": {
+    "reportDir": "reports/cypress_report",
+    "charts": true,
+    "reportPageTitle": "My Test Suite",
+    "embeddedScreenshots": true,
+    "inlineAssets": true,
+    "chromeWebSecurity": false
   },
   "standard": {
     "env": {
@@ -19,6 +36,7 @@
   "license": "ISC",
   "devDependencies": {
     "@faker-js/faker": "^6.2.0",
+    "browserstack-node-sdk": "^1.31.23",
     "cypress": "^12.5.1",
     "cypress-file-upload": "^5.0.8",
     "cypress-fill-command": "^1.0.2",

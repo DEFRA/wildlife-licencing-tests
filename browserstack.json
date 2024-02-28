@@ -1,98 +1,58 @@
-{
 
-    "auth": {
-  
-      "username": "oyedelelukman1",
-  
-      "access_key": "xSsd1Cp1JGu1sN2gN2Qk"
-  
-    },
-  
-    "browsers": [
-  
-      {
-  
-        "browser": "chrome",
-  
-        "os": "Windows 10",
-  
-        "versions": [
-  
-          "latest"
-  
-        ]
-  
-      },
-      {
-  
-        "browser": "edge",
-  
-        "os": "Windows 10",
-  
-        "versions": [
-  
-          "latest"
-  
-        ]
-  
-      },
-      {
-  
-        "browser": "firefox",
-  
-        "os": "Windows 10",
-  
-        "versions": [
-  
-          "latest"
-  
-        ]
-  
-      },
-  
-    
-      {
-  
-        "browser": "chrome",
-  
-        "os": "OS X Catalina",
-  
-        "versions": [
-  
-          "latest"
-  
-        ]
-  
-      }
-  
-    ],
-  
-    "run_settings": {
-  
-      "cypress_config_file": "./cypress.json",
-  
-      "cypress_version": "9.latest",
-  
-      "exclude": ["/SYSTM/release/**", "capacitor/**", "cordova/**", ".git/**"],
 
-      "project_name": "wildlife",
-  
-      "build_name": "Wiidlife Build: 1",
-  
-      "parallels": 5
-  
-    },
-    "connection_settings": {
-      "local": true,
-      "cache_dependencies": "false"
 
+
+    {
+      "auth": {
+        "username": "sddsproject_NixGaiq9E",
+    "access_key": "pnoAaMxp4GVeCNZwFbB5"
+      },
+      "browsers": [{
+          "browser": "chrome",
+          "os": "Windows 10",
+          "versions": ["latest", "latest - 1"]
+        },
+        {
+          "browser": "firefox",
+          "os": "OS X Mojave",
+          "versions": ["latest", "latest - 1"]
+        },
+        {
+          "browser": "edge",
+          "os": "OS X Catalina",
+          "versions": ["latest"]
+        }
+      ],
+      "run_settings": {
+        "cypress_config_file": "./cypress.config.js",
+        
+        "cypress_version": "13.latest",
+        "npm_dependencies": {
+          "@faker-js/faker": "^6.2.0",
+          "browserstack-node-sdk": "^1.31.23",
+          "cypress": "^12.5.1",
+          "cypress-file-upload": "^5.0.8",
+          "cypress-fill-command": "^1.0.2",
+          "cypress-mochawesome-reporter": "^3.2.3",
+          "cypress-parallel": "^0.12.0",
+          "cypress-xpath": "^1.6.2",
+          "standard": "^17.0.0"
+        },
+        "project_name": "Wildlife Licennce Test",
+        "build_name": "Build no: 1",
+        "parallels": 1,
+        "exclude": ["some-folder/test.js", "static/*.pdf"]
+      },
+
+
+  "connection_settings": {
+    "local": true,
+    "network_logs": "true",
+    "interactiveDebugging": "true"
+}
     }
-
-  
-  }
-  
-  
-  
+    
+    
 
 
-  
+
