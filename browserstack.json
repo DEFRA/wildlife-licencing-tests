@@ -1,58 +1,71 @@
-
-
-
-
-    {
-      "auth": {
+{
+    "auth": {
         "username": "sddsproject_NixGaiq9E",
-    "access_key": "pnoAaMxp4GVeCNZwFbB5"
-      },
-      "browsers": [{
-          "browser": "chrome",
-          "os": "Windows 10",
-          "versions": ["latest", "latest - 1"]
-        },
-        {
-          "browser": "firefox",
-          "os": "OS X Mojave",
-          "versions": ["latest", "latest - 1"]
-        },
-        {
+         "access_key": "pnoAaMxp4GVeCNZwFbB5"
+    },
+    "browsers": [
+    {
+      "browser": "edge",
+      "os": "Windows 10",
+      "versions": ["latest", "latest - 1"]
+    },
+    
+    
+      {
           "browser": "edge",
-          "os": "OS X Catalina",
-          "versions": ["latest"]
-        }
-      ],
-      "run_settings": {
-        "cypress_config_file": "./cypress.config.js",
-        
-        "cypress_version": "13.latest",
-        "npm_dependencies": {
-          "@faker-js/faker": "^6.2.0",
-          "browserstack-node-sdk": "^1.31.23",
-          "cypress": "^12.5.1",
-          "cypress-file-upload": "^5.0.8",
-          "cypress-fill-command": "^1.0.2",
-          "cypress-mochawesome-reporter": "^3.2.3",
-          "cypress-parallel": "^0.12.0",
-          "cypress-xpath": "^1.6.2",
-          "standard": "^17.0.0"
-        },
-        "project_name": "Wildlife Licennce Test",
-        "build_name": "Build no: 1",
-        "parallels": 1,
-        "exclude": ["some-folder/test.js", "static/*.pdf"]
+          "os": "OS X Ventura",
+          "versions": [
+              "latest",
+              "latest-1"
+          ]
       },
+      {
+          "browser": "chrome",
+          "os": "OS X Ventura",
+          "versions": [
+              "latest",
+              "latest-1"
+          ]
+      }
+     
+  ],
 
+    "run_settings": {
+        "cypress_config_file": "./browserstack-cypress.config.js",
+        "network_logs": true,
+        "project_name": "Wildlife",
+        "spec_timeout": 60,
+        "build_name": "Wildlife test",
+        "exclude": [],
+        "parallels": "3",
+        "cypress_version": "12.latest",
+        "npm_dependencies": {
+            "@faker-js/faker": "^6.2.0",
+            "browserstack-node-sdk": "^1.31.23",
+            "cypress-file-upload": "^5.0.8",
+            "cypress-fill-command": "^1.0.2",
+            "cypress-mochawesome-reporter": "^3.2.3",
+            "cypress-parallel": "^0.12.0",
+            "cypress-xpath": "^1.6.2",
+            "cypress": "^12.5.1",
+            "standard": "^17.0.0",
+            "cypress-axe": "^1.5.0",
+            "faker": "^5.5.3",
+            "axe-core": "^4.0.2",
+            "browserstack-cypress-cli": "^1.28.2"
+            
+          },
+        "package_config_options": {}
+        
+    },
+    "browserstack_local": true,
+    "browserstack_debug": true,
+    "connection_settings": {
+        "local": true,
+        "local_identifier": null,
+        "local_config_file": "./cypress/config.yml",
+        "local_mode": "always-on"
 
-  "connection_settings": {
-    "local": true,
-    "network_logs": "true",
-    "interactiveDebugging": "true"
+    },
+    "disable_usage_reporting": false
 }
-    }
-    
-    
-
-
-

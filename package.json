@@ -20,7 +20,7 @@
   "reporter": "cypress-mochawesome-reporter",
   "reporterOptions": {
     "reportDir": "reports/cypress_report",
-    "charts": true,
+    "charts": false,
     "reportPageTitle": "My Test Suite",
     "embeddedScreenshots": true,
     "inlineAssets": true,
@@ -36,6 +36,7 @@
   "license": "ISC",
   "devDependencies": {
     "@faker-js/faker": "^6.2.0",
+    "browserstack-local": "^1.5.5",
     "browserstack-node-sdk": "^1.31.23",
     "cypress": "^12.5.1",
     "cypress-file-upload": "^5.0.8",
@@ -43,13 +44,17 @@
     "cypress-mochawesome-reporter": "^3.2.3",
     "cypress-parallel": "^0.12.0",
     "cypress-xpath": "^1.6.2",
+    "path": "^0.12.7",
     "standard": "^17.0.0"
   },
   "dependencies": {
     "asn1": "^0.2.6",
     "axios": "^0.21.1",
+    "browserstack-cypress-cli": "^1.28.2",
+    "cypress-axe": "^1.5.0",
     "dotenv": "^4.0.0",
     "faker": "^5.5.3",
+    "file-fixture": "^0.0.2",
     "http-signature": "^1.3.6",
     "json-schema": "^0.4.0",
     "jsprim": "^2.0.2",

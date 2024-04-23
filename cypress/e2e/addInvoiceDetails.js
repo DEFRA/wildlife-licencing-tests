@@ -1,4 +1,7 @@
-const faker = require("faker");
+const faker = require('faker')
+const commonElement = require('../pageObjects/common.js')
+const eligibilityfunctionPage = require('../pageObjects/eligibility.js')
+const addInvoiceDetailsfunctionPage = require('../pageObjects/addInvoiceDetailsPage.js')
 
 describe('Add Invoice Details', () => {
   it(' 1 Verify happy path - Add Invoice Details', () => {
@@ -6,603 +9,629 @@ describe('Add Invoice Details', () => {
 
     //   '/set-sysdate?iso-string=2024-08-30T17:48:00.000Z'
     // )
-    cy.visit(Cypress.env('/'))
-    cy.fixture('users.json').then((users) => {
-      cy.get('#username').fill(users.email1)
-      cy.get('#password').fill(users.password1)
-      cy.get('#continue').click()
-      cy.get('h1.govuk-fieldset__heading').contains(users.nextpage)
-      cy.get('#main-content > div > div > form > fieldset > a').click()
-      cy.get('#species').click()
-      cy.get('#continue').click()
-      cy.get('#yes-no-2').click()
-      cy.get('#continue').click()
-      cy.get('#yes-no').click()
-      cy.get('#continue').click()
-      cy.get('#yes-no-2').click()
-      cy.get('#continue').click()
-      cy.get('#continue').click()
-      cy.get('#continue').click()
+    cy.visit(Cypress.env('baseUrl'))
 
-      cy.get('a').contains('Give licence holder details').click()
-      cy.get('#yes-no').click()
-      cy.get('#continue').click()
-      cy.get("input[value='new']").click()
-      cy.get('#continue').click()
-      cy.get('#is-organisation').click()
-      cy.get('#organisation-name').fill(faker.company.bs())
-      cy.get('#continue').click()
-      cy.get('#continue').click()
-      cy.get('#postcode').fill('M24 6DH')
-      cy.get('#continue').click()
-      cy.get('#address').select(
+    cy.fixture('users.json').then((users) => {
+      eligibilityfunctionPage.enterIdmUsername(users.email1)
+      eligibilityfunctionPage.enterIdmPassword(users.password1)
+      commonElement.clickContinueButton()
+      cy.wait(3000)
+      commonElement.verifyHeaderPage(users.nextpage)
+      commonElement.ClickOnNewApplicationButton()
+      eligibilityfunctionPage.selectBadgerOption()
+      commonElement.clickContinueButton()
+      commonElement.clickOnNoOption()
+      commonElement.clickContinueButton()
+      commonElement.clickContinueButton()
+      eligibilityfunctionPage.ClickOnOtherRoleOption()
+      commonElement.clickContinueButton()
+      commonElement.clickOnYesOption()
+      commonElement.clickContinueButton()
+      commonElement.clickOnNoOption()
+      commonElement.clickContinueButton()
+      commonElement.clickContinueButton()
+      commonElement.clickContinueButton()
+
+      commonElement.GetApplicationTasklist('Add alternative licence holder contact details')
+      commonElement.clickOnYesOption()
+      commonElement.clickContinueButton()
+      // cy.get("input[value='new']").click();
+      commonElement.clickContinueButton()
+      commonElement.SelectYesOptionaOnIsOrganisation()
+      commonElement.EnterOrganisationName(faker.company.bs())
+      commonElement.clickContinueButton()
+      commonElement.clickContinueButton()
+      commonElement.EnterPostCode('M24 6DH')
+      commonElement.clickContinueButton()
+      commonElement.SelectAddress(
         '1, SATIN DRIVE, MIDDLETON, MANCHESTER, M24 6DH'
       )
-      cy.get('#continue').click()
-      cy.get('#continue').click()
-      cy.get('a').contains('Give ecologist details').click()
-      cy.get('#yes-no-2').click()
-      cy.get('#continue').click()
+      commonElement.clickContinueButton()
+      commonElement.clickContinueButton()
+      commonElement.GetApplicationTasklist('Give ecologist details')
+      commonElement.clickOnNoOption()
+      commonElement.clickContinueButton()
       cy.get('#contact').click()
-      cy.get('#continue').click()
+      commonElement.clickContinueButton()
       cy.get('#account').click()
-      cy.get('#continue').click()
-      cy.get('#continue').click()
-      cy.get('#continue').click()
-      cy.get('a').contains('Add authorised people').click()
+      commonElement.clickContinueButton()
+      commonElement.clickContinueButton()
+      commonElement.clickContinueButton()
+      commonElement.GetApplicationTasklist('Add authorised people')
       // cy.injectAxe()
       // cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
-      cy.get('#yes-no').click()
-      cy.get('#continue').click()
-      cy.get('#name').fill(faker.name.firstName() + faker.name.lastName())
-      cy.get('#continue').click()
-      cy.get('#email-address').fill(faker.internet.email())
-      cy.get('#continue').click()
-      cy.get('#postcode').fill('M24 6DH')
-      cy.get('#continue').click()
-      cy.get('#address').select(
+      commonElement.clickOnYesOption()
+      commonElement.clickContinueButton()
+      commonElement.EnterName(faker.name.firstName() + ' ' + faker.name.lastName())
+      commonElement.clickContinueButton()
+      commonElement.EnterEmailAddress(faker.internet.email())
+      commonElement.clickContinueButton()
+      commonElement.EnterPostCode('M24 6DH')
+      commonElement.clickContinueButton()
+      commonElement.SelectAddress(
         '1, SATIN DRIVE, MIDDLETON, MANCHESTER, M24 6DH'
       )
-      cy.get('#continue').click()
-      cy.get('#yes-no').click()
-      cy.get('#continue').click()
-      cy.get('#name').fill(faker.name.firstName() + faker.name.lastName())
-      cy.get('#continue').click()
-      cy.get('#email-address').fill(faker.internet.email())
-      cy.get('#continue').click()
-      cy.get('#postcode').fill('M24 6DH')
-      cy.get('#continue').click()
-      cy.get('#address').select(
+      commonElement.clickContinueButton()
+      commonElement.clickOnYesOption()
+      commonElement.clickContinueButton()
+      commonElement.EnterName(faker.name.firstName() + ' ' + faker.name.lastName())
+      commonElement.clickContinueButton()
+      commonElement.EnterEmailAddress(faker.internet.email())
+      commonElement.clickContinueButton()
+      commonElement.EnterPostCode('M24 6DH')
+      commonElement.clickContinueButton()
+      commonElement.SelectAddress(
         '2, SATIN DRIVE, MIDDLETON, MANCHESTER, M24 6DH'
       )
-      cy.get('#continue').click()
-      cy.get('#yes-no-2').click()
-      cy.get('#continue').click()
+      commonElement.clickContinueButton()
+      commonElement.clickOnNoOption()
+      commonElement.clickContinueButton()
       //   Add additional contacts
-      cy.get('a').contains('Add alternative contacts').click()
+      commonElement.GetApplicationTasklist('Add alternative contacts')
       // cy.injectAxe()
       // cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
-      cy.get('#yes-no-2').click()
-      cy.get('#continue').click()
-      cy.get('#yes-no').click()
-      cy.get('#continue').click()
-      cy.get('#yes-no-2').click()
-      cy.get('#continue').click()
+      commonElement.clickOnNoOption()
+      commonElement.clickContinueButton()
+      commonElement.clickOnYesOption()
+      commonElement.clickContinueButton()
+      commonElement.clickOnNoOption()
+      commonElement.clickContinueButton()
       cy.get('#new').click()
-      cy.get('#continue').click()
-      cy.get('#name').fill(faker.name.firstName() + faker.name.lastName())
-      cy.get('#continue').click()
-      cy.get('#email-address').clear()
-      cy.get('#email-address').fill(faker.internet.email())
-      cy.get('#continue').click()
-      cy.get('#continue').click()
-      cy.get('a').contains('Add invoice details').click()
+      commonElement.clickContinueButton()
+      commonElement.EnterName(faker.name.firstName() + ' ' + faker.name.lastName())
+      commonElement.clickContinueButton()
+      commonElement.EnterEmailAddress().clear()
+      commonElement.EnterEmailAddress(faker.internet.email())
+      commonElement.clickContinueButton()
+      commonElement.clickContinueButton()
+      commonElement.GetApplicationTasklist('Add invoice details')
       // cy.injectAxe()
       // cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
-      cy.get('#responsible').click()
-      cy.get('#continue').click()
-      cy.get(
-        '#main-content > div > div'
-      ).contains('Individual responsible for paying the invoice')
-      cy.get('#yes-no').click()
-      cy.get('#continue').click()
-      cy.get('#purchase-order').fill(faker.internet.email())
-      cy.get('#continue').click()
-      cy.get('#continue').click()
-      cy.get(
-        '#main-content > div > div > form > fieldset > span > ol > li:nth-child(2) > ul > li:nth-child(9)'
-      ).contains('COMPLETED')
-      cy.get(
-        '#main-content > div > div > form > fieldset > span > ol > li:nth-child(2) > ul > li:nth-child(9)'
-      ).contains('Add invoice details')
+      addInvoiceDetailsfunctionPage.clickOnIndividualResponsible()
+      // cy.get("#responsible").click();
+      commonElement.clickContinueButton()
+      cy.get('#main-content > div > div').contains(
+        'Individual responsible for paying the invoice'
+      )
+      commonElement.clickOnYesOption()
+      commonElement.clickContinueButton()
+      addInvoiceDetailsfunctionPage.enterPurchaseOrderdetails(faker.internet.email())
+      // cy.get("#purchase-order").fill(faker.internet.email());
+      commonElement.clickContinueButton()
+      commonElement.clickContinueButton()
+      addInvoiceDetailsfunctionPage.Verifypage().contains('COMPLETED')
+      addInvoiceDetailsfunctionPage.Verifypage().contains('Add invoice details')
     })
   })
-  it(" 1a Verify happy path - Add Invoice Details", () => {
-    cy.visit(Cypress.env('login'))
+  it(' 1a Verify happy path - Add Invoice Details', () => {
+    cy.visit(Cypress.env('baseUrl'))
     cy.fixture('users.json').then((users) => {
-      cy.get('#username').fill(users.email1)
-      cy.get('#password').fill(users.password1)
-      cy.get('#continue').click()
-      cy.get('h1.govuk-fieldset__heading').contains(users.nextpage)
-      cy.get('#main-content > div > div > form > fieldset > a').click()
-      cy.get('#species').click()
-      cy.get('#continue').click()
-      cy.get('#yes-no-2').click()
-      cy.get('#continue').click()
-      cy.get('#yes-no').click()
-      cy.get('#continue').click()
-      cy.get('#yes-no-2').click()
-      cy.get('#continue').click()
-      cy.get('#continue').click()
-      cy.get('#continue').click()
-    cy.get("a").contains("Give licence holder details").click();
-    cy.get("#yes-no").click();
-    cy.get("#continue").click();
-    cy.get("input[value='new']").click();
-    cy.get("#continue").click();
-    cy.get("#is-organisation").click();
-    cy.get("#organisation-name").fill(faker.company.bs());
-    cy.get("#continue").click();
-    cy.get("#continue").click();
-    cy.get("#postcode").fill("M24 6DH");
-    cy.get("#continue").click();
-    cy.get("#address").select("1, SATIN DRIVE, MIDDLETON, MANCHESTER, M24 6DH");
-    cy.get("#continue").click();
-    cy.get("#continue").click();
-    cy.get("a").contains("Give ecologist details").click();
-    cy.get("#yes-no-2").click();
-    cy.get("#continue").click();
-    cy.get("#contact").click();
-    cy.get("#continue").click();
-    cy.get("#account").click();
-    cy.get("#continue").click();
-    cy.get("#continue").click();
-    cy.get("#continue").click();
-    cy.get("a").contains("Add authorised people").click();
-    cy.get("#yes-no").click();
-    cy.get("#continue").click();
-    cy.get("#name").fill(faker.name.firstName() + faker.name.lastName());
-    cy.get("#continue").click();
-    cy.get("#email-address").fill(faker.internet.email());
-    cy.get("#continue").click();
-    cy.get("#postcode").fill("M24 6DH");
-    cy.get("#continue").click();
-    cy.get("#address").select("1, SATIN DRIVE, MIDDLETON, MANCHESTER, M24 6DH");
-    cy.get("#continue").click();
-    cy.get("#yes-no").click();
-    cy.get("#continue").click();
-    cy.get("#name").fill(faker.name.firstName() + faker.name.lastName());
-    cy.get("#continue").click();
-    cy.get("#email-address").fill(faker.internet.email());
-    cy.get("#continue").click();
-    cy.get("#postcode").fill("M24 6DH");
-    cy.get("#continue").click();
-    cy.get("#address").select("2, SATIN DRIVE, MIDDLETON, MANCHESTER, M24 6DH");
-    cy.get("#continue").click();
-    cy.get("#yes-no-2").click();
-    cy.get("#continue").click();
-    //   Add additional contacts
-    cy.get("a").contains("Add alternative contacts").click();
-    cy.get("#yes-no-2").click();
-    cy.get("#continue").click();
-    cy.get("#yes-no").click();
-    cy.get("#continue").click();
-    cy.get("#yes-no-2").click();
-    cy.get("#continue").click();
-    cy.get("#new").click();
-    cy.get("#continue").click();
-    cy.get("#name").fill(faker.name.firstName() + faker.name.lastName());
-    cy.get("#continue").click();
-    cy.get("#email-address").clear();
-    cy.get("#email-address").fill(faker.internet.email());
-    cy.get("#continue").click();
-    cy.get("#continue").click();
-    cy.get("a").contains("Add invoice details").click();
-    cy.get("#responsible-2").click();
-    cy.get("#continue").click();
-    cy.get("#main-content > div > div").contains(
-      "Individual responsible for paying the invoice"
-    );
-    cy.get("#yes-no-2").click();
-    cy.get("#continue").click();
-    cy.get("#responsible-4").click();
-    cy.get("#continue").click();
-    cy.get("#new").click();
-    cy.get("#continue").click();
+      eligibilityfunctionPage.enterIdmUsername(users.email1)
+      eligibilityfunctionPage.enterIdmPassword(users.password1)
+      commonElement.clickContinueButton()
+      cy.wait(3000)
+      commonElement.verifyHeaderPage(users.nextpage)
+      commonElement.ClickOnNewApplicationButton()
+      eligibilityfunctionPage.selectBadgerOption()
+      commonElement.clickContinueButton()
+      commonElement.clickOnNoOption()
+      commonElement.clickContinueButton()
+      eligibilityfunctionPage.ClickOnOtherRoleOption()
+      commonElement.clickContinueButton()
+      commonElement.clickOnYesOption()
+      commonElement.clickContinueButton()
+      commonElement.clickOnNoOption()
+      commonElement.clickContinueButton()
+      commonElement.clickContinueButton()
+      commonElement.clickContinueButton()
+      commonElement.GetApplicationTasklist('Add alternative contacts')
+      commonElement.clickOnYesOption()
+      commonElement.clickContinueButton()
+      cy.get("input[value='new']").click()
+      commonElement.clickContinueButton()
+      commonElement.SelectYesOptionaOnIsOrganisation()
+      commonElement.EnterOrganisationName(faker.company.bs())
+      commonElement.clickContinueButton()
+      commonElement.clickContinueButton()
+      cy.get('body > div.govuk-width-container').should('not.have.text', 'e.g. SW1W 0NY')
+      commonElement.EnterPostCode('M24 6DH')
+      commonElement.clickContinueButton()
+      commonElement.SelectAddress(
+        '1, SATIN DRIVE, MIDDLETON, MANCHESTER, M24 6DH'
+      )
+      commonElement.clickContinueButton()
+      commonElement.clickContinueButton()
+      commonElement.GetApplicationTasklist('Give ecologist details')
+      commonElement.clickOnNoOption()
+      commonElement.clickContinueButton()
+      cy.get('#contact').click()
+      commonElement.clickContinueButton()
+      cy.get('#account').click()
+      commonElement.clickContinueButton()
+      commonElement.clickContinueButton()
+      commonElement.clickContinueButton()
+      commonElement.GetApplicationTasklist('Add authorised people')
+      commonElement.clickOnYesOption()
+      commonElement.clickContinueButton()
+      commonElement.EnterName(faker.name.firstName() + ' ' + faker.name.lastName())
+      commonElement.clickContinueButton()
+      commonElement.EnterEmailAddress(faker.internet.email())
+      commonElement.clickContinueButton()
+      commonElement.EnterPostCode('M24 6DH')
+      commonElement.clickContinueButton()
+      commonElement.SelectAddress(
+        '1, SATIN DRIVE, MIDDLETON, MANCHESTER, M24 6DH'
+      )
+      commonElement.clickContinueButton()
+      commonElement.clickOnYesOption()
+      commonElement.clickContinueButton()
+      commonElement.EnterName(faker.name.firstName() + ' ' + faker.name.lastName())
+      commonElement.clickContinueButton()
+      commonElement.EnterEmailAddress(faker.internet.email())
+      commonElement.clickContinueButton()
+      commonElement.EnterPostCode('M24 6DH')
+      commonElement.clickContinueButton()
+      commonElement.SelectAddress(
+        '2, SATIN DRIVE, MIDDLETON, MANCHESTER, M24 6DH'
+      )
+      commonElement.clickContinueButton()
+      commonElement.clickOnNoOption()
+      commonElement.clickContinueButton()
+      //   Add additional contacts
+      commonElement.GetApplicationTasklist('Add alternative contacts')
+      commonElement.clickOnNoOption()
+      commonElement.clickContinueButton()
+      commonElement.clickOnYesOption()
+      commonElement.clickContinueButton()
+      commonElement.clickOnNoOption()
+      commonElement.clickContinueButton()
+      cy.get('#new').click()
+      commonElement.clickContinueButton()
+      commonElement.EnterName(faker.name.firstName() + ' ' + faker.name.lastName())
+      commonElement.clickContinueButton()
+      commonElement.EnterEmailAddress().clear()
+      commonElement.EnterEmailAddress(faker.internet.email())
+      commonElement.clickContinueButton()
+      commonElement.clickContinueButton()
+      commonElement.GetApplicationTasklist('Add invoice details')
+      addInvoiceDetailsfunctionPage.clickOnResponsibleTwo()
+      // cy.get("#responsible-2").click();
+      commonElement.clickContinueButton()
+      cy.get('#main-content > div > div').contains(
+        'Individual responsible for paying the invoice'
+      )
+      commonElement.clickOnNoOption()
+      commonElement.clickContinueButton()
+      addInvoiceDetailsfunctionPage.clickOnResponsibleFour()
+      // cy.get("#responsible-4").click();
+      commonElement.clickContinueButton()
+      cy.get('body > div.govuk-width-container').contains(
+        'Invoice payer details'
+      )
+      cy.get('body > div.govuk-width-container').contains(
+        'You will have to pay a £101 administration charge if you want to change these details after the application is submitted.'
+      )
+      cy.get('body > div.govuk-width-container').contains(
+        'Who should we send the invoice to?'
+      )
+      cy.get('body > div.govuk-width-container').contains(
+        'Enter the full name of an individual. Do not enter the name of an organisation or department.'
+      )
+      cy.get('body > div.govuk-width-container').contains(
+        'Continue'
+      )
+      cy.get('body > div.govuk-width-container').contains(
+        'Back'
+      )
+      cy.get('#new').click()
+      commonElement.clickContinueButton()
 
-    // cy.get("input[value='new']").click()
-    //     cy.get('#continue').click()
-    //     cy.get('#is-organisation').click()
-    //     cy.get('#organisation-name').fill(faker.company.bs())
-    //     cy.get('#continue').click()
-    //     cy.get('#continue').click()
-    //     cy.get('#postcode').fill('M24 6DH')
-    //     cy.get('#continue').click()
-    //     cy.get('#address').select(
-    //       '1, SATIN DRIVE, MIDDLETON, MANCHESTER, M24 6DH'
-    //     )
-    //     cy.get('#continue').click()
-    cy.get("#name").fill(faker.name.firstName() + faker.name.lastName());
-    cy.get("#continue").click();
-    cy.get("input[value='new']").click();
-    cy.get("#continue").click();
-    cy.get("#is-organisation").click();
-    cy.get("#organisation-name").fill(faker.company.bs());
-    cy.get("#continue").click();
-    cy.get("#email-address").fill(faker.internet.email());
-    cy.get("#continue").click();
+      // cy.get("input[value='new']").click()
+      //    commonElement.clickContinueButton();
+      //     cy.get('#is-organisation').click()
+      //     cy.get('#organisation-name').fill(faker.company.bs())
+      //    commonElement.clickContinueButton();
+      //    commonElement.clickContinueButton();
+      //     cy.get('#postcode').fill('M24 6DH')
+      //    commonElement.clickContinueButton();
+      //     cy.get('#address').select(
+      //       '1, SATIN DRIVE, MIDDLETON, MANCHESTER, M24 6DH'
+      //     )
+      //    commonElement.clickContinueButton();
+      commonElement.EnterName(faker.name.firstName() + ' ' + faker.name.lastName())
+      commonElement.clickContinueButton()
+      cy.get("input[value='new']").click()
+      commonElement.clickContinueButton()
+      commonElement.SelectYesOptionaOnIsOrganisation()
+      commonElement.EnterOrganisationName(faker.company.bs())
+      commonElement.clickContinueButton()
+      commonElement.EnterEmailAddress(faker.internet.email())
+      commonElement.clickContinueButton()
 
-    //  cy.get('#continue').click()
-    cy.get("#postcode").fill("M24 6DH");
-    cy.get("#continue").click();
-    cy.get("#address").select("1, SATIN DRIVE, MIDDLETON, MANCHESTER, M24 6DH");
-    cy.get("#continue").click();
-    cy.get("#purchase-order").fill(faker.internet.email());
-    cy.get("#continue").click();
+      // commonElement.clickContinueButton();
+      commonElement.EnterPostCode('M24 6DH')
+      commonElement.clickContinueButton()
+      commonElement.SelectAddress(
+        '1, SATIN DRIVE, MIDDLETON, MANCHESTER, M24 6DH'
+      )
+      commonElement.clickContinueButton()
+      addInvoiceDetailsfunctionPage.enterPurchaseOrderdetails(faker.internet.email())
+      commonElement.clickContinueButton()
 
-    cy.get("#continue").click();
-    cy.get(
-      "#main-content > div > div > form > fieldset > span > ol > li:nth-child(2) > ul > li:nth-child(9)"
-    ).contains("COMPLETED");
-    cy.get(
-      "#main-content > div > div > form > fieldset > span > ol > li:nth-child(2) > ul > li:nth-child(9)"
-    ).contains("Add invoice details");
-  });
+      commonElement.clickContinueButton()
+
+      addInvoiceDetailsfunctionPage.Verifypage().contains('COMPLETED')
+      addInvoiceDetailsfunctionPage.Verifypage().contains('Add invoice details')
+    })
   })
 
   it(' 2 Verify happy path - Add Invoice Details', () => {
-    cy.visit(Cypress.env('login'))
+    cy.visit(Cypress.env('baseUrl'))
+
     cy.fixture('users.json').then((users) => {
-      cy.get('#username').fill(users.email1)
-      cy.get('#password').fill(users.password1)
-      cy.get('#continue').click()
-      cy.get('h1.govuk-fieldset__heading').contains(users.nextpage)
-      cy.get('#main-content > div > div > form > fieldset > a').click()
-      cy.get('#species').click()
-      cy.get('#continue').click()
-      cy.get('#yes-no-2').click()
-      cy.get('#continue').click()
-      cy.get('#yes-no').click()
-      cy.get('#continue').click()
-      cy.get('#yes-no-2').click()
-      cy.get('#continue').click()
-      cy.get('#continue').click()
-      cy.get('#continue').click()
+      eligibilityfunctionPage.enterIdmUsername(users.email1)
+      eligibilityfunctionPage.enterIdmPassword(users.password1)
+      commonElement.clickContinueButton()
+      cy.wait(3000)
+      commonElement.verifyHeaderPage(users.nextpage)
+      commonElement.ClickOnNewApplicationButton()
+      eligibilityfunctionPage.selectBadgerOption()
+      commonElement.clickContinueButton()
+      commonElement.clickOnNoOption()
+      commonElement.clickContinueButton()
+      eligibilityfunctionPage.ClickOnOtherRoleOption()
+      commonElement.clickContinueButton()
+      commonElement.clickOnYesOption()
+      commonElement.clickContinueButton()
+      commonElement.clickOnNoOption()
+      commonElement.clickContinueButton()
+      commonElement.clickContinueButton()
+      commonElement.clickContinueButton()
       //   Give licence holder details
-      cy.get('a').contains('Give licence holder details').click()
-      cy.get('#yes-no').click()
-      cy.get('#continue').click()
+      commonElement.GetApplicationTasklist('Add alternative contacts')
+      commonElement.clickOnYesOption()
+      commonElement.clickContinueButton()
       cy.get("input[value='new']").click()
-      cy.get('#continue').click()
-      cy.get('#is-organisation').click()
-      cy.get('#organisation-name').fill(faker.company.bs())
-      cy.get('#continue').click()
-      cy.get('#continue').click()
-      cy.get('#postcode').fill('M24 6DH')
-      cy.get('#continue').click()
-      cy.get('#address').select(
+      commonElement.clickContinueButton()
+      commonElement.SelectYesOptionaOnIsOrganisation()
+      commonElement.EnterOrganisationName(faker.company.bs())
+      commonElement.clickContinueButton()
+      commonElement.clickContinueButton()
+      commonElement.EnterPostCode('M24 6DH')
+      commonElement.clickContinueButton()
+      commonElement.SelectAddress(
         '1, SATIN DRIVE, MIDDLETON, MANCHESTER, M24 6DH'
       )
-      cy.get('#continue').click()
-      cy.get('#continue').click()
+      commonElement.clickContinueButton()
+      commonElement.clickContinueButton()
       //   Add authorised people
-      cy.get('a').contains('Add authorised people').click()
-      cy.get('#yes-no').click()
-      cy.get('#continue').click()
-      cy.get('#name').fill(faker.name.firstName() + faker.name.lastName())
-      cy.get('#continue').click()
-      cy.get('#email-address').fill(faker.internet.email())
-      cy.get('#continue').click()
-      cy.get('#postcode').fill('M24 6DH')
-      cy.get('#continue').click()
-      cy.get('#address').select(
+      commonElement.GetApplicationTasklist('Add authorised people')
+      commonElement.clickOnYesOption()
+      commonElement.clickContinueButton()
+      commonElement.EnterName(faker.name.firstName() + ' ' + faker.name.lastName())
+      commonElement.clickContinueButton()
+      commonElement.EnterEmailAddress(faker.internet.email())
+      commonElement.clickContinueButton()
+      commonElement.EnterPostCode('M24 6DH')
+      commonElement.clickContinueButton()
+      commonElement.SelectAddress(
         '1, SATIN DRIVE, MIDDLETON, MANCHESTER, M24 6DH'
       )
-      cy.get('#continue').click()
-      cy.get('#yes-no').click()
-      cy.get('#continue').click()
-      cy.get('#name').fill(faker.name.firstName() + faker.name.lastName())
-      cy.get('#continue').click()
-      cy.get('#email-address').fill(faker.internet.email())
-      cy.get('#continue').click()
-      cy.get('#postcode').fill('M24 6DH')
-      cy.get('#continue').click()
-      cy.get('#address').select(
+      commonElement.clickContinueButton()
+      commonElement.clickOnYesOption()
+      commonElement.clickContinueButton()
+      commonElement.EnterName(faker.name.firstName() + ' ' + faker.name.lastName())
+      commonElement.clickContinueButton()
+      commonElement.EnterEmailAddress(faker.internet.email())
+      commonElement.clickContinueButton()
+      commonElement.EnterPostCode('M24 6DH')
+      commonElement.clickContinueButton()
+      commonElement.SelectAddress(
         '2, SATIN DRIVE, MIDDLETON, MANCHESTER, M24 6DH'
       )
-      cy.get('#continue').click()
-      cy.get('#yes-no-2').click()
-      cy.get('#continue').click()
+      commonElement.clickContinueButton()
+      commonElement.clickOnNoOption()
+      commonElement.clickContinueButton()
 
       //   Give ecologist details
 
-      cy.get('a').contains('Give ecologist details').click()
-      cy.get('#yes-no-2').click()
-      cy.get('#continue').click()
+      commonElement.GetApplicationTasklist('Give ecologist details')
+      commonElement.clickOnNoOption()
+      commonElement.clickContinueButton()
       cy.get('#contact').click()
-      cy.get('#continue').click()
+      commonElement.clickContinueButton()
       cy.get('#account').click()
-      cy.get('#continue').click()
-      cy.get('#continue').click()
-      cy.get('#continue').click()
+      commonElement.clickContinueButton()
+      commonElement.clickContinueButton()
+      commonElement.clickContinueButton()
 
       //   Add additional contacts
 
-      cy.get('a').contains('Add alternative contacts').click()
-      cy.get('#yes-no-2').click()
-      cy.get('#continue').click()
-      cy.get('#yes-no').click()
-      cy.get('#continue').click()
-      cy.get('#yes-no-2').click()
-      cy.get('#continue').click()
+      commonElement.GetApplicationTasklist('Add alternative contacts')
+      commonElement.clickOnNoOption()
+      commonElement.clickContinueButton()
+      commonElement.clickOnYesOption()
+      commonElement.clickContinueButton()
+      commonElement.clickOnNoOption()
+      commonElement.clickContinueButton()
       cy.get("input[value='new']").click()
-      cy.get('#continue').click()
-      cy.get('#name').fill(faker.name.firstName() + faker.name.lastName())
-      cy.get('#continue').click()
-      cy.get('#email-address').clear()
-      cy.get('#email-address').fill(faker.internet.email())
-      cy.get('#continue').click()
-      cy.get('#continue').click()
+      commonElement.clickContinueButton()
+      commonElement.EnterName(faker.name.firstName() + ' ' + faker.name.lastName())
+      commonElement.clickContinueButton()
+      commonElement.EnterEmailAddress().clear()
+      commonElement.EnterEmailAddress(faker.internet.email())
+      commonElement.clickContinueButton()
+      commonElement.clickContinueButton()
 
       //   Add invoice details
 
-      cy.get('a').contains('Add invoice details').click()
+      commonElement.GetApplicationTasklist('Add invoice details')
       cy.get("input[value='other']").click()
-      cy.get('#continue').click()
+      commonElement.clickContinueButton()
       cy.get('#new').click()
-      cy.get('#continue').click()
-      cy.get('#name').fill(faker.name.firstName() + faker.name.lastName())
-      cy.get('#continue').click()
+      commonElement.clickContinueButton()
+      commonElement.EnterName(faker.name.firstName() + ' ' + faker.name.lastName())
+      commonElement.clickContinueButton()
       cy.get('#account').click()
-      cy.get('#continue').click()
+      commonElement.clickContinueButton()
       cy.get('#change-email').click()
-      cy.get('#continue').click()
-      cy.get('#purchase-order').fill(faker.internet.email())
-      cy.get('#continue').click()
-      cy.get('#continue').click()
-      cy.get(
-        '#main-content > div > div > form > fieldset > span > ol > li:nth-child(2) > ul > li:nth-child(9)'
-      ).contains('COMPLETED')
-      cy.get(
-        '#main-content > div > div > form > fieldset > span > ol > li:nth-child(2) > ul > li:nth-child(9)'
-      ).contains('Add invoice details')
+      commonElement.clickContinueButton()
+      addInvoiceDetailsfunctionPage.enterPurchaseOrderdetails(faker.internet.email())
+      commonElement.clickContinueButton()
+      commonElement.clickContinueButton()
+      addInvoiceDetailsfunctionPage.Verifypage().contains('COMPLETED')
+      addInvoiceDetailsfunctionPage.Verifypage().contains('Add invoice details')
     })
   })
   it(' 3 Verify happy path - Add Invoice Details', () => {
-    cy.visit(Cypress.env('login'))
+    cy.visit(Cypress.env('baseUrl'))
     cy.fixture('users.json').then((users) => {
-      cy.get('#username').fill(users.email1)
-      cy.get('#password').fill(users.password1)
-      cy.get('#continue').click()
-      cy.get('h1.govuk-fieldset__heading').contains(users.nextpage)
-      cy.get('#main-content > div > div > form > fieldset > a').click()
-      cy.get('#species').click()
-      cy.get('#continue').click()
-      cy.get('#yes-no-2').click()
-      cy.get('#continue').click()
-      cy.get('#yes-no').click()
-      cy.get('#continue').click()
-      cy.get('#yes-no-2').click()
-      cy.get('#continue').click()
-      cy.get('#continue').click()
-      cy.get('#continue').click()
+      eligibilityfunctionPage.enterIdmUsername(users.email1)
+      eligibilityfunctionPage.enterIdmPassword(users.password1)
+      commonElement.clickContinueButton()
+      commonElement.verifyHeaderPage(users.nextpage)
+      commonElement.ClickOnNewApplicationButton()
+      eligibilityfunctionPage.selectBadgerOption()
+      commonElement.clickContinueButton()
+      commonElement.clickOnNoOption()
+      commonElement.clickContinueButton()
+      commonElement.clickOnYesOption()
+      commonElement.clickContinueButton()
+      commonElement.clickOnNoOption()
+      commonElement.clickContinueButton()
+      commonElement.clickContinueButton()
+      commonElement.clickContinueButton()
 
       //   Give licence holder details
 
-      cy.get('a').contains('Give licence holder details').click()
-      cy.get('#yes-no').click()
-      cy.get('#continue').click()
+      commonElement.GetApplicationTasklist('Add alternative contacts')
+      commonElement.clickOnYesOption()
+      commonElement.clickContinueButton()
       cy.get("input[value='new']").click()
-      cy.get('#continue').click()
-      cy.get('#is-organisation').click()
-      cy.get('#organisation-name').fill(faker.company.bs())
-      cy.get('#continue').click()
-      cy.get('#continue').click()
-      cy.get('#postcode').fill('M24 6DH')
-      cy.get('#continue').click()
-      cy.get('#address').select(
+      commonElement.clickContinueButton()
+      commonElement.SelectYesOptionaOnIsOrganisation()
+      commonElement.EnterOrganisationName(faker.company.bs())
+      commonElement.clickContinueButton()
+      commonElement.clickContinueButton()
+      commonElement.EnterPostCode('M24 6DH')
+      commonElement.clickContinueButton()
+      commonElement.SelectAddress(
         '1, SATIN DRIVE, MIDDLETON, MANCHESTER, M24 6DH'
       )
-      cy.get('#continue').click()
-      cy.get('#continue').click()
+      commonElement.clickContinueButton()
+      commonElement.clickContinueButton()
 
       //   Give ecologist details
 
-      cy.get('a').contains('Give ecologist details').click()
-      cy.get('#yes-no-2').click()
-      cy.get('#continue').click()
+      commonElement.GetApplicationTasklist('Give ecologist details')
+      commonElement.clickOnNoOption()
+      commonElement.clickContinueButton()
       cy.get('#contact').click()
-      cy.get('#continue').click()
+      commonElement.clickContinueButton()
       cy.get('#account').click()
-      cy.get('#continue').click()
-      cy.get('#continue').click()
-      cy.get('#continue').click()
+      commonElement.clickContinueButton()
+      commonElement.clickContinueButton()
+      commonElement.clickContinueButton()
 
       //   Add authorised people
 
-      cy.get('a').contains('Add authorised people').click()
-      cy.get('#yes-no').click()
-      cy.get('#continue').click()
-      cy.get('#name').fill(faker.name.firstName() + faker.name.lastName())
-      cy.get('#continue').click()
-      cy.get('#email-address').fill(faker.internet.email())
-      cy.get('#continue').click()
-      cy.get('#postcode').fill('M24 6DH')
-      cy.get('#continue').click()
-      cy.get('#address').select(
+      commonElement.GetApplicationTasklist('Add authorised people')
+      commonElement.clickOnYesOption()
+      commonElement.clickContinueButton()
+      commonElement.EnterName(faker.name.firstName() + ' ' + faker.name.lastName())
+      commonElement.clickContinueButton()
+      commonElement.EnterEmailAddress(faker.internet.email())
+      commonElement.clickContinueButton()
+      commonElement.EnterPostCode('M24 6DH')
+      commonElement.clickContinueButton()
+      commonElement.SelectAddress(
         '1, SATIN DRIVE, MIDDLETON, MANCHESTER, M24 6DH'
       )
-      cy.get('#continue').click()
-      cy.get('#yes-no').click()
-      cy.get('#continue').click()
-      cy.get('#name').fill(faker.name.firstName() + faker.name.lastName())
-      cy.get('#continue').click()
-      cy.get('#email-address').fill(faker.internet.email())
-      cy.get('#continue').click()
-      cy.get('#postcode').fill('M24 6DH')
-      cy.get('#continue').click()
-      cy.get('#address').select(
+      commonElement.clickContinueButton()
+      commonElement.clickOnYesOption()
+      commonElement.clickContinueButton()
+      commonElement.EnterName(faker.name.firstName() + ' ' + faker.name.lastName())
+      commonElement.clickContinueButton()
+      commonElement.EnterEmailAddress(faker.internet.email())
+      commonElement.clickContinueButton()
+      commonElement.EnterPostCode('M24 6DH')
+      commonElement.clickContinueButton()
+      commonElement.SelectAddress(
         '2, SATIN DRIVE, MIDDLETON, MANCHESTER, M24 6DH'
       )
-      cy.get('#continue').click()
-      cy.get('#yes-no-2').click()
-      cy.get('#continue').click()
+      commonElement.clickContinueButton()
+      commonElement.clickOnNoOption()
+      commonElement.clickContinueButton()
 
       //   Add additional contacts
 
-      cy.get('a').contains('Add alternative contacts').click()
-      cy.get('#yes-no-2').click()
-      cy.get('#continue').click()
-      cy.get('#yes-no').click()
-      cy.get('#continue').click()
-      cy.get('#yes-no-2').click()
-      cy.get('#continue').click()
+      commonElement.GetApplicationTasklist('Add alternative contacts')
+      commonElement.clickOnNoOption()
+      commonElement.clickContinueButton()
+      commonElement.clickOnYesOption()
+      commonElement.clickContinueButton()
+      commonElement.clickOnNoOption()
+      commonElement.clickContinueButton()
       cy.get("input[value='new']").click()
-      cy.get('#continue').click()
-      cy.get('#name').fill(faker.name.firstName() + faker.name.lastName())
-      cy.get('#continue').click()
-      cy.get('#email-address').clear()
-      cy.get('#email-address').fill(faker.internet.email())
-      cy.get('#continue').click()
-      cy.get('#continue').click()
+      commonElement.clickContinueButton()
+      commonElement.EnterName(faker.name.firstName() + ' ' + faker.name.lastName())
+      commonElement.clickContinueButton()
+      commonElement.EnterEmailAddress().clear()
+      commonElement.EnterEmailAddress(faker.internet.email())
+      commonElement.clickContinueButton()
+      commonElement.clickContinueButton()
 
       //   Add invoice details
 
-      cy.get('a').contains('Add invoice details').click()
+      commonElement.GetApplicationTasklist('Add invoice details')
       cy.get("input[value='other']").click()
-      cy.get('#continue').click()
+      commonElement.clickContinueButton()
       cy.get('#new').click()
-      cy.get('#continue').click()
-      cy.get('#name').fill(faker.name.firstName() + faker.name.lastName())
-      cy.get('#continue').click()
+      commonElement.clickContinueButton()
+      commonElement.EnterName(faker.name.firstName() + ' ' + faker.name.lastName())
+      commonElement.clickContinueButton()
       cy.get('#account').click()
-      cy.get('#continue').click()
-      cy.get('#change-email-3').click()
-      cy.get('#email-address').fill(faker.internet.email())
-      cy.get('#continue').click()
-      cy.get('#purchase-order').fill(faker.internet.email())
-      cy.get('#continue').click()
-      cy.get('#continue').click()
-      cy.get(
-        '#main-content > div > div > form > fieldset > span > ol > li:nth-child(2) > ul > li:nth-child(9)'
-      ).contains('COMPLETED')
-      cy.get(
-        '#main-content > div > div > form > fieldset > span > ol > li:nth-child(2) > ul > li:nth-child(9)'
-      ).contains('Add invoice details')
+      commonElement.clickContinueButton()
+      commonElement.clickOnChangeEmailOption()
+      commonElement.EnterEmailAddress(faker.internet.email())
+      commonElement.clickContinueButton()
+      addInvoiceDetailsfunctionPage.enterPurchaseOrderdetails(faker.internet.email())
+      commonElement.clickContinueButton()
+      commonElement.clickContinueButton()
+      addInvoiceDetailsfunctionPage.Verifypage().contains('COMPLETED')
+      addInvoiceDetailsfunctionPage.Verifypage().contains('Add invoice details')
     })
   })
 
   it(' 4 Verify happy path - Add Invoice Details', () => {
-    cy.visit(Cypress.env('login'))
+    Cypress.env('baseUrl')
     cy.fixture('users.json').then((users) => {
-      cy.get('#username').fill(users.email1)
-      cy.get('#password').fill(users.password1)
-      cy.get('#continue').click()
-      cy.get('h1.govuk-fieldset__heading').contains(users.nextpage)
-      cy.get('#main-content > div > div > form > fieldset > a').click()
-      cy.get('#species').click()
-      cy.get('#continue').click()
-      cy.get('#yes-no-2').click()
-      cy.get('#continue').click()
-      cy.get('#continue').click()
-      cy.get('#yes-no').click()
-      cy.get('#continue').click()
-      cy.get('#yes-no-2').click()
-      cy.get('#continue').click()
-      cy.get('#continue').click()
-      cy.get('#continue').click()
+      eligibilityfunctionPage.enterIdmUsername(users.email1)
+      eligibilityfunctionPage.enterIdmPassword(users.password1)
+      commonElement.clickContinueButton()
+      commonElement.verifyHeaderPage(users.nextpage)
+      commonElement.ClickOnNewApplicationButton()
+      eligibilityfunctionPage.selectBadgerOption()
+      commonElement.clickContinueButton()
+      commonElement.clickOnNoOption()
+      commonElement.clickContinueButton()
+      eligibilityfunctionPage.ClickOnOtherRoleOption()
+      commonElement.clickContinueButton()
+      commonElement.clickContinueButton()
+      commonElement.clickOnYesOption()
+      commonElement.clickContinueButton()
+      commonElement.clickOnNoOption()
+      commonElement.clickContinueButton()
+      commonElement.clickContinueButton()
+      commonElement.clickContinueButton()
 
       //   Give licence holder details
 
-      cy.get('a').contains('Give licence holder details').click()
-      cy.get('#yes-no').click()
-      cy.get('#continue').click()
+      commonElement.GetApplicationTasklist('Add alternative contacts')
+      commonElement.clickOnYesOption()
+      commonElement.clickContinueButton()
       cy.get("input[value='new']").click()
-      cy.get('#continue').click()
-      cy.get('#is-organisation').click()
-      cy.get('#organisation-name').fill(faker.company.bs())
-      cy.get('#continue').click()
-      cy.get('#continue').click()
-      cy.get('#postcode').fill('M24 6DH')
-      cy.get('#continue').click()
-      cy.get('#address').select(
+      commonElement.clickContinueButton()
+      commonElement.SelectYesOptionaOnIsOrganisation()
+      commonElement.EnterOrganisationName(faker.company.bs())
+      commonElement.clickContinueButton()
+      commonElement.clickContinueButton()
+      commonElement.EnterPostCode('M24 6DH')
+      commonElement.clickContinueButton()
+      commonElement.SelectAddress(
         '1, SATIN DRIVE, MIDDLETON, MANCHESTER, M24 6DH'
       )
-      cy.get('#continue').click()
-      cy.get('#continue').click()
+      commonElement.clickContinueButton()
+      commonElement.clickContinueButton()
 
       //   Give ecologist details
 
-      cy.get('a').contains('Give ecologist details').click()
-      cy.get('#yes-no-2').click()
-      cy.get('#continue').click()
+      commonElement.GetApplicationTasklist('Give ecologist details')
+      commonElement.clickOnNoOption()
+      commonElement.clickContinueButton()
       cy.get('#contact').click()
-      cy.get('#continue').click()
+      commonElement.clickContinueButton()
       cy.get('#account').click()
-      cy.get('#continue').click()
-      cy.get('#continue').click()
-      cy.get('#continue').click()
+      commonElement.clickContinueButton()
+      commonElement.clickContinueButton()
+      commonElement.clickContinueButton()
 
       //   Add authorised people
 
-      cy.get('a').contains('Add authorised people').click()
-      cy.get('#yes-no').click()
-      cy.get('#continue').click()
-      cy.get('#name').fill(faker.name.firstName() + faker.name.lastName())
-      cy.get('#continue').click()
-      cy.get('#email-address').fill(faker.internet.email())
-      cy.get('#continue').click()
-      cy.get('#postcode').fill('M24 6DH')
-      cy.get('#continue').click()
-      cy.get('#address').select(
+      commonElement.GetApplicationTasklist('Add authorised people')
+      commonElement.clickOnYesOption()
+      commonElement.clickContinueButton()
+      commonElement.EnterName(faker.name.firstName() + ' ' + faker.name.lastName())
+      commonElement.clickContinueButton()
+      commonElement.EnterEmailAddress(faker.internet.email())
+      commonElement.clickContinueButton()
+      commonElement.EnterPostCode('M24 6DH')
+      commonElement.clickContinueButton()
+      commonElement.SelectAddress(
         '1, SATIN DRIVE, MIDDLETON, MANCHESTER, M24 6DH'
       )
-      cy.get('#continue').click()
-      cy.get('#yes-no').click()
-      cy.get('#continue').click()
-      cy.get('#name').fill(faker.name.firstName() + faker.name.lastName())
-      cy.get('#continue').click()
-      cy.get('#email-address').fill(faker.internet.email())
-      cy.get('#continue').click()
-      cy.get('#postcode').fill('M24 6DH')
-      cy.get('#continue').click()
-      cy.get('#address').select(
+      commonElement.clickContinueButton()
+      commonElement.clickOnYesOption()
+      commonElement.clickContinueButton()
+      commonElement.EnterName(faker.name.firstName() + ' ' + faker.name.lastName())
+      commonElement.clickContinueButton()
+      commonElement.EnterEmailAddress(faker.internet.email())
+      commonElement.clickContinueButton()
+      commonElement.EnterPostCode('M24 6DH')
+      commonElement.clickContinueButton()
+      commonElement.SelectAddress(
         '2, SATIN DRIVE, MIDDLETON, MANCHESTER, M24 6DH'
       )
-      cy.get('#continue').click()
-      cy.get('#yes-no-2').click()
-      cy.get('#continue').click()
+      commonElement.clickContinueButton()
+      commonElement.clickOnNoOption()
+      commonElement.clickContinueButton()
       //   Add invoice details
-      cy.get('a').contains('Add invoice details').click()
+      commonElement.GetApplicationTasklist('Add invoice details')
       cy.get("input[value='other']").click()
-      cy.get('#continue').click()
+      commonElement.clickContinueButton()
       cy.get('#new').click()
-      cy.get('#continue').click()
-      cy.get('#name').fill(faker.name.firstName() + faker.name.lastName())
-      cy.get('#continue').click()
+      commonElement.clickContinueButton()
+      commonElement.EnterName(faker.name.firstName() + ' ' + faker.name.lastName())
+      commonElement.clickContinueButton()
       cy.get('#new').click()
-      cy.get('#continue').click()
-      cy.get('#is-organisation').click()
-      cy.get('#organisation-name').fill(faker.company.bs())
-      cy.get('#continue').click()
+      commonElement.clickContinueButton()
+      commonElement.SelectYesOptionaOnIsOrganisation()
+      commonElement.EnterOrganisationName(faker.company.bs())
+      commonElement.clickContinueButton()
 
-      cy.get('#email-address').fill(faker.internet.email())
-      cy.get('#continue').click()
-      cy.get('#postcode').fill('M24 6DH')
-      cy.get('#continue').click()
-      cy.get('#address').select(
+      commonElement.EnterEmailAddress(faker.internet.email())
+      commonElement.clickContinueButton()
+      commonElement.EnterPostCode('M24 6DH')
+      commonElement.clickContinueButton()
+      commonElement.SelectAddress(
         '1, SATIN DRIVE, MIDDLETON, MANCHESTER, M24 6DH'
       )
-      cy.get('#continue').click()
-      cy.get('#purchase-order').fill(faker.internet.email())
-      cy.get('#continue').click()
-      cy.get('#continue').click()
-      cy.get(
-        '#main-content > div > div > form > fieldset > span > ol > li:nth-child(2) > ul > li:nth-child(9)'
-      ).contains('COMPLETED')
-      cy.get(
-        '#main-content > div > div > form > fieldset > span > ol > li:nth-child(2) > ul > li:nth-child(9)'
-      ).contains('Add invoice details')
+      commonElement.clickContinueButton()
+      addInvoiceDetailsfunctionPage.enterPurchaseOrderdetails(faker.internet.email())
+      commonElement.clickContinueButton()
+      commonElement.clickContinueButton()
+      addInvoiceDetailsfunctionPage.Verifypage().contains('COMPLETED')
+      addInvoiceDetailsfunctionPage.Verifypage().contains('Add invoice details')
     })
   })
 })

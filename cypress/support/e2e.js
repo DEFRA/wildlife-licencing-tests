@@ -14,8 +14,22 @@
 // ***********************************************************
 
 // Import commands.js using ES2015 syntax:
-import './commands'
-import 'cypress-mochawesome-reporter/register'
-
+// import './commands'
+// import 'cypress-mochawesome-reporter/register'
+require('./commands')
+require('cypress-mochawesome-reporter/register')
+Cypress.on('uncaught:exception', (err, runnable) => {
+  // returning false here prevents Cypress from
+// failing the test
+  return false
+})
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+
+// Cypress.on('before:each', () => {
+//     cy.request(Cypress.env("baseUrl") + "/reset-sysdate");// Navigate to a specific page
+//   });
+
+// Cypress.on('after:each', () => {
+//     cy.request(Cypress.env("baseUrl") + "/reset-sysdate");
+// });

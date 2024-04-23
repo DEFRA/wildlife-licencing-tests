@@ -7,7 +7,7 @@
 //     cy.fixture("users.json").then(users => {
 //         cy.get("#username").type(users.email1)
 //         cy.get("#password").type(users.password1)
-//         cy.get("#continue").click()
+//         commonElement.clickContinueButton()
 //     })
 // }
 
