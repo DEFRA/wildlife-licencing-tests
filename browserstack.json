@@ -1,7 +1,7 @@
 {
     "auth": {
-        "username": "sddsproject_NixGaiq9E",
-         "access_key": "pnoAaMxp4GVeCNZwFbB5"
+        "username": "BROWSERSTACK_USEERNAME",
+         "access_key": "BROWSERSTACK_KEY"
     },
     "browsers": [
     {
