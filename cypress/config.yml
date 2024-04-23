@@ -1,0 +1,21 @@
+...
+# Setting additional local flags
+
+# force-local: This flag ensures that, regardless of any other setting, none of the assets are resolved via the public internet and any resolution of URLs that your BrowserStack device does is routed through the Local tunnel. This flag is typically used to ensure compliance with your network policies. 
+force-local : true
+
+# verbose: This option sets the level of logging required. Set 1 to debug issues related to setting up connections. Set 2 for logs related to network information. Set 3 to forward all communication to local servers for each request and response. The default value for this option is 1.
+#verbose <INTEGER_1_2_3>
+
+# proxy-host: If you are behind the corporate proxy setup, specify your proxy host using this option.#
+#proxy-host : 'openvpn.ops.aws.defra.cloud'
+
+# proxy-port: If you are behind the corporate proxy setup, specify your proxy port using this option. The default value is 3128.
+#proxy-port : 1194
+
+# proxy-user: If you are behind a corporate proxy which requires authentication, specify your proxy username using this option. Currently, we support HTTP Basic authentication only.
+#proxy-user : dlookman
+
+# proxy-pass: If you are behind a corporate proxy which requires authentication, specify your proxy password using this option. Currently, we support HTTP Basic authentication only.
+#proxy-pass
+...

@@ -1,98 +1,71 @@
 {
-
     "auth": {
-  
-      "username": "oyedelelukman1",
-  
-      "access_key": "xSsd1Cp1JGu1sN2gN2Qk"
-  
+        "username": "BROWSERSTACK_USEERNAME",
+         "access_key": "BROWSERSTACK_KEY"
     },
-  
     "browsers": [
-  
-      {
-  
-        "browser": "chrome",
-  
-        "os": "Windows 10",
-  
-        "versions": [
-  
-          "latest"
-  
-        ]
-  
-      },
-      {
-  
-        "browser": "edge",
-  
-        "os": "Windows 10",
-  
-        "versions": [
-  
-          "latest"
-  
-        ]
-  
-      },
-      {
-  
-        "browser": "firefox",
-  
-        "os": "Windows 10",
-  
-        "versions": [
-  
-          "latest"
-  
-        ]
-  
-      },
-  
+    {
+      "browser": "edge",
+      "os": "Windows 10",
+      "versions": ["latest", "latest - 1"]
+    },
+    
     
       {
-  
-        "browser": "chrome",
-  
-        "os": "OS X Catalina",
-  
-        "versions": [
-  
-          "latest"
-  
-        ]
-  
+          "browser": "edge",
+          "os": "OS X Ventura",
+          "versions": [
+              "latest",
+              "latest-1"
+          ]
+      },
+      {
+          "browser": "chrome",
+          "os": "OS X Ventura",
+          "versions": [
+              "latest",
+              "latest-1"
+          ]
       }
-  
-    ],
-  
+     
+  ],
+
     "run_settings": {
-  
-      "cypress_config_file": "./cypress.json",
-  
-      "cypress_version": "9.latest",
-  
-      "exclude": ["/SYSTM/release/**", "capacitor/**", "cordova/**", ".git/**"],
-
-      "project_name": "wildlife",
-  
-      "build_name": "Wiidlife Build: 1",
-  
-      "parallels": 5
-  
+        "cypress_config_file": "./browserstack-cypress.config.js",
+        "network_logs": true,
+        "project_name": "Wildlife",
+        "spec_timeout": 60,
+        "build_name": "Wildlife test",
+        "exclude": [],
+        "parallels": "3",
+        "cypress_version": "12.latest",
+        "npm_dependencies": {
+            "@faker-js/faker": "^6.2.0",
+            "browserstack-node-sdk": "^1.31.23",
+            "cypress-file-upload": "^5.0.8",
+            "cypress-fill-command": "^1.0.2",
+            "cypress-mochawesome-reporter": "^3.2.3",
+            "cypress-parallel": "^0.12.0",
+            "cypress-xpath": "^1.6.2",
+            "cypress": "^12.5.1",
+            "standard": "^17.0.0",
+            "cypress-axe": "^1.5.0",
+            "faker": "^5.5.3",
+            "axe-core": "^4.0.2",
+            "browserstack-cypress-cli": "^1.28.2"
+            
+          },
+        "package_config_options": {}
+        
     },
+    "browserstack_local": true,
+    "browserstack_debug": true,
     "connection_settings": {
-      "local": true,
-      "cache_dependencies": "false"
+        "local": true,
+        "local_identifier": null,
+        "local_config_file": "./cypress/config.yml",
+        "local_mode": "always-on"
 
-    }
-
-  
-  }
-  
-  
-  
-
-
-  
+    },
+    "disable_usage_reporting": false
+}

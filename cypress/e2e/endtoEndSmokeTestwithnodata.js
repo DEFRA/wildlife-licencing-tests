@@ -2,6 +2,10 @@ const faker = require('faker')
 const commonElement = require('../pageObjects/common.js')
 const eligibilityfunctionPage = require('../pageObjects/eligibility.js')
 const addSettsfunctionPage = require('../pageObjects/addSettsPage.js')
+const addInvoiceDetailsfunctionPage = require('../pageObjects/addInvoiceDetailsPage.js')
+const uploadElement = require('../pageObjects/uploadPage.js')
+const convictionElement = require('../pageObjects/convictionPage.js')
+const converservativeIssueElement = require('../pageObjects/giveconservationIssuePage.js')
 
 /**
  * ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
@@ -11,205 +15,176 @@ const addSettsfunctionPage = require('../pageObjects/addSettsPage.js')
 
 describe('Page title verification', () => {
   it('SDDSIP-509 and verify Licence application screen', () => {
-    // cy.request(
-    //   "/reset?username=user1@email.com"
-    // );
+    cy.request(
+      '/reset?username=delelookman%2B2@gmail.com'
+    )
     cy.visit(Cypress.env('baseUrl'))
-    cy.injectAxe()
-    cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
     cy.fixture('users.json').then((users) => {
-      eligibilityfunctionPage.enterIdmUsername(users.email1)
-      eligibilityfunctionPage.enterIdmPassword(users.password1)
+      eligibilityfunctionPage.enterIdmUsername(users.email6)
+      eligibilityfunctionPage.enterIdmPassword(users.password6)
       commonElement.clickContinueButton()
-      cy.injectAxe()
-      cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
-      cy.wait(3000)
-      cy.get('h1.govuk-fieldset__heading').contains(users.nextpage)
-      cy.get('#main-content > div > div > form > fieldset > a').click()
+      // commonElement.clickContinueButton();
+      cy.wait(7000)
       eligibilityfunctionPage.selectBadgerOption()
       commonElement.clickContinueButton()
-      cy.injectAxe()
-      cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
       commonElement.clickOnNoOption()
       commonElement.clickContinueButton()
-
-      cy.injectAxe()
-      cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
       commonElement.clickContinueButton()
-      cy.injectAxe()
-      cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
-      cy.get('#user-role').click()
+      cy.get('#user-role-4').click()
+      commonElement.clickContinueButton()
+      commonElement.clickOnNoOption()
       commonElement.clickContinueButton()
       commonElement.clickOnYesOption()
       commonElement.clickContinueButton()
-      cy.injectAxe()
-      cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
       commonElement.clickOnYesOption()
       commonElement.clickContinueButton()
-      cy.injectAxe()
-      cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
       commonElement.clickOnYesOption()
       commonElement.clickContinueButton()
-      cy.injectAxe()
-      cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
       commonElement.clickContinueButton()
-      cy.injectAxe()
-      cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
       commonElement.clickContinueButton()
-      cy.injectAxe()
-      cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
       commonElement.GetApplicationTasklist('Give licence holder details')
-      cy.injectAxe()
-      cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
       // commonElement.clickOnYesOption();
-      //       commonElement.clickContinueButton();
-      //   cy.injectAxe()
-      //   cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
-      commonElement.EnterName()
+      // commonElement.clickContinueButton();
+      commonElement
+        .EnterName(faker.name.firstName() + ' ' + faker.name.lastName())
       commonElement.clickContinueButton()
-      //   cy.injectAxe()
-      //   cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
-      commonElement.SelectYesOptionaOnIsOrganisation
+      commonElement.SelectYesOptionaOnIsOrganisation()
       commonElement.EnterOrganisationName(faker.company.bs())
       commonElement.clickContinueButton()
-      cy.injectAxe()
-      cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
       commonElement.clickContinueButton()
-      commonElement.EnterPostCode('M24 6DH')
-      commonElement.clickContinueButton()
-      cy.injectAxe()
-      cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
-      commonElement.SelectAddress('1, SATIN DRIVE, MIDDLETON, MANCHESTER, M24 6DH'
-      )
-      commonElement.clickContinueButton()
-      cy.injectAxe()
-      cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
-      commonElement.EnterEmailAddress(faker.internet.email()) // new
-      commonElement.clickContinueButton() // new
-      //   cy.injectAxe()
-      //   cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
-      cy.get('#phone-number').fill(faker.phone.phoneNumber())
-      commonElement.clickContinueButton()
-      commonElement.clickContinueButton()
-      //   commonElement.clickContinueButton();
-      cy.injectAxe()
-      cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
-      //   Give ecologist details
-      commonElement.GetApplicationTasklist('Give ecologist details')
-      //   cy.injectAxe()
-      //   cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
-      // commonElement.clickOnYesOption();
-      commonElement.clickContinueButton()
-      //   cy.injectAxe()
-      //   cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
-      //   commonElement.SelectYesOptionaOnIsOrganisation;
-      //   commonElement.EnterOrganisationName(faker.company.bs());
-      //   cy.injectAxe()
-      //   cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
-      //   commonElement.clickContinueButton();
-      //   cy.injectAxe()
-      //   cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
-      //   cy.get("#change-email").click();
-      //   commonElement.clickContinueButton();
-      //   // commonElement.clickContinueButton();
-
-      //   cy.injectAxe()
-      //   cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
-      //   commonElement.EnterPostCode("M24 6DH");
-      //   commonElement.clickContinueButton();
-      //   commonElement.SelectAddress(
-      //     "1, SATIN DRIVE, MIDDLETON, MANCHESTER, M24 6DH"
-      //   );
-      //   cy.injectAxe()
-      //   cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
-      //   commonElement.clickContinueButton();
-      //   cy.injectAxe()
-      //   cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
-      //   commonElement.clickContinueButton();
-      cy.injectAxe()
-      cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
-      // Authorised person
-      commonElement.GetApplicationTasklist('Add authorised people')
-      cy.injectAxe()
-      cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
-      commonElement.clickOnYesOption()
-      commonElement.clickContinueButton()
-      cy.injectAxe()
-      cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
-      commonElement.EnterName()
-      commonElement.clickContinueButton()
-      cy.injectAxe()
-      cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
-      commonElement.EnterEmailAddress(faker.internet.email())
-      commonElement.clickContinueButton()
-      cy.injectAxe()
-      cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
       commonElement.EnterPostCode('M24 6DH')
       commonElement.clickContinueButton()
       commonElement.SelectAddress(
         '1, SATIN DRIVE, MIDDLETON, MANCHESTER, M24 6DH'
       )
       commonElement.clickContinueButton()
-      cy.injectAxe()
-      cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
-      commonElement.clickOnNoOption()
+      commonElement.EnterEmailAddress(faker.internet.email()) // new
+      commonElement.clickContinueButton() // new
+      cy.get('#phone-number').fill(faker.phone.phoneNumber())
       commonElement.clickContinueButton()
-      cy.injectAxe()
-      cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
-      //   Add additional contacts
-      commonElement.GetApplicationTasklist('Add alternative licence holder contact details')
-      cy.injectAxe()
-      cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
-      commonElement.clickOnYesOption()
-      cy.injectAxe()
-      cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
       commonElement.clickContinueButton()
-      cy.injectAxe()
-      cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
-      commonElement.EnterName()
-      commonElement.clickContinueButton()
-      cy.injectAxe()
-      cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
-      commonElement.EnterEmailAddress(faker.internet.email())
-      commonElement.clickContinueButton()
-      cy.injectAxe()
-      cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
+      // commonElement.clickContinueButton();
+
+      //   Give ecologist details
+      commonElement.GetApplicationTasklist('Give ecologist details')
       // commonElement.clickOnYesOption();
-      commonElement.clickContinueButton()
-      cy.injectAxe()
-      cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
-      //   commonElement.EnterName();
-      //   commonElement.clickContinueButton();
-      //   cy.injectAxe()
-      //   cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
-      //  commonElement.EnterEmailAddress()().clear();
-      //  commonElement.EnterEmailAddress(faker.internet.email());
-      //   commonElement.clickContinueButton();
-      //   cy.injectAxe()
-      //   cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
-      //   commonElement.clickContinueButton();
-      //   cy.injectAxe()
-      //   cy.checkA11y(null, { includedImpacts: ['critical', 'serious'] })
-      commonElement.GetApplicationTasklist('Add invoice details')
-      cy.get("input[value='other']").click()
-      commonElement.clickContinueButton()
-      commonElement.EnterName(faker.name.firstName() + faker.name.lastName())
-      commonElement.clickContinueButton()
-      //   cy.get("#new").click();
-      //   commonElement.clickContinueButton();
-      commonElement.SelectYesOptionaOnIsOrganisation
+      // commonElement.clickContinueButton();
+      commonElement
+        .EnterName(faker.name.firstName() + ' ' + faker.name.lastName())
+      commonElement.clickContinueButton() // new
+      commonElement.SelectYesOptionaOnIsOrganisation()
       commonElement.EnterOrganisationName(faker.company.bs())
+      commonElement.clickContinueButton()
+      // cy.get("#change-email").click();
+      // commonElement.clickContinueButton();
+      commonElement.EnterPostCode('M24 6DH')
+      commonElement.clickContinueButton()
+      commonElement.SelectAddress(
+        '1, SATIN DRIVE, MIDDLETON, MANCHESTER, M24 6DH'
+      )
+      commonElement.clickContinueButton()
+      commonElement.EnterEmailAddress(faker.internet.email()) // new
+      commonElement.clickContinueButton() // new
+      commonElement.clickContinueButton()
+
+      // Authorised person
+      commonElement.GetApplicationTasklist('Add authorised people')
+      commonElement.clickOnYesOption()
+      commonElement.clickContinueButton()
+      commonElement
+        .EnterName(faker.name.firstName() + ' ' + faker.name.lastName())
       commonElement.clickContinueButton()
       commonElement.EnterEmailAddress(faker.internet.email())
       commonElement.clickContinueButton()
       commonElement.EnterPostCode('M24 6DH')
       commonElement.clickContinueButton()
       commonElement.SelectAddress(
+        '1, SATIN DRIVE, MIDDLETON, MANCHESTER, M24 6DH'
+      )
+      commonElement.clickContinueButton()
+      commonElement.clickOnNoOption()
+      commonElement.clickContinueButton()
+
+      //   Add additional contacts
+      commonElement.GetApplicationTasklist('Add alternative licence holder contact details')
+
+      commonElement.clickOnYesOption()
+      commonElement.clickContinueButton()
+      commonElement.EnterName(faker.name.firstName() + ' ' + faker.name.lastName())
+      commonElement.clickContinueButton()
+      commonElement.EnterEmailAddress(faker.internet.email())
+      commonElement.clickContinueButton()
+      commonElement.clickContinueButton()
+
+      // commonElement.clickOnYesOption();
+      // commonElement.clickContinueButton();
+      // commonElement.EnterName(faker.name.firstName() + " " + faker.name.lastName());
+      // commonElement.clickContinueButton();
+      // commonElement.EnterEmailAddress().clear();
+      // commonElement.EnterEmailAddress.fill(faker.internet.email());
+      // commonElement.clickContinueButton();
+      // commonElement.clickContinueButton();
+      commonElement.GetApplicationTasklist('Add alternative ecologist contact details')
+      commonElement.verifyHeaderPage().should(
+        'contain',
+        'Do you want to add an alternative ecologist contact?'
+      )
+      commonElement.clickOnYesOption()
+      commonElement.clickContinueButton()
+
+      commonElement
+        .EnterName(faker.name.firstName() + ' ' + faker.name.lastName())
+      commonElement.clickContinueButton()
+      // cy.get("#new").click();
+      // commonElement.clickContinueButton();
+      commonElement.EnterEmailAddress().clear()
+      commonElement.EnterEmailAddress(faker.internet.email())
+      commonElement.clickContinueButton()
+      // commonElement.SelectYesOptionaOnIsOrganisation();
+      // commonElement.EnterOrganisationName().fill(faker.company.bs());
+      // commonElement.clickContinueButton();
+      // commonElement.EnterEmailAddress().clear();
+      // commonElement.EnterEmailAddress.fill(faker.internet.email());
+      // commonElement.clickContinueButton();
+      // commonElement.EnterPostCode("M24 6DH");
+      // commonElement.clickContinueButton();
+      // commonElement.SelectAddress(
+      //   "12, SATIN DRIVE, MIDDLETON, MANCHESTER, M24 6DH"
+      // );
+      // commonElement.clickContinueButton();
+      // commonElement.EnterEmailAddress().clear();
+      // commonElement.EnterEmailAddress.fill(faker.internet.email());
+      commonElement.clickContinueButton()
+      // cy.get('#yes-no-2').click()
+      commonElement.GetApplicationTasklist('Add invoice details')
+      cy.get("input[value='other']").click()
+      commonElement.clickContinueButton()
+      commonElement.EnterName(faker.name.firstName() + ' ' + faker.name.lastName())
+      commonElement.clickContinueButton()
+      // cy.get("#new").click();
+      // commonElement.clickContinueButton();
+      commonElement.SelectYesOptionaOnIsOrganisation()
+      commonElement.EnterOrganisationName(faker.company.bs())
+      commonElement.clickContinueButton()
+      // commonElement.EnterEmailAddress().clear();
+      // commonElement.EnterEmailAddress(faker.internet.email());
+      // commonElement.clickContinueButton();
+      commonElement.EnterPostCode('M24 6DH')
+      commonElement.clickContinueButton()
+      commonElement.SelectAddress(
         '12, SATIN DRIVE, MIDDLETON, MANCHESTER, M24 6DH'
       )
       commonElement.clickContinueButton()
-      cy.get('#purchase-order').fill(faker.internet.email())
-      commonElement.clickContinueButton() //       commonElement.clickContinueButton();
+      commonElement.EnterEmailAddress().clear()
+      commonElement.EnterEmailAddress(faker.internet.email())
+      commonElement.clickContinueButton()
+
+      addInvoiceDetailsfunctionPage.enterPurchaseOrderdetails(
+        faker.internet.email()
+      )
+
+      commonElement.clickContinueButton()
+      commonElement.clickContinueButton()
       // work activity
       commonElement.GetApplicationTasklist('Give work activity details')
       cy.get('#work-proposal').fill(faker.random.alphaNumeric(40))
@@ -238,7 +213,7 @@ describe('Page title verification', () => {
       commonElement.clickContinueButton()
       commonElement.clickOnYesOption()
       commonElement.clickContinueButton()
-      cy.get('#permission-details').fill(faker.random.alphaNumeric(40))
+      converservativeIssueElement.enterPermissionDetail().fill(faker.random.alphaNumeric(40))
       commonElement.clickContinueButton()
       commonElement.clickOnYesOption()
       commonElement.clickContinueButton()
@@ -288,53 +263,60 @@ describe('Page title verification', () => {
       cy.get('#site-name').fill(faker.random.alphaNumeric(100))
       commonElement.clickContinueButton()
       commonElement.clickContinueButton()
-      //       cy.get('#site-postcode-check-2').click()
+      cy.get('#site-postcode-check-2').click()
       commonElement.clickContinueButton()
-      //       cy.get('#address-line-1').fill(faker.random.alpha(80))
+      cy.get('#address-line-1').fill(faker.random.alpha(80))
       cy.get('#address-line-2').fill(faker.random.alpha(80))
       cy.get('#address-town').fill(faker.random.alpha(80))
       cy.get('#address-county').fill(faker.random.alpha(20))
       commonElement.clickContinueButton()
-      //       cy.get('#scan-file').click()
-      const yourFixturePath = 'magic_polygons.cpg'
-      const dbfFixturePath = 'magic_polygons.dbf'
-      const prjFixturePath = 'magic_polygons.prj'
-      cy.get('#scan-file').attachFile(yourFixturePath)
+      uploadElement.clickOnUploadField()
+      // const yourFixturePath = 'magic_polygonsOne.cpg'
+      // const dbfFixturePath = 'magic_polygonsTwo.dbf'
+      // const prjFixturePath = 'magic_polygonsThree.prj'
+
+      cy.writeFile(
+        'cypress/fixtures/magic_polygons.cpg',
+        '<html>Hello world</html>'
+      )
+      uploadElement.uploadFileField().attachFile('magic_polygons.cpg')
       commonElement.clickContinueButton()
-      //       cy.get('#scan-file').click()
-      cy.get('#scan-file').attachFile(dbfFixturePath)
+      uploadElement.clickOnUploadField()
+      cy.writeFile(
+        'cypress/fixtures/magic_polygons.dbf',
+        '<html>Hello world</html>'
+      )
+      uploadElement.uploadFileField().attachFile('magic_polygons.dbf')
       commonElement.clickContinueButton()
-      //       cy.get('#scan-file').click()
-      cy.get('#scan-file').attachFile(prjFixturePath)
+      uploadElement.clickOnUploadField()
+      cy.writeFile(
+        'cypress/fixtures/magic_polygons.prj',
+        '<html>Hello world</html>'
+      )
+      uploadElement.uploadFileField().attachFile('magic_polygons.prj')
       commonElement.clickContinueButton()
-      //  commonElement.clickContinueButton();
-      //       // cy.get('#scan-file').click()
+      //  commonElement.clickContinueButton();      // uploadElement.clickOnUploadField()
       // const shpFixturePath = 'magic_polygons.shp'
       // const yourFixturePath = 'virusfile.pdf'
       // const shpxmlFixturePath = 'magic_polygons.shp.xml'
       // cy.get('#scan-file').attachFile(yourFixturePath)
-      // commonElement.clickContinueButton();
-      //       // cy.get('#scan-file').click()
+      // commonElement.clickContinueButton();      // uploadElement.clickOnUploadField()
       // cy.get('#scan-file').attachFile(shpFixturePath)
-      // commonElement.clickContinueButton();
-      //       // cy.get('#scan-file').click()
+      // commonElement.clickContinueButton();      // uploadElement.clickOnUploadField()
       // cy.get('#scan-file').attachFile(shpxmlFixturePath)
-      // commonElement.clickContinueButton();
-      //       // cy.get('#site-grid-ref').clear()
+      // commonElement.clickContinueButton();      // cy.get('#site-grid-ref').clear()
       // cy.get('#site-grid-ref').fill(
       //   'NY' + faker.datatype.number({ min: 100000 }).toString()
       // )
+      // commonElement.clickContinueButton();      // cy.get('#address-and-grid-reference-mismatch').click()
       // commonElement.clickContinueButton();
-      //       // cy.get('#address-and-grid-reference-mismatch').click()
-      // commonElement.clickContinueButton();
-      //       cy.get('#site-grid-ref').clear()
-      cy.get('#site-grid-ref').fill(
-        'NY' + faker.datatype.number({ min: 100000 }).toString()
-      )
+      cy.get('#site-grid-ref')
+        .clear()
+        .fill('NY' + faker.datatype.number({ min: 100000 }).toString())
       commonElement.clickContinueButton()
-      //       cy.get('#address-and-grid-reference-mismatch-4').click()
+      cy.get('#address-and-grid-reference-mismatch-4').click()
       commonElement.clickContinueButton()
-      //       commonElement.clickContinueButton();
+      commonElement.clickContinueButton()
 
       commonElement.GetApplicationTasklist('Give ecologist’s experience')
       cy.get("input[value='no']").click()
@@ -344,7 +326,7 @@ describe('Page title verification', () => {
       cy.get('#enter-methods').fill(faker.random.alphaNumeric(21))
       commonElement.clickContinueButton()
       commonElement.clickOnYesOption()
-      //       commonElement.clickContinueButton();
+      commonElement.clickContinueButton()
       cy.get('#enter-class-mitigation-details').fill('BAD-2022-agsss1')
       commonElement.clickContinueButton()
       commonElement.clickContinueButton()
@@ -353,15 +335,15 @@ describe('Page title verification', () => {
       const yourFixturePath1 = 'virusfile.pdf'
       const yourFixturePath2 = 'Thirtysample.jpg'
       const yourFixturePath3 = 'OVERVIEW.jpg'
-      cy.get('#scan-file').attachFile(yourFixturePath1)
+      uploadElement.uploadFileField().attachFile(yourFixturePath1)
       commonElement.clickContinueButton()
-      //       cy.get('#another-file-check').click()
+      uploadElement.clickUploadAnotherFile()
       commonElement.clickContinueButton()
-      //       cy.get('#scan-file').attachFile(yourFixturePath2)
+      uploadElement.uploadFileField().attachFile(yourFixturePath2)
       commonElement.clickContinueButton()
-      //       cy.get('#another-file-check').click()
+      uploadElement.clickUploadAnotherFile()
       commonElement.clickContinueButton()
-      //       cy.get('#scan-file').attachFile(yourFixturePath3)
+      uploadElement.uploadFileField().attachFile(yourFixturePath3)
       cy.fixture('uploadWorkSchedule-copydeck.json').then(
         (uploadWorkSchedule) => {
           commonElement.clickContinueButton()
@@ -373,37 +355,30 @@ describe('Page title verification', () => {
           commonElement.clickContinueButton()
           addSettsfunctionPage.enterHabitatName(faker.name.firstName())
           commonElement.clickContinueButton()
-          addSettsfunctionPage.clickOnHabitattypeThree()
-          //   cy.get("#habitat-types-3").click();
+          cy.get('#habitat-types-3').click()
           commonElement.clickContinueButton()
           cy.get("input[value='true']").click()
           commonElement.clickContinueButton()
-          addSettsfunctionPage.enterAmountOfHabitatEntrance(7)
-          //   cy.get("#habitat-entrances").fill("7");
+          cy.get('#habitat-entrances').fill('7')
           commonElement.clickContinueButton()
-          addSettsfunctionPage.enterAmountOfActivEntrance(5)
-          //   cy.get("#habitat-active-entrances").fill("5");
+          cy.get('#habitat-active-entrances').fill('5')
           commonElement.clickContinueButton()
-          addSettsfunctionPage.enterHabitatGridRef('NY123456')
-
-          //   cy.get("#habitat-grid-ref").fill("NY123456");
+          cy.get('#habitat-grid-ref').clear()
+          cy.get('#habitat-grid-ref').fill('NY123456')
           commonElement.clickContinueButton()
-          addSettsfunctionPage.enterWorkStartDay('1')
-          //   cy.get("#habitat-work-start-day").fill("1");
-          addSettsfunctionPage.enterWorkStartMonth('11')
-          //   cy.get("#habitat-work-start-month").fill("11");
-          addSettsfunctionPage.enterWorkStartYear('2024')
-          //   cy.get("#habitat-work-start-year").fill("2024");
+          cy.get('#habitat-work-start-day').fill('1')
+          cy.get('#habitat-work-start-month').fill('11')
+          cy.get('#habitat-work-start-year').fill('2024')
           commonElement.clickContinueButton()
-          addSettsfunctionPage.enterWorkEndDay('30')
-          addSettsfunctionPage.enterWorkEndMonth('11')
-          addSettsfunctionPage.enterWorkEndYear('2024')
-          //   cy.get("#habitat-work-end-day").fill("30");
-          //   cy.get("#habitat-work-end-month").fill("11");
-          //   cy.get("#habitat-work-end-year").fill("2024");
+          cy.get('#habitat-work-end-day').fill('30')
+          cy.get('#habitat-work-end-month').fill('11')
+          cy.get('#habitat-work-end-year').fill('2024')
           commonElement.clickContinueButton()
-          addSettsfunctionPage.clickOnHabitatActivities()
-          //   cy.get("#habitat-activities").click();
+          cy.get('#habitat-activities').click()
+          cy.get('#habitat-activities-2').click()
+          cy.get('#habitat-activities-3').click()
+          cy.get('#habitat-activities-4').click()
+          cy.get('#habitat-activities-5').click()
           commonElement.clickContinueButton()
           cy.get("input[value='no']").click()
           commonElement.clickContinueButton()
@@ -412,64 +387,63 @@ describe('Page title verification', () => {
           commonElement.clickContinueButton()
           commonElement.clickContinueButton()
           commonElement.GetApplicationTasklist('Agree to terms and send application')
-          cy.get('#main-content > div > div > form > fieldset').contains(
+          commonElement.assertPageText().contains(
             users.text18
           )
-          cy.get('#main-content > div > div > form > fieldset').contains(
+          commonElement.assertPageText().contains(
             'By sending the application you agree that you have given complete and correct information.'
           )
-          cy.get('#main-content > div > div > form > fieldset').contains(
+          commonElement.assertPageText().contains(
             'If you are making this application on behalf of another person, you confirm that you have their permission to do so. By sending the application, they agree they will:'
           )
-          cy.get('#main-content > div > div > form > fieldset').contains(
+          commonElement.assertPageText().contains(
             'will uphold any conditions applied to my licence if granted'
           )
-          cy.get('#main-content > div > div > form > fieldset').contains(
+          commonElement.assertPageText().contains(
             'will abide by the terms and conditions of this service'
           )
-          cy.get('#main-content > div > div > form > fieldset').contains(
+          commonElement.assertPageText().contains(
             'will abide by the terms and conditions of paying for wildlife licences (opens in new tab) and agree to pay relevant charges'
           )
-          cy.get('#main-content > div > div > form > fieldset').contains(
+          commonElement.assertPageText().contains(
             'By sending the application you confirm that:'
           )
-          cy.get('#main-content > div > div > form > fieldset').contains(
+          commonElement.assertPageText().contains(
             'an appropriate ecologist has been involved in the application and design of any mitigations'
           )
-          cy.get('#main-content > div > div > form > fieldset').contains(
+          commonElement.assertPageText().contains(
             'the ecologist supports the application'
           )
-          cy.get('#main-content > div > div > form > fieldset').contains(
+          commonElement.assertPageText().contains(
             'the ecologist is content that the proposed methods, actions and mitigation are appropriate to address the findings of the ecologist’s site assessment'
           )
-          cy.get('#main-content > div > div > form > fieldset').contains(
+          commonElement.assertPageText().contains(
             'you will report any actions you took using this licence within 2 weeks of your licence expiring, even if you have taken no action'
           )
-          cy.get('#main-content > div > div > form > fieldset').contains(
+          commonElement.assertPageText().contains(
             'you will pay any charges that apply'
           )
           commonElement.clickContinueButton()
-          //           commonElement.clickContinueButton();
-          //           const ls = cy.get('a').contains('Badger mitigation').first()
-          ls.click()
-          cy.get('#main-content > div > div > form > fieldset > dl').contains(
+          commonElement.clickContinueButton()
+
+          commonElement.VerifyPagetext().contains(
             'SUBMITTED'
           )
-          cy.get('#main-content > div > div > form > fieldset > dl').contains(
+          commonElement.VerifyPagetext().contains(
             'Badger mitigation'
           )
-          cy.get('#main-content > div > div > form > fieldset > dl').contains(
+          commonElement.VerifyPagetext().contains(
             'Site'
           )
-          cy.get('#main-content > div > div > form > fieldset > dl').contains(
+          commonElement.VerifyPagetext().contains(
             'Applicant'
           )
 
-          cy.get('#main-content > div > div > form > fieldset > dl').contains(
+          commonElement.VerifyPagetext().contains(
             'Application reference'
           )
 
-          cy.get('#main-content > div > div > form > fieldset > dl').contains(
+          commonElement.VerifyPagetext().contains(
             'Submitted'
           )
         }

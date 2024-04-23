@@ -1,14 +1,16 @@
 const { defineConfig } = require('cypress')
+const browserstack = require('browserstack-local')
 
 module.exports = defineConfig({
   chromeWebSecurity: false,
-  video: false,
   projectId: 'wildlife test',
   env: {
-    baseUrl: 'https://new-tst.aws.defra.cloud/',
+
+    baseUrl: 'https://new-tst.aws.defra.cloud',
+
     tasklist: 'tasklist',
     login: 'login',
-    'which-species': 'which-species',
+    'which-species': '/which-species',
     signInText: 'Dealing in exempted ivory items privacy not'
   },
   e2e: {
@@ -17,12 +19,15 @@ module.exports = defineConfig({
     setupNodeEvents (on, config) {
       return require('./cypress/plugins/index.js')(on, config)
     },
-    specPattern: 'cypress/e2e/**/*.{js,jsx,ts,tsx}'
+    supportFile: 'cypress/support/e2e.{js,jsx,ts,tsx}',
+
+    specPattern: 'cypress/**/*.{js,jsx,ts,tsx}'
   },
   reporter: 'cypress-mochawesome-reporter',
   reporterOptions: {
     reportDir: 'reports/cypress_reports',
     charts: true,
+    html: true,
     reportPageTitle: 'My Test Suite',
     embeddedScreenshots: true,
     inlineAssets: true
