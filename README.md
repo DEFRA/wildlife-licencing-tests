@@ -1,5 +1,10 @@
 # wildlife-licencing-tests
 A repository for storing end-to-end tests (For regression testing of the wildlife licensing service, part of SDDS)
+
+## Current repo status
+
+Work on the frontend service is paused as of April 2024.
+
 # create .env file from cypress root
 
 ## To build and run local image
